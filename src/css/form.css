@@ -1,0 +1,56 @@
+
+.container {
+    background-color: lightgray;
+    height: auto;
+    min-width: 20rem;
+    max-width: 30rem;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    display: inline-block;
+    font-family: Arial, "Arial Nova",sans-serif;
+}
+
+input {
+    width: calc(90% - 1rem);
+    min-width: 20rem;
+    max-width: 50rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.containerButton {
+    background: darkgray;
+    width: calc(30% - 1rem);
+    padding: 0.5rem 0.5rem;
+    margin: auto;
+    display: block;
+    cursor:pointer;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+.containerButton:before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 1s ease;
+}
+.containerButton:hover:before {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.containerButton:active {
+    box-shadow: none;
+}
