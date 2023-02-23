@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+}
+footer{
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid;
+}
+
+.footerContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 150px;
+}
+
+.footerSection{
+    text-align: center;
+    margin: 0 auto;
+}
+ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+li{
+    margin: auto;
+}
+
+.imgContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.imgFooter{
+    margin: auto;
+}
