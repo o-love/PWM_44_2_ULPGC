@@ -1,0 +1,81 @@
+
+p {
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.containerList {
+    border: 1px solid black;
+    width: 22rem;
+    height: 20rem;
+    overflow: hidden;
+    background-color: #FFE;
+}
+
+.containerSearch {
+    display:flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btnEdit {
+    background-color: darkslateblue;
+    color: white;
+    margin: 2px;
+    padding: 4px 8px;
+    border: none;
+}
+
+.btnTrash {
+    background-color: darkred;
+    color: white;
+    margin: 2px;
+    padding: 4px 8px;
+    border: none;
+}
+
+#btnAdd {
+    background-color: limegreen;
+    font-weight: bold;
+    color: white;
+    margin: 2px;
+    padding: 8px 16px;
+    border: none;
+}
+
+#btnBusCar {
+    background-color: royalblue;
+    font-weight: bold;
+    color: white;
+    margin: 2px;
+    padding: 8px 16px;
+    border: none;
+}
+
+
+table {
+    margin: auto;
+    background-color: lightgray;
+    border: black 1px solid;
+    margin-bottom: 27px;
+    margin-top: 27px;
+    height: 50px;
+}
+
+
+td {
+    background-color: white;
+    margin-bottom: 10px;
+
+}
+tbody{
+    margin-bottom: 10px;
+}
+
+.listElements {
+    width:auto;
+}
