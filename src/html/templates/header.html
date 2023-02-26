@@ -1,28 +1,29 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Header</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/header.css">
+</head>
+<body>
 <header>
+    <img id="headerLogo" class="headerLeftSection headerSection" src="" alt="Logo">
 
-    <section class="headerContainer">
-        <div class="headerLeftSection">
-            <img class="headerSection" src="" alt="Logo">
-
-            <a class="headerSection">Link 1</a>
-            <a class="headerSection">Link 1</a>
-        </div>
-
-        <div class="headerRightSection">
-
-            <!-- Register button --->
-            <div id="registerButton" class="headerSection">
-
-            </div>
-
-            <!-- Profile Icon --->
-            <div id="profileIcon" class="headerSection">
-
-            </div>
+    <nav id="headerLinks" class="headerLeftSection headerSection">
+        <a>Link 1</a>
+        <a>Link 2</a>
+    </nav>
 
 
-        </div>
-    </section>
+    <!-- In the final application only one of these will be displayed
+    at a time depending on if the user is logged in or not. --->
+
+    <!-- Profile Icon --->
+    <img id="headerProfileImg" src="" alt="Profile Image" class="headerSection headerRightSection">
+
+    <!-- Login button --->
+    <button id="headerLoginButton" type="button" class="headerSection headerRightSection">Login</button>
+
 
 </header>
+</body>

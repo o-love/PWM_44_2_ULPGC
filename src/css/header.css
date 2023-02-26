@@ -1,0 +1,17 @@
+header {
+    align-items: center;
+}
+
+.headerLeftSection {
+    float: left;
+}
+
+.headerRightSection {
+    float: right;
+}
+
+.headerSection {
+    padding: 10px 10px;
+    text-align: center;
+}
+
