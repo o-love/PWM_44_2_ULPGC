@@ -1,0 +1,13 @@
+body {
+    text-align: center;
+}
+
+#map {
+    max-width: 20rem;
+    max-height: 30rem;
+    float: left;
+}
+
+#gasStationList {
+    float: right;
+}
