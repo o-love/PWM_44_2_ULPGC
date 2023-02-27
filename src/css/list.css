@@ -21,7 +21,6 @@ p {
     justify-content: center;
 }
 
-
 .btnEdit {
     background-color: darkslateblue;
     color: white;
@@ -57,9 +56,6 @@ p {
     padding: 0.5rem 1rem;
     border: none;
 }
-
-
-
 
 table {
     margin: auto;
