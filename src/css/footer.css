@@ -28,7 +28,10 @@ footer{
 .footerSectionElement{
     margin: auto;
 }
-
+img{
+    max-width: 3rem;
+    max-height: 3rem;
+}
 .imgContainer{
     display: flex;
     flex-direction: column;
