@@ -1,5 +1,9 @@
 header {
     align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: sandybrown;
+    padding: 2px;
 }
 
 .headerLeftSection {
