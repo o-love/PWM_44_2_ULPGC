@@ -19,13 +19,13 @@ footer{
     text-align: center;
     margin: 0 auto;
 }
-ul{
+.linksFooter{
     padding: 0;
     list-style: none;
     display: flex;
     flex-direction: column;
 }
-li{
+.footerSectionElement{
     margin: auto;
 }
 
