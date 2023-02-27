@@ -25,25 +25,27 @@ p {
 .btnEdit {
     background-color: darkslateblue;
     color: white;
-    margin: 2px;
-    padding: 4px 8px;
+    margin: 0.1rem;
+    padding: 0.2rem 0.5rem;
     border: none;
+    font-weight: bold;
 }
 
 .btnTrash {
     background-color: darkred;
     color: white;
-    margin: 2px;
-    padding: 4px 8px;
+    margin: 0.1rem;
+    padding: 0.2rem 0.5rem;
     border: none;
+    font-weight: bold;
 }
 
 #btnAdd {
     background-color: limegreen;
     font-weight: bold;
     color: white;
-    margin: 2px;
-    padding: 8px 16px;
+    margin: 0.3rem;
+    padding: 0.5rem 1rem;
     border: none;
 }
 
@@ -51,31 +53,31 @@ p {
     background-color: royalblue;
     font-weight: bold;
     color: white;
-    margin: 2px;
-    padding: 8px 16px;
+    margin: 0.3rem;
+    padding: 0.5rem 1rem;
     border: none;
 }
+
+
 
 
 table {
     margin: auto;
     background-color: lightgray;
     border: black 1px solid;
-    margin-bottom: 27px;
-    margin-top: 27px;
-    height: 50px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-collapse: collapse;
 }
-
 
 td {
     background-color: white;
-    margin-bottom: 10px;
-
 }
 tbody{
-    margin-bottom: 10px;
+    opacity: 0.8;
 }
 
 .listElements {
-    width:auto;
+    height: 12rem;
+    overflow-y: auto;
 }
