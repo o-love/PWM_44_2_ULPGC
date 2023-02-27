@@ -1,0 +1,33 @@
+
+.containerTable {
+    border: 1px black solid;
+    background-color: lightyellow;
+}
+
+td {
+    border: 1px black solid;
+    width: 5rem;
+    height: 1rem;
+}
+
+th {
+    border: 1px black solid;
+    text-align: center;
+    cursor: pointer;
+}
+
+th:after {
+    content: " ▼";
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+th.sorted-asc:after {
+    content: " ▲";
+    opacity: 1;
+}
+
+th.sorted-desc:after {
+    content: " ▼";
+    opacity: 1;
+}
