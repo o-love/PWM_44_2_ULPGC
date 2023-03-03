@@ -4,14 +4,12 @@ header {
     overflow: hidden;
     background-color: sandybrown;
     padding: 2px;
-}
-
-.headerLeftSection {
-    float: left;
+    display: flex;
 }
 
 .headerRightSection {
-    float: right;
+    margin-left: auto;
+    margin-right: 1.5rem;
 }
 
 .headerSection {
@@ -19,3 +17,12 @@ header {
     text-align: center;
 }
 
+#headerLogo {
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+#headerProfileImg {
+    max-width: 3rem;
+    max-height: 3rem;
+}
