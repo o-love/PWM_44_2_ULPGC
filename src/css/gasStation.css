@@ -1,0 +1,30 @@
+
+.bodyContainer{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+}
+.mapContainer{
+    padding: 3rem;
+}
+.mapaImagen{
+    max-width: 35rem;
+    max-height: 35rem;
+    margin: auto;
+}
+
+.InfoGasStation{
+    padding: 0 3rem;
+}
+h2{
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.GasDescription{
+    margin-top: 3rem;
+    border: solid 1px;
+    min-height: 60%;
+    padding: 2rem;
+}
