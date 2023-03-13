@@ -13,10 +13,38 @@
     max-height: 3rem;
 }
 
+#headerAboutSection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 header {
     background-color: sandybrown;
     padding: 2px;
     display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    html, body {
+        height: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        vertical-align: middle;
+        text-align: center;
+        width: 70%;
+        height: 98%;
+    }
+
+    .headerRightSection {
+        margin-top: auto;
+        margin-bottom: 1.5rem;
+    }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
@@ -26,9 +54,8 @@ header {
 
     header {
         flex-direction: column;
-        vertical-align: center;
+        vertical-align: middle;
         text-align: center;
-        overflow: hidden;
         max-width: 10rem;
         height: 98%;
     }
@@ -41,13 +68,15 @@ header {
 
 @media only screen and (min-width: 900px) {
     header {
-        align-items: center;
-        text-align: center;
-        overflow: hidden;
     }
 
     .headerRightSection {
         margin-left: auto;
         margin-right: 1.5rem;
+    }
+
+    #headerAboutSection {
+        flex-direction: row;
+        visibility: collapse;
     }
 }
