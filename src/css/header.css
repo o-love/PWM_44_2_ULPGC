@@ -20,7 +20,7 @@
 }
 
 header {
-    background-color: sandybrown;
+    background-color: var(--dark-blue);
     padding: 2px;
     display: flex;
     align-items: center;
@@ -39,6 +39,7 @@ header {
         text-align: center;
         width: 70%;
         height: 98%;
+        background-color: var(--light-blue);
     }
 
     .headerRightSection {

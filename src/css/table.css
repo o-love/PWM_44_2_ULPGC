@@ -1,7 +1,7 @@
 
 .containerTable {
     border: 1px black solid;
-    background-color: lightyellow;
+    background-color: var(--light-blue);
 }
 
 td {

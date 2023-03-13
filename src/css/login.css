@@ -13,6 +13,7 @@ form {
     align-items: center;
     border: 1px solid black;
     width: 15rem;
+    background-color: var(--super-light-blue);
 }
 
 div {
@@ -34,7 +35,7 @@ input {
 
 button {
     padding: 10px;
-    background-color: #B5B5B5;
+    background-color: var(--light-blue);
     border-radius: 5px;
     cursor: pointer;
 }

@@ -1,6 +1,6 @@
 
 .containerForm {
-    background-color: lightgray;
+    background-color: var(--light-blue);
     height: auto;
     min-width: 20rem;
     max-width: 30rem;
@@ -25,7 +25,7 @@ p {
 }
 
 .containerButton {
-    background: darkgray;
+    background: var(--dark-blue);
     width: calc(30% - 1rem);
     padding: 0.5rem 0.5rem;
     margin: auto;

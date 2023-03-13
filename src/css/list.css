@@ -59,17 +59,18 @@ p {
 
 table {
     margin: auto;
-    background-color: lightgray;
+    background-color: var(--light-blue);
     border: black 1px solid;
     margin-bottom: 1rem;
     margin-top: 1rem;
     border-collapse: collapse;
 }
 
-td {
-    background-color: white;
+table.td {
+    background-color: var(--light-blue);
 }
-tbody{
+
+tbody {
     opacity: 0.8;
 }
 
