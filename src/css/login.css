@@ -11,7 +11,6 @@ form {
     padding: 3rem;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
     width: 15rem;
     background-color: var(--super-light-blue);
 }
@@ -38,4 +37,33 @@ button {
     background-color: var(--light-blue);
     border-radius: 5px;
     cursor: pointer;
+}
+
+#submit {
+    margin-top: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+
+    form {
+        height: 90%;
+        width: 90%;
+        border-radius: 0;
+    }
+
+    form div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    form {
+        border: 1px solid black;
+    }
 }
