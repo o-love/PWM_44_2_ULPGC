@@ -8,6 +8,9 @@ img {
     padding-right: 0.5rem;
     margin: 1rem;
 }
+#iconTabletTruck{
+    display: none;
+}
 .img-left{
     display: inline-block;
     max-width: 30%;
@@ -45,4 +48,47 @@ img {
 }
 .aboutUs-container{
     text-align: center;
+}
+@media only screen and (min-width: 1400px) {
+    .parragraphLightBlueContainer{
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .img-right, .img-left{
+        display: none;
+    }
+    .parragraphLightBlueContainer{
+        margin: 0;
+    }
+    .parragraphBlueContainer{
+        margin: 0;
+    }
+    .paragraphTabletContainer{
+        border-radius: 0;
+    }
+    #paragraphTopTabletContainer{
+        margin-top: 2rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    #paragraphBottonTabletContainer{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .img-left{
+        display: block;
+        margin: 1rem auto;
+        object-fit: contain;
+        width: 100%;
+        height: auto;
+    }
+    .paragraphTabletContainer{
+        display: none;
+        overflow: auto;
+    }
 }
