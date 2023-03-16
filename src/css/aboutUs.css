@@ -1,3 +1,4 @@
+
 img {
     width: 10rem;
     height: 8rem;
@@ -11,59 +12,38 @@ img {
 #iconTabletTruck{
     display: none;
 }
-.img-left .img-left{
+.img-left .img-left .image-bus {
     display: inline-block;
     max-width: 30%;
 }
-.image-bus{
+.paragraph{
+    border-radius: 19px;
+    text-align: left;
+    max-width: 70%;
     display: inline-block;
-    max-width: 30%;
+    border: 1px solid black;
+    vertical-align: middle;
+    width: 60%;
+    font-size: 2.5rem;
+    padding: 3rem;
 }
-
-.parragraphLightBlueContainer{
+.paragraphLightBlueContainer{
     background: #DAF0F4;
-    border-radius: 19px;
-    text-align: left;
-    max-width: 70%;
-    display: inline-block;
-    border: 1px solid black;
-    vertical-align: middle;
-    width: 60%;
-    font-size: 2.5rem;
-    padding: 3rem;
 }
-
-.parragraphBlueContainer{
+.paragraphBlueContainer{
     background: #5DCCFC;
-    border-radius: 19px;
-    position: center;
-    text-align: left;
-    max-width: 70%;
-    display: inline-block;
-    vertical-align: middle;
-    border: 1px solid black;
-    width: 60%;
-    font-size: 2.5rem;
-    padding: 3rem;
 }
 .aboutUs-container{
     text-align: center;
 }
-.image-bus {
-    display: inline-block;
-    max-width: 40%;
-}
-
 @media only screen and (max-width: 1200px) {
     .img-right, .img-left{
         display: none;
     }
-    .parragraphLightBlueContainer{
+    .paragraphLightBlueContainer, .paragraphBlueContainer{
         margin: 0;
     }
-    .parragraphBlueContainer{
-        margin: 0;
-    }
+
     .paragraphTabletContainer{
         border-radius: 0;
     }
@@ -72,7 +52,7 @@ img {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
-    #paragraphBottonTabletContainer{
+    #paragraphButtonTabletContainer{
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
@@ -86,14 +66,11 @@ img {
         height: auto;
         display: inline-block;
         text-align: center;
-        /*justify-content: center;*/
-        /*margin:  auto;*/
     }
     .aboutUs-container{
         justify-content: center;
         align-items: center;
     }
-
     .img-text-container{
         display: block;
         background: none;
@@ -103,7 +80,6 @@ img {
         min-width: 20rem;
         border: none;
     }
-
     p{
         min-width: 20rem
     }
@@ -111,7 +87,6 @@ img {
         display: none;
         overflow: auto;
     }
-
     .img-text-phone{
         background: none;
         padding: 10px;
@@ -119,7 +94,7 @@ img {
     body{
         background: #DAF0F4;
     }
-    #paragraphBottonTabletContainer, #paragraphTopTabletContainer {
+    #paragraphButtonTabletContainer, #paragraphTopTabletContainer {
         background: none;
         border: 0;
     }
