@@ -91,4 +91,20 @@ img {
         display: none;
         overflow: auto;
     }
+    .img-text-container{
+        background: none;
+        padding: 20px;
+        border: none;
+    }
+    .img-text-phone{
+        background: none;
+        padding: 10px;
+    }
+    body{
+        background: #DAF0F4;
+    }
+    #paragraphBottonTabletContainer, #paragraphTopTabletContainer {
+        background: none;
+        border: 0;
+    }
 }
