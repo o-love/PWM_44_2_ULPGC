@@ -11,11 +11,11 @@ img {
 #iconTabletTruck{
     display: none;
 }
-.img-left{
+.img-left .img-left{
     display: inline-block;
     max-width: 30%;
 }
-.img-right{
+.image-bus{
     display: inline-block;
     max-width: 30%;
 }
@@ -23,37 +23,36 @@ img {
 .parragraphLightBlueContainer{
     background: #DAF0F4;
     border-radius: 19px;
-    width: 50rem;
     text-align: left;
-    font-size: 2rem;
-    padding: 2rem;
     max-width: 70%;
     display: inline-block;
     border: 1px solid black;
     vertical-align: middle;
+    width: 60%;
+    font-size: 2.5rem;
+    padding: 3rem;
 }
 
 .parragraphBlueContainer{
     background: #5DCCFC;
     border-radius: 19px;
-    font-size: 2rem;
-    width: 50rem;
     position: center;
     text-align: left;
-    padding: 2rem;
     max-width: 70%;
     display: inline-block;
     vertical-align: middle;
     border: 1px solid black;
+    width: 60%;
+    font-size: 2.5rem;
+    padding: 3rem;
 }
 .aboutUs-container{
     text-align: center;
 }
-@media only screen and (min-width: 1400px) {
-    .parragraphLightBlueContainer{
-    }
+.image-bus {
+    display: inline-block;
+    max-width: 40%;
 }
-
 
 @media only screen and (max-width: 1200px) {
     .img-right, .img-left{
@@ -80,22 +79,39 @@ img {
 }
 
 @media only screen and (max-width: 800px) {
-    .img-left{
-        display: block;
-        margin: 1rem auto;
+    .img-left {
         object-fit: contain;
         width: 100%;
+        min-width: 10rem;
         height: auto;
+        display: inline-block;
+        text-align: center;
+        /*justify-content: center;*/
+        /*margin:  auto;*/
+    }
+    .aboutUs-container{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-text-container{
+        display: block;
+        background: none;
+        width: 100%;
+        padding-top: 2rem;
+        object-fit: contain;
+        min-width: 20rem;
+        border: none;
+    }
+
+    p{
+        min-width: 20rem
     }
     .paragraphTabletContainer{
         display: none;
         overflow: auto;
     }
-    .img-text-container{
-        background: none;
-        padding: 20px;
-        border: none;
-    }
+
     .img-text-phone{
         background: none;
         padding: 10px;
