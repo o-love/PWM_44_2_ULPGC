@@ -1,7 +1,7 @@
 
 img {
-    width: 10rem;
-    height: 8rem;
+    width: calc(8rem + 1.8vw);
+    height: calc(8rem + 1.5vw);
     border-radius: 29px;
     display: inline-block;
     max-width: 30%;
@@ -24,7 +24,7 @@ img {
     border: 1px solid black;
     vertical-align: middle;
     width: 60%;
-    font-size: 2.5rem;
+    font-size: calc(1rem + 1.5vw);
     padding: 3rem;
 }
 .paragraphLightBlueContainer{
