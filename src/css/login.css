@@ -5,42 +5,62 @@ body {
     height: 100vh;
 }
 
-
 form {
     display: flex;
     padding: 3rem;
     flex-direction: column;
     align-items: center;
-    width: 15rem;
+    width: calc(8rem + 6.8vw);
+    height: calc(9rem + 3.8vw);
+    border-radius: 20px;
     background-color: var(--super-light-blue);
 }
 
 div {
-    display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 10px;
 }
 
 label {
-    margin-right: 10px;
+    display: block;
+    font-size: calc(0.8rem + 0.5vw);
 }
 
 input {
+    display: block;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
     border: 1px solid #ccc;
+    border-bottom: 1px solid black;
+    width: calc(10rem + 2vw);
+    height: calc(0.5rem + 0.5vw);
 }
 
 button {
     padding: 10px;
-    background-color: var(--light-blue);
-    border-radius: 5px;
+    background-color: var(--power-blue);
+    color: #FFFFEE;
+    font-size: calc(0.7rem + 0.5vw);
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    text-align: center;
+    width: calc(6rem + 3.5vw);
+}
+
+a{
+    color: black;
+    padding-top: 0.5rem;
+    font-size: calc(0.7rem + 0.5vw);
 }
 
 #submit {
     margin-top: auto;
+}
+.label-container .params-container{
+    display: block;
 }
 
 @media only screen and (max-width: 600px) {
@@ -53,6 +73,7 @@ button {
         height: 90%;
         width: 90%;
         border-radius: 0;
+        text-align: center;
     }
 
     form div {
@@ -63,10 +84,28 @@ button {
     form input {
         width: 100%;
     }
+    input {
+        width: calc(3rem + 0.5vw);
+        height: calc(1rem + 1.5vw);
+        min-width: 8rem;
+    }
 
-    button {
+    button,  a, label{
         width: 90%;
+        font-size: calc(2rem + 0.5vw);
         height: 5rem;
+        text-align: left;
+    }
+
+    button, a{
+        text-align: center;
+        font-size: calc(1.5rem + 0.5vw);
+        min-width: 5rem;
+
+    }
+
+    body{
+        background: var(--super-light-blue);
     }
 }
 

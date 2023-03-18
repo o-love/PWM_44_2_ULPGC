@@ -8,15 +8,25 @@
     </head>
     <body>
         <form>
-            <div>
-                <label for="username">Email:</label>
+            <div class="params-container">
+                <div class="params-container">
+                    <label for="username">Email</label>
+                </div>
+                <div class="label-container">
                 <input type="email" id="username" required>
+                </div>
             </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" maxlength="16" required>
+            <div class="params-container">
+                <div class="label-container">
+                    <label for="password">Password</label>
+                </div>
+                <div class="label-container">
+                    <input type="password" id="password" maxlength="16" required>
+                </div>
             </div>
-            <button type="submit" id="submit">Log In</button>
+            <button type="submit" id="submit">LOG IN</button>
+            <a href="../html/userRegistration.html"><strong>No tienes cuenta?</strong></a>
+
         </form>
     </body>
 
