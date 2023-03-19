@@ -5,7 +5,11 @@ footer{
     background-color: var(--dark-blue);
     margin: 0;
     padding: 0;
-    border-top: 1px solid;
+    border-top: 1px solid black;
+    color: white;
+}
+.footerSectionTitle{
+    text-decoration: underline;
 }
 
 .footerContainer{
@@ -29,8 +33,9 @@ footer{
     margin: auto;
 }
 img{
-    max-width: 3rem;
-    max-height: 3rem;
+    max-width: 158px;
+    max-height: 94px;
+    border-radius: 30px;
 }
 .imgContainer{
     display: flex;
