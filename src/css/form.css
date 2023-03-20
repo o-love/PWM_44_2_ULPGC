@@ -6,6 +6,7 @@ input {
 }
 
 .containerForm {
+    margin:auto;
     vertical-align: middle;
     text-align: center;
     background-color: var(--light-blue);
