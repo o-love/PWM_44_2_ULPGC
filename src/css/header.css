@@ -16,18 +16,19 @@
 #headerAboutSection {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 header {
     background-color: var(--dark-blue);
+    color:white;
     padding: 2px;
     display: flex;
     align-items: center;
     overflow: hidden;
     text-align: center;
 }
-
+/*Movil*/
 @media only screen and (max-width: 600px) {
     html, body {
         height: 100%;
@@ -38,7 +39,7 @@ header {
         vertical-align: middle;
         text-align: center;
         width: 70%;
-        height: 98%;
+        height: 100%;
         background-color: var(--light-blue);
     }
 
@@ -46,9 +47,14 @@ header {
         margin-top: auto;
         margin-bottom: 1.5rem;
     }
+    #headerAboutSection {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 }
-
-@media only screen and (min-width: 600px) and (max-width: 900px) {
+/*Tablet*/
+@media only screen and (min-width: 600px) and (max-width: 1025px) {
     html, body {
         height: 100%;
     }
@@ -58,7 +64,7 @@ header {
         vertical-align: middle;
         text-align: center;
         max-width: 10rem;
-        height: 98%;
+        height: 100%;
         display: inline-block;
     }
 
@@ -66,18 +72,10 @@ header {
         margin-top: auto;
         margin-bottom: 1.5rem;
     }
-}
-
-@media only screen and (min-width: 900px) {
-    header {
-    }
-
-    .SecondaryRightSection {
-        margin-left: auto;
-        margin-right: 1.5rem;
-    }
-
     #headerAboutSection {
-        display: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 }
+

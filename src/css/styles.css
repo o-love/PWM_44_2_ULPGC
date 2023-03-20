@@ -5,3 +5,29 @@
     --dark-blue: #0065a3;
     --super-dark-blue: #00426a;
 }
+
+body{
+    margin:0;
+    max-height: 100%;
+}
+/*Desktop*/
+@media (min-width: 1025px) {
+    body{
+        background-color: red;
+    }
+}
+
+/*movil*/
+@media only screen and (max-width: 600px) {
+    body{
+        background-color: green;
+    }
+}
+/*tablet*/
+@media (min-width: 600px) and (max-width:1025px){
+    body {
+        display: flex;
+        flex-direction: row;
+        background-color: blue;
+    }
+}
