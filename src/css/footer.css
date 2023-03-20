@@ -32,11 +32,7 @@ footer{
 .footerSectionElement{
     margin: auto;
 }
-img{
-    max-width: 158px;
-    max-height: 94px;
-    border-radius: 30px;
-}
+
 .imgContainer{
     display: flex;
     flex-direction: column;
@@ -44,6 +40,9 @@ img{
 
 .imgFooter{
     margin: auto;
+    max-width: 158px;
+    max-height: 94px;
+    border-radius: 30px;
 }
 @media only screen and (max-width: 1200px) {
     footer{
