@@ -4,13 +4,25 @@
         <meta charset="UTF-8">
         <title>Title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/gasStation.css">
+        <script src="../js/loadTemplate.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', init);
+
+            function init() {
+                loadTemplate("../html/templates/loggedOutHeader.html", "header")
+                loadTemplate("../html/templates/components/map.html", "indexBody")
+            }
+        </script>
     </head>
     <body>
-        <!--    header-->
-        <div class="bodyContainer">
-        <!--        Mapa-->
-        <!--        Lista-->
-        </div>
+    <header id="header"></header>
+    <!--    header-->
+    <div id="indexBody" class="bodyContainer">
+
+    </div>
     </body>
     <footer>
         <!-- Aqui se insertara el componente del footer -->

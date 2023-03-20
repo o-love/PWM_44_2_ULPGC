@@ -59,6 +59,7 @@ header {
         text-align: center;
         max-width: 10rem;
         height: 98%;
+        display: inline-block;
     }
 
     .headerRightSection {
