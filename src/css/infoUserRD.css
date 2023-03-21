@@ -1,0 +1,35 @@
+.title-information-user {
+    background-color: #99d8ff;
+    border: 0;
+    border-bottom: 1px black solid;
+}
+
+.title-information-user, .paragraph-information-user {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: calc(0.5rem + 1vw);
+}
+
+.top-title-information-user{
+    margin-top: 0;
+    padding-top: 1rem;
+}
+
+.other-title-information-user{
+    border-top: 1px black solid;
+}
+
+
+.title-Rd-User-container {
+    width: calc(15rem + 10vw);
+    border: 1px black solid;
+    border-radius: 20px;
+    margin: 2rem;
+    overflow: hidden;
+}
+
+.info-user-rd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
