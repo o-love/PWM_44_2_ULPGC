@@ -1,80 +1,89 @@
-
-p {
-    font-weight: bold;
-    text-align: center;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-}
-
 .containerList {
-    border: 1px solid black;
-    width: 22rem;
-    height: 20rem;
-    overflow: hidden;
-    background-color: #FFE;
-}
-
-.containerSearch {
-    display:flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.btnEdit {
-    background-color: darkslateblue;
-    color: white;
-    margin: 0.1rem;
-    padding: 0.2rem 0.5rem;
-    border: none;
-    font-weight: bold;
-}
-
-.btnTrash {
-    background-color: darkred;
-    color: white;
-    margin: 0.1rem;
-    padding: 0.2rem 0.5rem;
-    border: none;
-    font-weight: bold;
-}
-
-#btnAdd {
-    background-color: limegreen;
-    font-weight: bold;
-    color: white;
-    margin: 0.3rem;
-    padding: 0.5rem 1rem;
-    border: none;
-}
-
-#btnBusCar {
-    background-color: royalblue;
-    font-weight: bold;
-    color: white;
-    margin: 0.3rem;
-    padding: 0.5rem 1rem;
-    border: none;
-}
-
-table {
+    min-height: 100vh;
     margin: auto;
-    background-color: var(--light-blue);
-    border: black 1px solid;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    min-width: 100%;
+
+}
+
+table, td{
+    min-width: 100%;
+    text-align: center;
     border-collapse: collapse;
 }
+td{
+    border-bottom: solid 1px var(--row-border-color);
+}
+tr{
+    background-color:var(--bg-table);
 
-table.td {
-    background-color: var(--light-blue);
+}
+.tableHeader{
+    background-color:white;
+    padding: 0.5rem 0;
+}
+.fa-trash-can{
+    color: red;
+}
+.fa-solid{
+}
+.fa-pen-to-square{
+    color: black;
 }
 
-tbody {
-    opacity: 0.8;
+
+.headerListContainer{
+    padding: 0.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.listElements {
-    height: 12rem;
-    overflow-y: auto;
+.imgProfile{
+    max-width: 70px;
+    max-height: 90px;
+    border-radius: 100px    ;
+}
+.searchBox{
+    border: solid 1px;
+    border-radius: 0.4rem;
+    margin:auto 0;
+    padding:0.2rem;
+}
+.searchInput{
+    margin:auto;
+    outline: none;
+    border: none;
+    height: 100%;
+}
+
+
+/*movil*/
+@media only screen and (max-width: 600px) {
+    td.elementUser{
+        display: none;
+    }
+    tr{
+        max-width: 20%;
+        margin: auto;
+    }
+    .imgProfile{
+        max-width: 50px;
+        max-height: 50px;
+        border-radius: 100px;
+    }
+    .headerListContainer{
+        flex-direction: column;
+        max-width: 70%;
+    }
+    h3{
+        margin: auto;
+    }
+    .searchBox{
+        max-width: 75%;
+        margin:  1rem auto;
+    }
+    .btnTable{
+        font-size: 1.5rem;
+    }
 }
