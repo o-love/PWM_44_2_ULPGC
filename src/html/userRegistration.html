@@ -4,16 +4,32 @@
         <meta charset="UTF-8">
         <title>userRegistration</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--FONTAWESOME-->
+        <script src="https://kit.fontawesome.com/ff006d44e4.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/form.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <script src="../js/loadTemplate.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', init);
+
+            function init() {
+                loadTemplate("../html/templates/loggedOutHeader.html", "header")
+                loadTemplate("../html/templates/formUser.html", "indexBody")
+                loadTemplate("../html/templates/footer.html", "footer")
+            }
+        </script>
     </head>
     <body>
-        <!--Aqui va el Header-->
-        <div class="bodyContainer">
-            <!--Aqui va el Formulario de registro usuario-->
+        <header id="header"></header>
+        <!--    header-->
+        <div id="indexBody" class="bodyContainer">
         </div>
-        <!--Aqui va el Footer-->
-    </body>
 
-    <footer>
-        <!-- Aqui se insertara el componente del footer -->
-    </footer>
+        <footer id="footer">
+            <!-- Aqui se insertara el componente del footer -->
+        </footer>
+    </body>
 </html>

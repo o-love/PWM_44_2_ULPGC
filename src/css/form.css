@@ -18,6 +18,7 @@ input {
     overflow: hidden;
     align-items: center;
     font-family: Arial, "Arial Nova", sans-serif;
+    max-width: 45%;
 }
 
 .elementForm{

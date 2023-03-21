@@ -1,9 +1,7 @@
-body{
-    margin: 0;
-}
+
 footer{
     background-color: var(--dark-blue);
-    margin: 0;
+    margin-top: auto;
     padding: 0;
     border-top: 1px solid black;
     color: white;
