@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Polo",
+    "model": "Volkswagen T9",
+    "imgSrc": "../../../img/car.PNG"
+  },
+  {
+    "name": "Daughter's car",
+    "model": "Benz",
+    "imgSrc": "../../../img/car.PNG"
+  },
+  {
+    "name": "Dad's car",
+    "model": "Volkswagen",
+    "imgSrc": "../../../img/car.PNG"
+  },
+  {
+    "name": "Friend's car",
+    "model": "T9",
+    "imgSrc": "../../../img/car.PNG"
+  },
+  {
+    "name": "Someone else's car",
+    "model": "Tesla",
+    "imgSrc": "../../../img/car.PNG"
+  }
+]

@@ -6,73 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../css/cardCar.css">
     <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+            loadCarContent();
+
+            feather.replace();
+        }
+
+        function loadCarContent() {
+            fetch('../../../../Static Data/Car Data/cars.json')
+                .then((response) => response.json())
+                .then((cars) => {
+                    if (!('content' in document.createElement('template'))) {
+                        console.error('Your browser does not support templates');
+                        return;
+                    }
+
+                    const container = document.getElementById('carCardContainer');
+
+                    cars.forEach((car) => {
+                        const tmpl = document
+                            .getElementById('car-card-template')
+                            .content.cloneNode(true);
+
+                        tmpl.querySelector('h3').innerText = car.name;
+                        tmpl.querySelector('p').innerText = car.model;
+                        tmpl.querySelector('img').src = car.imgSrc;
+
+                        container.appendChild(tmpl);
+                    })
+                }).catch((err) => console.error(err));
+        }
+    </script>
 </head>
-  <body>
-      <div class="layout">
-          <div class="card">
-                <img src="../../../img/car.PNG" class="card-img" alt="...">
-                <div class="card-body">
-                  <h3 class="card-title">Polo</h3>
-                  <p class="card-text">Volkswagen T9 Diesel 2023KVM</p>
-                    <button class="btn btn-primary mb-1">
-                        <i data-feather="maximize-2" class="feather-48"></i>
-                    </button>
-                 </div>
-          </div>
-          <div class="card">
-              <img src="../../../img/car.PNG" class="card-img" alt="...">
-              <div class="card-body">
-                  <h3 class="card-title">Polo</h3>
-                  <p class="card-text">Volkswagen T9 Diesel 2023KVM</p>
-                  <button class="btn btn-primary mb-1">
-                      <i data-feather="maximize-2" class="feather-48"></i>
-                  </button>
-              </div>
-          </div>
-          <div class="card">
-              <img src="../../../img/car.PNG" class="card-img" alt="...">
-              <div class="card-body">
-                  <h3 class="card-title">Polo</h3>
-                  <p class="card-text">Volkswagen T9 Diesel 2023KVM</p>
-                  <button class="btn btn-primary mb-1">
-                      <i data-feather="maximize-2" class="feather-48"></i>
-                  </button>
-              </div>
-          </div>
+<body>
+<div id="carCardContainer" class="layout">
+    <template id="car-card-template">
+        <div class="card">
+            <img src="" class="card-img" alt="...">
+            <div class="card-body">
+                <h3 class="card-title"></h3>
+                <p class="card-text"></p>
+                <button class="btn btn-primary mb-1">
+                    <i data-feather="maximize-2" class="feather-48"></i>
+                </button>
+            </div>
+        </div>
+    </template>
 
-          <div class="card">
-              <img src="../../../img/car.PNG" class="card-img" alt="...">
-              <div class="card-body">
-                  <h3 class="card-title">Polo</h3>
-                  <p class="card-text">Volkswagen T9 Diesel 2023KVM</p>
-                  <button class="btn btn-primary mb-1">
-                      <i data-feather="maximize-2" class="feather-48"></i>
-                  </button>
-              </div>
-          </div>
 
-          <div class="card">
-              <img src="../../../img/car.PNG" class="card-img" alt="...">
-              <div class="card-body">
-                  <h3 class="card-title">Polo</h3>
-                  <p class="card-text">Volkswagen T9 Diesel 2023KVM</p>
-                  <button class="btn btn-primary mb-1">
-                      <i data-feather="maximize-2" class="feather-48"></i>
-                  </button>
-              </div>
-          </div>
-
-          <div class="card">
-              <img src="../../../img/car.PNG" class="card-img" alt="...">
-              <div class="card-body">
-                  <h3 class="card-title">Polo</h3>
-                  <p class="card-text">Volkswagen T9 Diesel 2023KVM</p>
-                  <button class="btn btn-primary mb-1">
-                      <i data-feather="maximize-2" class="feather-48"></i>
-                  </button>
-              </div>
-          </div>
-      </div>
-      <script>feather.replace()</script>
-  </body>
+</div>
+</body>
 </html>
