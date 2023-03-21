@@ -6,38 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../css/cardCar.css">
     <script src="https://unpkg.com/feather-icons"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', init);
-
-        function init() {
-            loadCarContent();
-        }
-
-        function loadCarContent() {
-            fetch('../../../../Static Data/Car Data/cars.json')
-                .then((response) => response.json())
-                .then((cars) => {
-                    if (!('content' in document.createElement('template'))) {
-                        console.error('Your browser does not support templates');
-                        return;
-                    }
-
-                    const container = document.getElementById('carCardContainer');
-
-                    cars.forEach((car) => {
-                        const tmpl = document
-                            .getElementById('car-card-template')
-                            .content.cloneNode(true);
-
-                        tmpl.querySelector('h3').innerText = car.name;
-                        tmpl.querySelector('p').innerText = car.model;
-                        tmpl.querySelector('img').src = car.imgSrc;
-
-                        container.appendChild(tmpl);
-                    })
-                }).catch((err) => console.error(err));
-        }
-    </script>
+    <script src="../../../js/cardCar.js"></script>
 </head>
 <body>
 <div id="carCardContainer" class="layout">
@@ -54,8 +23,6 @@
             </div>
         </div>
     </template>
-
-
 </div>
 </body>
 </html>
