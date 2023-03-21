@@ -42,7 +42,7 @@ tr{
 .imgProfile{
     max-width: 70px;
     max-height: 90px;
-    border-radius: 100px    ;
+    border-radius: 100px;
 }
 .searchBox{
     border: solid 1px;
@@ -61,7 +61,7 @@ tr{
     font-size: 1.5rem;
 }
 /*movil*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     td.elementUser{
         display: none;
     }

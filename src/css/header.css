@@ -28,33 +28,9 @@ header {
     overflow: hidden;
     text-align: center;
 }
-/*Movil*/
-@media only screen and (max-width: 600px) {
-    html, body {
-        height: 100%;
-    }
 
-    header {
-        flex-direction: column;
-        vertical-align: middle;
-        text-align: center;
-        width: 70%;
-        height: 100%;
-        background-color: var(--light-blue);
-    }
-
-    .headerRightSection {
-        margin-top: auto;
-        margin-bottom: 1.5rem;
-    }
-    #headerAboutSection {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-}
 /*Tablet*/
-@media only screen and (min-width: 600px) and (max-width: 1025px) {
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
     html, body {
         height: 100%;
     }
@@ -79,3 +55,28 @@ header {
     }
 }
 
+/*Movil*/
+@media only screen and (max-width: 800px) {
+    html, body {
+        height: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        vertical-align: middle;
+        text-align: center;
+        width: 70%;
+        height: 100%;
+        background-color: var(--light-blue);
+    }
+
+    .headerRightSection {
+        margin-top: auto;
+        margin-bottom: 1.5rem;
+    }
+    #headerAboutSection {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}

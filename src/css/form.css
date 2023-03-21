@@ -87,7 +87,7 @@ p {
     max-width: 6rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     html, body {
         height: 100%;
         width: 100%;
@@ -99,7 +99,7 @@ p {
     }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
     .containerForm {
         min-width: 20rem;
         max-width: 30rem;

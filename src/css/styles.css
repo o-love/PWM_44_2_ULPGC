@@ -13,16 +13,16 @@ body{
     min-height: 100vh;
 }
 /*Desktop*/
-@media (min-width: 1025px) {
+@media (min-width: 1200px) {
 
 }
 
 /*movil*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
 
 }
 /*tablet*/
-@media (min-width: 600px) and (max-width:1025px){
+@media (min-width: 800px) and (max-width:1200px){
     body {
         display: flex;
         flex-direction: row;
