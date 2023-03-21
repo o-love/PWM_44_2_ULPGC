@@ -1,78 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../css/styles.css"/>
-    <link rel="stylesheet" href="../../css/form.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <form class="containerForm form">
-        <div class="formTitle">
-            <h3>REGISTRATE</h3>
-        </div>
-        <div class="elementForm">
-            <label for="Usuario">Usuario</label>
-            <input type="text" class="input" id="user" required>
-        </div>
-        <div class="elementForm">
-            <label for="email">Email</label>
-            <input type="email"  class="input" id="email" placeholder="ejemplo@dominio.com" required>
-        </div>
-        <div class="elementForm">
-            <label for="Contraseña">Contraseña</label>
-            <input type="password" id="pass" class="input" required>
-        </div>
-        <div class="elementForm">
-            <label for="ConfirmaContraseña">Confirma Contraseña</label>
-            <input type="password" id="passConfirm" class="input" required>
-        </div>
-        <div class="elementForm">
-            <label for="foto">Foto</label>
-            <input type="file" class="input">
-        </div>
-
-        <button type="submit" id="registerBtn" class="containerButton" >Registrar</button>
-
-    </form>
-    <script>
-        document.addEventListener("DOMContentLoaded", () =>{
-            document.getElementById("registerBtn").addEventListener("click",(e)=>{
-                e.preventDefault();
-                const expresionRegular = new RegExp("^[^@]+@[^@]+\\.[a-zA-Z]{2,}$")
-                const user = document.getElementById("user").value
-                const email = document.getElementById("email").value
-                const pass = document.getElementById("pass").value
-                const passConfirm = document.getElementById("passConfirm").value
-                let userGood,emailGood,passGood
-
-                userGood = user !== "" && user !== null;
-                emailGood = expresionRegular.test(email)
-
-                if (pass.length > 5 && passConfirm.length === pass.length){
-                    passGood = pass === passConfirm;
-                }else{
-                    passGood = false
-                }
-                let mensaje = "";
-                if (!userGood){
-                    mensaje += "-El usuario no debe estar vacio"
-                }
-                if (!emailGood){
-                    mensaje +="\n\n-El email no debe estar vacio y debe seguir el formato nombre@dominio.com"
-                }
-                if (!passGood){
-                    mensaje +="\n\n-Las contraseñas no deben estar vacias y deben coincidir"
-                }
-
-                if (!passGood){
-                    alert(mensaje)
-                }else{
-                    //enviar info
-                }
-            })
-        });
-    </script>
-</body>
-</html>
+<form class="containerForm form">
+    <div class="formTitle">
+        <h3>REGISTRATE</h3>
+    </div>
+    <div class="elementForm">
+        <label for="Usuario">Usuario</label>
+        <input type="text" class="input" id="user" required>
+    </div>
+    <div class="elementForm">
+        <label for="email">Email</label>
+        <input type="email"  class="input" id="email" placeholder="ejemplo@dominio.com" required>
+    </div>
+    <div class="elementForm">
+        <label for="Contraseña">Contraseña</label>
+        <input type="password" id="pass" class="input" required>
+    </div>
+    <div class="elementForm">
+        <label for="ConfirmaContraseña">Confirma Contraseña</label>
+        <input type="password" id="passConfirm" class="input" required>
+    </div>
+    <div class="elementForm">
+        <label for="foto">Foto</label>
+        <input type="file" class="input">
+    </div>
+    <button type="submit" id="registerBtn" class="containerButton" >Registrar</button>
+</form>
