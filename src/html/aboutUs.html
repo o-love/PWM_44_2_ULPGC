@@ -5,8 +5,21 @@
     <link rel="stylesheet" href="../css/aboutUs.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/loadTemplate.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+            loadTemplate("../html/templates/loggedOutHeader.html", "header")
+            loadTemplate("../html/templates/footer.html", "footer")
+        }
+    </script>
 </head>
     <body>
+    <header id="header"></header>
     <div class="aboutUs-container">
         <div class="img-text-container">
                 <img src="../img/aboutUs/IconBus.PNG" alt="Icono auto-bus" class="img-left">
@@ -34,5 +47,6 @@
             <img src="../img/aboutUs/IconCar.PNG" alt="Icono Coche" class="img-right">
         </div>
     </div>
+    <footer id="footer"></footer>
     </body>
 </html>
