@@ -19,6 +19,7 @@ input {
     align-items: center;
     font-family: Arial, "Arial Nova", sans-serif;
     max-width: 45%;
+    min-width: 20%;
 }
 
 .elementForm{

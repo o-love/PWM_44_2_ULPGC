@@ -4,16 +4,27 @@
         <meta charset="UTF-8">
         <title>addPumping</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/form.css"/>
+        <script src="../js/loadTemplate.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', init);
+
+            function init() {
+                loadTemplate("../html/templates/loggedOutHeader.html", "header")
+                loadTemplate("../html/templates/formPumping.html", "addPumpingBody")
+                loadTemplate("../html/templates/footer.html", "footer")
+            }
+        </script>
     </head>
     <body>
-        <!--Aqui va el header-->
+    <header id="header"></header>
 
-        <div class="bodyContainer">
-            <!--Aqui va el formulario de añadir Repostaje-->
-        </div>
+    <div id="addPumpingBody" class="bodyContainer containerForm">
+    </div>
+
+    <footer id="footer"></footer>
     </body>
-
-    <footer>
-        <!-- Aqui se insertara el componente del footer -->
-    </footer>
 </html>
