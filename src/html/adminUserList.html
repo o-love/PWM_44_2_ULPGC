@@ -4,14 +4,25 @@
         <meta charset="UTF-8">
         <title>AdminUserList</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <script src="../js/loadTemplate.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', init);
+
+            function init() {
+                loadTemplate("../html/templates/loggedOutHeader.html", "header")
+                loadTemplate("../html/templates/footer.html", "footer")
+            }
+        </script>
     </head>
     <body>
-        <header>
-            <!-- Aqui se insertara el componente del header -->
-        </header>
-        <!-- Aqui se insertara el componente de la lista de usuarios -->
+    <header id="header"></header>
+
+    <div id="adminUserListBody" class="bodyContainer">
+    </div>
+
+    <footer id="footer"></footer>
     </body>
-    <footer>
-        <!-- Aqui se insertara el componente del footer -->
-    </footer>
 </html>
