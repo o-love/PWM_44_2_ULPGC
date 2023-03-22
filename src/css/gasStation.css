@@ -1,23 +1,27 @@
 
 .bodyContainer {
-    margin: auto;
     display: flex;
     flex-direction: row;
     max-width: 80%;
+    padding: 1rem;
+}
+
+#Global\ Body {
     background-color: var(--light-blue);
     border: 2px solid black;
-    padding: 4rem;
+    padding: 2rem;
+    margin: auto;
+    height: 100%;
 }
 
 .mapContainer {
-    padding: 2rem;
+    padding: 1rem;
     border: solid 1px;
 }
 
 .mapaImagen {
     max-width: 30rem;
     max-height: 30rem;
-    margin: auto;
 }
 
 .InfoGasStation {
@@ -25,13 +29,13 @@
 }
 
 h2 {
-    margin: 3rem auto;
     text-align: center;
 }
 
 .GasDescription {
     margin-top: 3rem;
     border: solid 1px;
-    min-height: 60%;
     padding: 2rem;
+    height: 100%;
+    width: 100%;
 }
