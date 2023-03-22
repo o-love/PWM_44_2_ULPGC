@@ -8,6 +8,7 @@ footer{
 }
 .footerSectionTitle{
     text-decoration: underline;
+    margin-bottom: 0.8rem;
 }
 
 .footerContainer{
@@ -25,10 +26,12 @@ footer{
     padding: 0;
     list-style: none;
     display: flex;
+    margin-top: 0;
     flex-direction: column;
 }
 .footerSectionElement{
-    margin: auto;
+    margin-bottom: 0.6rem;
+    text-align: left;
 }
 
 .imgContainer{
