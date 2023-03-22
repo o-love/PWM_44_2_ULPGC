@@ -17,47 +17,31 @@
 
             function init() {
                 loadTemplate("../html/templates/loggedOutHeader.html", "header")
-                loadTemplate("../html/templates/formUser.html", "indexBody")
+                fetch("../html/templates/formUser.html").then((res) => {
+                    return res.text();
+                }).then((text) => {
+                    document.getElementById("indexBody").innerHTML = text;
+                    document.getElementById("formUserRegistration").addEventListener("submit",(e) => {
+                        console.log("me han pulsado")
+                        e.preventDefault();
+                        const passInput = document.getElementById("pass")
+                        const passConfitmInput = document.getElementById("passConfirm")
+                        if(passInput.value !== passConfitmInput.value){
+                            passInput // invalid
+                                .setCustomValidity('Must match !')
+                        } else {
+                            passInput // invalid
+                                .setCustomValidity('')
+                            console.log("se ha enviado correctamente");
+                        }
+                        passInput.reportValidity()
+                    })
+                })
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
         <script>
-            document.addEventListener("DOMContentLoaded", () =>{
-                document.getElementById("registerBtn").addEventListener("click",(e)=>{
-                    e.preventDefault();
-                    const expresionRegular = new RegExp("^[^@]+@[^@]+\\.[a-zA-Z]{2,}$")
-                    const user = document.getElementById("user").value
-                    const email = document.getElementById("email").value
-                    const pass = document.getElementById("pass").value
-                    const passConfirm = document.getElementById("passConfirm").value
-                    let userGood,emailGood,passGood
 
-                    userGood = user !== "" && user !== null;
-                    emailGood = expresionRegular.test(email)
-
-                    if (pass.length > 5 && passConfirm.length === pass.length){
-                        passGood = pass === passConfirm;
-                    }else{
-                        passGood = false
-                    }
-                    let mensaje = "";
-                    if (!userGood){
-                        mensaje += "-El usuario no debe estar vacio"
-                    }
-                    if (!emailGood){
-                        mensaje +="\n\n-El email no debe estar vacio y debe seguir el formato nombre@dominio.com"
-                    }
-                    if (!passGood){
-                        mensaje +="\n\n-Las contraseñas no deben estar vacias y deben coincidir"
-                    }
-
-                    if (!passGood){
-                        alert(mensaje)
-                    }else{
-                        //enviar info
-                    }
-                })
-            });
         </script>
 
     </head>
