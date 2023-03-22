@@ -23,7 +23,7 @@ function loadGasStationContent() {
                 }
 
                 let element = document.createElement('li');
-                element.innerText = `${key.substring(7)}: ${gasStop[key]}`;
+                element.innerText = `${key.substring(7)}: ${gasStop[key]}€`;
 
                 document.getElementById('pricesList').appendChild(element);
             })
