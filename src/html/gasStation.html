@@ -4,16 +4,32 @@
     <meta charset="UTF-8">
     <title>gasStation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-    <body>
-        <!--Template de header-->
-        <div class="bodyContainer">
-            <!--  Aqui va el mapa-->
-            <!--  Aqui va la descripcion de la gasolinera-->
-        </div>
-    </body>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/gasStation.css">
+    <script src="../js/loadTemplate.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', init);
 
-    <footer>
-        <!-- Aqui se insertara el componente del footer -->
-    </footer>
+        function init() {
+            loadTemplate("../html/templates/loggedOutHeader.html", "header")
+            loadTemplate("../html/templates/components/map.html", "mapBody")
+            loadTemplate("../html/templates/components/gasDescription.html", "descriptionBody")
+            loadTemplate("../html/templates/footer.html", "footer")
+        }
+    </script>
+</head>
+<body>
+<header id="header"></header>
+<!--    header-->
+<div id="indexBody" class="bodyContainer">
+    <div id="mapBody"></div>
+    <div id="descriptionBody" class=""></div>
+</div>
+
+<footer id="footer">
+    <!-- Aqui se insertara el componente del footer -->
+</footer>
+</body>
 </html>
