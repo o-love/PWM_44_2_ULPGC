@@ -1,0 +1,23 @@
+.infoUserViewRight, .iconsUserViewLeft{
+    width: 49%;
+    height: 100%;
+    display: inline-block;
+}
+.infoUserViewRight{
+    border-left: 1px black solid;
+}
+
+.iconsUserViewLeft{
+    margin: 0;
+}
+
+.left-icons-view{
+    margin: 0;
+    width: 100%;
+    height: calc(40rem + 5vw);
+}
+
+.user-info-container{
+    width: 100%;
+    height: 100%;
+}

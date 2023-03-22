@@ -28,8 +28,37 @@
     overflow: hidden;
 }
 
-.info-user-rd{
+.info-user-view{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media only screen and (max-width: 1200px) {
+    .title-Rd-User-container {
+        width: calc(12rem + 10vw);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .title-Rd-User-container {
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+    }
+    .top-title-information-user{
+        border-top: 1px solid black;
+    }
+    .title-information-user{
+        text-align: center;
+        min-width: 4rem;
+    }
+
+    .paragraph-information-user{
+        padding-left: 1rem;
+    }
+    .title-information-user, .paragraph-information-user{
+        min-width: 6rem;
+
+    }
 }

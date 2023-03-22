@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>User Profile View</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONTAWESOME-->
+    <script src="https://kit.fontawesome.com/ff006d44e4.js" crossorigin="anonymous"></script>
+    <!--FALTA AÑADIR Form ICON CON CARGA DINAMICA Y EL RESPONSIVE-->
+    <link rel="stylesheet" href="../css/userProfileView.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/dataInfoUserView.css">
+    <script src="../js/loadTemplate.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', init);
+
+      function init() {
+        loadTemplate("../html/templates/loggedHeader.html", "header")
+        loadTemplate("../html/templates/components/dataInfoUserView.html", "dataInfo")
+        loadTemplate("../html/templates/footer.html", "footer")
+      }
+    </script>
+  </head>
+    <body>
+    <!--- Header -->
+    <header id="header"></header>
+    <!-- A la izquierda se inserta formIconAndOptions.html con el imagen de perfil
+    del usuario y con los botones editar, mis coches, cerrar session y borrar cuenta. -->
+    <div class="user-info-container">
+      <div class="iconsUserViewLeft">
+
+        <p class="left-icons-view">Es un ejemplo del subbusqueda</p>
+      </div>
+      <!-- A la derecha se inserta el formulario de usuario con los datos actuales prereyenados --->
+      <div class="infoUserViewRight">
+        <div id="dataInfo"> </div>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+    </body>
+</html>
