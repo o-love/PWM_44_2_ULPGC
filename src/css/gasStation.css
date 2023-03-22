@@ -5,7 +5,6 @@
     align-items: center;
     text-align: center;
     padding: 1rem;
-    overflow: hidden;
 }
 
 #Global\ Body {
@@ -14,6 +13,7 @@
     padding: 2rem;
     margin: auto;
     height: 100%;
+    align-items: center;
 }
 
 .mapaImagen {
@@ -28,7 +28,7 @@ h2 {
 
 .GasDescription {
     border: solid 1px;
-    width: 70%;
     padding: 1rem;
     text-align: justify;
+    margin: 1px;
 }
