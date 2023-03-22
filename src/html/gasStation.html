@@ -9,22 +9,13 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/gasStation.css">
     <script src="../js/loadTemplate.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', init);
-
-        function init() {
-            loadTemplate("../html/templates/loggedOutHeader.html", "header")
-            loadTemplate("../html/templates/components/map.html", "mapBody")
-            loadTemplate("../html/templates/components/gasDescription.html", "descriptionBody")
-            loadTemplate("../html/templates/footer.html", "footer")
-        }
-    </script>
+    <script src="../js/gasStation.js"></script>
 </head>
 <body>
 <header id="header"></header>
 <!--    header-->
 <div id="Global Body">
-    <h2 id="GasStationName">GAS XXX</h2>
+    <h2 id="GasStationName"></h2>
     <div id="mapBody"></div>
     <div id="descriptionBody" class="GasDescription"></div>
 </div>
