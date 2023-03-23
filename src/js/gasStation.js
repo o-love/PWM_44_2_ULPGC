@@ -23,7 +23,17 @@ function loadGasStationContent() {
                 }
 
                 let element = document.createElement('li');
-                element.innerText = `${key.substring(7)}: ${gasStop[key]}€`;
+                const cheapPriceGas = 1.4;
+                const expensivePriceGas = 2;
+                let price = parseFloat(gasStop[key].replace(',', '.').toLocaleString());
+
+                if(price < cheapPriceGas){
+                    element.innerHTML = `${key.substring(7)}: <span style="color: green"><strong>${gasStop[key]}€</strong></span>`;
+                }else if(price > cheapPriceGas && price < expensivePriceGas) {
+                    element.innerHTML = `${key.substring(7)}: <span style="color: yellow"><strong>${gasStop[key]}€</strong></span>`;
+                }else{
+                    element.innerHTML = `${key.substring(7)}: <span style="color: red"><strong>${gasStop[key]}€</strong></span>`;
+                }
 
                 document.getElementById('pricesList').appendChild(element);
             })

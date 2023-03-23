@@ -1,5 +1,5 @@
 
-.card{
+.card-car-img-text-container{
     display: inline-block;
     width: calc(12rem + 6.5vw);
     margin: auto;
@@ -8,12 +8,13 @@
     border-radius: 5%;
     overflow: hidden;
 }
+
 .card-img{
     height: auto;
     width: calc(12rem + 6.5vw);
 }
 
-.layout {
+.layout-card-car {
     display: grid;
     grid-template-rows:
         [row-start row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end row-end];
@@ -22,7 +23,7 @@
 }
 
 
-.btn, i{
+.btn-card-car, .feather-48-card-car{
     background: #5DCCFC;
     padding: 0.5rem;
     color: #FFFFEE;
@@ -34,12 +35,12 @@
     font-size: 15px;
 }
 
-h3 {
+.card-title {
     font-size: calc(1.5rem + 1.5vw);
     margin: 1rem;
 }
 
-p, a {
+.card-text {
     font-size: calc(0.5rem + 1vw);
     padding-left: 1rem;
     padding-right: 1rem;
@@ -50,35 +51,30 @@ p, a {
 }
 
 @media only screen and (min-width: 1200px) {
-    .card {
+    .card-car-img-text-container {
         margin-top: 4rem;
         margin-bottom: 4rem;
     }
 }
 
 @media only screen and (min-width: 800px) and (max-width: 1200px) {
-    h3 {
+    .card-title {
         margin-bottom: 2px;
     }
 
-    .card {
+    .card-car-img-text-container {
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
 
-    p, a {
-        font-size: calc(1rem + 1vw);
-        padding-bottom: 0;
-        margin-bottom: 0;
-        margin-top: 0;
-    }
-
     .card-text {
+        font-size: calc(1rem + 1vw);
+        margin-top: 0;
         padding-bottom: 10px;
         margin-bottom: 10px;
     }
 
-    .layout {
+    .layout-card-car {
         display: grid;
         grid-template-rows:
             [row-start row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end row-end];
@@ -89,27 +85,22 @@ p, a {
 }
 
 @media only screen and (max-width: 800px) {
-    .card {
+    .card-car-img-text-container {
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
 
-    p, a {
+    .card-text  {
         font-size: calc(1.5rem + 1vw);
-        padding-bottom: 20px;
-    }
-
-    .card-text {
         padding-bottom: 0;
         margin-bottom: 0;
     }
 
-    .layout {
+    .layout-card-car {
         display: grid;
         grid-template-rows:
             [row-start row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end row-end];
         grid-template-columns:
             [col-start] 1fr [col-end];
-
     }
 }
