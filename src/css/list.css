@@ -1,7 +1,6 @@
 .containerList {
     margin: auto;
     min-width: 100%;
-
 }
 
 table, td{
@@ -12,6 +11,7 @@ table, td{
 td{
     border-bottom: solid 1px var(--row-border-color);
 }
+
 tr{
     background-color:var(--bg-table);
 
@@ -59,11 +59,23 @@ tr{
 .btnTable{
     font-size: 1.5rem;
 }
+
+/*tablet*/
+@media only screen and (max-width: 1200px) {
+
+    .bodyContainer {
+        align-content: center;
+        width: 80%;
+        margin: 2rem;
+    }
+}
 /*movil*/
 @media only screen and (max-width: 800px) {
     td.elementUser{
         display: none;
     }
+
+
     tr{
         max-width: 20%;
         margin: auto;
@@ -84,5 +96,4 @@ tr{
         max-width: 75%;
         margin:  1rem auto;
     }
-
 }
