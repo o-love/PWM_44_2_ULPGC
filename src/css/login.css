@@ -1,33 +1,29 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+html, body {
+    height: 100%;
+    width: 100%;
 }
 
-form {
+
+#loginForm {
     display: flex;
     padding: 3rem;
     flex-direction: column;
+    margin: auto;
     align-items: center;
     width: calc(8rem + 6.8vw);
     height: calc(9rem + 3.8vw);
     border-radius: 20px;
     background-color: var(--super-light-blue);
+    border: 1px solid black;
 }
 
-div {
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10px;
-}
 
-label {
+.loginLabel {
     display: block;
     font-size: calc(0.8rem + 0.5vw);
 }
 
-input {
+.loginInput {
     display: block;
     padding: 5px;
     border-radius: 3px;
@@ -37,7 +33,7 @@ input {
     height: calc(0.5rem + 0.5vw);
 }
 
-button {
+#submit {
     padding: 10px;
     background-color: var(--power-blue);
     color: #FFFFEE;
@@ -50,7 +46,7 @@ button {
     width: calc(6rem + 3.5vw);
 }
 
-a{
+#userRegistrationHREF {
     color: black;
     padding-top: 0.5rem;
     font-size: calc(0.7rem + 0.5vw);
@@ -59,58 +55,41 @@ a{
 #submit {
     margin-top: auto;
 }
-.label-container .params-container{
+
+.label-container .params-container {
     display: block;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.params-container {
+    padding: 0.5rem;
+}
+
+.label-container {
+    padding-bottom: 0.2rem;
 }
 
 @media only screen and (max-width: 800px) {
-    html, body {
-        height: 100%;
-        width: 100%;
-    }
-
-    form {
+    #loginForm {
         height: 90%;
         width: 90%;
         border-radius: 0;
-        text-align: center;
+        border: none;
     }
 
-    form div {
+    .label-container .params-container {
         display: inline-block;
         width: 80%;
     }
 
-    form input {
-        width: 100%;
-    }
-    input {
-        width: calc(3rem + 0.5vw);
-        height: calc(1rem + 1.5vw);
-        min-width: 8rem;
-    }
 
-    button,  a, label{
-        width: 90%;
-        font-size: calc(2rem + 0.5vw);
-        height: 5rem;
-        text-align: left;
-    }
-
-    button, a{
-        text-align: center;
+    #submit, #userRegistrationHREF, .loginLabel {
         font-size: calc(1.5rem + 0.5vw);
-        min-width: 5rem;
-
     }
 
-    body{
+    body {
         background: var(--super-light-blue);
-    }
-}
-
-@media only screen and (min-width: 800px) and (max-width: 1200px){
-    form {
-        border: 1px solid black;
     }
 }

@@ -4,34 +4,44 @@
         <title>Header</title>
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/footer.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <form>
-            <div class="params-container">
-                <div class="params-container">
-                    <label for="username">Email</label>
-                </div>
-                <div class="label-container">
-                <input type="email" id="username" required>
-                </div>
-            </div>
-            <div class="params-container">
-                <div class="label-container">
-                    <label for="password">Password</label>
-                </div>
-                <div class="label-container">
-                    <input type="password" id="password" maxlength="16" required>
-                </div>
-            </div>
-            <button type="submit" id="submit">LOG IN</button>
-            <a href="../html/userRegistration.html"><strong>No tienes cuenta?</strong></a>
+        <script src="../js/loadTemplate.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', init);
 
-        </form>
+            function init() {
+                loadTemplate("../html/templates/loggedOutHeader.html", "header")
+                loadTemplate("../html/templates/footer.html", "footer")
+            }
+        </script>
+    </head>
+    <header id="header"></header>
+    <body>
+    <form id="loginForm">
+        <div class="params-container">
+            <div class="label-container">
+                <label for="username" class="loginLabel">Email</label>
+            </div>
+            <div class="label-container">
+                <input type="email" id="username" class="loginInput" required>
+            </div>
+        </div>
+        <div class="params-container">
+            <div class="label-container">
+                <label for="password" class="loginLabel">Password</label>
+            </div>
+            <div class="label-container">
+                <input type="password" id="password" class="loginInput" maxlength="16" required>
+            </div>
+        </div>
+        <button type="submit" id="submit">LOG IN</button>
+        <a href="../html/userRegistration.html" id="userRegistrationHREF"><strong>No tienes cuenta?</strong></a>
+
+    </form>
     </body>
 
-    <footer>
-        <!-- Aqui se insertara el componente del footer -->
-    </footer>
+    <footer id="footer"></footer>
 </html>
 
