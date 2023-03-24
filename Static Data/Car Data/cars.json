@@ -5,7 +5,7 @@
     "imgSrc": "../../../img/car.PNG"
   },
   {
-    "name": "Daughter's car",
+    "name": "Toyota",
     "model": "Benz",
     "imgSrc": "../../../img/car.PNG"
   },
@@ -20,7 +20,7 @@
     "imgSrc": "../../../img/car.PNG"
   },
   {
-    "name": "Someone else's car",
+    "name": "Renault",
     "model": "Tesla",
     "imgSrc": "../../../img/car.PNG"
   }

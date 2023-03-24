@@ -1,0 +1,25 @@
+.inputDataPumping{
+    width: 100%;
+    display: block;
+    margin-top: 1rem;
+}
+
+.container-input-pumping{
+    text-align: left;
+    padding-bottom: 1rem;
+}
+.labelPumping{
+    font-size: 1rem;
+}
+
+.containerButton{
+    background-color: #5DCCFC;
+    border: none;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 2px;
+    color: #FFFFEE;
+}
+.bodyContainer{
+    border: 1px black solid;
+}

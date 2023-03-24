@@ -10,7 +10,7 @@
 }
 
 .card-img{
-    height: auto;
+    height: 10rem;
     width: calc(12rem + 6.5vw);
 }
 
@@ -23,16 +23,26 @@
 }
 
 
-.btn-card-car, .feather-48-card-car{
-    background: #5DCCFC;
+.feather-48-card-car{
+    color: #FFFFEE;
+    float: right;
+    border: none;
+    border-radius: 20%;
+    padding-right: 0.5rem;
+}
+
+.btn-card-car{
+    background: #0065A3;
     padding: 0.5rem;
     color: #FFFFEE;
-    width: calc(2.5rem + 1vw);
     float: right;
     border: none;
     margin: 1rem;
     border-radius: 20%;
-    font-size: 15px;
+    height: 3.5rem;
+    width: 3.5rem;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 .card-title {
@@ -81,7 +91,6 @@
         grid-template-columns:
             [col-start] 0.5fr [col-2-start] 0.5fr [col-end];
     }
-
 }
 
 @media only screen and (max-width: 800px) {

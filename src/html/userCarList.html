@@ -18,16 +18,15 @@
             document.addEventListener('DOMContentLoaded', init);
             function init() {
                 loadTemplate("../html/templates/loggedHeader.html", "header")
-                loadTemplate("../html/templates/components/cardCar.html", "carCards")
+                loadTemplate("../html/templates/components/cardCar.html", "carList")
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
     </head>
     <body>
     <header id="header"></header>
-    <!-- Lista de Coches -->
-    <div id="carCards"></div>
-
+    <!--  Lista de Coches -->
+    <div id="carList"></div>
     <footer id="footer"></footer>
     </body>
 </html>
