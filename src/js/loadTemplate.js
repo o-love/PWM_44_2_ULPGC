@@ -11,3 +11,30 @@ function loadTemplate(fileName, id, callback) {
         }
     })
 }
+
+
+function loadHeaderMobile(){
+    //modo = 1 header oculto actualmente
+    let modo = 0;
+    fetch("../html/templates/components/headerMobile.html")
+        .then((res) => {
+            return res.text();
+        })
+        .then((text) => {
+            document.getElementById("headerMobile").innerHTML = text;
+            document.getElementById("buttonToggleHeaderMobile").addEventListener("click", ()=>{
+                const sidebar = document.getElementById("header")
+                const indexBody = document.getElementById("indexBody")
+
+                if(modo === 1){
+                    sidebar.classList.add("headerDisplayoff")
+                    indexBody.classList.remove("displayoff")
+                    modo = 0;
+                }else{
+                    indexBody.classList.add("displayoff")
+                    sidebar.classList.remove("headerDisplayoff")
+                    modo = 1;
+                }
+            })
+        })
+}
