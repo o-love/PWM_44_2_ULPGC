@@ -6,7 +6,7 @@ input {
 }
 
 .containerForm {
-    margin:auto;
+    margin: auto;
     vertical-align: middle;
     text-align: center;
     background-color: var(--light-blue);
@@ -19,7 +19,7 @@ input {
     align-items: center;
     font-family: Arial, "Arial Nova", sans-serif;
     max-width: 45%;
-    min-width: 20%;
+    min-width: 40%;
 }
 
 .elementForm{
@@ -98,6 +98,7 @@ p {
     .containerForm {
         height: 97%;
         border-radius: 0;
+        min-width: 100%;
     }
 }
 
@@ -105,5 +106,16 @@ p {
     .containerForm {
         min-width: 20rem;
         max-width: 30rem;
+    }
+    #indexBody{
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #indexBody{
+        display: flex;
+        align-items: center;
     }
 }

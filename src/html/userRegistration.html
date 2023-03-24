@@ -17,9 +17,11 @@
 
             function init() {
                 loadTemplate("../html/templates/loggedOutHeader.html", "header")
-                fetch("../html/templates/formUser.html").then((res) => {
+                fetch("../html/templates/formUser.html")
+                    .then((res) => {
                     return res.text();
-                }).then((text) => {
+                })
+                    .then((text) => {
                     document.getElementById("indexBody").innerHTML = text;
                     document.getElementById("formUserRegistration").addEventListener("submit",(e) => {
                         console.log("me han pulsado")
@@ -40,9 +42,7 @@
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
-        <script>
 
-        </script>
 
     </head>
     <body>
