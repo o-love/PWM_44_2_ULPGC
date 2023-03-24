@@ -5,7 +5,7 @@ function init() {
 }
 
 function loadCarContent() {
-    fetch('../../../../Static Data/Car Data/cars.json')
+    fetch('/../../Static Data/Car Data/cars.json')
         .then((response) => response.json())
         .then((cars) => {
             if (!('content' in document.createElement('template'))) {
