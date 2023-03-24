@@ -11,23 +11,28 @@
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/gasStation.css">
         <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/headerMobile.css">
         <script src="../js/loadTemplate.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', init);
 
             function init() {
+                loadTemplate("../html/templates/components/headerMobile.html","headerMobile")
                 loadTemplate("../html/templates/loggedOutHeader.html", "header")
                 loadTemplate("../html/templates/components/map.html", "indexBody")
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
     </head>
+
     <body>
+    <div id="headerMobile"></div>
+    <div id="bodyMain">
         <header id="header"></header>
-        <!--    header-->
-        <div id="indexBody" class="bodyContainer">
-        </div>
+
+        <div id="indexBody" class="bodyContainer"></div>
 
         <footer id="footer"></footer>
+    </div>
     </body>
 </html>

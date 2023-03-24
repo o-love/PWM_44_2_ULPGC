@@ -1,0 +1,19 @@
+@media only screen and (min-width: 800px) {
+    #headerMobile{
+        display: none
+    }
+
+}
+
+/*movil*/
+@media only screen and (max-width: 800px) {
+    body{
+        margin: 0;
+    }
+    #headerMobile{
+        background-color: var(--dark-blue);
+        margin: 0;
+        padding: 0.75rem;
+
+    }
+}

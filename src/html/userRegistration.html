@@ -11,11 +11,13 @@
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/form.css">
         <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/headerMobile.css">
         <script src="../js/loadTemplate.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', init);
 
             function init() {
+                loadTemplate("../html/templates/components/headerMobile.html","headerMobile")
                 loadTemplate("../html/templates/loggedOutHeader.html", "header")
                 fetch("../html/templates/formUser.html")
                     .then((res) => {
@@ -46,13 +48,13 @@
 
     </head>
     <body>
-        <header id="header"></header>
-        <!--    header-->
-        <div id="indexBody" class="bodyContainer">
-        </div>
+        <div id="headerMobile"></div>
+        <div id="bodyMain">
+            <header id="header"></header>
 
-        <footer id="footer">
-            <!-- Aqui se insertara el componente del footer -->
-        </footer>
+            <div id="indexBody" class="bodyContainer"></div>
+
+            <footer id="footer"></footer>
+        </div>
     </body>
 </html>
