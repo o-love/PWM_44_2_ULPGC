@@ -2,16 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>carRegistration</title>
+    <title>userRegistration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONTAWESOME-->
+    <script src="https://kit.fontawesome.com/ff006d44e4.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/loadTemplate.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+            loadTemplate("../html/templates/loggedOutHeader.html", "header")
+            loadTemplate("../html/templates/formCar.html","indexBody")
+            loadTemplate("../html/templates/footer.html", "footer")
+        }
+            function enviar(){
+            console.log("Formulario enviado correctamente")
+        }
+            function valForm(nform){
+            let var1,var2= "";
+            switch(nform){
+            case 1:
+            var1="First";
+            var2="Second";
+            break;
+            case 2:
+            var1="Second";
+            var2="Third";
+            break;
+            case 3:
+            var1="Third";
+            var2="Fourth";
+            break;
+            case 4:
+            var1="Fourth";
+            var2="Fifth";
+            break;
+            case 5:
+            var1="Fifth";
+            var2="Sixth";
+            break;
+        }
+            <!--Validacion de los campos-->
+            const formactual = document.getElementById(var1)
+            const formsig = document.getElementById(var2)
+
+            formactual.classList.add("displayoff");
+            formsig.classList.remove("displayoff")
+            console.log("me han pulsado")
+        }
+    </script>
+
 </head>
-    <body>
-        <!--Aqui va el header-->
-        <div class="bodyContainer">
-            <!-- Aqui va el formulario de registro de coche-->
-        </div>
-    </body>
-    <footer>
-        <!-- Aqui se insertara el componente del footer -->
-    </footer>
+<body>
+<header id="header"></header>
+<!--    header-->
+<div id="indexBody" class="bodyContainer">
+</div>
+
+<footer id="footer">
+    <!-- Aqui se insertara el componente del footer -->
+</footer>
+</body>
 </html>

@@ -11,6 +11,7 @@
 body{
     margin:0;
     min-height: 100vh;
+    display: flex;
 }
 #indexBody{
     flex:1;
@@ -18,7 +19,6 @@ body{
 /*Desktop*/
 @media (min-width: 1200px) {
     body{
-        display: flex;
         flex-direction: column;
     }
 
@@ -31,7 +31,6 @@ body{
 /*tablet*/
 @media (min-width: 800px) and (max-width:1200px){
     body {
-        display: flex;
         flex-direction: row;
     }
 

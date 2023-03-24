@@ -1,15 +1,20 @@
 
 input {
-    width: calc(90% - 1rem);
+    width: 100%;
     border: none;
     border-bottom: solid 1px;
+    min-height: 30px;
+}
+select{
+    width:100%;
+    min-height: 30px;
 }
 
 .containerForm {
     margin: auto;
     vertical-align: middle;
     text-align: center;
-    background-color: var(--light-blue);
+    background-color: var(--super-light-blue);
     height: auto;
     padding: 1rem 1rem;
     border-radius: 5px;
@@ -27,8 +32,10 @@ input {
     display: flex;
     flex-direction:column ;
     text-align: left;
+    margin: auto;
     margin-top: 0.5rem;
     margin-bottom: 1rem ;
+
 }
 
 
@@ -39,11 +46,12 @@ p {
     text-underline-offset: 4px;
 }
 
-.containerButton {
+.formButton {
+    color: white;
     background: var(--dark-blue);
     width: calc(30% - 1rem);
     padding: 0.5rem 0.5rem;
-    margin-top: auto;
+    margin: auto;
     margin-bottom: 1rem;
     display: block;
     cursor: pointer;
@@ -51,26 +59,6 @@ p {
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     position: relative;
-}
-
-.containerButton:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: rgba(255, 255, 255, 0.1);
-    transition: all 1s ease;
-}
-
-.containerButton:hover:before {
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.containerButton:active {
-    box-shadow: none;
 }
 
 #formIconSection {
@@ -89,6 +77,15 @@ p {
     max-width: 6rem;
 }
 
+img{
+    max-width: 340px;
+    max-height: 50px;
+}
+
+/*Uso exclusivo para el car registration form*/
+#First,#Second,#Third,#Fourth,#Fifth,#Sixth{
+    width: 100%;
+}
 @media only screen and (max-width: 800px) {
     html, body {
         height: 100%;
@@ -100,6 +97,10 @@ p {
         border-radius: 0;
         min-width: 100%;
     }
+    .elementForm{
+        margin-top: 1.5rem;
+    }
+
 }
 
 @media only screen and (min-width: 800px) and (max-width: 1200px) {
@@ -118,4 +119,5 @@ p {
         display: flex;
         align-items: center;
     }
+
 }

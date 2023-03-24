@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../css/styles.css"/>
-    <link rel="stylesheet" href="../../css/form.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <form id="formUserRegistration" class="containerForm form">
+
+    <form id="formCarRegistration" class="containerForm form">
+        <h3>Registrate</h3>
         <div id="First">
+            <img src="../img/forms/firstProgress.PNG" alt="actualProgress">
             <div class="elementForm">
                 <label for="Matricula">Matricula</label>
                 <input type="text" class="input" id="matricula">
@@ -30,47 +25,50 @@
                     <option value="fiat">Diesel</option>
                 </select>
             </div>
-            <button type="button" onclick="valForm(1)" id="btnForm1" class="containerButton">Siguiente</button>
+            <button type="button" onclick="valForm(1)" id="btnForm1" class="formButton">Siguiente</button>
         </div>
         <div id="Second" class="displayoff">
+            <img src="../img/forms/secondProgress.PNG" alt="actualProgress">
             <div class="elementForm">
-                <label for="Aceite motor">Aceite motor</label>
+                <label for="aceiteMotor">Aceite motor</label>
                 <input type="text" class="input" id="aceiteMotor">
             </div>
             <div class="elementForm">
-                <label for="Aceite direccion">Aceite direccion</label>
+                <label for="aceiteDireccion">Aceite direccion</label>
                 <input type="text" class="input" id="aceiteDireccion">
             </div>
             <div class="elementForm">
-                <label for="Agua del radiador">Agua del radiador</label>
+                <label for="aguaRadiador">Agua del radiador</label>
                 <input type="text" class="input" id="aguaRadiador">
             </div>
             <div class="elementForm">
-                <label for="Agua del parabrisas">Agua del parabrisas</label>
+                <label for="aguaParabrisas">Agua del parabrisas</label>
                 <input type="text" class="input" id="aguaParabrisas">
             </div>
-            <button type="button" onclick="valForm(2)">Siguiente</button>
+            <button type="button" onclick="valForm(2)" class="formButton">Siguiente</button>
         </div>
         <div id="Third" class="displayoff">
+            <img src="../img/forms/thirdProgress.PNG" alt="actualProgress">
             <div class="elementForm">
-                <label for="Liquido de frenos">Liquido de frenos</label>
+                <label for="liquidoFrenos">Liquido de frenos</label>
                 <input type="text" class="input" id="liquidoFrenos">
             </div>
             <div class="elementForm">
-                <label for="Valvulina caja de cambios">Valvulina caja de cambios</label>
+                <label for="valculinaCajaCambios">Valvulina caja de cambios</label>
                 <input type="text" class="input" id="valculinaCajaCambios">
             </div>
             <div class="elementForm">
-                <label for="Valvulina del diferencial">Valvulina del diferencial</label>
+                <label for="valvulinaDiferencial">Valvulina del diferencial</label>
                 <input type="text" class="input" id="valvulinaDiferencial">
             </div>
             <div class="elementForm">
-                <label for="Agua de la bateria">Agua de la bateria</label>
+                <label for="aguaBateria">Agua de la bateria</label>
                 <input type="text" class="input" id="aguaBateria">
             </div>
-            <button type="button" onclick="valForm(3)">Siguiente</button>
+            <button type="button" onclick="valForm(3)" class="formButton">Siguiente</button>
         </div>
         <div id="Fourth" class="displayoff">
+            <img src="../img/forms/fourProgress.PNG" alt="actualProgress">
             <div class="elementForm">
                 <label for="Filtro de aceite">Filtro de aceite</label>
                 <input type="text" class="input" id="filtroAceite">
@@ -87,9 +85,10 @@
                 <label for="Presion neumaticos">Presión neumaticos</label>
                 <input type="text" class="input" id="presionNeumaticos">
             </div>
-            <button type="button" onclick="valForm(4)">Siguiente</button>
+            <button type="button" onclick="valForm(4)" class="formButton">Siguiente</button>
         </div>
         <div id="Fifth" class="displayoff">
+            <img src="../img/forms/fiveProgress.PNG" alt="actualProgress">
             <div class="elementForm">
                 <label for="correaDistribucion">Correa de distribucion</label>
                 <input type="text" class="input" id="correaDistribucion">
@@ -106,9 +105,10 @@
                 <label for="cambioBujias">Cambio de Bujias</label>
                 <input type="text" class="input" id="cambioBujias">
             </div>
-            <button type="button" onclick="valForm(5)">boton 5</button>
+            <button type="button" onclick="valForm(5)" class="formButton">Siguiente</button>
         </div>
         <div id="Sixth" class="displayoff">
+            <img src="../img/forms/sixProgress.PNG" alt="actualProgress">
             <div class="elementForm">
                 <label for="impuestoCirculacion">Impuesto de circulacion</label>
                 <input type="date" class="input" id="impuestoCirculacion">
@@ -125,58 +125,7 @@
                 <label for="fotoCoche">Foto del coche</label>
                 <input type="file" class="input" id="fotoCoche">
             </div>
-            <button type="button" onclick="enviar()">boton 6</button>
+            <button type="button" onclick="enviar()" class="formButton">Enviar</button>
         </div>
     </form>
-    <script>
-        // document.addEventListener("DOMContentLoaded",()=>{
-        //     document.getElementById("btnForm1").addEventListener("click",(e)=>{
-        //         e.preventDefault()
-        //         const matricula = document.getElementById("matricula")
-        //         const marca = document.getElementById("marca")
-        //         const modelo = document.getElementById("modelo")
-        //         const combustible = document.getElementById("combustible")
-        //         let re = new RegExp('^[0-9]{1,4}(?!.*(LL|CH))[BCDFGHJKLMNPRSTVWXYZ]{3}');
-        //
-        //
-        //
-        //     })
-        // })
-        function enviar(){
-            console.log("Formulario enviado correctamente")
-        }
-        function valForm(nform){
-            let var1,var2= "";
-            switch(nform){
-                case 1:
-                    var1="First";
-                    var2="Second";
-                    break;
-                case 2:
-                    var1="Second";
-                    var2="Third";
-                    break;
-                case 3:
-                    var1="Third";
-                    var2="Fourth";
-                    break;
-                case 4:
-                    var1="Fourth";
-                    var2="Fifth";
-                    break;
-                case 5:
-                    var1="Fifth";
-                    var2="Sixth";
-                    break;
-            }
-            <!--Validacion de los campos-->
-            const formactual = document.getElementById(var1)
-            const formsig = document.getElementById(var2)
 
-            formactual.classList.add("displayoff");
-            formsig.classList.remove("displayoff")
-            console.log("me han pulsado")
-        }
-    </script>
-</body>
-</html>
