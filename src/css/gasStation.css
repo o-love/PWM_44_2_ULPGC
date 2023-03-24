@@ -38,6 +38,7 @@ h2 {
     #gasStationName {
         grid-row: 1;
         grid-column: 1 / 3;
+        height: 10rem;
     }
 
     #mapBody {

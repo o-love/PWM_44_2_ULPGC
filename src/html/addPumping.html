@@ -3,16 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>addPumping</title>
+        <script src="https://kit.fontawesome.com/ff006d44e4.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/form.css"/>
+        <link rel="stylesheet" href="../css/headerMobile.css">
         <script src="../js/loadTemplate.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', init);
 
             function init() {
+                loadTemplate("../html/templates/components/headerMobile.html", "headerMobile")
                 loadTemplate("../html/templates/loggedOutHeader.html", "header")
                 loadTemplate("../html/templates/formPumping.html", "addPumpingBody")
                 loadTemplate("../html/templates/footer.html", "footer")
@@ -20,6 +23,7 @@
         </script>
     </head>
     <body>
+    <div id="headerMobile"></div>
     <header id="header"></header>
 
     <div id="addPumpingBody" class="bodyContainer containerForm">
