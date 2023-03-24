@@ -8,9 +8,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="containerForm">
-        <p>Informacion coche</p>
-        <!--Aqui va el formulario-->
-    </div>
+    <form id="formUserRegistration" class="containerForm form">
+        <div id="First">
+            <div class="elementForm">
+                <label for="Matricula">Matricula</label>
+                <input type="text" class="input" id="matricula">
+            </div>
+            <div class="elementForm">
+                <label for="Marca">Marca</label>
+                <input type="text" class="input" id="marca">
+            </div>
+            <div class="elementForm">
+                <label for="Modelo">Modelo</label>
+                <input type="text" class="input" id="modelo">
+            </div>
+            <div class="elementForm">
+                <label for="Combustible">Combustible</label>
+                <select id="combustible" name="cars">
+                    <option value="volvo">Gasolina 98</option>
+                    <option value="saab">Gasolina 96</option>
+                    <option value="fiat">Diesel</option>
+                </select>
+            </div>
+            <button type="button" onclick="valForm(1)" id="btnForm1" class="containerButton">Siguiente</button>
+        </div>
+        <div id="Second" class="displayoff">
+            <div class="elementForm">
+                <label for="Aceite motor">Aceite motor</label>
+                <input type="text" class="input" id="aceiteMotor">
+            </div>
+            <div class="elementForm">
+                <label for="Aceite direccion">Aceite direccion</label>
+                <input type="text" class="input" id="aceiteDireccion">
+            </div>
+            <div class="elementForm">
+                <label for="Agua del radiador">Agua del radiador</label>
+                <input type="text" class="input" id="aguaRadiador">
+            </div>
+            <div class="elementForm">
+                <label for="Agua del parabrisas">Agua del parabrisas</label>
+                <input type="text" class="input" id="aguaParabrisas">
+            </div>
+            <button type="button" onclick="valForm(2)">Siguiente</button>
+        </div>
+        <div id="Third" class="displayoff">
+            <div class="elementForm">
+                <label for="Liquido de frenos">Liquido de frenos</label>
+                <input type="text" class="input" id="liquidoFrenos">
+            </div>
+            <div class="elementForm">
+                <label for="Valvulina caja de cambios">Valvulina caja de cambios</label>
+                <input type="text" class="input" id="valculinaCajaCambios">
+            </div>
+            <div class="elementForm">
+                <label for="Valvulina del diferencial">Valvulina del diferencial</label>
+                <input type="text" class="input" id="valvulinaDiferencial">
+            </div>
+            <div class="elementForm">
+                <label for="Agua de la bateria">Agua de la bateria</label>
+                <input type="text" class="input" id="aguaBateria">
+            </div>
+            <button type="button" onclick="valForm(3)">Siguiente</button>
+        </div>
+        <div id="Fourth" class="displayoff">
+            <div class="elementForm">
+                <label for="Filtro de aceite">Filtro de aceite</label>
+                <input type="text" class="input" id="filtroAceite">
+            </div>
+            <div class="elementForm">
+                <label for="Filtro de aire">Filtro de aire</label>
+                <input type="text" class="input" id="filtroAire">
+            </div>
+            <div class="elementForm">
+                <label for="Filtro del combustible">Filtro del combustible</label>
+                <input type="text" class="input" id="filtroCombustible">
+            </div>
+            <div class="elementForm">
+                <label for="Presion neumaticos">Presión neumaticos</label>
+                <input type="text" class="input" id="presionNeumaticos">
+            </div>
+            <button type="button" onclick="valForm(4)">Siguiente</button>
+        </div>
+        <div id="Fifth" class="displayoff">
+            <div class="elementForm">
+                <label for="correaDistribucion">Correa de distribucion</label>
+                <input type="text" class="input" id="correaDistribucion">
+            </div>
+            <div class="elementForm">
+                <label for="correaAlternador">Correa del alternador</label>
+                <input type="text" class="input" id="correaAlternador">
+            </div>
+            <div class="elementForm">
+                <label for="limpiezaBujias">Limpieza de Bujias</label>
+                <input type="text" class="input" id="limpiezaBujias">
+            </div>
+            <div class="elementForm">
+                <label for="cambioBujias">Cambio de Bujias</label>
+                <input type="text" class="input" id="cambioBujias">
+            </div>
+            <button type="button" onclick="valForm(5)">boton 5</button>
+        </div>
+        <div id="Sixth" class="displayoff">
+            <div class="elementForm">
+                <label for="impuestoCirculacion">Impuesto de circulacion</label>
+                <input type="date" class="input" id="impuestoCirculacion">
+            </div>
+            <div class="elementForm">
+                <label for="seguroCoche">Seguro del coche</label>
+                <input type="date" class="input" id="seguroCoche">
+            </div>
+            <div class="elementForm">
+                <label for="revisionITV">Revision ITV</label>
+                <input type="date" class="input" id="revisionITV">
+            </div>
+            <div class="elementForm">
+                <label for="fotoCoche">Foto del coche</label>
+                <input type="file" class="input" id="fotoCoche">
+            </div>
+            <button type="button" onclick="enviar()">boton 6</button>
+        </div>
+    </form>
+    <script>
+        // document.addEventListener("DOMContentLoaded",()=>{
+        //     document.getElementById("btnForm1").addEventListener("click",(e)=>{
+        //         e.preventDefault()
+        //         const matricula = document.getElementById("matricula")
+        //         const marca = document.getElementById("marca")
+        //         const modelo = document.getElementById("modelo")
+        //         const combustible = document.getElementById("combustible")
+        //         let re = new RegExp('^[0-9]{1,4}(?!.*(LL|CH))[BCDFGHJKLMNPRSTVWXYZ]{3}');
+        //
+        //
+        //
+        //     })
+        // })
+        function enviar(){
+            console.log("Formulario enviado correctamente")
+        }
+        function valForm(nform){
+            let var1,var2= "";
+            switch(nform){
+                case 1:
+                    var1="First";
+                    var2="Second";
+                    break;
+                case 2:
+                    var1="Second";
+                    var2="Third";
+                    break;
+                case 3:
+                    var1="Third";
+                    var2="Fourth";
+                    break;
+                case 4:
+                    var1="Fourth";
+                    var2="Fifth";
+                    break;
+                case 5:
+                    var1="Fifth";
+                    var2="Sixth";
+                    break;
+            }
+            <!--Validacion de los campos-->
+            const formactual = document.getElementById(var1)
+            const formsig = document.getElementById(var2)
+
+            formactual.classList.add("displayoff");
+            formsig.classList.remove("displayoff")
+            console.log("me han pulsado")
+        }
+    </script>
 </body>
 </html>
