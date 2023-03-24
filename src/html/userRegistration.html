@@ -14,10 +14,33 @@
         <link rel="stylesheet" href="../css/headerMobile.css">
         <script src="../js/loadTemplate.js"></script>
         <script>
+
             document.addEventListener('DOMContentLoaded', init);
 
             function init() {
-                loadTemplate("../html/templates/components/headerMobile.html","headerMobile")
+                //modo = 1 header oculto actualmente
+                let modo = 0;
+                fetch("../html/templates/components/headerMobile.html")
+                    .then((res) => {
+                        return res.text();
+                    })
+                    .then((text) => {
+                        document.getElementById("headerMobile").innerHTML = text;
+                        document.getElementById("buttonToggleHeaderMobile").addEventListener("click", ()=>{
+                            const sidebar = document.getElementById("header")
+                            const indexBody = document.getElementById("indexBody")
+
+                            if(modo === 1){
+                                sidebar.classList.add("headerDisplayoff")
+                                indexBody.classList.remove("displayoff")
+                                modo = 0;
+                            }else{
+                                indexBody.classList.add("displayoff")
+                                sidebar.classList.remove("headerDisplayoff")
+                                modo = 1;
+                            }
+                        })
+                    })
                 loadTemplate("../html/templates/loggedOutHeader.html", "header")
                 fetch("../html/templates/formUser.html")
                     .then((res) => {
@@ -50,7 +73,7 @@
     <body>
         <div id="headerMobile"></div>
         <div id="bodyMain">
-            <header id="header"></header>
+            <header id="header" class="headerDisplayoff"></header>
 
             <div id="indexBody" class="bodyContainer"></div>
 

@@ -1,5 +1,6 @@
 
 input {
+    margin-top: 0.5rem;
     width: 100%;
     border: none;
     border-bottom: solid 1px;
@@ -32,9 +33,7 @@ select{
     display: flex;
     flex-direction:column ;
     text-align: left;
-    margin: auto;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem ;
+    margin: 0.5rem auto 1rem;
 
 }
 
@@ -52,7 +51,6 @@ p {
     width: calc(30% - 1rem);
     padding: 0.5rem 0.5rem;
     margin: auto;
-    margin-bottom: 1rem;
     display: block;
     cursor: pointer;
     border: 1px solid #000;
@@ -97,6 +95,7 @@ img{
     .containerForm {
         height: 97%;
         border-radius: 0;
+        padding: 0;
         min-width: 100%;
         border: 1px black solid;
     }

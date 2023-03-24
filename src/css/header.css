@@ -22,7 +22,6 @@
 header {
     background-color: var(--dark-blue);
     color:white;
-    padding: 2px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -65,11 +64,13 @@ header {
         flex-direction: column;
         vertical-align: middle;
         text-align: center;
-        width: 70%;
-        height: 100%;
+        min-width: 100%;
+        height: auto;
         background-color: var(--light-blue);
     }
-
+    .headerDisplayoff{
+        display: none;
+    }
     .headerRightSection {
         margin-top: auto;
         margin-bottom: 1.5rem;
