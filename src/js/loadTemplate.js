@@ -26,14 +26,14 @@ function loadHeaderMobile(bodyName) {
                 const sidebar = document.getElementById("headerPadre")
                 const indexBody = document.getElementById(bodyName)
 
-                if (modo === 1) {
+                if (modo === 0) {
                     sidebar.classList.add("headerDisplayOff")
                     indexBody.classList.remove("bodyDisplayOff")
-                    modo = 0;
+                    modo = 1;
                 } else {
                     indexBody.classList.add("bodyDisplayOff")
                     sidebar.classList.remove("headerDisplayOff")
-                    modo = 1;
+                    modo = 0;
                 }
             })
         })
