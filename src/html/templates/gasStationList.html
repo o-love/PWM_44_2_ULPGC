@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/gasStationList.css">
     <title>Title</title>
     <script src="../../js/gasStationUtil.js"></script>
     <script src="../../js/gasStationList.js"></script>
 </head>
 <body>
 <div id="gasStationListContainer">
-    <template id="gasStationElementTemplate" class="GasStationElement">
-        <h2 class="gasStationName"></h2>
-        <p class="gasStationAddress"></p>
-        <ul class="gasStationPrices"></ul>
+    <template id="gasStationElementTemplate">
+        <div class="GasStationElement">
+            <div>
+                <h2 class="gasStationName"></h2>
+                <p class="gasStationAddress"></p>
+            </div>
+            <ul class="gasStationPrices"></ul>
+        </div>
     </template>
 </div>
 </body>

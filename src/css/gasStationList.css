@@ -1,0 +1,27 @@
+#gasStationListContainer {
+    width: 50%;
+    height: 30rem;
+    overflow-y: scroll;
+}
+
+.GasStationElement {
+    background-color: var(--light-blue);
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.gasStationPrices {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.gasStationPrices li {
+    float: left;
+    padding: 0.2rem;
+}
+
+.gasStationName .gasStationAddress {
+    display: inline;
+}
