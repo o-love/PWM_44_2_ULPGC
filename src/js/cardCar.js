@@ -13,6 +13,12 @@ function loadCarContent() {
                 return;
             }
 
+            fetch("../html/templates/components/cardCar.html")
+                .then(res => {
+                    return res.text()
+                })
+                .then(texto =>{
+
             const container = document.getElementById('carCardContainer');
 
             cars.forEach((car) => {
@@ -25,6 +31,6 @@ function loadCarContent() {
                 tmpl.querySelector('img').src = car.imgSrc;
 
                 container.appendChild(tmpl);
-            })
+            })})
         }).catch((err) => console.error(err));
 }

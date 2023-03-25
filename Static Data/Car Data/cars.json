@@ -7,7 +7,7 @@
   {
     "name": "Toyota",
     "model": "Benz",
-    "imgSrc": "../../../img/car.PNG"
+    "imgSrc":"../../../img/car.PNG"
   },
   {
     "name": "Dad's car",
