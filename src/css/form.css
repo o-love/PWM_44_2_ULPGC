@@ -66,19 +66,17 @@ p {
     align-items: center;
 }
 
-#formIconSection * {
-    margin: 1rem;
+.image-form-icon-options{
+    width: calc(10rem + 5vw);
+    height: calc(10rem + 5vw);
 }
 
-#formIconSection img {
-    max-height: 6rem;
+#formIconSection {
     max-width: 6rem;
+    margin: auto;
+    text-align: center;
 }
 
-img{
-    max-width: 340px;
-    max-height: 50px;
-}
 
 /*Uso exclusivo para el car registration form*/
 #First,#Second,#Third,#Fourth,#Fifth,#Sixth{
