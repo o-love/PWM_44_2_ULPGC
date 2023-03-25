@@ -1,114 +1,65 @@
-.title-information-user {
-    background-color: #99d8ff;
-    border: 0;
-    border-bottom: 1px black solid;
-}
-.button-user-options{
-    margin: 0;
-    background: none;
-    border: none;
-    border-bottom: 1px gray solid;
-    width: calc(15rem + 5vw);
-    font-size: calc(0.5rem + 0.8vw);
 
+
+
+@media (min-width: 801px) {
+    #userData{
+        text-align: center;
+        flex:1;
+        display: grid;
+        grid-template-columns: 1fr;
+        min-height: 100%;
+    }
+    #dataUserContainer{
+        grid-row: 1;
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lastInfoUser{
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+
+    .top-title-information-user{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .title-Rd-User-container{
+        border-radius: 20px;
+    }
 }
+
+
 .title-Rd-User-container{
-    align-self: center;
-}
-.info-user-view{
-    display: flex;
-    justify-content: center;
-    border-left: 1px gray solid;
-}
-
-#formIconSection{
-    width: 100%;
+    border: solid 1px;
     text-align: left;
-    padding: 0;
-    top: 50%;
+    min-width: 50%;
 }
 
-
-.button-user-options{
-    margin: 1rem;
-
-}
-#userOptionsForm{
-    height: 100%;
-    align-self: flex-end;
-}
-
-.title-information-user, .paragraph-information-user {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: calc(0.5rem + 0.8vw);
+.titleSection   {
+    padding: 0.75rem;
+    margin: 0;
+    background-color: var(--light-blue);
 }
 
 .paragraph-information-user{
+    text-decoration: none;
     text-align: left;
+    margin: 0;
+    padding-top: 2rem;
+    padding-left: 0.5rem;
+    padding-bottom: 2rem;
+    background-color:var(--background-data-user);
 }
-
-.top-title-information-user{
-    margin-top: 0;
-    padding-top: 1rem;
-}
-
-.other-title-information-user{
-    border-top: 1px black solid;
-}
-
-.title-Rd-User-container {
-    width: calc(15rem + 10vw);
-    border: 1px black solid;
-    border-radius: 20px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    overflow: hidden;
-}
-#formIconSection{
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-}
-
-.delete-option-form{
-    color: red;
-}
-
-.info-user-view{
-    align-items: center;
-}
-
-@media only screen and (max-width: 1200px) {
-    .title-Rd-User-container {
-        width: calc(12rem + 10vw);
-    }
-    .button-user-options{
-        width: calc(2rem + 10vw);
-        margin-left: 4rem;
-    }
-
-
-}
-
 @media only screen and (max-width: 800px) {
-    .title-Rd-User-container {
-        width: 100%;
-        border: 0;
-        margin-top: 0;
-        border-radius: 0;
+    #userData{
+        grid-template-columns: 1fr ;
     }
-    .top-title-information-user{
-        border-top: 1px solid black;
-    }
-    .title-information-user{
-        text-align: center;
-        min-width: 4rem;
-    }
-
-    .paragraph-information-user{
-        padding-left: 1rem;
-    }
-    .title-information-user, .paragraph-information-user{
-        min-width: 6rem;
+    #dataUserContainer{
+        grid-column: 1;
     }
 }

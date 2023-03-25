@@ -21,9 +21,9 @@
         document.addEventListener('DOMContentLoaded', init);
         function init() {
             loadHeaderMobile("userProfileViewBody")
-            loadTemplate("../html/templates/Header.html", "header")
-            loadTemplate("../html/templates/userFormIconAndOptions.html", "userOptionsForm")
-            loadTemplate("../html/templates/components/dataInfoUserView.html", "dataInfo")
+            loadHeader("../html/templates/Header.html")
+            loadTemplate("../html/templates/userFormIconAndOptions.html", "userBtnsandPhoto")
+            loadTemplate("../html/templates/components/dataInfoUserView.html", "userData")
             loadTemplate("../html/templates/footer.html", "footer")
         }
     </script>
@@ -37,11 +37,9 @@
     </div>
 
     <!-- Body -->
-    <div class="user-info-container" id="userProfileViewBody">
-        <div class="iconsUserViewLeft" id="userOptionsForm"></div>
-        <div class="infoUserViewRight">
-            <div id="dataInfo"> </div>
-        </div>
+    <div id="indexBody">
+        <div id="userBtnsandPhoto" ></div>
+        <div id="userData"></div>
     </div>
     <!-- Footer -->
     <footer id="footer"></footer>
