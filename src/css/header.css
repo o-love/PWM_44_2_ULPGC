@@ -14,7 +14,9 @@
 
     min-height: 130px;
 }
-
+#headerPadre{
+    min-width: 100%;
+}
 .ulHeader {
     display: flex;
     list-style: none;
@@ -85,6 +87,9 @@ a {
 
         display:flex;
     }
+    #headerPadre{
+        min-height: 100%;
+    }
     .ulHeader,#header,#headerLinks {
         flex-direction: column;
     }
@@ -139,6 +144,7 @@ a {
     }
     #header{
 
+        min-height: 100%;
         display:flex;
     }
     header {
@@ -182,5 +188,8 @@ a {
     }
     .Right{
         margin:auto;
+    }
+    #headerPadre{
+        min-height: 100%;
     }
 }

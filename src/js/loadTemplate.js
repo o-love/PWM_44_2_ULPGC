@@ -23,7 +23,7 @@ function loadHeaderMobile(bodyName) {
         .then((text) => {
             document.getElementById("headerMobile").innerHTML = text;
             document.getElementById("buttonToggleHeaderMobile").addEventListener("click", () => {
-                const sidebar = document.getElementById("header")
+                const sidebar = document.getElementById("headerPadre")
                 const indexBody = document.getElementById(bodyName)
 
                 if (modo === 1) {
