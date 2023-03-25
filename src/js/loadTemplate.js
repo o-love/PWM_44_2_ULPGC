@@ -38,3 +38,30 @@ function loadHeaderMobile(bodyName) {
             })
         })
 }
+
+function loadHeader(){
+    let userRol = 0;//0 user not logged, 1 user logged, 2 admin
+    let urlLinks;
+    fetch("../html/templates/header.html")
+        .then(response => {
+            return response.text()
+        })
+        .then(text => {
+            document.getElementById("header").innerHTML = text
+            if (userRol === 1){
+                urlLinks = "../html/templates/components/logedheader.html";
+            }else if(userRol===2){
+                urlLinks = "../html/templates/components/adminheader.html";
+            }else{
+                urlLinks = "../html/templates/components/unlogedHeader.html";
+            }
+
+            fetch(urlLinks)
+                .then(response =>{
+                    return response.text()
+                })
+                .then(text => {
+                    document.getElementById("headerLinks").innerHTML = text
+                })
+        })
+}

@@ -1,31 +1,74 @@
-.headerSection {
-    padding: 1rem 1rem;
-    text-align: center;
+#headerLogo{
+    width: 100px;
+    height: 80px;
+    border-radius: 17px;
 }
-
-#headerLogo {
-    max-width: 3rem;
-    max-height: 3rem;
+.logo{
+    margin-top: auto;
+    margin-bottom: auto;
+    align-self: center;
+    margin-left: 2rem;
 }
-
-#headerProfileImg {
-    max-width: 3rem;
-    max-height: 3rem;
-}
-
-#headerAboutSection {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-
-header {
+#header{
     background-color: var(--dark-blue);
-    color:white;
     display: flex;
-    align-items: center;
-    overflow: hidden;
-    text-align: center;
+    justify-content: space-between;
+    min-height: 130px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+
+}
+
+li {
+    margin: 0 10px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+}
+.links{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#headerLinks{
+    display:flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+
+#fotoUserHeader{
+    max-width: 158px;
+    max-height: 94px;
+    border-radius: 100%;
+}
+
+.Right{
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-right: 2rem;
+}
+
+#loginBtn{
+    border: none;
+    color: white;
+    font-size: large;
+    background-color: var(--light-blue);
+    min-height: 50px;
+    min-width: 130px;
+}
+#loginBtn:hover{
+    background-color: var(--super-dark-blue);
+    cursor: pointer;
+}
+
+@media (min-width: 1200px){
+
 }
 
 /*Tablet*/

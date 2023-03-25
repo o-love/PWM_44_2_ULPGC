@@ -19,7 +19,7 @@
 
             function init() {
                 loadHeaderMobile("indexBody")
-                loadTemplate("../html/templates/loggedOutHeader.html", "header")
+                loadHeader("../html/templates/header.html")
                 fetch("../html/templates/formUser.html")
                     .then((res) => {
                     return res.text();
