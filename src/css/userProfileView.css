@@ -38,6 +38,17 @@
 p{
     text-decoration: none;
 }
+
+@media only screen and (max-width: 1200px) {
+    .image-form-icon-options{
+        width: calc(4rem + 4vw);
+        height:  calc(4rem + 4vw);
+    }
+    .image-container-form{
+        padding-left: 3rem;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     #formIconSection{
         display: none;

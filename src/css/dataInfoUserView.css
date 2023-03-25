@@ -83,8 +83,11 @@
         width: calc(12rem + 10vw);
     }
     .button-user-options{
-        width: calc(6rem + 10vw);
+        width: calc(2rem + 10vw);
+        margin-left: 4rem;
     }
+
+
 }
 
 @media only screen and (max-width: 800px) {
