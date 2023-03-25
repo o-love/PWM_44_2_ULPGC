@@ -1,5 +1,5 @@
 
-img {
+img.aboutUsPhoto {
     width: calc(8rem + 1.8vw);
     height: calc(8rem + 1.5vw);
     border-radius: 29px;
