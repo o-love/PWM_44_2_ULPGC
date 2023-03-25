@@ -8,3 +8,24 @@
 .infoUserViewRight{
     border-left: 1px gray solid;
 }
+
+/* Tablet*/
+@media only screen and (max-width: 1200px) {
+    .infoUserViewRight{
+        width: auto;
+    }
+}
+
+/* Movil */
+@media only screen and (max-width: 800px) {
+    body{
+        background: #daf0f4;
+    }
+    .infoUserViewRight{
+        width: 100%;
+    }
+    .containerForm{
+        border: none;
+    }
+
+}
