@@ -41,11 +41,22 @@ p{
 
 @media only screen and (max-width: 1200px) {
     .image-form-icon-options{
-        width: calc(4rem + 4vw);
+        width: calc(6rem + 4vw);
         height:  calc(4rem + 4vw);
     }
+
+    .infoUserViewRight{
+        width: 10%;
+    }
+    .iconsUserViewLeft {
+        display:inline-block;
+        width: 40%;
+    }
     .image-container-form{
-        padding-left: 3rem;
+        padding-left: 0.3rem;
+    }
+    p{
+        margin-bottom: 3.5rem;
     }
 }
 

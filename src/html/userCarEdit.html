@@ -36,11 +36,13 @@
                     return res.text();
                 })
                 .then((text) => {
+
                     /* Añadimos los campos del coche*/
                     var image = document.getElementById('image-form-icon');
 
                     image.src = "../img/car.png"
-                    image.style.minWidth = "calc(6rem + 12vw)";
+                    image.style.minWidth = "calc(0.5rem + 3vw)";
+                    image.style.width = "calc(2rem + 12vw)";
                     /*Añadimos la matricula marca y combustible*/
                     var enroll = document.createElement("p");
                     enroll.textContent = "Matricula";
@@ -92,6 +94,7 @@
                     /*Arreglamos el contenedor bodyMain*/
                     var bodyMain = document.querySelector('.user-info-container');
                     bodyMain.style.flex = "1";
+
                     /* Añadimos la linea divisoria */
                     var viewRight = document.querySelector('.infoUserViewRight');
                     viewRight.style.height ="calc(60rem + 10vw)";
