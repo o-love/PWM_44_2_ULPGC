@@ -12,95 +12,61 @@
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/headerMobile.css">
-    <link rel="stylesheet" href="../css/userProfileView.css">
-    <link rel="stylesheet" href="../css/dataInfoUserView.css">
     <script src="../js/loadTemplate.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', init);
 
         function init() {
             loadTemplate("../html/templates/components/headerMobile.html", "headerMobile")
-            loadHeader()
-            loadTemplate("../html/templates/userFormIconAndOptions.html", "userOptionsForm")
-            loadTemplate("../html/templates/formCar.html","indexBody")
+            loadHeader("../html/templates/Header.html")
+            // loadTemplate("../html/templates/formCar.html","indexBody")
+            fetch("../html/templates/formCar.html")
+                .then(res => {
+                    return res.text()
+                })
+                .then(texto =>{
+                    document.getElementById("indexBody").innerHTML= texto
+                    //form1
+                    document.getElementById("mat").value = "1234BBB"
+                    document.getElementById("marca").value = "Seat"
+                    document.getElementById("modelo").value = "Ibiza"
+                    document.getElementById("combustible").selectedIndex = 2
+                    //form2
+                    document.getElementById("aceiteMotor").value = 40000
+                    document.getElementById("aceiteDireccion").value = 20000
+                    document.getElementById("aguaRadiador").value = 10000
+                    document.getElementById("aguaParabrisas").value = 5000
+                    //form3
+                    document.getElementById("liquidoFrenos").value = 55000
+                    document.getElementById("valculinaCajaCambios").value = 60000
+                    document.getElementById("valvulinaDiferencial").value = 20000
+                    document.getElementById("aguaBateria").value = 7000
+                    //form4
+                    document.getElementById("filtroAceite").value = 45000
+                    document.getElementById("filtroAire").value = 50000
+                    document.getElementById("filtroCombustible").value = 10000
+                    document.getElementById("presionNeumaticos").value = 15000
+                    //form5
+                    document.getElementById("correaDistribucion").value = 100000
+                    document.getElementById("correaAlternador").value = 80000
+                    document.getElementById("limpiezaBujias").value = 50000
+                    document.getElementById("cambioBujias").value = 100000
+                    //form5
+                    const dateSeguro = new Date('December 17, 2023');
+                    const dateITV = new Date('June 20, 2023');
+                    const dateImpuesto = new Date('January 15, 2024');
+                    document.getElementById("impuestoCirculacion").value = dateImpuesto.toISOString().slice(0,10);
+                    document.getElementById("seguroCoche").value = dateSeguro.toISOString().slice(0,10);
+                    document.getElementById("revisionITV").value = dateITV.toISOString().slice(0,10);
+
+
+                })
             loadTemplate("../html/templates/footer.html", "footer")
-            changeCarOptions()
         }
         function enviar(){
             console.log("Formulario enviado correctamente")
         }
 
-        function changeCarOptions(){
-            fetch("../html/templates/userFormIconAndOptions.html")
-                .then((res) => {
-                    return res.text();
-                })
-                .then((text) => {
-
-                    /* Añadimos los campos del coche*/
-                    var image = document.getElementById('image-form-icon');
-
-                    image.src = "../img/car.png"
-                    image.style.minWidth = "calc(0.5rem + 3vw)";
-                    image.style.width = "calc(2rem + 12vw)";
-                    /*Añadimos la matricula marca y combustible*/
-                    var enroll = document.createElement("p");
-                    enroll.textContent = "Matricula";
-                    enroll.style.textAlign="left";
-                    enroll.style.fontSize="calc(0.5rem + 1vw)";
-                    enroll.style.textDecoration="none";
-                    var model = document.createElement("p");
-                    model.textContent = "Marca Modelo";
-                    model.style.textAlign="left";
-                    model.style.fontSize="calc(0.5rem + 1vw)";
-                    model.style.textDecoration="none";
-                    var typeOil = document.createElement("p");
-                    typeOil.textContent = "Combustible";
-                    typeOil.style.textAlign="left";
-                    typeOil.style.fontSize="calc(0.5rem + 1vw)";
-                    typeOil.style.textDecoration="none";
-
-                    image.insertAdjacentHTML("afterend", enroll.outerHTML);
-                    image.insertAdjacentHTML("afterend", model.outerHTML);
-                    image.insertAdjacentHTML("afterend", typeOil.outerHTML);
-
-                    /* Cambio de  los iconos y del texto*/
-                    var addOil = document.getElementById("edit-button-id")
-                    addOil.textContent = "Añadir Repostaje";
-                    addOil.style.fontWeight = "bold";
-                    addOil.innerHTML += ' <i class="fa-solid fa-gas-pump"></i>';
-
-                    var addChange = document.getElementById("my-cars-button-id")
-                    addChange.textContent = "Añadir Recambio";
-                    addChange.style.fontWeight = "bold";
-                    addChange.innerHTML += ' <i class="fa-solid fa-screwdriver-wrench"></i>';
-
-                    var edit = document.getElementById("exit-button-id")
-                    edit.textContent = "Editar";
-                    edit.style.fontWeight = "bold";
-                    edit.innerHTML += ' <i class="fa-solid fa-pen-to-square"></i>';
-
-                    var borrar=document.getElementById("delete-button-id")
-                    borrar.textContent = "Eliminar";
-                    borrar.style.color = "red";
-                    borrar.style.fontWeight = "bold";
-                    borrar.innerHTML += ' <i class="fa-solid fa-trash"></i>';
-
-                    /*Arreglamos el formulario de registro*/
-                    var registerForm = document.getElementById('formCarRegistration');
-                    registerForm.style.marginTop = "3rem";
-                    registerForm.style.minWidth = "43rem";
-
-                    /*Arreglamos el contenedor bodyMain*/
-                    var bodyMain = document.querySelector('.user-info-container');
-                    bodyMain.style.flex = "1";
-
-                    /* Añadimos la linea divisoria */
-                    var viewRight = document.querySelector('.infoUserViewRight');
-                    viewRight.style.height ="calc(60rem + 10vw)";
-                    viewRight.style.borderLeft="1px gray solid";
-                })
-        }
         function valForm(nform){
             let var1,var2= "";
             switch(nform){
@@ -136,23 +102,17 @@
     </script>
 </head>
 <body>
-<!--Header-->
-<div id="headerMobile"></div>
-<div id="bodyMain">
-    <div id="headerPadre" class="headerDisplayOff">
-        <header id="header"></header>
-    </div>
-    <!--Body-->
-    <div class="user-info-container ">
-        <div id="userOptionsForm" class="iconsUserViewLeft"></div>
-        <div class="infoUserViewRight">
-            <div class="edit-car-container">
-                <div id="indexBody" class="bodyContainer"></div>
-            </div>
+    <!-- Header -->
+    <div id="headerMobile"></div>
+    <div id="bodyMain">
+        <div id="headerPadre" class="headerDisplayOff">
+            <header id="header" ></header>
         </div>
+
+        <!-- Body -->
+        <div id="indexBody"></div>
+        <!-- Footer -->
+        <footer id="footer"></footer>
     </div>
-    <!--Footer-->
-<footer id="footer"></footer>
-</div>
 </body>
 </html>
