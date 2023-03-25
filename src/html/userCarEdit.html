@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/headerMobile.css">
+    <link rel="stylesheet" href="../css/userProfileView.css">
+    <link rel="stylesheet" href="../css/dataInfoUserView.css">
     <script src="../js/loadTemplate.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', init);
@@ -19,12 +21,44 @@
         function init() {
             loadHeaderMobile("indexBody")
             loadTemplate("../html/templates/loggedOutHeader.html", "header")
-
+            loadTemplate("../html/templates/userFormIconAndOptions.html", "userOptionsForm")
             loadTemplate("../html/templates/formCar.html","indexBody")
             loadTemplate("../html/templates/footer.html", "footer")
+            changeCarOptions()
         }
         function enviar(){
             console.log("Formulario enviado correctamente")
+        }
+
+        function changeCarOptions(){
+            fetch("../html/templates/userFormIconAndOptions.html")
+                .then((res) => {
+                    return res.text();
+                })
+                .then((text) => {
+                    /* Cambio de  los iconos y del texto*/
+
+                    var addOil = document.getElementById("edit-button-id")
+                        addOil.textContent = "Añadir Repostaje";
+                    addOil.style.fontWeight = "bold";
+                    addOil.innerHTML += ' <i class="fa-solid fa-gas-pump"></i>';
+
+                    var addChange = document.getElementById("my-cars-button-id")
+                        addChange.textContent = "Añadir Recambio";
+                    addChange.style.fontWeight = "bold";
+                    addChange.innerHTML += ' <i class="fa-solid fa-screwdriver-wrench"></i>';
+
+                    var edit = document.getElementById("exit-button-id")
+                        edit.textContent = "Editar";
+                    edit.style.fontWeight = "bold";
+                    edit.innerHTML += ' <i class="fa-solid fa-pen-to-square"></i>';
+
+                    var borrar=document.getElementById("delete-button-id")
+                        borrar.textContent = "Eliminar";
+                        borrar.style.color = "red";
+                        borrar.style.fontWeight = "bold";
+                    borrar.innerHTML += ' <i class="fa-solid fa-trash"></i>';
+                })
         }
         function valForm(nform){
             let var1,var2= "";
@@ -59,17 +93,22 @@
             console.log("me han pulsado")
         }
     </script>
-
 </head>
 <body>
-<div id="headerMobile"></div>
-<div id="bodyMain">
-    <header id="header"></header>
-    <div class="edit-car-container">
-
-        <div id="indexBody" class="bodyContainer"></div>
+    <!--Header-->
+    <div id="headerMobile"></div>
+    <div id="bodyMain">
+        <header id="header" class="headerDisplayoff"></header>
+        <!--Body-->
+        <div class="user-info-container ">
+            <div id="userOptionsForm" class="iconsUserViewLeft"></div>
+            <div class="infoUserViewRight">
+                <div class="edit-car-container">
+                <div id="indexBody" class="bodyContainer"></div>
+        </div></div></div></div>
+        <!--Footer-->
+        <footer id="footer"></footer>
     </div>
-    <footer id="footer"></footer>
 </div>
 </body>
 </html>
