@@ -6,15 +6,19 @@
 .button-user-options{
     margin: 0;
     background: none;
-    border: 1px gray solid;
-    border-left: none;
-    border-top: none;
-    border-right: none;
-    width: 20rem;
+    border: none;
+    border-bottom: 1px gray solid;
+    width: calc(15rem + 5vw);
     font-size: calc(0.5rem + 0.8vw);
 }
-
-
+.title-Rd-User-container{
+    align-self: center;
+}
+.info-user-view{
+    display: flex;
+    justify-content: center;
+    border-left: 1px gray solid;
+}
 
 #formIconSection{
     width: 100%;
@@ -23,16 +27,16 @@
     top: 50%;
 }
 
-.iconsUserViewLeft{
-    height: 100%;
-    flex-grow: 1;
-}
+
 .button-user-options{
     margin: 1rem;
+
 }
 #userOptionsForm{
     height: 100%;
+    align-self: flex-end;
 }
+
 .title-information-user, .paragraph-information-user {
     width: 100%;
     padding: 0.5rem;
@@ -57,7 +61,16 @@
     border: 1px black solid;
     border-radius: 20px;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     overflow: hidden;
+}
+#formIconSection{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.delete-option-form{
+    color: red;
 }
 
 .info-user-view{
@@ -67,6 +80,9 @@
 @media only screen and (max-width: 1200px) {
     .title-Rd-User-container {
         width: calc(12rem + 10vw);
+    }
+    .button-user-options{
+        width: calc(6rem + 10vw);
     }
 }
 
