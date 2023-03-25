@@ -4,14 +4,32 @@
         <meta charset="UTF-8">
         <title>List of pumpings</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--FONTAWESOME-->
+        <script src="https://kit.fontawesome.com/ff006d44e4.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/headerMobile.css">
+        <script>
+            document.addEventListener('DOMContentLoaded', init);
+
+            function init() {
+                loadTemplate("../html/templates/components/headerMobile.html", "headerMobile")
+                loadTemplate("../html/templates/loggedOutHeader.html", "header")
+                loadTemplate("../html/templates/footer.html", "footer")
+            }
+        </script>
     </head>
+
     <body>
-        <header>
-            <!-- Aqui se insertara el componente del header -->
-        </header>
-        <!-- Aqui se insertara el componente del table -->
+    <div id="headerMobile"></div>
+    <div id="bodyMain">
+        <header id="header"></header>
+
+        <div id="pumpingList"></div>
+
+        <footer id="footer"></footer>
+    </div>
     </body>
-    <footer>
-        <!-- Aqui se insertara el componente del footer -->
-    </footer>
 </html>
