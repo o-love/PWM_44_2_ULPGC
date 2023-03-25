@@ -1,4 +1,3 @@
-
 .aboutUsPhoto {
     width: calc(8rem + 1.8vw);
     height: calc(8rem + 1.5vw);
@@ -9,13 +8,16 @@
     padding-right: 0.5rem;
     margin: 1rem;
 }
+
 #iconTabletTruck{
     display: none;
 }
+
 .img-left, .img-left, .image-bus {
     display: inline-block;
     max-width: 30%;
 }
+
 .paragraph{
     border-radius: 19px;
     text-align: left;
@@ -27,15 +29,20 @@
     font-size: calc(1rem + 1.5vw);
     padding: 3rem;
 }
+
 .paragraphLightBlueContainer{
     background: #DAF0F4;
 }
+
 .paragraphBlueContainer{
     background: #5DCCFC;
 }
+
 .aboutUs-container{
     text-align: center;
 }
+
+/*Tablet*/
 @media only screen and (max-width: 1200px) {
     .img-right, .img-left{
         display: none;
@@ -59,6 +66,7 @@
     }
 }
 
+/*Movil*/
 @media only screen and (max-width: 800px) {
     .img-left {
         object-fit: contain;
