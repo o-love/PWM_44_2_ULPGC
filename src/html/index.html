@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/headerMobile.css">
         <link rel="stylesheet" href="../css/gasStationList.css">
+        <link rel="stylesheet" href="../css/index.css">
         <script src="../js/gasStationUtil.js"></script>
         <script src="../js/loadTemplate.js"></script>
         <script>
@@ -22,7 +23,7 @@
                 loadHeaderMobile("indexBody")
                 loadTemplate("../html/templates/loggedOutHeader.html", "header")
                 loadTemplate("../html/templates/components/map.html", "map")
-                loadTemplate("../html/templates/gasStationList.html", "gasStationList")
+                loadTemplate("../html/templates/gasStationList.html", "gasStationListContainer")
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
@@ -36,7 +37,7 @@
 
         <div id="indexBody" class="bodyContainer">
             <div id="map"></div>
-            <div id="gasStationList"></div>
+            <div id="gasStationListContainer"></div>
         </div>
 
         <footer id="footer"></footer>
