@@ -1,5 +1,5 @@
 
-img.aboutUsPhoto {
+.aboutUsPhoto {
     width: calc(8rem + 1.8vw);
     height: calc(8rem + 1.5vw);
     border-radius: 29px;
@@ -12,7 +12,7 @@ img.aboutUsPhoto {
 #iconTabletTruck{
     display: none;
 }
-.img-left .img-left .image-bus {
+.img-left, .img-left, .image-bus {
     display: inline-block;
     max-width: 30%;
 }
@@ -40,6 +40,7 @@ img.aboutUsPhoto {
     .img-right, .img-left{
         display: none;
     }
+
     .paragraphLightBlueContainer, .paragraphBlueContainer{
         margin: 0;
     }
@@ -80,7 +81,7 @@ img.aboutUsPhoto {
         min-width: 20rem;
         border: none;
     }
-    p{
+    .paragraph{
         min-width: 20rem
     }
     .paragraphTabletContainer{
@@ -92,8 +93,9 @@ img.aboutUsPhoto {
         padding: 10px;
     }
     body{
-        background: #DAF0F4;
+       background: #DAF0F4;
     }
+
     #paragraphButtonTabletContainer, #paragraphTopTabletContainer {
         background: none;
         border: 0;
