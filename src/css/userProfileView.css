@@ -5,6 +5,7 @@
 }
 .infoUserViewRight{
     width: 70%;
+    display: inline-block;
 }
 .iconsUserViewLeft {
     display:inline-block;
@@ -18,7 +19,6 @@
     height:  calc(7rem + 4vw);
 }
 
-
 .left-icons-view{
     margin: 0;
     width: 100%;
@@ -29,14 +29,12 @@
     width: 100%;
     height: 100%;
 }
-.infoUserViewRight{
-    display: inline-block;
 
-}
 p{
     text-decoration: none;
 }
 
+/* Tablet*/
 @media only screen and (max-width: 1200px) {
     .image-form-icon-options{
         width: calc(6rem + 4vw);
@@ -58,6 +56,7 @@ p{
     }
 }
 
+/* Movil */
 @media only screen and (max-width: 800px) {
     #formIconSection{
         display: none;
