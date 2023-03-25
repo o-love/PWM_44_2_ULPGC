@@ -21,6 +21,12 @@
         width: 50%;
     }
     #buttonToggleHeaderMobile{
+        color: white;
         margin: 0.5rem;
+        background-color: var(--super-dark-blue);
+        border: none;
+    }
+    #buttonToggleHeaderMobile:hover{
+        cursor: pointer;
     }
 }
