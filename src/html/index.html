@@ -19,7 +19,8 @@
             function init() {
                 loadHeaderMobile("indexBody")
                 loadTemplate("../html/templates/loggedOutHeader.html", "header")
-                loadTemplate("../html/templates/components/map.html", "indexBody")
+                loadTemplate("../html/templates/components/map.html", "map")
+                loadTemplate("../html/templates/gasStationList.html", "gasStationList")
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
@@ -30,7 +31,10 @@
     <div id="bodyMain">
         <header id="header"></header>
 
-        <div id="indexBody" class="bodyContainer"></div>
+        <div id="indexBody" class="bodyContainer">
+            <div id="map"></div>
+            <div id="gasStationList"></div>
+        </div>
 
         <footer id="footer"></footer>
     </div>
