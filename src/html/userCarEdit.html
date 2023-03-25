@@ -36,8 +36,33 @@
                     return res.text();
                 })
                 .then((text) => {
-                    /* Cambio de  los iconos y del texto*/
+                    /* Añadimos los campos del coche*/
+                    var image = document.getElementById('image-form-icon');
 
+                    image.src = "../img/car.png"
+                    image.style.minWidth = "calc(6rem + 12vw)";
+                    /*Añadimos la matricula marca y combustible*/
+                    var enroll = document.createElement("p");
+                    enroll.textContent = "Matricula";
+                    enroll.style.textAlign="left";
+                    enroll.style.fontSize="calc(0.5rem + 1vw)";
+                    enroll.style.textDecoration="none";
+                    var model = document.createElement("p");
+                    model.textContent = "Marca Modelo";
+                    model.style.textAlign="left";
+                    model.style.fontSize="calc(0.5rem + 1vw)";
+                    model.style.textDecoration="none";
+                    var typeOil = document.createElement("p");
+                    typeOil.textContent = "Combustible";
+                    typeOil.style.textAlign="left";
+                    typeOil.style.fontSize="calc(0.5rem + 1vw)";
+                    typeOil.style.textDecoration="none";
+
+                    image.insertAdjacentHTML("afterend", enroll.outerHTML);
+                    image.insertAdjacentHTML("afterend", model.outerHTML);
+                    image.insertAdjacentHTML("afterend", typeOil.outerHTML);
+
+                    /* Cambio de  los iconos y del texto*/
                     var addOil = document.getElementById("edit-button-id")
                     addOil.textContent = "Añadir Repostaje";
                     addOil.style.fontWeight = "bold";
@@ -58,6 +83,19 @@
                     borrar.style.color = "red";
                     borrar.style.fontWeight = "bold";
                     borrar.innerHTML += ' <i class="fa-solid fa-trash"></i>';
+
+                    /*Arreglamos el formulario de registro*/
+                    var registerForm = document.getElementById('formCarRegistration');
+                    registerForm.style.marginTop = "3rem";
+                    registerForm.style.minWidth = "43rem";
+
+                    /*Arreglamos el contenedor bodyMain*/
+                    var bodyMain = document.querySelector('.user-info-container');
+                    bodyMain.style.flex = "1";
+                    /* Añadimos la linea divisoria */
+                    var viewRight = document.querySelector('.infoUserViewRight');
+                    viewRight.style.height ="calc(60rem + 10vw)";
+                    viewRight.style.borderLeft="1px gray solid";
                 })
         }
         function valForm(nform){
@@ -105,7 +143,9 @@
         <div class="infoUserViewRight">
             <div class="edit-car-container">
                 <div id="indexBody" class="bodyContainer"></div>
-            </div></div></div></div>
+            </div>
+        </div>
+    </div>
 <!--Footer-->
 <footer id="footer"></footer>
 </div>
