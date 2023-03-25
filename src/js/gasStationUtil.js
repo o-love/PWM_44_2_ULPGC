@@ -1,0 +1,23 @@
+function loadAllPricesInto(gasStop, listName) {
+    const list = document.getElementById(listName);
+    Object.keys(gasStop).filter(key => key.startsWith("Precio")).forEach(key => {
+        if (gasStop[key] === "") {
+            return;
+        }
+
+        let element = document.createElement('li');
+        const cheapPriceGas = 1.4;
+        const expensivePriceGas = 2;
+        let price = parseFloat(gasStop[key].replace(',', '.').toLocaleString());
+
+        if (price < cheapPriceGas) {
+            element.innerHTML = `${key.substring(7)}: <span style="color: green"><strong>${gasStop[key]}€</strong></span>`;
+        } else if (price > cheapPriceGas && price < expensivePriceGas) {
+            element.innerHTML = `${key.substring(7)}: <span style="color: yellow"><strong>${gasStop[key]}€</strong></span>`;
+        } else {
+            element.innerHTML = `${key.substring(7)}: <span style="color: red"><strong>${gasStop[key]}€</strong></span>`;
+        }
+
+        list.appendChild(element)
+    });
+}
