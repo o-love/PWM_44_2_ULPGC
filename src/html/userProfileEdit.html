@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/headerMobile.css">
-    <link rel="stylesheet" href="../css/userProfileView.css">
-    <link rel="stylesheet" href="../css/dataInfoUserView.css">
-    <link rel="stylesheet" href="../css/userProfileEdit.css">
 
     <!--Carga dinamica-->
     <script src="../js/loadTemplate.js"></script>
@@ -24,8 +21,6 @@
 
         function init() {
             loadHeaderMobile("indexBody")
-            loadHeaderMobile("userProfileViewBody")
-            loadTemplate("../html/templates/userFormIconAndOptions.html", "userOptionsForm")
             loadHeader("../html/templates/header.html")
             fetch("../html/templates/formUser.html")
             .then((res) => {
@@ -33,6 +28,14 @@
         })
             .then((text) => {
             document.getElementById("indexBody").innerHTML = text;
+            document.getElementById("user").value = "Andrea Monzón";
+            document.getElementById("email").value="andrea@correo.com";
+            document.getElementById("pass").value="12345";
+            document.getElementById("passConfirm").value="12345"
+
+
+
+
             document.getElementById("formUserRegistration").addEventListener("submit",(e) => {
             console.log("me han pulsado")
             e.preventDefault();
@@ -55,21 +58,20 @@
 </head>
 <body>
 <!-- Header -->
-<div id="headerMobile"></div>
-<div id="bodyMain">
-    <div id="headerPadre" class="headerDisplayOff">
-        <header id="header" ></header>
-    </div>
+    <div id="headerMobile"></div>
+    <div id="bodyMain">
+        <!-- Header -->
+        <div id="headerMobile"></div>
+        <div id="bodyMain">
+            <div id="headerPadre" class="headerDisplayOff">
+                <header id="header" ></header>
+            </div>
 
-    <!-- Body -->
-    <div class="user-info-container" id="userProfileViewBody">
-        <div class="iconsUserViewLeft" id="userOptionsForm"></div>
-        <div class="infoUserViewRight">
-            <div id="indexBody" class="bodyContainer"></div>
+            <!-- Body -->
+            <div id="indexBody"></div>
+            <!-- Footer -->
+            <footer id="footer"></footer>
         </div>
     </div>
-    <!-- Footer -->
-    <footer id="footer"></footer>
-</div>
 </body>
 </html>
