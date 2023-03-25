@@ -1,5 +1,4 @@
-function loadAllPricesInto(gasStop, listName) {
-    const list = document.getElementById(listName);
+function loadAllPricesInto(gasStop, list) {
     Object.keys(gasStop).filter(key => key.startsWith("Precio")).forEach(key => {
         if (gasStop[key] === "") {
             return;

@@ -18,7 +18,7 @@ function loadGasStationContent() {
             document.getElementById('GasStationName').innerText = gasStop["Rótulo"];
             document.getElementById('GasAddress').innerText = `${gasStop["Dirección"]}. ${gasStop["Municipio"]}, ${gasStop["C.P."]}`;
 
-            loadAllPricesInto(gasStop, 'pricesList');
+            loadAllPricesInto(gasStop, document.getElementById('pricesList'));
 
         }).catch((err) => console.error(err));
 }
