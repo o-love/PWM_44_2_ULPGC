@@ -22,6 +22,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', init);
         function init() {
+            loadHeaderMobile()
+            loadTemplate("../html/templates/loggedHeader.html", "header")
             loadTemplate("../html/templates/userFormIconAndOptions.html", "userOptionsForm")
             loadTemplate("../html/templates/components/dataInfoUserView.html", "dataInfo")
         }

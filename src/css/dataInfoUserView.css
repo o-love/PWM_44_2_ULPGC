@@ -39,6 +39,10 @@
     font-size: calc(0.5rem + 1vw);
 }
 
+.paragraph-information-user{
+    text-align: left;
+}
+
 .top-title-information-user{
     margin-top: 0;
     padding-top: 1rem;
