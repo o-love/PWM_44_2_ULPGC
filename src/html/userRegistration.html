@@ -18,7 +18,7 @@
             document.addEventListener('DOMContentLoaded', init);
 
             function init() {
-                loadHeaderMobile()
+                loadHeaderMobile("indexBody")
                 loadTemplate("../html/templates/loggedOutHeader.html", "header")
                 fetch("../html/templates/formUser.html")
                     .then((res) => {

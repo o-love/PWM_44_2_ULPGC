@@ -13,7 +13,7 @@ function loadTemplate(fileName, id, callback) {
 }
 
 
-function loadHeaderMobile(){
+function loadHeaderMobile(bodyName) {
     //modo = 1 header oculto actualmente
     let modo = 0;
     fetch("../html/templates/components/headerMobile.html")
@@ -22,15 +22,15 @@ function loadHeaderMobile(){
         })
         .then((text) => {
             document.getElementById("headerMobile").innerHTML = text;
-            document.getElementById("buttonToggleHeaderMobile").addEventListener("click", ()=>{
+            document.getElementById("buttonToggleHeaderMobile").addEventListener("click", () => {
                 const sidebar = document.getElementById("header")
-                const indexBody = document.getElementById("indexBody")
+                const indexBody = document.getElementById(bodyName)
 
-                if(modo === 1){
+                if (modo === 1) {
                     sidebar.classList.add("headerDisplayoff")
                     indexBody.classList.remove("displayoff")
                     modo = 0;
-                }else{
+                } else {
                     indexBody.classList.add("displayoff")
                     sidebar.classList.remove("headerDisplayoff")
                     modo = 1;

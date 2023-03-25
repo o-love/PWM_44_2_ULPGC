@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    loadTemplate("../html/templates/components/headerMobile.html", "headerMobile")
+    loadHeaderMobile("Global Body")
     loadTemplate("../html/templates/loggedOutHeader.html", "header")
     loadTemplate("../html/templates/components/map.html", "mapBody")
     loadTemplate("../html/templates/components/gasDescription.html", "descriptionBody")

@@ -22,7 +22,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', init);
         function init() {
-            loadHeaderMobile()
+            loadHeaderMobile("UserProfileViewBody")
             loadTemplate("../html/templates/loggedHeader.html", "header")
             loadTemplate("../html/templates/userFormIconAndOptions.html", "userOptionsForm")
             loadTemplate("../html/templates/components/dataInfoUserView.html", "dataInfo")
@@ -34,10 +34,10 @@
         <div id="bodyMain">
             <header id="header" class="headerDisplayoff"></header>
             <!--Body-->
-            <div class="user-info-container ">
+            <div id="UserProfileViewBody" class="user-info-container ">
                 <div id="userOptionsForm" class="iconsUserViewLeft"></div>
                 <div class="infoUserViewRight">
-                    <div id="dataInfo"> </div>
+                    <div id="dataInfo"></div>
                 </div>
             </div>
             <!--Footer-->

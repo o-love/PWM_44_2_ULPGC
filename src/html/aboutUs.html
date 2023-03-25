@@ -17,7 +17,7 @@
         document.addEventListener('DOMContentLoaded', init);
 
         function init() {
-            loadTemplate("../html/templates/components/headerMobile.html", "headerMobile")
+            loadHeaderMobile("aboutUsBody")
             loadTemplate("../html/templates/loggedOutHeader.html", "header")
             loadTemplate("../html/templates/footer.html", "footer")
         }
@@ -28,15 +28,17 @@
     <div id="headerMobile"></div>
     <div id="bodyMain">
         <header id="header"></header>
-        <div class="aboutUs-container">
+        <div id="aboutUsBody" class="aboutUs-container">
             <div class="img-text-container">
-                    <img src="../img/aboutUs/IconBus.PNG" alt="Icono auto-bus" class="img-left">
-                <p class="paragraph paragraphLightBlueContainer" id="paragraphTopTabletContainer">Somos una empresa que se dedica a orientar a
+                <img src="../img/aboutUs/IconBus.PNG" alt="Icono auto-bus" class="img-left">
+                <p class="paragraph paragraphLightBlueContainer" id="paragraphTopTabletContainer">Somos una empresa que
+                    se dedica a orientar a
                     sus clientes a un <strong>buen mantenimiento de su vehiculo</strong>.</p>
             </div>
 
             <div class="img-text-container">
-                <p class="paragraph paragraphBlueContainer paragraphTabletContainer">Le hacemos recomendaciones de <strong>gasolineras cercanas</strong>
+                <p class="paragraph paragraphBlueContainer paragraphTabletContainer">Le hacemos recomendaciones de
+                    <strong>gasolineras cercanas</strong>
                     a usted filtrandolas por los parametros que desee.</p>
                 <img src="../img/aboutUs/IconTruck.PNG" alt="Icono camion" class="img-right">
             </div>

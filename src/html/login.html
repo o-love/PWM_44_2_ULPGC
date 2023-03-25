@@ -2,23 +2,30 @@
 <html lang="en">
     <head>
         <title>Header</title>
+        <!--FONTAWESOME-->
+        <script src="https://kit.fontawesome.com/ff006d44e4.js" crossorigin="anonymous"></script>
+
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="../css/login.css">
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/headerMobile.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="../js/loadTemplate.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', init);
 
             function init() {
+                loadHeaderMobile("loginForm")
                 loadTemplate("../html/templates/loggedOutHeader.html", "header")
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
     </head>
-    <header id="header"></header>
+
     <body>
+    <div id="headerMobile"></div>
+    <header id="header"></header>
     <form id="loginForm">
         <div class="params-container">
             <div class="label-container">
@@ -40,8 +47,9 @@
         <a href="../html/userRegistration.html" id="userRegistrationHREF"><strong>No tienes cuenta?</strong></a>
 
     </form>
+    <footer id="footer"></footer>
     </body>
 
-    <footer id="footer"></footer>
+
 </html>
 
