@@ -4,24 +4,20 @@
     overflow-y: scroll;
 }
 
-.GasStationElement {
+.GasStationListElement {
     background-color: var(--light-blue);
     border-bottom: 1px solid black;
     border-top: 1px solid black;
 }
 
-.gasStationPrices {
+.gasStationListPrices {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-.gasStationPrices li {
+.gasStationListPrices li {
     float: left;
     padding: 0.2rem;
-}
-
-.gasStationName .gasStationAddress {
-    display: inline;
 }

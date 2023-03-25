@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    fetch('../../../Static Data/Gas Station/gasStationPricesStatic.json')
+    fetch('../../Static Data/Gas Station/gasStationPricesStatic.json')
         .then(response => response.json())
         .then(gasStations => loadGasStations(gasStations))
         .catch(err => console.error(err));
@@ -19,13 +19,13 @@ function loadGasStations(gasStationList) {
 
     gasStationList['ListaEESSPrecio'].forEach((gasStation) => {
         const tmpl = document
-            .getElementById('gasStationElementTemplate')
+            .getElementById('gasStationListElementTemplate')
             .content.cloneNode(true);
 
-        tmpl.querySelector(".gasStationName").innerText = gasStation["Rótulo"];
-        tmpl.querySelector(".gasStationAddress").innerText = `${gasStation["Dirección"]}. ${gasStation["Municipio"]}, ${gasStation["C.P."]}`;
+        tmpl.querySelector(".gasStationListName").innerText = gasStation["Rótulo"];
+        tmpl.querySelector(".gasStationListAddress").innerText = `${gasStation["Dirección"]}. ${gasStation["Municipio"]}, ${gasStation["C.P."]}`;
 
-        const priceList = tmpl.querySelector(".gasStationPrices");
+        const priceList = tmpl.querySelector(".gasStationListPrices");
 
         loadAllPricesInto(gasStation, priceList);
 
