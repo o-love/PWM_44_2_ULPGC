@@ -19,7 +19,7 @@
         document.addEventListener('DOMContentLoaded', init);
 
         function init() {
-            loadHeaderMobile("indexBody")
+            loadTemplate("../html/templates/components/headerMobile.html", "headerMobile")
             loadTemplate("../html/templates/loggedOutHeader.html", "header")
             loadTemplate("../html/templates/userFormIconAndOptions.html", "userOptionsForm")
             loadTemplate("../html/templates/formCar.html","indexBody")
@@ -39,24 +39,24 @@
                     /* Cambio de  los iconos y del texto*/
 
                     var addOil = document.getElementById("edit-button-id")
-                        addOil.textContent = "Añadir Repostaje";
+                    addOil.textContent = "Añadir Repostaje";
                     addOil.style.fontWeight = "bold";
                     addOil.innerHTML += ' <i class="fa-solid fa-gas-pump"></i>';
 
                     var addChange = document.getElementById("my-cars-button-id")
-                        addChange.textContent = "Añadir Recambio";
+                    addChange.textContent = "Añadir Recambio";
                     addChange.style.fontWeight = "bold";
                     addChange.innerHTML += ' <i class="fa-solid fa-screwdriver-wrench"></i>';
 
                     var edit = document.getElementById("exit-button-id")
-                        edit.textContent = "Editar";
+                    edit.textContent = "Editar";
                     edit.style.fontWeight = "bold";
                     edit.innerHTML += ' <i class="fa-solid fa-pen-to-square"></i>';
 
                     var borrar=document.getElementById("delete-button-id")
-                        borrar.textContent = "Eliminar";
-                        borrar.style.color = "red";
-                        borrar.style.fontWeight = "bold";
+                    borrar.textContent = "Eliminar";
+                    borrar.style.color = "red";
+                    borrar.style.fontWeight = "bold";
                     borrar.innerHTML += ' <i class="fa-solid fa-trash"></i>';
                 })
         }
@@ -95,20 +95,19 @@
     </script>
 </head>
 <body>
-    <!--Header-->
-    <div id="headerMobile"></div>
-    <div id="bodyMain">
-        <header id="header" class="headerDisplayoff"></header>
-        <!--Body-->
-        <div class="user-info-container ">
-            <div id="userOptionsForm" class="iconsUserViewLeft"></div>
-            <div class="infoUserViewRight">
-                <div class="edit-car-container">
+<!--Header-->
+<div id="headerMobile"></div>
+<div id="bodyMain">
+    <header id="header" class="headerDisplayoff"></header>
+    <!--Body-->
+    <div class="user-info-container ">
+        <div id="userOptionsForm" class="iconsUserViewLeft"></div>
+        <div class="infoUserViewRight">
+            <div class="edit-car-container">
                 <div id="indexBody" class="bodyContainer"></div>
-        </div></div></div></div>
-        <!--Footer-->
-        <footer id="footer"></footer>
-    </div>
+            </div></div></div></div>
+<!--Footer-->
+<footer id="footer"></footer>
 </div>
 </body>
 </html>

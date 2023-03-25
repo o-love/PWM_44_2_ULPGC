@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>User Profile View</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,32 +16,32 @@
     <link rel="stylesheet" href="../css/dataInfoUserView.css">
     <!--Carga dinamica-->
     <script src="../js/loadTemplate.js"></script>
-  </head>
-    <body>
-    <!--Carga contenido pagina-->
-    <script>
-        document.addEventListener('DOMContentLoaded', init);
-        function init() {
-            loadHeaderMobile("UserProfileViewBody")
-            loadTemplate("../html/templates/loggedHeader.html", "header")
-            loadTemplate("../html/templates/userFormIconAndOptions.html", "userOptionsForm")
-            loadTemplate("../html/templates/components/dataInfoUserView.html", "dataInfo")
-            loadTemplate("../html/templates/footer.html", "footer")
-        }
-    </script>
-    <!--Header-->
-        <div id="headerMobile"></div>
-        <div id="bodyMain">
-            <header id="header" class="headerDisplayoff"></header>
-            <!--Body-->
-            <div id="UserProfileViewBody" class="user-info-container ">
-                <div id="userOptionsForm" class="iconsUserViewLeft"></div>
-                <div class="infoUserViewRight">
-                    <div id="dataInfo"></div>
-                </div>
-            </div>
-            <!--Footer-->
-            <footer id="footer"></footer>
+</head>
+<body>
+<!--Carga contenido pagina-->
+<script>
+    document.addEventListener('DOMContentLoaded', init);
+    function init() {
+        loadHeaderMobile()
+        loadTemplate("../html/templates/loggedHeader.html", "header")
+        loadTemplate("../html/templates/userFormIconAndOptions.html", "userOptionsForm")
+        loadTemplate("../html/templates/components/dataInfoUserView.html", "dataInfo")
+        loadTemplate("../html/templates/footer.html", "footer")
+    }
+</script>
+<!--Header-->
+<div id="headerMobile"></div>
+<div id="bodyMain">
+    <header id="header" class="headerDisplayoff"></header>
+    <!--Body-->
+    <div class="user-info-container ">
+        <div class="iconsUserViewLeft" id="userOptionsForm"></div>
+        <div class="infoUserViewRight">
+            <div id="dataInfo"> </div>
         </div>
-    </body>
+    </div>
+    <!--Footer-->
+    <footer id="footer"></footer>
+</div>
+</body>
 </html>
