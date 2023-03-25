@@ -21,24 +21,34 @@
     vertical-align: top;
 }
 
-.left-icons-view{
+.left-icons-view {
     margin: 0;
     width: 100%;
     height: calc(40rem + 5vw);
 }
 
-.user-info-container{
+.user-info-container {
     width: 100%;
     height: 100%;
 }
-.infoUserViewRight{
-    display: inline-block;
 
+.infoUserViewRight {
+    display: inline-block;
 }
+
+.button-user-options {
+    transition-duration: 0.4s;
+}
+
+.button-user-options:hover {
+    background-color: lightgray;
+}
+
 @media only screen and (max-width: 800px) {
-    #formIconSection{
+    #formIconSection {
         display: none;
     }
+
     .infoUserViewRight {
         width: 100%;
         height: 100%;

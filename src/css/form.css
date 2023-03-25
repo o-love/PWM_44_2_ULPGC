@@ -57,6 +57,11 @@ p {
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     position: relative;
+    transition-duration: 0.4s;
+}
+
+.formButton:hover {
+    background-color: var(--super-dark-blue);
 }
 
 #formIconSection {
@@ -66,7 +71,7 @@ p {
     align-items: center;
 }
 
-.image-form-icon-options{
+.image-form-icon-options {
     width: calc(10rem + 5vw);
     height: calc(10rem + 5vw);
 }

@@ -44,16 +44,19 @@ html, body {
     cursor: pointer;
     text-align: center;
     width: calc(6rem + 3.5vw);
+    margin-top: auto;
+    transition-duration: 0.4s;
+}
+
+
+#submit:hover {
+    background-color: var(--dark-blue);
 }
 
 #userRegistrationHREF {
     color: black;
     padding-top: 0.5rem;
     font-size: calc(0.7rem + 0.5vw);
-}
-
-#submit {
-    margin-top: auto;
 }
 
 .label-container .params-container {

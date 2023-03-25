@@ -12,14 +12,20 @@
     font-size: 1rem;
 }
 
-.containerButton{
+.containerButton {
     background-color: #5DCCFC;
     border: none;
     width: 6rem;
     height: 2rem;
     border-radius: 2px;
     color: #FFFFEE;
+    transition-duration: 0.4s;
 }
-.bodyContainer{
+
+.containerButton:hover {
+    background-color: var(--dark-blue);
+}
+
+.bodyContainer {
     border: 1px black solid;
 }
