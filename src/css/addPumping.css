@@ -11,6 +11,9 @@
 .labelPumping{
     font-size: 1rem;
 }
+#addPumpingBody{
+    width: 10rem;
+}
 
 .containerButton {
     background-color: #5DCCFC;
