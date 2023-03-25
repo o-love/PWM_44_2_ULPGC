@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/form.css"/>
-        <link rel="stylesheet" href="../css/addPumping.css">
         <link rel="stylesheet" href="../css/headerMobile.css">
         <script src="../js/loadTemplate.js"></script>
         <script>
@@ -17,8 +16,8 @@
 
             function init() {
                 loadHeaderMobile("addPumpingBody")
-                loadHeader()
-                loadTemplate("../html/templates/formPumping.html", "addPumpingBody")
+                loadHeader("../html/templates/header.html")
+                loadTemplate("../html/templates/formPumping.html", "indexBody")
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
@@ -27,9 +26,9 @@
     <div id="headerMobile"></div>
     <div id="bodyMain">
         <div id="headerPadre" class="headerDisplayOff">
-            <header id="header"></header>
+            <header id="header" ></header>
         </div>
-        <div id="addPumpingBody" class="bodyContainer containerForm">
+        <div id="indexBody" class="bodyContainer">
         </div>
         <footer id="footer"></footer>
     </div>

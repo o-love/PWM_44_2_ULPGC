@@ -22,7 +22,7 @@ body{
     min-width: 100%;
 
 }
-#indexBody{
+#indexBody,#addPumpingBody{
     flex:1;
 }
 @media (min-width: 1200px){
