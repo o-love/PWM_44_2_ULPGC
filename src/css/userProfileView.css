@@ -9,6 +9,8 @@
 .iconsUserViewLeft {
     display:inline-block;
     width: 29%;
+    margin: 0;
+    vertical-align: top;
 }
 
 .image-form-icon-options{
@@ -16,10 +18,6 @@
     height:  calc(7rem + 4vw);
 }
 
-.iconsUserViewLeft{
-    margin: 0;
-    vertical-align: top;
-}
 
 .left-icons-view{
     margin: 0;
