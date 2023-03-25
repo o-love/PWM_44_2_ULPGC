@@ -89,6 +89,7 @@ a {
     }
     #headerPadre{
         min-height: 100%;
+        min-width: 20%;
     }
     .ulHeader,#header,#headerLinks {
         flex-direction: column;

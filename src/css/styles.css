@@ -43,6 +43,6 @@ body{
         min-width: 100%;
     }
 }
-.bodyDisplayOff{
+.displayoff,.bodyDisplayOff{
     display: none;
 }
