@@ -15,7 +15,7 @@ function loadTemplate(fileName, id, callback) {
 
 function loadHeaderMobile(bodyName) {
     //modo = 1 header oculto actualmente
-    let modo = 0;
+    let modo = 1;
     fetch("../html/templates/components/headerMobile.html")
         .then((res) => {
             return res.text();
@@ -27,12 +27,12 @@ function loadHeaderMobile(bodyName) {
                 const indexBody = document.getElementById(bodyName)
 
                 if (modo === 1) {
-                    sidebar.classList.add("headerDisplayoff")
-                    indexBody.classList.remove("displayoff")
+                    sidebar.classList.add("headerDisplayOff")
+                    indexBody.classList.remove("bodyDisplayOff")
                     modo = 0;
                 } else {
-                    indexBody.classList.add("displayoff")
-                    sidebar.classList.remove("headerDisplayoff")
+                    indexBody.classList.add("bodyDisplayOff")
+                    sidebar.classList.remove("headerDisplayOff")
                     modo = 1;
                 }
             })

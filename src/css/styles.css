@@ -40,40 +40,9 @@ body{
 @media only screen and (max-width: 800px) {
     #bodyMain{
         height: auto;
+        min-width: 100%;
     }
 }
-/* Cambiar body por bodymain
-
-
-
-body{
-    margin:0;
-    min-height: 100vh;
-}
-
-/*Desktop
-@media (min-width: 1200px) {
-    body{
-        flex-direction: column;
-    }
-
-}
-
-/*movil
-@media only screen and (max-width: 800px) {
-
-}
-/*tablet*
-@media (min-width: 800px) and (max-width:1200px){
-    body {
-        flex-direction: row;
-    }
-    #headerMobile{
-        flex-direction: column;
-    }
-
-}
-*/
-.displayoff{
+.bodyDisplayOff{
     display: none;
 }

@@ -100,10 +100,20 @@ p {
         border-radius: 0;
         padding: 0;
         min-width: 100%;
+        max-width: 100%;
+        min-height: 96%;
+        max-height: 96%;
         border: 1px black solid;
     }
     .elementForm{
         margin-top: 1.5rem;
+    }
+
+    form{
+        min-width: 96%;
+        max-width: 96%;
+        padding: 0;
+        margin:0;
     }
 
 }

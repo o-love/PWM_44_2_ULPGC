@@ -11,22 +11,21 @@
 }
 #header{
     background-color: var(--dark-blue);
-    display: flex;
-    justify-content: space-between;
+
     min-height: 130px;
 }
 
-header ul {
+.ulHeader {
     display: flex;
     list-style: none;
 
 }
 
-header li {
+.liLinkHeader {
     margin: 0 10px;
 }
 
-header a {
+a {
     color: white;
     text-decoration: none;
     font-size: larger;
@@ -70,20 +69,45 @@ header a {
 }
 
 @media (min-width: 1200px){
-
+    #header{
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 /*Tablet*/
 @media only screen and (min-width: 800px) and (max-width: 1200px) {
-    html, body {
-        height: 100%;
+    .logoHeader{
+        margin: auto;
+        margin-top: 2rem;
+    }
+    #header{
+
+        display:flex;
+    }
+    .ulHeader,#header,#headerLinks {
+        flex-direction: column;
+    }
+    .ulHeader,.liLinkHeader{
+        margin:0;
+        padding: 0;
+    }
+
+    .liLinkHeader{
+        border-top: solid 1px;
+
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .lastLinkHeader{
+        border-bottom: solid 1px;
     }
 
     header {
         flex-direction: column;
         vertical-align: middle;
         text-align: center;
-        max-width: 10rem;
+        min-width: 15rem;
         height: 100%;
         display: inline-block;
     }
@@ -97,6 +121,11 @@ header a {
         align-items: center;
         flex-direction: column;
     }
+
+    .Right{
+        margin:auto;
+    }
+
 }
 
 /*Movil*/
@@ -104,8 +133,16 @@ header a {
     html, body {
         height: 100%;
     }
+    #headerLogo{
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    #header{
 
+        display:flex;
+    }
     header {
+        border-top: solid 1px black;
         flex-direction: column;
         vertical-align: middle;
         text-align: center;
@@ -113,8 +150,8 @@ header a {
         height: auto;
         background-color: var(--light-blue);
     }
-    .headerDisplayoff{
-        display: none;
+    .headerDisplayOff{
+        display:none;
     }
     .headerRightSection {
         margin-top: auto;
@@ -124,5 +161,26 @@ header a {
         display: flex;
         align-items: center;
         flex-direction: column;
+    }
+    .ulHeader,#header,#headerLinks {
+        flex-direction: column;
+    }
+
+    .ulHeader,.liLinkHeader{
+        margin:0;
+        padding: 0;
+    }
+
+    .liLinkHeader{
+        border-top: solid 1px;
+
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .lastLinkHeader{
+        border-bottom: solid 1px;
+    }
+    .Right{
+        margin:auto;
     }
 }
