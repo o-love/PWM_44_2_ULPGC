@@ -2,19 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User Profile edit</title>
+    <title>User Profile Edit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONTAWESOME-->
+    <script src="https://kit.fontawesome.com/ff006d44e4.js" crossorigin="anonymous"></script>
+    <!--Estilos de la pagina-->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/headerMobile.css">
+    <link rel="stylesheet" href="../css/userProfileView.css">
+    <link rel="stylesheet" href="../css/dataInfoUserView.css">
+    <!--Carga dinamica-->
+    <script src="../js/loadTemplate.js"></script>
+    <!--Carga contenido pagina-->
+    <script>
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+            loadHeaderMobile("indexBody")
+            loadHeaderMobile("userProfileViewBody")
+            loadTemplate("../html/templates/userFormIconAndOptions.html", "userOptionsForm")
+            loadHeader("../html/templates/header.html")
+            fetch("../html/templates/formUser.html")
+            .then((res) => {
+            return res.text();
+        })
+            .then((text) => {
+            document.getElementById("indexBody").innerHTML = text;
+            document.getElementById("formUserRegistration").addEventListener("submit",(e) => {
+            console.log("me han pulsado")
+            e.preventDefault();
+            const passInput = document.getElementById("pass")
+            const passConfitmInput = document.getElementById("passConfirm")
+            if(passInput.value !== passConfitmInput.value){
+            passInput // invalid
+            .setCustomValidity('Must match !')
+        } else {
+            passInput // invalid
+            .setCustomValidity('')
+            console.log("se ha enviado correctamente");
+        }
+            passInput.reportValidity()
+        })
+        })
+            loadTemplate("../html/templates/footer.html", "footer")
+        }
+    </script>
 </head>
 <body>
-<!--- Header -->
+<!-- Header -->
+<div id="headerMobile"></div>
+<div id="bodyMain">
+    <div id="headerPadre" class="headerDisplayOff">
+        <header id="header" ></header>
+    </div>
 
-<!-- A la izquierda se inserta formIconAndOptions.html con el imagen de perfil
-del usuario y con los botones editar cuenta, borrar cuenta y cerrar session. -->
-
-<!-- A la derecha se inserta el formulario de usuario con los datos actuales prereyenados --->
-
+    <!-- Body -->
+    <div class="user-info-container" id="userProfileViewBody">
+        <div class="iconsUserViewLeft" id="userOptionsForm"></div>
+        <div class="infoUserViewRight">
+            <div id="indexBody" class="bodyContainer"></div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer"></footer>
+</div>
 </body>
-
-<!--- Se añade el footer abajo -->
-
 </html>
