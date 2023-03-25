@@ -17,7 +17,7 @@
 
             function init() {
                 loadHeaderMobile("loginForm")
-                loadTemplate("../html/templates/loggedOutHeader.html", "header")
+                loadHeader()
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
@@ -25,7 +25,9 @@
 
     <body>
     <div id="headerMobile"></div>
-    <header id="header"></header>
+    <div id="headerPadre" class="headerDisplayOff">
+        <header id="header"></header>
+    </div>
     <form id="loginForm">
         <div class="params-container">
             <div class="label-container">

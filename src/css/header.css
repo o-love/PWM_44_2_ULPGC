@@ -115,7 +115,7 @@ a {
         text-align: center;
         min-width: 15rem;
         height: 100%;
-        display: inline-block;
+        display: flex;
     }
 
     .headerRightSection {

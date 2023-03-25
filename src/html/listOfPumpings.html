@@ -16,7 +16,7 @@
 
             function init() {
                 loadHeaderMobile("pumpingList")
-                loadTemplate("../html/templates/loggedOutHeader.html", "header")
+                loadHeader()
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
@@ -25,7 +25,9 @@
     <body>
     <div id="headerMobile"></div>
     <div id="bodyMain">
-        <header id="header"></header>
+        <div id="headerPadre" class="headerDisplayOff">
+            <header id="header"></header>
+        </div>
 
         <div id="pumpingList"></div>
 

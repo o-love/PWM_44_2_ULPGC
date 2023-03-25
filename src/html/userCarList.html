@@ -17,14 +17,16 @@
         <script>
             document.addEventListener('DOMContentLoaded', init);
             function init() {
-                loadTemplate("../html/templates/header.html", "header")
+                loadHeader()
                 loadTemplate("../html/templates/components/cardCar.html", "carList")
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
     </head>
     <body>
-    <header id="header"></header>
+    <div id="headerPadre" class="headerDisplayOff">
+        <header id="header"></header>
+    </div>
     <!--  Lista de Coches -->
     <div id="carList"></div>
     <footer id="footer"></footer>

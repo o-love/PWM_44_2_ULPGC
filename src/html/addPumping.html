@@ -17,7 +17,7 @@
 
             function init() {
                 loadHeaderMobile("addPumpingBody")
-                loadTemplate("../html/templates/loggedOutHeader.html", "header")
+                loadHeader()
                 loadTemplate("../html/templates/formPumping.html", "addPumpingBody")
                 loadTemplate("../html/templates/footer.html", "footer")
             }
@@ -26,7 +26,9 @@
     <body>
     <div id="headerMobile"></div>
     <div id="bodyMain">
-        <header id="header" class="headerDisplayoff"></header>
+        <div id="headerPadre" class="headerDisplayOff">
+            <header id="header"></header>
+        </div>
         <div id="addPumpingBody" class="bodyContainer containerForm">
         </div>
         <footer id="footer"></footer>

@@ -5,7 +5,7 @@ function loadAllPricesInto(gasStop, list) {
         }
 
         let element = document.createElement('li');
-        const cheapPriceGas = 1.4;
+        const cheapPriceGas = 1.55;
         const expensivePriceGas = 2;
         let price = parseFloat(gasStop[key].replace(',', '.').toLocaleString());
 
