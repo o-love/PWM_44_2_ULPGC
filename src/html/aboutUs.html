@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/ff006d44e4.js" crossorigin="anonymous"></script>
 
     <title>About us</title>
+    <!--Estilos de pagina-->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -17,47 +18,49 @@
         document.addEventListener('DOMContentLoaded', init);
 
         function init() {
-            loadHeaderMobile("aboutUsBody")
             loadHeader("../html/templates/header.html")
+            loadHeaderMobile("aboutUsBody")
             loadTemplate("../html/templates/footer.html", "footer")
         }
     </script>
 </head>
-    <body>
+<body>
 
-    <div id="headerMobile"></div>
-    <div id="bodyMain">
-        <header id="header"></header>
-        <div id="aboutUsBody" class="aboutUs-container">
-            <div class="img-text-container">
-                <img src="../img/aboutUs/IconBus.PNG" alt="Icono auto-bus" class="img-left aboutUsPhoto">
-                <p class="paragraph paragraphLightBlueContainer" id="paragraphTopTabletContainer">Somos una empresa que
-                    se dedica a orientar a
-                    sus clientes a un <strong>buen mantenimiento de su vehiculo</strong>.</p>
-            </div>
-
-            <div class="img-text-container">
-                <p class="paragraph paragraphBlueContainer paragraphTabletContainer">Le hacemos recomendaciones de
-                    <strong>gasolineras cercanas</strong>
-                    a usted filtrandolas por los parametros que desee.</p>
-                <img src="../img/aboutUs/IconTruck.PNG" alt="Icono camion" class="img-right aboutUsPhoto">
-            </div>
-
-            <div class="img-text-container img-text-phone">
-                <img src="../img/aboutUs/IconWrench.PNG" alt="Icono llave inglesa" class="img-left aboutUsPhoto">
-                <p class="paragraph paragraphLightBlueContainer paragraphTabletContainer">Mantenemos el <strong>control de su vehiculo</strong> como el cambio
-                    de la correa de distribucion, revision de las ruedas,
-                    cambios de aceite etc...</p>
-            </div>
-
-            <div class="img-text-container img-text-phone">
-                <p class="paragraph paragraphBlueContainer" id="paragraphButtonTabletContainer">No dudes en registrarte, tener un <strong>buen mantenimiento</strong>
-                    ayuda a <strong>prevenir futuras averias</strong>,y lo mas importante
-                    salvar vidas por futuros accidentes.</p>
-                <img src="../img/aboutUs/IconCar.PNG" alt="Icono Coche" class="img-right aboutUsPhoto">
-            </div>
+<div id="headerMobile"></div>
+<div id="bodyMain">
+    <header id="header" class="headerDisplayoff"></header>
+    <!-- Parragraph 1 of about us-->
+    <div id="aboutUsBody" class="aboutUs-container">
+        <div class="img-text-container">
+            <img src="../img/aboutUs/IconBus.PNG" alt="Icono auto-bus" class="img-left aboutUsPhoto">
+            <p class="paragraph paragraphLightBlueContainer" id="paragraphTopTabletContainer">Somos una empresa que
+                se dedica a orientar a
+                sus clientes a un <strong>buen mantenimiento de su vehiculo</strong>.</p>
         </div>
-        <footer id="footer"></footer>
+        <!-- Parragraph 2 of about us-->
+        <div class="img-text-container">
+            <p class="paragraph paragraphBlueContainer paragraphTabletContainer">Le hacemos recomendaciones de
+                <strong>gasolineras cercanas</strong>
+                a usted filtrandolas por los parametros que desee.</p>
+            <img src="../img/aboutUs/IconTruck.PNG" alt="Icono camion" class="img-right aboutUsPhoto">
         </div>
-    </body>
+        <!-- Parragraph 3 of about us-->
+        <div class="img-text-container img-text-phone">
+            <img src="../img/aboutUs/IconWrench.PNG" alt="Icono llave inglesa" class="img-left aboutUsPhoto">
+            <p class="paragraph paragraphLightBlueContainer paragraphTabletContainer">Mantenemos el <strong>control de su vehiculo</strong> como el cambio
+                de la correa de distribucion, revision de las ruedas,
+                cambios de aceite etc...</p>
+        </div>
+        <!-- Parragraph 4 of about us-->
+        <div class="img-text-container img-text-phone">
+            <p class="paragraph paragraphBlueContainer" id="paragraphButtonTabletContainer">No dudes en registrarte, tener un <strong>buen mantenimiento</strong>
+                ayuda a <strong>prevenir futuras averias</strong>,y lo mas importante
+                salvar vidas por futuros accidentes.</p>
+            <img src="../img/aboutUs/IconCar.PNG" alt="Icono Coche" class="img-right aboutUsPhoto">
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+</div>
+</body>
 </html>
