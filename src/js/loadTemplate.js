@@ -28,10 +28,10 @@ function loadHeaderMobile(bodyName) {
 
                 if (modo === 0) {
                     sidebar.classList.add("headerDisplayOff")
-                    body.classList.remove("bodyDisplayOff")
+                    body.style=""
                     modo = 1;
                 } else {
-                    body.classList.add("bodyDisplayOff")
+                    body.style="display:none;"
                     sidebar.classList.remove("headerDisplayOff")
                     modo = 0;
                 }
