@@ -15,6 +15,9 @@
     cursor: pointer;
 }
 
+#carList{
+    flex:1;
+}
 
 .card-img{
     height: 10rem;
@@ -92,7 +95,7 @@
         grid-template-rows:
             [row-start row-1-start] 1.5fr [row-1-end row-2-start] 1.2fr [row-2-end row-end] 1.5fr;
         grid-template-columns:
-            [col-start] 1.5fr [col-2-start] 1fr [col-end];
+            [col-start] 1.1fr [col-2-start] 1fr [col-end];
     }
 }
 
@@ -108,7 +111,6 @@
         grid-template-rows:
             [row-start row-1-start] 1.5fr [row-1-end row-2-start] 1.2fr [row-2-end row-end];
         grid-template-columns:
-         [col-start] 0.4fr [col-end];
-
+         [col-start] 100fr [col-end];
     }
 }
