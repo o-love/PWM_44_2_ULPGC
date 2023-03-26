@@ -32,6 +32,8 @@ function confirmUser(event){
                     } else {
                         // El usuario no está registrado
                         console.log("Usuario no registrado");
+                        const errorMsg = document.getElementById("error-msg");
+                        errorMsg.style.display = "block";
                     }
                 })
         })

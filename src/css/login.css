@@ -11,12 +11,16 @@ html, body {
     margin: auto;
     align-items: center;
     width: calc(8rem + 6.8vw);
-    height: calc(9rem + 3.8vw);
+    height: calc(12rem + 3.8vw);
     border-radius: 20px;
     background-color: var(--super-light-blue);
     border: 1px solid black;
 }
 
+#error-msg{
+    color: red;
+    display:none;
+}
 
 .loginLabel {
     display: block;
