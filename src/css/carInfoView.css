@@ -66,13 +66,13 @@
     border-bottom: solid 1px var(--border-buttons-profile);
 
 }
-#ContenedorMantenimientoLista,#ContenedorPumpingList{
+#ContenedorMantenimientoLista,#ContenedorPumpingList,#ContenedorSpareList{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
-#mantenimientoInfo,#respostajesInfo{
+#mantenimientoInfo,#respostajesInfo,#reparacionesInfo{
     max-width: 75%;
     margin: auto;
 }
@@ -138,7 +138,7 @@ table{
     min-width: 100%;
     text-align: center;
     max-height: 300px;
-    overflow: auto;
+    overflow: scroll;
 }
 tbody{
     background-color: var(--super-light-blue);
@@ -189,6 +189,13 @@ tbody{
         min-width: 10rem;
     }
 }
+
+@media (min-width: 801px) and (max-width:1200px) {
+    .searchBox{
+        min-width: 60%;
+    }
+}
+
 h3.info{
     text-align: center;
 }
