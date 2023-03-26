@@ -20,7 +20,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', init);
         function init() {
-            loadHeaderMobile("userProfileViewBody")
+            loadHeaderMobile("indexBody")
             loadHeader("../html/templates/Header.html")
             loadTemplate("../html/templates/userFormIconAndOptions.html", "BtnsandPhoto")
             loadTemplate("../html/templates/components/dataInfoUserView.html", "userData")
@@ -38,8 +38,11 @@
 
         <!-- Body -->
         <div id="indexBody">
-            <div id="BtnsandPhoto" ></div>
-            <div id="userData"></div>
+            <div id="containerMain">
+
+                <div id="BtnsandPhoto" ></div>
+                <div id="userData"></div>
+            </div>
         </div>
         <!-- Footer -->
         <footer id="footer"></footer>
