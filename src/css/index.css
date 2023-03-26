@@ -1,7 +1,7 @@
 .bodyContainer {
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-items: center;
     padding: 1rem;
     height: 80vh;
     margin: auto;
@@ -10,12 +10,12 @@
 #gasStationListContainer {
     overflow-y: scroll;
     height: 80%;
+    max-width: 40rem;
 }
 
 @media only screen and (min-width: 1200px) {
     .bodyContainer {
         flex-direction: row;
-        width: 80%;
     }
 }
 
