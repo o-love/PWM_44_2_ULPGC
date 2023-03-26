@@ -5,10 +5,12 @@ function loadUsers(init) {
         console.error('Your browser does not support templates');
         return;
     }
-    document.getElementById("logearse").addEventListener("click", confirmUser);
+    const log= document.getElementById("logearse");
+    log.addEventListener("click", confirmUser);
 };
 
-function confirmUser(users){
+function confirmUser(event){
+    event.preventDefault()
     fetch("../html/login.html").then(res => {
         return res.text()
     })
@@ -16,17 +18,17 @@ function confirmUser(users){
             fetch('../../Static Data/User Data/users.json')
                 .then(response => response.json())
                 .then((users) => {
+
                     localStorage.setItem("users", JSON.stringify(users));
                     const mail = document.getElementById("username").value;
                     const password = document.getElementById("password").value;
 
-                    console.log(users)
                     const user = users.users.find(u => u.email === mail && u.password === password);
-                    console.log(user)
 
                     if (user) {
                         // El usuario está registrado
-                        console.log("Usuario registrado");
+                        localStorage.setItem("currentUser", JSON.stringify(user));
+                        window.location="../html/userCarList.html";
                     } else {
                         // El usuario no está registrado
                         console.log("Usuario no registrado");

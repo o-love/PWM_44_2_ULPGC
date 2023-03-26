@@ -41,6 +41,7 @@ function loadHeaderMobile(bodyName) {
 
 function loadHeader(){
     let userRol = 0;//0 user not logged, 1 user logged, 2 admin
+    userRol = verificarRol();
     let urlLinks;
     fetch("../html/templates/header.html")
         .then(response => {
@@ -64,4 +65,17 @@ function loadHeader(){
                     document.getElementById("headerLinks").innerHTML = text
                 })
         })
+}
+
+function verificarRol(){
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    // Verificamos si esta registrado
+    if(currentUser){
+        if(currentUser.is_admin){
+            return 2; // Usuario registrado administrador
+        }else{
+            return 1; // Usuario registrado
+        }
+    }
+    return 0;
 }
