@@ -27,31 +27,31 @@
             return res.text();
         })
             .then((text) => {
-            document.getElementById("indexBody").innerHTML = text;
-            document.getElementById("user").value = "Andrea Monzón";
-            document.getElementById("email").value="andrea@correo.com";
-            document.getElementById("pass").value="12345";
-            document.getElementById("passConfirm").value="12345"
+                document.getElementById("indexBody").innerHTML = text;
+                document.getElementById("user").value = "Andrea Monzón";
+                document.getElementById("email").value="andrea@correo.com";
+                document.getElementById("pass").value="12345";
+                document.getElementById("passConfirm").value="12345"
 
 
 
 
-            document.getElementById("formUserRegistration").addEventListener("submit",(e) => {
-            console.log("me han pulsado")
-            e.preventDefault();
-            const passInput = document.getElementById("pass")
-            const passConfitmInput = document.getElementById("passConfirm")
-            if(passInput.value !== passConfitmInput.value){
-            passInput // invalid
-            .setCustomValidity('Must match !')
-        } else {
-            passInput // invalid
-            .setCustomValidity('')
-            console.log("se ha enviado correctamente");
-        }
-            passInput.reportValidity()
-        })
-        })
+                document.getElementById("formUserRegistration").addEventListener("submit",(e) => {
+                    console.log("me han pulsado")
+                    e.preventDefault();
+                    const passInput = document.getElementById("pass")
+                    const passConfitmInput = document.getElementById("passConfirm")
+                    if(passInput.value !== passConfitmInput.value){
+                        passInput // invalid
+                        .setCustomValidity('Must match !')
+                    } else {
+                        passInput // invalid
+                        .setCustomValidity('')
+                        console.log("se ha enviado correctamente");
+                    }
+                    passInput.reportValidity()
+                })
+            })
             loadTemplate("../html/templates/footer.html", "footer")
         }
     </script>
@@ -69,6 +69,5 @@
             <!-- Footer -->
             <footer id="footer"></footer>
         </div>
-    </div>
 </body>
 </html>
