@@ -1,5 +1,5 @@
 @media (min-width: 801px) {
-    #containerMain{
+    #indexBody{
         display: grid;
         grid-template-columns: 1fr 2fr;
     }
@@ -47,7 +47,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-    #containerMain{
+    #indexBody{
         display: grid;
         grid-template-rows: 1fr 3fr;
     }
