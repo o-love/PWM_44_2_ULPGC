@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/headerMobile.css">
         <link rel="stylesheet" href="../css/cardCar.css">
         <link rel="stylesheet" href="../css/footer.css">
         <script src="https://unpkg.com/feather-icons"></script>
@@ -17,18 +18,21 @@
         <script>
             document.addEventListener('DOMContentLoaded', init);
             function init() {
-                loadHeader()
+                loadHeaderMobile("carList")
+                loadHeader("../html/templates/header.html")
                 loadTemplate("../html/templates/components/cardCar.html", "carList")
                 loadTemplate("../html/templates/footer.html", "footer")
             }
         </script>
     </head>
     <body>
-    <div id="headerPadre" class="headerDisplayOff">
-        <header id="header"></header>
+    <div id="headerMobile"></div>
+    <div id="bodyMain">
+        <div id="headerPadre" class="headerDisplayOff">
+            <header id="header" ></header>
+        </div>
+        <div id="carList" ></div>
+        <footer id="footer"></footer>
     </div>
-    <!--  Lista de Coches -->
-    <div id="carList"></div>
-    <footer id="footer"></footer>
     </body>
 </html>

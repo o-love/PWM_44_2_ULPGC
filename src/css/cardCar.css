@@ -90,6 +90,7 @@
             [row-start row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end row-end];
         grid-template-columns:
             [col-start] 0.5fr [col-2-start] 0.5fr [col-end];
+        justify-items: center;
     }
 }
 

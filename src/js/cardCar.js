@@ -12,15 +12,12 @@ function loadCarContent() {
                 console.error('Your browser does not support templates');
                 return;
             }
-
             fetch("../html/templates/components/cardCar.html")
                 .then(res => {
                     return res.text()
                 })
                 .then(texto =>{
-
             const container = document.getElementById('carCardContainer');
-
             cars.forEach((car) => {
                 const tmpl = document
                     .getElementById('car-card-template')
@@ -29,8 +26,8 @@ function loadCarContent() {
                 tmpl.querySelector('h3').innerText = car.name;
                 tmpl.querySelector('p').innerText = car.model;
                 tmpl.querySelector('img').src = car.imgSrc;
-
+                console.log(car.imgSrc)
                 container.appendChild(tmpl);
-            })})
+            }) })
         }).catch((err) => console.error(err));
 }
