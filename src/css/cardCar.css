@@ -11,7 +11,7 @@
 }
 
 .card-car-img-text-container:hover {
-    background-color: white;
+    background-color: #daf0f4;
     cursor: pointer;
 }
 
@@ -33,12 +33,8 @@
 }
 
 
-.feather-48-card-car{
-    color: #FFFFEE;
-    float: right;
-    border: none;
-    border-radius: 20%;
-    padding-right: 0.5rem;
+.fa-expand{
+    font-size: 2rem;
 }
 
 .btn-card-car{
@@ -109,8 +105,9 @@
     .layout-card-car {
         display: grid;
         grid-template-rows:
-            [row-start row-1-start] 1.5fr [row-1-end row-2-start] 1.2fr [row-2-end row-end];
+            [row-start row-1-start] 1.4fr [row-1-end row-2-start] 1.2fr  [row-2-end row-3-start]
+            1.4fr  [row-3-end row-4-start] 1.2fr [row-4-end row-5-start] 1.4fr [row-4-end row-end] ;
         grid-template-columns:
-         [col-start] 100fr [col-end];
+         [col-start] 20fr [col-end];
     }
 }
