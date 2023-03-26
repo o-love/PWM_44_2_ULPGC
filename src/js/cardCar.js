@@ -18,6 +18,13 @@ function loadCarContent() {
                 })
                 .then(texto =>{
             const container = document.getElementById('carCardContainer');
+
+            // Rediccion al clickar en una card
+            const card = document.getElementById("carList")
+            card.addEventListener("click", function() {
+                  window.location = "../html/carProfile.html";
+            });
+
             cars.forEach((car) => {
                 const tmpl = document
                     .getElementById('car-card-template')
@@ -31,3 +38,7 @@ function loadCarContent() {
             }) })
         }).catch((err) => console.error(err));
 }
+
+
+
+
