@@ -7,7 +7,14 @@
     text-align: left;
     border-radius: 5%;
     overflow: hidden;
+    transition: background-color 0.3s ease;
 }
+
+.card-car-img-text-container:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
 
 .card-img{
     height: 10rem;
@@ -72,10 +79,6 @@
         margin-bottom: 2px;
     }
 
-    .card-car-img-text-container {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
 
     .card-text {
         font-size: calc(1rem + 1vw);
@@ -87,19 +90,13 @@
     .layout-card-car {
         display: grid;
         grid-template-rows:
-            [row-start row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end row-end];
+            [row-start row-1-start] 1.5fr [row-1-end row-2-start] 1.2fr [row-2-end row-end] 1.5fr;
         grid-template-columns:
-            [col-start] 0.5fr [col-2-start] 0.5fr [col-end];
-        justify-items: center;
+            [col-start] 1.5fr [col-2-start] 1fr [col-end];
     }
 }
 
 @media only screen and (max-width: 800px) {
-    .card-car-img-text-container {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-
     .card-text  {
         font-size: calc(1.5rem + 1vw);
         padding-bottom: 0;
@@ -109,8 +106,9 @@
     .layout-card-car {
         display: grid;
         grid-template-rows:
-            [row-start row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end row-end];
+            [row-start row-1-start] 1.5fr [row-1-end row-2-start] 1.2fr [row-2-end row-end];
         grid-template-columns:
-            [col-start] 1fr [col-end];
+         [col-start] 0.4fr [col-end];
+
     }
 }

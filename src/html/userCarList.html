@@ -22,7 +22,18 @@
                 loadHeader("../html/templates/header.html")
                 loadTemplate("../html/templates/components/cardCar.html", "carList")
                 loadTemplate("../html/templates/footer.html", "footer")
+                cardsClick()
             }
+            function cardsClick(){
+                const card = document.getElementById('carList');
+                card.addEventListener('click', () => {
+                    // Acción que se ejecuta al hacer click en la card
+                    console.log('Ver coche del usuario');
+                });
+            }
+
+
+
         </script>
     </head>
     <body>
