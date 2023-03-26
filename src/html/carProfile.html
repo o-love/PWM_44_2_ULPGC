@@ -9,7 +9,6 @@
     <!--Estilos de la pagina-->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/headerMobile.css">
     <link rel="stylesheet" href="../css/carInfoView.css">
@@ -31,34 +30,50 @@
                     const mantenimientoDiv = document.getElementById("mantenimientoInfo")
                     const respostajesDiv = document.getElementById("respostajesInfo")
                     const reparacionesDiv = document.getElementById("reparacionesInfo")
-                    document.getElementById("mantenimientoBtn").addEventListener("click",()=>{
+                    const mantenimientoBtn = document.getElementById("mantenimientoBtn")
+                    const respostajeBtn = document.getElementById("respostajesBtn")
+                    const reparacioneBTN = document.getElementById("reparacionesBTN")
+                    mantenimientoBtn.addEventListener("click",()=>{
                         mantenimientoDiv.classList.remove("displayoff");
+                        mantenimientoBtn.classList.add("selectedInfo");
 
                         if(respostajesDiv.className.indexOf("displayoff") === -1){
                             respostajesDiv.classList.add("displayoff")
+                            respostajeBtn.classList.remove("selectedInfo")
                         }
                         if(reparacionesDiv.className.indexOf("displayoff") === -1){
                             reparacionesDiv.classList.add("displayoff")
+                            reparacioneBTN.classList.remove("selectedInfo")
                         }
                     })
                     document.getElementById("respostajesBtn").addEventListener("click",()=>{
                         respostajesDiv.classList.remove("displayoff");
+                        respostajeBtn.classList.add("selectedInfo");
 
                         if(mantenimientoDiv.className.indexOf("displayoff") === -1){
                             mantenimientoDiv.classList.add("displayoff")
+                            mantenimientoBtn.classList.remove("selectedInfo")
+
                         }
                         if(reparacionesDiv.className.indexOf("displayoff") === -1){
                             reparacionesDiv.classList.add("displayoff")
+                            reparacioneBTN.classList.remove("selectedInfo")
+
                         }
                     })
                     document.getElementById("reparacionesBTN").addEventListener("click",()=>{
                         reparacionesDiv.classList.remove("displayoff");
+                        reparacioneBTN.classList.add("selectedInfo");
 
                         if(mantenimientoDiv.className.indexOf("displayoff") === -1){
                             mantenimientoDiv.classList.add("displayoff")
+                            mantenimientoBtn.classList.remove("selectedInfo")
+
                         }
                         if(respostajesDiv.className.indexOf("displayoff") === -1){
                             respostajesDiv.classList.add("displayoff")
+                            respostajeBtn.classList.remove("selectedInfo")
+
                         }
                     })
                     fetch("../html/templates/mantenimientoLista.html")

@@ -1,18 +1,6 @@
-@media (min-width: 801px) {
-    #indexBody{
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-    }
-    #BtnsandPhoto{
-        min-height: 100%;
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        border-right: solid 1px var(--border-buttons-profile);
-    }
-
-    #infoAMostrar{
-        margin-top: 4rem;
-    }
+.valor>p{
+    text-align: center;
+    font-weight: bold;
 }
 .btnCabeceraCar{
     color: white;
@@ -24,7 +12,7 @@
 
 .btnCabeceraCar:hover{
     cursor:pointer;
-    background-color: var(--hard-blue);
+    background-color: var(--hover-button);
 }
 
 #carData{
@@ -40,6 +28,19 @@
 }
 
 
+.searchBox{
+    border: solid 1px;
+    border-radius: 0.4rem;
+    margin:auto 0;
+    max-width: 40%;
+    padding:0.2rem;
+}
+.searchInput{
+    margin:auto;
+    outline: none;
+    border: none;
+    height: 100%;
+}
 .button-car-options{
     min-width: 100%;
     font-size: large;
@@ -65,8 +66,20 @@
     border-bottom: solid 1px var(--border-buttons-profile);
 
 }
-.listaMantenimiento{
+#ContenedorMantenimientoLista,#ContenedorPumpingList{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#mantenimientoInfo,#respostajesInfo{
     max-width: 75%;
+    margin: auto;
+}
+
+
+.listaMantenimiento{
+    min-width: 100%;
     margin:auto;
     border: solid 1px;
     max-height: 450px;
@@ -88,6 +101,10 @@ p{
 }
 
 
+.selectedInfo{
+    background-color:var(--hard-blue);
+}
+
 .bg-orange{
     background-color: var(--orange-Mantenimento);
 }
@@ -106,6 +123,26 @@ p{
     transform: translate(-50%, -50%);
 }
 
+table,td,tr{
+    border-collapse: collapse;
+}
+td,tr{
+    border: solid 1px var(--row-border-color);
+}
+td{
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+table{
+    min-width: 100%;
+    text-align: center;
+    max-height: 300px;
+    overflow: auto;
+}
+tbody{
+    background-color: var(--super-light-blue);
+}
 
 @media only screen and (max-width: 800px) {
     #indexBody{
@@ -118,7 +155,6 @@ p{
         border-right: solid 1px var(--border-buttons-profile);
     }
     #btnsCar{
-
         border-left: solid 1px var(--border-buttons-profile);
     }
     .infoCoche{
@@ -126,6 +162,31 @@ p{
     }
     #carData{
         border-top: solid 2px ;
+    }
+    .searchBox{
+        min-width: 75%;
+        margin: 10px auto;
+    }
+}
+@media (min-width: 801px) {
+    #indexBody{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    #BtnsandPhoto{
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        border-right: solid 1px var(--border-buttons-profile);
+    }
+
+    #infoAMostrar{
+        margin-top: 4rem;
+    }
+    .searchBox{
+        margin-bottom: 10px;
+        align-self: flex-end;
+        min-width: 10rem;
     }
 }
 h3.info{
