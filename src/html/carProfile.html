@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User Profile</title>
+    <title>Car Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--FONTAWESOME-->
     <script src="https://kit.fontawesome.com/ff006d44e4.js" crossorigin="anonymous"></script>
@@ -18,7 +18,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', init);
         function init() {
-            loadHeaderMobile("userProfileViewBody")
+            loadHeaderMobile("indexBody")
             loadHeader("../html/templates/Header.html")
             loadTemplate("../html/templates/carFormIconAndOptions.html", "BtnsandPhoto")
             fetch("../html/templates/carInfo.html")
@@ -114,8 +114,10 @@
 
         <!-- Body -->
         <div id="indexBody">
-            <div id="BtnsandPhoto" ></div>
-            <div id="carData"></div>
+            <div id="containerMain">
+                <div id="BtnsandPhoto" ></div>
+                <div id="carData"></div>
+            </div>
         </div>
         <!-- Footer -->
         <footer id="footer"></footer>

@@ -24,14 +24,14 @@ function loadHeaderMobile(bodyName) {
             document.getElementById("headerMobile").innerHTML = text;
             document.getElementById("buttonToggleHeaderMobile").addEventListener("click", () => {
                 const sidebar = document.getElementById("headerPadre")
-                const indexBody = document.getElementById(bodyName)
+                const body = document.getElementById(bodyName)
 
                 if (modo === 0) {
                     sidebar.classList.add("headerDisplayOff")
-                    indexBody.classList.remove("bodyDisplayOff")
+                    body.classList.remove("bodyDisplayOff")
                     modo = 1;
                 } else {
-                    indexBody.classList.add("bodyDisplayOff")
+                    body.classList.add("bodyDisplayOff")
                     sidebar.classList.remove("headerDisplayOff")
                     modo = 0;
                 }
