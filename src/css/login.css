@@ -33,7 +33,7 @@ html, body {
     height: calc(0.5rem + 0.5vw);
 }
 
-#submit {
+#logearse {
     padding: 10px;
     background-color: var(--power-blue);
     color: #FFFFEE;
@@ -49,7 +49,7 @@ html, body {
 }
 
 
-#submit:hover {
+#logearse:hover {
     background-color: var(--dark-blue);
 }
 
@@ -88,7 +88,7 @@ html, body {
     }
 
 
-    #submit, #userRegistrationHREF, .loginLabel {
+    #logearse, #userRegistrationHREF, .loginLabel {
         font-size: calc(1.5rem + 0.5vw);
     }
 
