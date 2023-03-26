@@ -28,12 +28,59 @@
                 })
                 .then(text =>{
                     document.getElementById("carData").innerHTML=text
+                    const mantenimientoDiv = document.getElementById("mantenimientoInfo")
+                    const respostajesDiv = document.getElementById("respostajesInfo")
+                    const reparacionesDiv = document.getElementById("reparacionesInfo")
+                    document.getElementById("mantenimientoBtn").addEventListener("click",()=>{
+                        mantenimientoDiv.classList.remove("displayoff");
+
+                        if(respostajesDiv.className.indexOf("displayoff") === -1){
+                            respostajesDiv.classList.add("displayoff")
+                        }
+                        if(reparacionesDiv.className.indexOf("displayoff") === -1){
+                            reparacionesDiv.classList.add("displayoff")
+                        }
+                    })
+                    document.getElementById("respostajesBtn").addEventListener("click",()=>{
+                        respostajesDiv.classList.remove("displayoff");
+
+                        if(mantenimientoDiv.className.indexOf("displayoff") === -1){
+                            mantenimientoDiv.classList.add("displayoff")
+                        }
+                        if(reparacionesDiv.className.indexOf("displayoff") === -1){
+                            reparacionesDiv.classList.add("displayoff")
+                        }
+                    })
+                    document.getElementById("reparacionesBTN").addEventListener("click",()=>{
+                        reparacionesDiv.classList.remove("displayoff");
+
+                        if(mantenimientoDiv.className.indexOf("displayoff") === -1){
+                            mantenimientoDiv.classList.add("displayoff")
+                        }
+                        if(respostajesDiv.className.indexOf("displayoff") === -1){
+                            respostajesDiv.classList.add("displayoff")
+                        }
+                    })
                     fetch("../html/templates/mantenimientoLista.html")
                         .then(res => {
                             return res.text()
                         })
                         .then(text =>{
-                            document.getElementById("mantenimientoInfo").innerHTML=text
+                            mantenimientoDiv.innerHTML=text
+                        })
+                    fetch("../html/templates/pumpingList.html")
+                        .then(res => {
+                            return res.text()
+                        })
+                        .then(text =>{
+                            respostajesDiv.innerHTML=text
+                        })
+                    fetch("../html/templates/spareList.html")
+                        .then(res => {
+                            return res.text()
+                        })
+                        .then(text =>{
+                            reparacionesDiv.innerHTML=text
                         })
                 })
             loadTemplate("../html/templates/footer.html", "footer")
