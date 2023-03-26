@@ -27,13 +27,12 @@
                     .then((text) => {
                     document.getElementById("indexBody").innerHTML = text;
                     document.getElementById("formUserRegistration").addEventListener("submit",(e) => {
-                        console.log("me han pulsado")
                         e.preventDefault();
                         const passInput = document.getElementById("pass")
                         const passConfitmInput = document.getElementById("passConfirm")
                         if(passInput.value !== passConfitmInput.value){
                             passInput // invalid
-                                .setCustomValidity('Must match !')
+                                .setCustomValidity('Las contraseñas no coinciden !')
                         } else {
                             passInput // valid
                                 .setCustomValidity('')
