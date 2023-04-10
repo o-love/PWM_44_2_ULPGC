@@ -3,27 +3,27 @@
   {
     "name": "Polo",
     "model": "Volkswagen T9",
-    "imgSrc": "../img/car.PNG"
+    "imgSrc": "./assets/img/car/car_ferrari.png"
   },
   {
     "name": "Toyota",
     "model": "Benz",
-    "imgSrc":"../img/car.PNG"
+    "imgSrc":"./assets/img/car/car_golf.png"
   },
   {
     "name": "Dad's car",
     "model": "Volkswagen",
-    "imgSrc": "../img/car.PNG"
+    "imgSrc": "./assets/img/car/car_gti.png"
   },
   {
     "name": "Friend's car",
     "model": "T9",
-    "imgSrc": "../img/car.PNG"
+    "imgSrc": "./assets/img/car/car_toyota.png"
   },
   {
     "name": "Renault",
     "model": "Tesla",
-    "imgSrc": "../img/car.PNG"
+    "imgSrc": "./assets/img/car/car_truck.png"
   }
   ]
 }

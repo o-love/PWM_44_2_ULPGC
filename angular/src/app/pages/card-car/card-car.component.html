@@ -1,1 +1,16 @@
-<p>card-car works!</p>
+<div *ngFor="let car of cars" class="car-card">
+  <ng-container *ngTemplateOutlet="carCardTemplate; context: { car: car }"></ng-container>
+</div>
+
+<ng-template #carCardTemplate let-car>
+  <div class="card-car-img-text-container">
+    <img src="{{cars.imgSrc}}" class="card-img" alt="coche">
+    <div class="card-body">
+      <h3 class="card-title">{{ cars.name }}</h3>
+      <p class="card-text">{{ cars.model }}</p>
+      <button class="btn btn-primary mb-1 btn-card-car">
+        <i class="fa-solid fa-expand"></i>
+      </button>
+    </div>
+  </div>
+</ng-template>
