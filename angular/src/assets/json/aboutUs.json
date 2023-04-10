@@ -2,19 +2,19 @@
   "paragraphs": [
     {
       "text": "Somos una empresa que se dedica a orientar a sus clientes a un buen mantenimiento de su vehiculo.",
-      "img": "../aboutUs/iconBus.png"
+      "img": "./assets/img/aboutUs/IconBus.png"
     },
     {
       "text": "Le hacemos recomendaciones por gasolineras cercanas a usted, filtrandolas por los parametros que desee.",
-      "img": "../aboutUs/iconCar.png"
+      "img": "./assets/img/aboutUs/IconCar.png"
     },
     {
       "text": "Mantenemos el control de su vehiculo como el cambio de la correa de distribucion, revision de las ruedas,cambios de aceite etc...",
-      "img": "../aboutUs/iconTruck.png"
+      "img": "./assets/img/aboutUs/IconTruck.png"
     },
     {
       "text": "No dudes en registrarte, tener un buen mantenimiento ayuda  a prevenir futuras averias</strong> y lo mas importante para nosotros es ayudar nuestros clientes.",
-      "img": "../aboutUs/iconWrench.png"
+      "img": "./assets/img/aboutUs/IconWrench.png"
     }
   ]
 }

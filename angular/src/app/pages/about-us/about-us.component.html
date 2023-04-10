@@ -1,1 +1,4 @@
-<p>about-us works!</p>
+<div *ngFor="let paragraph of paragraphs" class="paragraph" style="margin-top:1rem;">
+  <img src="{{ paragraph.img }}" style="width:4rem; height:4rem; margin-left:1rem" >
+  <p style="display:inline;  margin-left:1rem; width:60%">{{ paragraph.text }}</p>
+</div>
