@@ -1,6 +1,23 @@
+<div class="containerList">
+  <div class="headerListContainer">
+    <h3>Lista de Usuarios:</h3>
+    <div class="searchBox">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" name="search" placeholder="Buscar..." class="searchInput" autocomplete="off">
+    </div>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <td class="tableHeader">Foto</td>
+      <td class="tableHeader elementUser">Usuario</td>
+      <td class="tableHeader">Email</td>
+      <td class="tableHeader"></td>
+      <td class="tableHeader"></td>
+    </tr>
+    </thead>
+    
+    <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
 
-<ul>
-  <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
-</ul>
-
-hello
+  </table>
+</div>

@@ -1,0 +1,57 @@
+td {
+  min-width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-bottom: solid 1px black;
+}
+
+tr {
+  background-color: lightblue;
+}
+
+.fa-trash-can {
+  color: red;
+}
+
+.fa-solid {
+}
+
+.fa-pen-to-square {
+  color: black;
+}
+
+
+.imgProfile {
+  max-width: 70px;
+  max-height: 90px;
+  border-radius: 100px;
+}
+
+
+.btnTable {
+  font-size: 1.5rem;
+}
+
+/*movil*/
+@media only screen and (max-width: 800px) {
+  td.elementUser {
+    display: none;
+  }
+
+
+  tr {
+    max-width: 20%;
+    margin: auto;
+  }
+
+  .imgProfile {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 100px;
+  }
+
+  .headerListContainer {
+    flex-direction: column;
+    max-width: 70%;
+  }
+}

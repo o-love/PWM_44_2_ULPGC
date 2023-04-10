@@ -5,7 +5,7 @@ import {UserService} from "../../services/user.service";
 @Component({
   selector: 'app-admins-user-list',
   templateUrl: './admins-user-list.component.html',
-  styleUrls: ['./admins-user-list.component.sass']
+  styleUrls: ['./admins-user-list.component.css']
 })
 export class AdminsUserListComponent {
   users: User[] = [];

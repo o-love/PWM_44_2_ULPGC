@@ -5,21 +5,24 @@
       "username": "alejandro",
       "email": "alejandro@gmail.com",
       "password": "123",
-      "is_admin": false
+      "is_admin": false,
+      "photo_url": ""
     },
     {
       "id": 2,
       "username": "Oscar",
       "email": "oscar@gmail.com",
       "password": "123",
-      "is_admin": true
+      "is_admin": true,
+      "photo_url": ""
     },
     {
       "id": 3,
       "username": "cesar",
       "email": "cesar@gmail.com",
       "password": "123",
-      "is_admin": true
+      "is_admin": true,
+      "photo_url": ""
     }
   ]
 }
