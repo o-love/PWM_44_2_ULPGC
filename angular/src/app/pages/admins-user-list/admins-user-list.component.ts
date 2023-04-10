@@ -13,9 +13,14 @@ export class AdminsUserListComponent {
   constructor(private userService: UserService) {
   }
 
-  loadUsers() {
+  ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers() {
     this.userService.getUsers().subscribe(
       (userList: User[]) => {
+        console.log(userList);
         this.users = [...this.users, ...userList];
       }
     )
