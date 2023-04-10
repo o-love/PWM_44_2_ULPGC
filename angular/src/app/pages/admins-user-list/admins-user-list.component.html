@@ -6,19 +6,19 @@
       <input type="text" name="search" placeholder="Buscar..." class="searchInput" autocomplete="off">
     </div>
   </div>
-  <table>
+  <table class="table table-hover">
     <thead>
     <tr>
-      <td class="tableHeader">Foto</td>
-      <td class="tableHeader elementUser">Usuario</td>
-      <td class="tableHeader">Email</td>
-      <td class="tableHeader"></td>
-      <td class="tableHeader"></td>
+      <td scope="col">Foto</td>
+      <td scope="col">Usuario</td>
+      <td scope="col">Email</td>
+      <td scope="col"></td>
+      <td scope="col"></td>
     </tr>
     </thead>
-    
-    <tr class="fila" *ngFor="let user of users">
-      <td><img class="imgProfile" src="{{user.photo_url}}" alt=""></td>
+
+    <tr *ngFor="let user of users">
+      <td><img class="me-2" src="{{user.photo_url}}" alt=""></td>
       <td class="elementUser">{{user.username}}</td>
       <td>{{user.email}}</td>
       <td class="btnTable"><a><i class="fa-solid fa-pen-to-square"></i></a></td>
