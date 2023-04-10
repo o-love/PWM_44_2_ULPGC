@@ -4,6 +4,8 @@ import {Observable} from "rxjs";
 import {User} from "../models/user.model";
 import {of} from "rxjs";
 
+import data from '../../assets/json/users.json';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +15,6 @@ export class UserService {
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>('./assets/json/users.json')
+    return of(data.users)
   }
 }
