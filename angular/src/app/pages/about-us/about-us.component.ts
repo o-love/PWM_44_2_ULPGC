@@ -15,7 +15,6 @@ export class AboutUsComponent implements OnInit{
   ngOnInit(): void {
     this.http.get('../../assets/json/aboutUs.json').subscribe((data: any) => {
       this.paragraphs = data.paragraphs;
-      console.log(this.paragraphs)
     });
   }
 }

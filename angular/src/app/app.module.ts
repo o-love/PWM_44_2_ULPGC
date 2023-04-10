@@ -10,6 +10,7 @@ import {AdminsUserListComponent} from './pages/admins-user-list/admins-user-list
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -19,13 +20,14 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
     AdminsUserListComponent,
     AboutUsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    BrowserAnimationsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        NgOptimizedImage
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
