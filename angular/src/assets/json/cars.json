@@ -1,0 +1,29 @@
+{
+  "cars": [
+  {
+    "name": "Polo",
+    "model": "Volkswagen T9",
+    "imgSrc": "../img/car.PNG"
+  },
+  {
+    "name": "Toyota",
+    "model": "Benz",
+    "imgSrc":"../img/car.PNG"
+  },
+  {
+    "name": "Dad's car",
+    "model": "Volkswagen",
+    "imgSrc": "../img/car.PNG"
+  },
+  {
+    "name": "Friend's car",
+    "model": "T9",
+    "imgSrc": "../img/car.PNG"
+  },
+  {
+    "name": "Renault",
+    "model": "Tesla",
+    "imgSrc": "../img/car.PNG"
+  }
+  ]
+}
