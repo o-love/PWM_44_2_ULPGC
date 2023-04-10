@@ -9,7 +9,6 @@ import {HomePageComponent} from './pages/home-page/home-page.component';
 import {AdminsUserListComponent} from './pages/admins-user-list/admins-user-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
-import {UserCardComponent} from './pages/admins-user-list/user-card/user-card.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
     HeaderComponent,
     HomePageComponent,
     AdminsUserListComponent,
-    UserCardComponent,
     AboutUsComponent
   ],
   imports: [

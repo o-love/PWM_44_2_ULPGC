@@ -17,7 +17,14 @@
     </tr>
     </thead>
     
-    <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
+    <tr class="fila" *ngFor="let user of users">
+      <td><img class="imgProfile" src="{{user.photo_url}}" alt=""></td>
+      <td class="elementUser">{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td class="btnTable"><a><i class="fa-solid fa-pen-to-square"></i></a></td>
+      <td class="btnTable"><a><i class="fa-solid fa-trash-can"></i></a></td>
+    </tr>
+
 
   </table>
 </div>
