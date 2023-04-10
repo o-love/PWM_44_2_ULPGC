@@ -10,6 +10,7 @@ import {AdminsUserListComponent} from './pages/admins-user-list/admins-user-list
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {UserCardComponent} from './pages/admins-user-list/user-card/user-card.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {UserCardComponent} from './pages/admins-user-list/user-card/user-card.co
     HeaderComponent,
     HomePageComponent,
     AdminsUserListComponent,
-    UserCardComponent
+    UserCardComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
