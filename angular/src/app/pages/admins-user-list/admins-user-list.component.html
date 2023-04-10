@@ -1,6 +1,6 @@
 
 <ul>
-  <li *ngFor="let user of users">{{ user.username}}</li>
+  <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
 </ul>
 
 hello

@@ -9,13 +9,15 @@ import {HomePageComponent} from './pages/home-page/home-page.component';
 import {AdminsUserListComponent} from './pages/admins-user-list/admins-user-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import {UserCardComponent} from './pages/admins-user-list/user-card/user-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomePageComponent,
-    AdminsUserListComponent
+    AdminsUserListComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,
