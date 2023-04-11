@@ -24,6 +24,11 @@
     "name": "Renault",
     "model": "Tesla",
     "imgSrc": "./assets/img/car/car_truck.PNG"
-  }
+  },
+    {
+      "name": "Seat",
+      "model": "Azteca z8",
+      "imgSrc": "./assets/img/car/car_seat.PNG"
+    }
   ]
 }
