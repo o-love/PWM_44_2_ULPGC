@@ -3,7 +3,7 @@
     <h3>Lista de Usuarios:</h3>
     <div class="searchBox">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" name="search" placeholder="Buscar..." class="searchInput" autocomplete="off">
+      <input type="text" name="search" placeholder="Buscar..." autocomplete="off" [(ngModel)]="searchText">
     </div>
   </div>
   <table class="table table-hover">
@@ -18,7 +18,7 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users | userFilter: searchText">
       <td scope="col"><img class="me-2" src="{{user.photo_url}}" alt=""></td>
       <td scope="col" class="elementUser">{{user.username}}</td>
       <td scope="col">{{user.email}}</td>

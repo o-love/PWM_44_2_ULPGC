@@ -8,6 +8,7 @@ import {UserService} from "../../services/user.service";
   styleUrls: ['./admins-user-list.component.sass']
 })
 export class AdminsUserListComponent {
+  searchText: string = '';
   users: User[] = [];
 
   constructor(private userService: UserService) {
