@@ -13,6 +13,7 @@ import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {NgOptimizedImage} from "@angular/common";
 import {UserFilterPipe} from './models/User/user-filter.pipe';
 import {FormsModule} from "@angular/forms";
+import { CardCarComponent } from './pages/card-car/card-car.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {FormsModule} from "@angular/forms";
     HomePageComponent,
     AdminsUserListComponent,
     AboutUsComponent,
+    CardCarComponent,
     UserFilterPipe,
   ],
   imports: [

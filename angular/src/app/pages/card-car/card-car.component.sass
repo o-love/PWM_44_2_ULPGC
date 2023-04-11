@@ -9,8 +9,13 @@
   transition: background-color 0.3s ease
 
 .card-car-img-text-container:hover
-  background-color: #daf0f4
+  background-color: #8af0f4
   cursor: pointer
+
+.card-car-img-text-container:hover
+  cursor: pointer
+  transform: scale(1.05)
+  transition: all 0.3s ease
 
 #carList
   flex: 1
@@ -35,9 +40,25 @@
   margin-top: 0
   margin-bottom: 15px
 
+.cards-full-contain
+  justify-content: center
+
+.odd-background-card-car
+  background: #EFFFFF
+
+.even-background-card-car
+  background: white
+
 .card-title
   font-size: calc(1.5rem + 1.5vw)
   margin: 1rem
+
+.container
+  padding-left: 0
+  padding-right: 0
+  display: inline-block
+  margin: 4rem
+  width: auto
 
 .card-text
   font-size: calc(0.5rem + 1vw)
@@ -46,3 +67,23 @@
 
 .cards-container
   text-align: center
+
+.btn-card-expand
+  background: #0065A3
+  padding: 0.5rem
+  color: #FFFFEE
+  float: right
+  border: none
+  margin: 1rem
+  border-radius: 20%
+  height: 3.5rem
+  width: 3.5rem
+  margin-top: 0
+  margin-bottom: 15px
+
+.btn-card-expand i.fa-expand
+  font-size: 2rem
+  transition: transform 0.2s ease-in-out
+
+.btn-card-expand:hover i.fa-expand
+  transform: scale(1.2)

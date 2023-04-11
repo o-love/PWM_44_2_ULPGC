@@ -1,16 +1,14 @@
-<div *ngFor="let car of cars" class="car-card">
-  <ng-container *ngTemplateOutlet="carCardTemplate; context: { car: car }"></ng-container>
-</div>
-
-<ng-template #carCardTemplate let-car>
-  <div class="card-car-img-text-container">
-    <img src="{{cars.imgSrc}}" class="card-img" alt="coche">
+<div class="cards-full-contain">
+<div *ngFor="let car of cars; let j = index" class="car-card container text-center card-group" (click)="navigateToCarDetails(car)">
+  <div class="card-car-img-text-container" [ngClass]="{'odd-background-card-car': j % 2 === 0, 'even-background-card-car': j % 2 === 1}">
+    <img src="{{ car.imgSrc }}" class="card-img" alt="coche">
     <div class="card-body">
-      <h3 class="card-title">{{ cars.name }}</h3>
-      <p class="card-text">{{ cars.model }}</p>
-      <button class="btn btn-primary mb-1 btn-card-car">
+      <h3 class="card-title">{{ car.name }}</h3>
+      <p class="card-text">{{ car.model }}</p>
+      <button class="btn btn-primary mb-1 btn-card-car btn-card-expand">
         <i class="fa-solid fa-expand"></i>
       </button>
     </div>
   </div>
-</ng-template>
+</div>
+</div>
