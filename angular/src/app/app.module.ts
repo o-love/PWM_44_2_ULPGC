@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import {CardCarComponent} from './pages/card-car/card-car.component';
 import {MapComponent} from './pages/GeneralComponents/map/map.component';
 import {GasStationListComponent} from './pages/home-page/gas-station-list/gas-station-list.component';
+import { LoginComponent } from './pages/login/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,12 @@ import {GasStationListComponent} from './pages/home-page/gas-station-list/gas-st
     HeaderComponent,
     HomePageComponent,
     AdminsUserListComponent,
-    AboutUsComponent,
     CardCarComponent,
     UserFilterPipe,
     MapComponent,
     GasStationListComponent,
+    AboutUsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
