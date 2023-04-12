@@ -13,7 +13,9 @@ import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {NgOptimizedImage} from "@angular/common";
 import {UserFilterPipe} from './models/User/user-filter.pipe';
 import {FormsModule} from "@angular/forms";
-import { CardCarComponent } from './pages/card-car/card-car.component';
+import {CardCarComponent} from './pages/card-car/card-car.component';
+import {MapComponent} from './pages/GeneralComponents/map/map.component';
+import {GasStationListComponent} from './pages/home-page/gas-station-list/gas-station-list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { CardCarComponent } from './pages/card-car/card-car.component';
     AboutUsComponent,
     CardCarComponent,
     UserFilterPipe,
+    MapComponent,
+    GasStationListComponent,
   ],
   imports: [
     BrowserModule,
