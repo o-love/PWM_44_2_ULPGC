@@ -18,6 +18,7 @@ import {MapComponent} from './pages/GeneralComponents/map/map.component';
 import {GasStationListComponent} from './pages/home-page/gas-station-list/gas-station-list.component';
 import { DataUserComponent } from './pages/GeneralComponents/data-user/data-user.component';
 import { LoginComponent } from './pages/login/login/login.component';
+import { FooterComponent } from './pages/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoginComponent } from './pages/login/login/login.component';
     GasStationListComponent,
     DataUserComponent,
     AboutUsComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
