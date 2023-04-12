@@ -1,1 +1,10 @@
-<p>gas-station-list works!</p>
+hello
+<div *ngFor="let gasStation of gasStations">
+  <h2>{{gasStation.name}}</h2>
+  <p>{{gasStation.address}}. {{gasStation.municipality}}, {{gasStation.zip}}</p>
+  <ul>
+    <li *ngFor="let fuel of gasStation.gasPrices">
+      <p>{{fuel.gas_type}}: {{fuel.price}}€</p>
+    </li>
+  </ul>
+</div>
