@@ -46,6 +46,7 @@ import { FooterComponent } from './pages/footer/footer.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
