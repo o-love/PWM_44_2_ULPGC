@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
   host:{
-    class:"vh-100 d-flex flex-column "
+    class:" "
   }
 })
 export class AppComponent {

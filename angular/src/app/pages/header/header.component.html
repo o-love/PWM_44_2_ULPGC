@@ -1,36 +1,37 @@
-<nav class="navbar navbar-expand-lg " style="background-color: #0065A3">
-  <a class="navbar-brand mx-2 my-auto text-white h3" [routerLink]="['/']">LOGO</a>
-  <div class="d-flex justify-content-between w-100" id="navbarNav">
-    <ul class="navbar-nav" *ngIf='Rol==="Admin"'>
-      <li class="nav-item active">
-        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav" *ngIf='Rol==="usuarioLogeado"'>
-      <li class="nav-item active">
-        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav" *ngIf='Rol==="usuarioNoLogeado"'>
-      <li class="nav-item active">
-        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
-      </li>
-    </ul>
-    <button class="btn btn-primary mx-2 text-white" [routerLink]="['/login']" >Login</button>
-  </div>
-</nav>
+<div class="">
+  <!--    <img id="headerLogo" class="headerSection headerLeftSection" src="../img/Logo.png" alt="Logo">-->
+  <a class=" mx-2 my-auto text-white h3" [routerLink]="['/']">LOGO</a>
+</div>
+<div class="" id="navbarNav">
+  <ul class="" *ngIf='Rol==="Admin"'>
+    <li class="nav-item active">
+      <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
+    </li>
+  </ul>
+  <ul class="" *ngIf='Rol==="usuarioLogeado"'>
+    <li class="nav-item active">
+      <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
+    </li>
+  </ul>
+  <ul class="" *ngIf='Rol==="usuarioNoLogeado"'>
+    <li class="nav-item active">
+      <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
+    </li>
+  </ul>
+  <button class="btn btn-primary mx-2 text-white" [routerLink]="['/login']">Login</button>
+</div>
