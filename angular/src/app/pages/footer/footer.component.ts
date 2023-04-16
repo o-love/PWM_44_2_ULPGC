@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.sass'],
   host:{
-    class:"mt-auto"
+    class:"mt-auto d-none d-lg-block"
   }
 })
 export class FooterComponent {
