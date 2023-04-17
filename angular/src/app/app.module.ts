@@ -35,7 +35,7 @@ import { UserFormIconAndOptionsComponent } from './pages/GeneralComponents/user-
     AboutUsComponent,
     LoginComponent,
     FooterComponent,
-    UserFormIconAndOptionsComponent
+    UserFormIconAndOptionsComponent,
   ],
   imports: [
     BrowserModule,
