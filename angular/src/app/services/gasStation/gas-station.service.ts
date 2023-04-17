@@ -44,7 +44,6 @@ export class GasStationService {
   constructor(protected http: HttpClient) { }
 
   getGasStations(): Observable<GasStation[]> {
-    this.http.get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/').subscribe((rawGasStations: any) => console.log(rawGasStations));
     return this.http.get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/')
       .pipe(map((rawGasStations: any) => rawGasStations.ListaEESSPrecio.map(rawGasStationMapper)));
   }
