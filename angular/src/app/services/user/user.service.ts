@@ -18,4 +18,10 @@ export class UserService {
   getUsers(): Observable<User[]> {
     return of(data.users)
   }
+  getUserById(userId: User): Observable<User | null> {
+    const user = data.users.find(user => user === userId);
+    console.log(user)
+    return user ? of(user) : of(null);
+  }
+
 }

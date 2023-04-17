@@ -19,7 +19,7 @@ import {GasStationListComponent} from './pages/home-page/gas-station-list/gas-st
 import { DataUserComponent } from './pages/GeneralComponents/data-user/data-user.component';
 import { LoginComponent } from './pages/login/login/login.component';
 import { FooterComponent } from './pages/footer/footer.component';
-
+import { UserFormIconAndOptionsComponent } from './pages/GeneralComponents/user-form-icon-and-options/user-form-icon-and-options.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +34,8 @@ import { FooterComponent } from './pages/footer/footer.component';
     DataUserComponent,
     AboutUsComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    UserFormIconAndOptionsComponent
   ],
   imports: [
     BrowserModule,

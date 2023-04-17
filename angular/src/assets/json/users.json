@@ -6,7 +6,7 @@
       "email": "alejandro@gmail.com",
       "password": "123",
       "is_admin": false,
-      "photo_url": ""
+      "photo_url": "./assets/img/users/user_foto.PNG"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "email": "oscar@gmail.com",
       "password": "123",
       "is_admin": true,
-      "photo_url": ""
+      "photo_url": "./assets/img/users/user_foto.PNG"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "email": "cesar@gmail.com",
       "password": "123",
       "is_admin": true,
-      "photo_url": ""
+      "photo_url": "./assets/img/users/user_foto.PNG"
     }
   ]
 }
