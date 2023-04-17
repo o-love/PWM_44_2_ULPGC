@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 import {GasStation} from "../../models/GasStation/gas-station.model";
 import {GasPrice} from "../../models/GasStation/gas-price.model";
+import {GasProvincia} from "../../models/GasStation/gas-provincia.model";
 
 function rawGasStationMapper(rawGasStation: any): GasStation {
   let prices: GasPrice[] = [];
@@ -41,10 +42,20 @@ function rawGasStationMapper(rawGasStation: any): GasStation {
 })
 export class GasStationService {
 
-  constructor(protected http: HttpClient) { }
+  constructor(protected http: HttpClient) {
+  }
 
   getGasStations(): Observable<GasStation[]> {
     return this.http.get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/')
       .pipe(map((rawGasStations: any) => rawGasStations.ListaEESSPrecio.map(rawGasStationMapper)));
+  }
+
+  getGasStationsByProvince(provinceID: number): Observable<GasStation[]> {
+    return this.http.get(`https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProvincia/${provinceID}`)
+      .pipe(map((rawGasStations: any) => rawGasStations.ListaEESSPrecio.map(rawGasStationMapper)));
+  }
+
+  getGasStationProvincias(): Observable<GasProvincia[]> {
+    return this.http.get<GasProvincia[]>('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/Provincias/');
   }
 }
