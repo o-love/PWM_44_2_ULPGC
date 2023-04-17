@@ -1,10 +1,12 @@
+<div id="gasStationListContainer">
+  <div *ngFor="let gasStation of gasStations" class="GasStationListElement">
+    <h2>{{gasStation.name}}</h2>
+    <p>{{gasStation.address}}. {{gasStation.municipality}}, {{gasStation.zip}}</p>
+    <ul>
+      <li *ngFor="let fuel of gasStation.gasPrices" class="gasStationListPrices">
+        <p>{{fuel.gas_type}}: {{fuel.price}}€</p>
+      </li>
+    </ul>
+  </div>
 
-<div *ngFor="let gasStation of gasStations">
-  <h2>{{gasStation.name}}</h2>
-  <p>{{gasStation.address}}. {{gasStation.municipality}}, {{gasStation.zip}}</p>
-  <ul>
-    <li *ngFor="let fuel of gasStation.gasPrices">
-      <p>{{fuel.gas_type}}: {{fuel.price}}€</p>
-    </li>
-  </ul>
 </div>
