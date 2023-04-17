@@ -1,39 +1,40 @@
-<div class="" style="background-color: blue">
-  <div class="">
+<div class="d-flex p-2" style="background-color: #0065A3">
+  <div class="my-auto">
     <!--    <img id="headerLogo" class="headerSection headerLeftSection" src="../img/Logo.png" alt="Logo">-->
     <a class=" mx-2 my-auto text-white h3" [routerLink]="['/']">LOGO</a>
   </div>
-  <div class="" id="navbarNav">
-    <ul class="" *ngIf='Rol==="Admin"'>
-      <li class="">
+  <div class="my-auto flex-grow-1 d-flex justify-content-between" id="navbarNav">
+    <ul class="list-unstyled" *ngIf='Rol==="Admin"'>
+      <li class="ms-2 p-2 rounded">
         <a class="text-white" [routerLink]="['/adminPage']">AdminPage</a>
       </li>
-      <li class="">
+      <li class="ms-2 p-2 rounded">
         <a class="text-white" [routerLink]="['/adminPage']">AdminPage</a>
       </li>
-      <li class="">
+      <li class="ms-2 p-2 rounded">
         <a class="text-white" [routerLink]="['/adminPage']">AdminPage</a>
       </li>
     </ul>
-    <ul class="" *ngIf='Rol==="usuarioLogeado"'>
-      <li class="nav-item active">
+    <ul class="list-unstyled d-flex" *ngIf='Rol==="usuarioLogeado"'>
+      <li class="ms-2 p-2 rounded">
         <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
       </li>
-      <li class="nav-item">
+      <li class="ms-2 p-2 rounded">
         <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
-      </li>
-    </ul>
-    <ul class="" *ngIf='Rol==="usuarioNoLogeado"'>
-      <li class="nav-item active">
-        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
-      </li>
-      <li class="nav-item">
+      <li class="ms-2 p-2 rounded">
         <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
       </li>
     </ul>
-    <button class="btn btn-primary mx-2 text-white" [routerLink]="['/login']">Login</button>
+    <ul class="list-unstyled d-flex my-auto" *ngIf='Rol==="usuarioNoLogeado"'>
+      <li class="ms-2 p-2 rounded">
+        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
+      </li>
+      <li class="ms-2 p-2 rounded">
+        <a class="nav-link text-white" [routerLink]="['/adminPage']">AdminPage</a>
+      </li>
+    </ul>
+    <button class="btn btn-primary mx-2 text-white" [routerLink]="['/login']" *ngIf='Rol==="usuarioNoLogeado"'>Login</button>
+    <a class=" mx-2 my-auto text-white h3" *ngIf='Rol!=="usuarioNoLogeado"'>Foto</a>
   </div>
 </div>
