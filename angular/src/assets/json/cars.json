@@ -1,30 +1,30 @@
 {
   "cars": [
-  {
-    "name": "Polo",
-    "model": "Volkswagen T9",
-    "imgSrc": "./assets/img/car/car_ferrari.PNG"
-  },
-  {
-    "name": "Toyota",
-    "model": "Benz",
-    "imgSrc":"./assets/img/car/car_golf.PNG"
-  },
-  {
-    "name": "Dad's car",
-    "model": "Volkswagen",
-    "imgSrc": "./assets/img/car/car_gti.PNG"
-  },
-  {
-    "name": "Friend's car",
-    "model": "T9",
-    "imgSrc": "./assets/img/car/car_toyota.PNG"
-  },
-  {
-    "name": "Renault",
-    "model": "Tesla",
-    "imgSrc": "./assets/img/car/car_truck.PNG"
-  },
+    {
+      "name": "Polo",
+      "model": "Volkswagen T9",
+      "imgSrc": "./assets/img/car/car_ferrari.PNG"
+    },
+    {
+      "name": "Toyota",
+      "model": "Benz",
+      "imgSrc":"./assets/img/car/car_golf.PNG"
+    },
+    {
+      "name": "Dad's car",
+      "model": "Volkswagen",
+      "imgSrc": "./assets/img/car/car_gti.PNG"
+    },
+    {
+      "name": "Friend's car",
+      "model": "T9",
+      "imgSrc": "./assets/img/car/car_toyota.PNG"
+    },
+    {
+      "name": "Renault",
+      "model": "Tesla",
+      "imgSrc": "./assets/img/car/car_truck.PNG"
+    },
     {
       "name": "Seat",
       "model": "Azteca z8",

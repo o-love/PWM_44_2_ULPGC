@@ -1,14 +1,25 @@
 <div class="cards-full-contain">
-<div *ngFor="let car of cars; let j = index" class="car-card container text-center card-group" (click)="navigateToCarDetails(car)">
-  <div class="card-car-img-text-container" [ngClass]="{'odd-background-card-car': j % 2 === 0, 'even-background-card-car': j % 2 === 1}">
-    <img src="{{ car.imgSrc }}" class="card-img" alt="coche">
-    <div class="card-body">
-      <h3 class="card-title">{{ car.name }}</h3>
-      <p class="card-text">{{ car.model }}</p>
-      <button class="btn btn-primary mb-1 btn-card-car btn-card-expand">
-        <i class="fa-solid fa-expand"></i>
-      </button>
+  <div *ngFor="let car of cars; let j = index" class="car-card container text-center card-group" (click)="navigateToCarDetails(car)">
+    <div class="card-car-img-text-container" [ngClass]="{'odd-background-card-car': j % 2 === 0, 'even-background-card-car': j % 2 === 1}">
+      <img src="{{ car.imgSrc }}" class="card-img" alt="coche">
+      <div class="card-body">
+        <h3 class="card-title">{{ car.name }}</h3>
+        <p class="card-text">{{ car.model }}</p>
+        <button class="btn btn-primary mb-1 btn-card-car btn-card-expand">
+          <i class="fa-solid fa-expand"></i>
+        </button>
+      </div>
     </div>
   </div>
-</div>
+  <div class="car-card container text-center card-group" (click)="navigateToCarCreate()">
+    <div class="card-car-img-text-container gray-background-card-car add-car">
+      <div class="card-body">
+        <h3 class="card-title text-add-car">Añadir coche</h3>
+        <div class="add-car-group">
+          <i class="fa-solid fa-plus"  aria-hidden="true"></i>
+          <i class="fa-solid fa-car"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

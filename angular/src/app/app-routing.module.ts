@@ -16,7 +16,6 @@ const routes: Routes = [
   {path: 'cardCar', component: CardCarComponent},
   {path: 'dataUser', component: DataUserComponent},
   {path: 'cardCar', component: CardCarComponent},
-  {path: 'aboutUs', component: AboutUsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'test', component: GasStationListComponent},
   {path: 'userInfo',component:UserFormIconAndOptionsComponent}

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AdminsUserListComponent {
   searchText: string = '';
   users: User[] = [];
-  userSelected: User | null | undefined;
+  user: User | null | undefined;
   constructor(private userService: UserService, private router: Router) {
   }
 
@@ -27,12 +27,11 @@ export class AdminsUserListComponent {
       }
     )
   }
-  getUserId(user: User) {
+  getUserId(user: number) {
     this.userService.getUserById(user).subscribe(
       (user: User | null) => {
-        this.userSelected = user;
-        let userSelect= this.userSelected?.id
-        this.router.navigate(['userInfo', this.userSelected]);
+        this.user = user;
+        this.router.navigate(['userInfo', {number: this.user?.id}]);
       }
     );
   }
