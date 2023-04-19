@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {GasStation} from "../../../models/GasStation/gas-station.model";
 
 @Component({
   selector: 'app-map',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class MapComponent {
 
+  @Input()
+  gasStations: GasStation[] = [];
 }
