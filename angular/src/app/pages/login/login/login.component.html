@@ -1,12 +1,12 @@
-<form class="w-50 my-auto formulario p-3 rounded d-block d-md-block">
+<form (ngSubmit)="logIn()" class="w-50 my-auto formulario p-3 rounded d-block d-md-block">
   <h2 class="text-center mb-3">Login</h2>
   <div class="my-3 d-flex flex-column w-75 m-auto">
     <label class="form-label">Email</label>
-    <input type="email" class="w-100" id="emailInput">
+    <input type="email" class="w-100" id="emailInput" [(ngModel)]="Name" name="email">
   </div>
   <div class="my-4 d-flex flex-column w-75 m-auto">
     <label class="form-label">Contraseña</label>
-    <input type="password" class="w-100" id="passInput">
+    <input type="password" class="w-100" id="passInput" [(ngModel)]="Password" name="password">
   </div>
   <div class="text-center mb-3">
     <button class="boton p-2 text-white">Inicia Sesión</button>

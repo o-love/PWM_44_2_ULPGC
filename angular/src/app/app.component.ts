@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
   host:{
-    class:" "
+    id:"app"
   }
 })
 export class AppComponent {

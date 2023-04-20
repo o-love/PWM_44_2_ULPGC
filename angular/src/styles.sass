@@ -6,7 +6,15 @@
 
 body
   min-height: 100vh
+  display: flex
+#app
+  min-height: 100%
+  flex: 1
+  display: flex
+  flex-direction: column
 
+#pruebaContenido
+  flex: 1
 .boton
   background-color: rgb(93, 204, 252)
   border: 1px solid #000
@@ -19,21 +27,30 @@ body
 input
   border: none
   border-bottom: solid black 1px
+#headerMobile
+  display: none
 
-:root
+@media screen and (max-width: 575px)
+  #headerMobile
+    display: block
+  #headerPadre
+    min-width: 100%
+  .hideOnMobile
+    display: none
+
+\:root
   --super-light-blue: #daf0f4
   --light-blue: #99d8ff
   --power-blue: #5DCCFC
   --dark-blue: #0065a3
   --super-dark-blue: #00426a
-  --bg-table:#DAF0F4
+  --bg-table: #DAF0F4
   --row-border-color: #a5a2a2
-  --border-buttons-profile:#B5B5B5
-  --hover-profile-options:#c4c2c2
-  --background-data-user:#FFF9F9
-  --orange-Mantenimento:#DC7D0D
-  --green-Mantenimento:#1BB54F
-  --red-Mantenimento:#DB1818
-  --hard-blue:#1FA9FF
-  --hover-button:#0079C6
-
+  --border-buttons-profile: #B5B5B5
+  --hover-profile-options: #c4c2c2
+  --background-data-user: #FFF9F9
+  --orange-Mantenimento: #DC7D0D
+  --green-Mantenimento: #1BB54F
+  --red-Mantenimento: #DB1818
+  --hard-blue: #1FA9FF
+  --hover-button: #0079C6

@@ -20,6 +20,7 @@ import { DataUserComponent } from './pages/GeneralComponents/data-user/data-user
 import { LoginComponent } from './pages/login/login/login.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { UserFormIconAndOptionsComponent } from './pages/GeneralComponents/user-form-icon-and-options/user-form-icon-and-options.component';
+import { HeaderMobileComponent } from './pages/header-mobile/header-mobile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { UserFormIconAndOptionsComponent } from './pages/GeneralComponents/user-
     LoginComponent,
     FooterComponent,
     UserFormIconAndOptionsComponent,
+    HeaderMobileComponent,
   ],
   imports: [
     BrowserModule,
