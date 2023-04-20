@@ -3,3 +3,33 @@
 
 li:hover
   background-color: rgb(0, 66, 106)
+
+#linksAndPhotoHeader,#headerContainer
+  min-height: 100%
+
+#headerContainer
+  min-width: 100%
+
+.maxwidth
+  background-color: red
+
+@media screen and (max-width: 991px)
+  .listaLinksHeader
+    margin: 0 !important
+    margin-top: 2rem !important
+
+  #headerContainer,#linksAndPhotoHeader
+    padding: 0 !important
+    padding-top: 1rem !important
+
+  #linksAndPhotoHeader,.itemHeader
+    margin: 0 !important
+    border-radius: 0 !important
+    border-bottom: solid 1px black
+  #btnLogin
+    margin-bottom: 1rem
+
+
+@media screen and (max-width: 575px)
+  #headerContainer
+    min-width: 100%

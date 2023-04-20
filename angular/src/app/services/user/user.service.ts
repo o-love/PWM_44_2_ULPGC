@@ -26,4 +26,19 @@ export class UserService {
     console.log(user);
     return of(user);
   }
+
+  userCreated(email:String, pass:String){
+    data.users.forEach(user => {
+      if (user.email === email && user.password===pass){
+        //se guarda en local storage
+        console.log("habemus usuario")
+      }
+    })
+  }
+
+  onLoginChange():Observable<User>|null{
+    let user: User;
+
+    return null;
+  }
 }
