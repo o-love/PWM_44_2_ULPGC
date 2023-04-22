@@ -6,7 +6,11 @@ import {GasStationService} from "../../services/gasStation/gas-station.service";
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.sass']
+  styleUrls: ['./home-page.component.sass'],
+  host: {
+    id: "homePage",
+    class: "flex-grow-1 d-sm-flex justify-content-sm-center hideOnMobile"
+  }
 })
 export class HomePageComponent {
 
