@@ -21,6 +21,8 @@ import { LoginComponent } from './pages/login/login/login.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { UserFormIconAndOptionsComponent } from './pages/GeneralComponents/user-form-icon-and-options/user-form-icon-and-options.component';
 import { HeaderMobileComponent } from './pages/header-mobile/header-mobile.component';
+import {GoogleMapsModule} from '@angular/google-maps';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,7 @@ import { HeaderMobileComponent } from './pages/header-mobile/header-mobile.compo
     BrowserAnimationsModule,
     HttpClientModule,
     NgOptimizedImage,
+    GoogleMapsModule,
     FormsModule
   ],
   providers: [],

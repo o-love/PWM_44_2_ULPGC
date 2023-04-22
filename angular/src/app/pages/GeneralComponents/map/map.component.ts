@@ -1,7 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {View, Map} from 'ol';
-import TileLayer from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
 import {GasStation} from "../../../models/GasStation/gas-station.model";
 
 
@@ -13,19 +10,14 @@ import {GasStation} from "../../../models/GasStation/gas-station.model";
 export class MapComponent {
 
   @Input() gasStations: GasStation[] = [];
-  Map: Map | undefined;
+
+  options: google.maps.MapOptions = {
+    center: {lat: 40, lng: -20},
+    zoom: 4
+  };
 
   ngOnInit() {
-    this.Map = new Map({
-      view: new View({
-        center: [0, 0],
-        zoom: 1,
-      }),
-      layers: [new TileLayer({
-        source: new OSM()
-      })],
-      target: 'ol-map',
-    });
-    console.log(this.Map);
+
   }
+
 }
