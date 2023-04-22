@@ -25,8 +25,7 @@ export class AuthService {
       localStorage.setItem("userLoged",JSON.stringify(userLoged))
       return true;
     }
-    localStorage.removeItem("userLoged")
-    return true;
+    return false;
   }
 
   login(userEmail: String, userPassword: String): void {
@@ -37,6 +36,7 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem("userLoged")
+    console.log("saliendo")
     this.loggedIn.next(false); // cambia el valor del BehaviorSubject y notifica a sus suscriptores
   }
 }

@@ -38,8 +38,8 @@
     <div class="mx-2 text-white" *ngIf="!isLoggedIn">
       <button class="btn btn-primary mx-2 text-white" id="btnLogin" [routerLink]="['/login']">Login</button>
     </div>
-    <div class="mx-2 text-white" *ngIf="isLoggedIn">
-      <a class=" mx-2 my-auto text-white h3" (click)="miLogOut()">Foto</a>
+    <div class="mx-2 text-white mb-3" *ngIf="isLoggedIn">
+      <img src="../../../assets/img/users/user_foto.PNG" alt="User Photo" (click)="miLogOut()" id="fotoPerfilHeader" >
     </div>
 
   </div>
