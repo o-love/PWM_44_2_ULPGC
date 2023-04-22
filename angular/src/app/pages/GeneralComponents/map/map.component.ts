@@ -15,9 +15,12 @@ export class MapComponent {
     center: {lat: 40, lng: -20},
     zoom: 4
   };
+  markerClustererImagePath =
+    'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
 
   ngOnInit() {
 
   }
 
+  protected readonly unescape = unescape;
 }

@@ -25,6 +25,7 @@ export class HomePageComponent {
       provincias.forEach((provincia: GasProvincia) => {
         this.gasStationService.getGasStationsByProvince(provincia.IDPovincia).subscribe((gasStationList: GasStation[]) => {
           this.gasStations = [...this.gasStations, ...gasStationList];
+          console.log(this.gasStations);
         });
       });
     });

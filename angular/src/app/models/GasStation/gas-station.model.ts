@@ -4,9 +4,9 @@ export interface GasStation {
   zip: number;
   address: string;
   business_hours: string;
-  latitude: string;
+  latitude: number;
   locality: string;
-  longitude: string;
+  longitude: number;
   margin: string;
   municipality: string;
   province: string;

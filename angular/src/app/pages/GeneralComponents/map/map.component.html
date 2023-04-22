@@ -1,2 +1,6 @@
 <google-map [options]="options">
+  <map-marker-clusterer [imagePath]="markerClustererImagePath">
+    <map-marker *ngFor="let gasStation of gasStations"
+                [position]="{lat: gasStation.latitude, lng: gasStation.longitude}"></map-marker>
+  </map-marker-clusterer>
 </google-map>
