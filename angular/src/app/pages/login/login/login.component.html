@@ -1,4 +1,4 @@
-<form (ngSubmit)="logIn()" class="w-50 my-auto formulario p-3 rounded d-block d-md-block">
+<form class="w-50 my-auto formulario p-3 rounded d-block d-md-block">
   <h2 class="text-center mb-3">Login</h2>
   <div class="my-3 d-flex flex-column w-75 m-auto">
     <label class="form-label">Email</label>
@@ -8,9 +8,10 @@
     <label class="form-label">Contraseña</label>
     <input type="password" class="w-100" id="passInput" [(ngModel)]="Password" name="password">
   </div>
-  <div class="text-center mb-3">
-    <button class="boton p-2 text-white">Inicia Sesión</button>
+  <div class="text-center mb-3" >
+    <button class="boton p-2 text-white" (click)="login()">Inicia Sesión</button>
   </div>
+
   <p class="text-center">No tienes cuenta?. <a>Créala aquí</a></p>
 </form>
 

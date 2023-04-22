@@ -1,6 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import {UserService} from "../../services/user/user.service";
-import {User} from "../../models/User/user.model";
+import {AuthService} from "../../services/auth/auth.service";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,11 +12,32 @@ import {User} from "../../models/User/user.model";
 })
 
 export class HeaderComponent implements OnInit{
+  isLoggedIn = false;
 
   Rol: String = "usuarioNoLogeado";
-  constructor(private userService:UserService) {
-  }
-  ngOnInit(): void {
+  constructor(private authService: AuthService) { }
 
+  ngOnInit(): void {
+    this.authService.isLoggedIn.subscribe(
+      (loggedIn) => {
+        console.log("header => ",loggedIn);
+        this.isLoggedIn = loggedIn;
+        let user = localStorage.getItem("userLoged")
+        if (user===null){
+          this.Rol="usuarioNoLogeado"
+        }else{
+          if (JSON.parse(user).is_admin){
+            this.Rol="Admin"
+          }else{
+            this.Rol="usuarioLogeado"
+          }
+        }
+
+      }
+    );
+  }
+  miLogOut(){
+    this.authService.logout()
+    console.log("loged out")
   }
 }
