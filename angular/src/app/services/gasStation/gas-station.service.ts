@@ -11,7 +11,7 @@ function rawGasStationMapper(rawGasStation: any): GasStation {
     if (rawGasStation[key] === "") {
       return;
     }
-    prices.push({gas_type: key, price: parseFloat(rawGasStation[key].replace(',', '.'))} as GasPrice);
+    prices.push({gas_type: key.substring(7), price: parseFloat(rawGasStation[key].replace(',', '.'))} as GasPrice);
   });
 
   return {

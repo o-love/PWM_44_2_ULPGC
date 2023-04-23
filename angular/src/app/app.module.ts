@@ -16,12 +16,16 @@ import {FormsModule} from "@angular/forms";
 import {CardCarComponent} from './pages/card-car/card-car.component';
 import {MapComponent} from './pages/GeneralComponents/map/map.component';
 import {GasStationListComponent} from './pages/home-page/gas-station-list/gas-station-list.component';
-import { DataUserComponent } from './pages/GeneralComponents/data-user/data-user.component';
-import { LoginComponent } from './pages/login/login/login.component';
-import { FooterComponent } from './pages/footer/footer.component';
-import { UserFormIconAndOptionsComponent } from './pages/GeneralComponents/user-form-icon-and-options/user-form-icon-and-options.component';
-import { HeaderMobileComponent } from './pages/header-mobile/header-mobile.component';
+import {DataUserComponent} from './pages/GeneralComponents/data-user/data-user.component';
+import {LoginComponent} from './pages/login/login/login.component';
+import {FooterComponent} from './pages/footer/footer.component';
+import {
+  UserFormIconAndOptionsComponent
+} from './pages/GeneralComponents/user-form-icon-and-options/user-form-icon-and-options.component';
+import {HeaderMobileComponent} from './pages/header-mobile/header-mobile.component';
 import {GoogleMapsModule} from '@angular/google-maps';
+import {GasInfoPageComponent} from './pages/gas-info-page/gas-info-page.component';
+import {GasPriceListComponent} from './pages/GeneralComponents/gas-price-list/gas-price-list.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,8 @@ import {GoogleMapsModule} from '@angular/google-maps';
     FooterComponent,
     UserFormIconAndOptionsComponent,
     HeaderMobileComponent,
+    GasInfoPageComponent,
+    GasPriceListComponent,
   ],
   imports: [
     BrowserModule,
