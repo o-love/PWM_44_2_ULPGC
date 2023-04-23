@@ -17,10 +17,4 @@ export class MapComponent {
   };
   markerClustererImagePath =
     'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
-
-  ngOnInit() {
-
-  }
-
-  protected readonly unescape = unescape;
 }
