@@ -25,7 +25,7 @@ function rawGasStationMapper(rawGasStation: any): GasStation {
     municipality: rawGasStation["Municipio"],
     province: rawGasStation["Provincia"],
     remission: rawGasStation["Retribución"],
-    name: rawGasStation["Rotulo"],
+    name: rawGasStation["Rótulo"],
     sale_type: rawGasStation["Tipo Venta"],
     bio_ethanol_percentage: rawGasStation["Porcentaje Bioetanol"],
     methyl_ester_percentage: rawGasStation["Porcentaje Metanol"],
