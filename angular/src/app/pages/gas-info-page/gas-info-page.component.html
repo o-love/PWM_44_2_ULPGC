@@ -1,11 +1,11 @@
 <div *ngIf="gasStation" id="gasInfoBody">
-  <h1>{{gasStation.name}}</h1>
-  <app-map [gasStations]="[gasStation]" [options]="{
+  <h1 id="gasStationName">{{gasStation.name}}</h1>
+  <app-map id="mapBody" [gasStations]="[gasStation]" [options]="{
     center: {lat: gasStation.latitude, lng: gasStation.longitude},
-    zoom: 13
+    zoom: 15
   }"></app-map>
 
-  <div>
+  <div id="descriptionBody">
     <h4>Ubicación:</h4>
     <p>{{gasStation.address}}. {{gasStation.municipality}}, {{gasStation.zip}}</p>
 
