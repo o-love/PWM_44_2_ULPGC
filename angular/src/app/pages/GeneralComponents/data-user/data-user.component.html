@@ -3,10 +3,10 @@
   <div class="title-Rd-User-container">
     <!-- Nombre del usuario -->
     <h2 class="titleSection top-title-information-user">Datos del usuario</h2>
-    <p class="paragraph-information-user">Nombre: {{ nombre }}</p>
+    <p class="paragraph-information-user">Nombre: {{ this.user?.username }}</p>
 
     <!-- Correo del usuario -->
-    <p class="paragraph-information-user">Correo: {{ correo }}</p>
+    <p class="paragraph-information-user">Correo: {{ this.user?.email }}</p>
 
     <!-- Numero de coches del usuario -->
     <h2 class="titleSection other-title-information-user">Informacion de coches</h2>

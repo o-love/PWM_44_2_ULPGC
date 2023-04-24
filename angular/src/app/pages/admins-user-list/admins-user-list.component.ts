@@ -28,11 +28,6 @@ export class AdminsUserListComponent {
     )
   }
   getUserId(user: number) {
-    this.userService.getUserById(user).subscribe(
-      (user: User | null) => {
-        this.user = user;
-        this.router.navigate(['userInfo', {number: this.user?.id}]);
-      }
-    );
+    this.router.navigate(['userProfile', {number: user}]);
   }
 }

@@ -7,10 +7,8 @@ import {CardCarComponent} from "./pages/card-car/card-car.component";
 import {DataUserComponent} from "./pages/GeneralComponents/data-user/data-user.component";
 import {LoginComponent} from "./pages/login/login/login.component";
 import {GasStationListComponent} from "./pages/home-page/gas-station-list/gas-station-list.component";
-import {
-  UserFormIconAndOptionsComponent
-} from "./pages/GeneralComponents/user-form-icon-and-options/user-form-icon-and-options.component";
-import {GasInfoPageComponent} from "./pages/gas-info-page/gas-info-page.component";
+import {UserFormIconAndOptionsComponent} from "./pages/GeneralComponents/user-form-icon-and-options/user-form-icon-and-options.component";
+import {UserProfileViewComponent} from "./pages/user-profile-view/user-profile-view.component";
 
 const routes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: "full"},
@@ -21,8 +19,8 @@ const routes: Routes = [
   {path: 'cardCar', component: CardCarComponent},
   {path: 'login', component: LoginComponent},
   {path: 'test', component: GasStationListComponent},
-  {path: 'userInfo', component: UserFormIconAndOptionsComponent},
-  {path: 'gasStation', component: GasInfoPageComponent}
+  {path: 'userInfo',component:UserFormIconAndOptionsComponent},
+  {path: 'userProfile', component: UserProfileViewComponent}
 ];
 
 @NgModule({

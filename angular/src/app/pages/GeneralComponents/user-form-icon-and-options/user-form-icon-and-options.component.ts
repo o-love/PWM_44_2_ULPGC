@@ -15,12 +15,11 @@ export class UserFormIconAndOptionsComponent implements OnInit{
 
   ngOnInit(): void {
     const userId: number = this.route.snapshot.params['number'];
-    this.userService.getUserById(userId).subscribe(
-      (user: User) => {
-        this.user = user;
-        console.log(user);
-      }
-    );
+    console.log(typeof(userId));
+
+    this.userService.getUserById(userId).subscribe((user: User | undefined) => {
+      this.user = user ?? undefined;
+    });
   }
 }
 

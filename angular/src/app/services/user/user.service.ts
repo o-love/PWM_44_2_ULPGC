@@ -19,11 +19,8 @@ export class UserService {
     return of(data.users)
   }
 
-  getUserById(userId: number | undefined): Observable<User>{
-    let user: User;
-    // @ts-ignore
-    user = data.users.find(user => user.id === userId);
-    console.log(user);
-    return of(user);
+  getUserById(userId: number): Observable<User|undefined>{
+    const users: User | undefined = data.users.find(user => user.id == userId);
+    return of(users);
   }
 }
