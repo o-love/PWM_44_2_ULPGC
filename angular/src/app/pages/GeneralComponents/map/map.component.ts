@@ -11,10 +11,12 @@ export class MapComponent {
 
   @Input() gasStations: GasStation[] = [];
 
+  @Input()
   options: google.maps.MapOptions = {
     center: {lat: 28, lng: -16},
     zoom: 7
   };
+  
   markerClustererImagePath =
     'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
 }

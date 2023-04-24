@@ -1,6 +1,9 @@
-<ng-container *ngIf="gasStation">
+<div *ngIf="gasStation" id="gasInfoBody">
   <h1>{{gasStation.name}}</h1>
-  <app-map [gasStations]="[gasStation]"></app-map>
+  <app-map [gasStations]="[gasStation]" [options]="{
+    center: {lat: gasStation.latitude, lng: gasStation.longitude},
+    zoom: 13
+  }"></app-map>
 
   <div>
     <h4>Ubicación:</h4>
@@ -9,4 +12,4 @@
     <h4>Precios:</h4>
     <app-gas-price-list [gasPrices]="gasStation.gasPrices"></app-gas-price-list>
   </div>
-</ng-container>
+</div>
