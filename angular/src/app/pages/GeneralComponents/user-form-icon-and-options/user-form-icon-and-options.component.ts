@@ -15,6 +15,7 @@ export class UserFormIconAndOptionsComponent implements OnInit {
   constructor(private userService: UserService, private route: ActivatedRoute, private authService: AuthService, private router: Router) {
   }
 
+
   ngOnInit(): void {
     const userId: number = this.route.snapshot.params['number'];
     console.log(typeof (userId));

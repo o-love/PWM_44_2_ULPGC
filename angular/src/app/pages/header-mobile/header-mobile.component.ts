@@ -5,13 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './header-mobile.component.html',
   styleUrls: ['./header-mobile.component.sass'],
   host:{
-    id:"headerMobile"
+    id:"headerMobile",
+    class:"p-2",
+    style:"background-color: #0065A3;"
   }
 })
 export class HeaderMobileComponent {
 
   toggleHeader() {
-    console.log("me estan llamando")
     const h = document.getElementById("headerPadre")
     const c = document.getElementById("mainContent")
 
