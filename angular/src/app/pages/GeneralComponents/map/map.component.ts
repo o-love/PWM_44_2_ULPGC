@@ -12,8 +12,8 @@ export class MapComponent {
   @Input() gasStations: GasStation[] = [];
 
   options: google.maps.MapOptions = {
-    center: {lat: 40, lng: -20},
-    zoom: 4
+    center: {lat: 28, lng: -16},
+    zoom: 7
   };
   markerClustererImagePath =
     'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
