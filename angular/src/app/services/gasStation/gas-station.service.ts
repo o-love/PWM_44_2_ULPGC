@@ -58,4 +58,13 @@ export class GasStationService {
   getGasStationProvincias(): Observable<GasProvincia[]> {
     return this.http.get<GasProvincia[]>('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/Provincias/');
   }
+
+  getGasStationsCCAA(CCAA_id: string): Observable<GasStation[]> {
+    return this.http.get(`https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/${CCAA_id}`)
+      .pipe(map((rawGasStations: any) => rawGasStations.ListaEESSPrecio.map(rawGasStationMapper)));
+  }
+
+  getCanaryIslandsGasStations(): Observable<GasStation[]> {
+    return this.getGasStationsCCAA("05");
+  }
 }
