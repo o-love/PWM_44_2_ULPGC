@@ -28,6 +28,7 @@ import {GasInfoPageComponent} from './pages/gas-info-page/gas-info-page.componen
 import {GasPriceListComponent} from './pages/GeneralComponents/gas-price-list/gas-price-list.component';
 import {UserProfileViewComponent} from "./pages/user-profile-view/user-profile-view.component";
 import { FormCarComponent } from './pages/form-car/form-car.component';
+import {UserRegistrationComponent} from "./pages/user-registration/user-registration.component";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { FormCarComponent } from './pages/form-car/form-car.component';
     GasInfoPageComponent,
     GasPriceListComponent,
     UserProfileViewComponent,
-    FormCarComponent
+    FormCarComponent,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,
