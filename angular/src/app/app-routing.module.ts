@@ -10,6 +10,7 @@ import {GasStationListComponent} from "./pages/home-page/gas-station-list/gas-st
 import {UserFormIconAndOptionsComponent} from "./pages/GeneralComponents/user-form-icon-and-options/user-form-icon-and-options.component";
 import {UserProfileViewComponent} from "./pages/user-profile-view/user-profile-view.component";
 import {GasInfoPageComponent} from "./pages/gas-info-page/gas-info-page.component";
+import {FormCarComponent} from "./pages/GeneralComponents/Forms/form-car/form-car.component";
 
 const routes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: "full"},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'test', component: GasStationListComponent},
   {path: 'userInfo', component: UserFormIconAndOptionsComponent},
-  {path: 'userProfile', component: UserProfileViewComponent}
+  {path: 'userProfile', component: UserProfileViewComponent},
+  {path: 'formCar', component:FormCarComponent}
 ];
 
 @NgModule({

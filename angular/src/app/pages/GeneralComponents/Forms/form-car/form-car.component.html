@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<form (ngSubmit)="onSubmit(carForm)" #carForm="ngForm" id="formCarRegistration" class="containerForm form mt-3 mb-4">
+  <h2 class="mt-2">Registra tu coche</h2>
+  <div id="First">
+    <img src="./assets/img/formProgress/firstProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <div class="elementForm">
+      <label for="matricula" class="form-label">Matricula</label>
+      <input type="text" class="input form-control" id="matricula" name="matricula" [(ngModel)]="model.matricula" required #matricula="ngModel">
+      <div [hidden]="matricula.valid || matricula.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;"> <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p></div>
+    </div>
+    <div class="elementForm">
+      <label for="Combustible" class="form-label">Combustible</label>
+      <select id="combustible" class="form-select form-select-xl" style="border-bottom: 1px black solid" name="combustible"  [(ngModel)]="model.combustible" required>
+        <option value="Gasolina 98">Gasolina 98</option>
+        <option value="Gasolina 96">Gasolina 96</option>
+        <option value="Diesel">Diesel</option>
+      </select>
+    </div>
+    <div class="elementForm">
+      <label for="Marca" class="form-label">Marca</label>
+      <input type="text" class="input  form-control" id="marca"  name="marca" [(ngModel)]="model.marca" required #marca="ngModel">
+      <div [hidden]="marca.valid || marca.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;"> <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p></div>
+    </div>
+    <div class="elementForm">
+      <label for="Modelo" class="form-label">Modelo</label>
+      <input type="text" class="input  form-control" id="modelo" name="modelo" [(ngModel)]="model.modelo" required #modelo="ngModel">
+      <div [hidden]="modelo.valid || modelo.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;"> <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p></div>
+    </div>
+    <button type="button" [disabled]="!needFieldsInForm()" [ngClass]="needFieldsInForm ? 'boton-habilitado' : 'boton-deshabilitado'"(click)="valForm(1)" id="btnForm1" class="formButton btn btn-lg">Siguiente</button>
+  </div>
+  <div id="Second" class="displayoff">
+    <img src="./assets/img/formProgress/secondProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <div class="elementForm">
+      <label for="AceiteMotor" class="form-label">Aceite motor</label>
+      <input type="text" class="input form-control" id="aceiteMotor" name="aceite_motor" [(ngModel)]="model.aceite_motor">
+    </div>
+    <div class="elementForm">
+      <label for="AceiteDireccion" class=" form-label">Aceite direccion</label>
+      <input type="text" class="input form-control" id="aceiteDireccion" name="aceite_direccion" [(ngModel)]="model.aceite_direccion">
+    </div>
+    <div class="elementForm">
+      <label for="AguaRadiador" class="form-label">Agua del radiador</label>
+      <input type="text" class="input form-control" id="aguaRadiador"  name="agua_radiador" [(ngModel)]="model.agua_radiador">
+    </div>
+    <div class="elementForm">
+      <label for="AguaParabrisas" class="form-label">Agua del parabrisas</label>
+      <input type="text" class="input form-control" id="aguaParabrisas"  name="agua_parabrisas" [(ngModel)]="model.agua_parabrisas">
+    </div>
+    <button type="button" (click)="valForm(2)" class="formButton btn btn-lg">Siguiente</button>
+  </div>
+  <div id="Third" class="displayoff">
+    <img src="./assets/img/formProgress/thirdProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <div class="elementForm">
+      <label for="liquidoFrenos" class="form-label">Liquido de frenos</label>
+      <input type="text" class="input form-control" id="liquidoFrenos"  name="liquido_frenos" [(ngModel)]="model.liquido_frenos">
+    </div>
+    <div class="elementForm">
+      <label for="valculinaCajaCambios" class="form-label">Valvulina caja de cambios</label>
+      <input type="text" class="input form-control" id="valculinaCajaCambios"  name="valculina_caja_cambios" [(ngModel)]="model.valculina_caja_cambios">
+    </div>
+    <div class="elementForm">
+      <label for="ValvulinaDiferencial" class="form-label">Valvulina del diferencial</label>
+      <input type="text" class="input form-control" id="valvulinaDiferencial"  name="valvulina_diferencial" [(ngModel)]="model.valvulina_diferencial">
+    </div>
+    <div class="elementForm">
+      <label for="aguaBateria" class="form-label">Agua de la bateria</label>
+      <input type="text" class="input form-control" id="aguaBateria"  name="agua_bateria" [(ngModel)]="model.agua_bateria">
+    </div>
+    <button type="button" (click)="valForm(3)" class="formButton btn btn-lg">Siguiente</button>
+  </div>
+  <div id="Fourth" class="displayoff">
+    <img src="./assets/img/formProgress/fourProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <div class="elementForm">
+      <label for="Filtro de aceite" class="form-label">Filtro de aceite</label>
+      <input type="text" class="input form-control" id="Filtro de aceite"  name="filtro_aceite" [(ngModel)]="model.filtro_aceite">
+    </div>
+    <div class="elementForm">
+      <label for="Filtro-de-aire" class="form-label">Filtro de aire</label>
+      <input type="text" class="input form-control" id="Filtro-de-aire"  name="filtro_aire" [(ngModel)]="model.filtro_aire">
+    </div>
+    <div class="elementForm">
+      <label for="Filtro-del-combustible" class="form-label">Filtro del combustible</label>
+      <input type="text" class="input form-control" id="Filtro-del-combustible"  name="filtro_combustible" [(ngModel)]="model.filtro_combustible">
+    </div>
+    <div class="elementForm">
+      <label for="Presion-neumaticos" class="form-label">Presión neumaticos</label>
+      <input type="text" class="input form-control" id="Presion-neumaticos"  name="presion_neumaticos" [(ngModel)]="model.presion_neumaticos">
+    </div>
+    <button type="button" (click)="valForm(4)" class="formButton btn btn-lg">Siguiente</button>
+  </div>
+  <div id="Fifth" class="displayoff">
+    <img src="./assets/img/formProgress/fiveProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <div class="elementForm">
+      <label for="correaDistribucion" class="form-label">Correa de distribucion</label>
+      <input type="text" class="input form-control" id="correaDistribucion"  name="correo_distribucion" [(ngModel)]="model.correo_distribucion">
+    </div>
+    <div class="elementForm">
+      <label for="correaAlternador" class="form-label">Correa del alternador</label>
+      <input type="text" class="input form-control" id="correaAlternador"  name="correa_altenador" [(ngModel)]="model.correa_altenador">
+    </div>
+    <div class="elementForm">
+      <label for="limpiezaBujias" class="form-label">Limpieza de Bujias</label>
+      <input type="text" class="input form-control" id="limpiezaBujias"  name="limpieza_bujias" [(ngModel)]="model.limpieza_bujias">
+    </div>
+    <div class="elementForm">
+      <label for="cambioBujias" class="form-label">Cambio de Bujias</label>
+      <input type="text" class="input form-control" id="cambioBujias"  name="cambio_bujias" [(ngModel)]="model.cambio_bujias">
+    </div>
+    <button type="button" (click)="valForm(5)"  class="formButton btn btn-lg">Siguiente</button>
+  </div>
+  <div id="Sixth" class="displayoff">
+    <img src="./assets/img/formProgress/sixProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <div class="elementForm">
+      <label for="impuesto_circulacion" class="form-label">Impuesto de circulacion</label>
+      <input type="date" class="input form-control" id="impuesto_circulacion"  name="impuesto_circulacion" [(ngModel)]="model.impuesto_circulacion" >
+    </div>
+    <div class="elementForm">
+      <label for="seguroCoche" class="form-label">Seguro del coche</label>
+      <input type="date" class="input form-control" id="seguroCoche"  name="seguro_coche" [(ngModel)]="model.seguro_coche" required>
+    </div>
+    <div class="elementForm">
+      <label for="revisionITV" class="form-label">Revision ITV</label>
+      <input type="date" class="input form-control" id="revisionITV"  name="revision_itv" [(ngModel)]="model.revision_itv" required>
+    </div>
+    <div class="elementForm">
+      <label for="fotoCoche" class="form-label">Foto del coche</label>
+      <input type="file" class="input form-control" id="fotoCoche"  name="foto_coche" [(ngModel)]="model.foto_coche" required>
+    </div>
+    <button type="submit" class="formButton mb-4  btn btn-lg" id="btn-submit-form-car" [ngClass]="needFieldsInFinalForm ? 'boton-habilitado' : 'boton-deshabilitado'" [disabled]="!needFieldsInFinalForm()" >Enviar</button>
+  </div>
+</form>
