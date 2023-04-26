@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
 import {NgForm} from "@angular/forms";
-import {CarModel} from "../../../../models/Car/car.model";
+import {CarModel} from "../../models/Car/car.model";
 
 let var1 = "First";
 let var2 = "Second";
@@ -25,6 +25,8 @@ export class FormCarComponent implements OnInit {
     cambio_bujias: "", impuesto_circulacion: "", seguro_coche: "",
     revision_itv: "", foto_coche_src: ""
   }
+
+  file: File | undefined;
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
   }
@@ -88,7 +90,6 @@ export class FormCarComponent implements OnInit {
     }
     return validacion;
   }
-
 
   onSubmit(form: NgForm) {
     if(form.valid) {

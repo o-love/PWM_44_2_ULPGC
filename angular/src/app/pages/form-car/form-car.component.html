@@ -3,7 +3,7 @@
 <form (ngSubmit)="onSubmit(carForm)" #carForm="ngForm" id="formCarRegistration" class="containerForm form mt-3 mb-4">
   <h2 class="mt-2">Registra tu coche</h2>
   <div id="First">
-    <img src="./assets/img/formProgress/firstProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <img src="../../../assets/img/formProgress/firstProgress.png" class="progressCarRegistration" alt="actualProgress">
     <div class="elementForm">
       <label for="matricula" class="form-label">Matricula</label>
       <input type="text" class="input form-control" id="matricula" name="matricula" [(ngModel)]="model.matricula" required #matricula="ngModel">
@@ -33,7 +33,7 @@
     </button>
   </div>
   <div id="Second" class="displayoff">
-    <img src="./assets/img/formProgress/secondProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <img src="../../../assets/img/formProgress/secondProgress.png" class="progressCarRegistration" alt="actualProgress">
     <div class="elementForm">
       <label for="AceiteMotor" class="form-label">Aceite motor</label>
       <input type="text" class="input form-control" id="aceiteMotor" name="aceite_motor" [(ngModel)]="model.aceite_motor">
@@ -53,7 +53,7 @@
     <button type="button" (click)="valForm(2)" class="formButton btn btn-lg">Siguiente</button>
   </div>
   <div id="Third" class="displayoff">
-    <img src="./assets/img/formProgress/thirdProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <img src="../../../assets/img/formProgress/thirdProgress.png" class="progressCarRegistration" alt="actualProgress">
     <div class="elementForm">
       <label for="liquidoFrenos" class="form-label">Liquido de frenos</label>
       <input type="text" class="input form-control" id="liquidoFrenos"  name="liquido_frenos" [(ngModel)]="model.liquido_frenos">
@@ -73,7 +73,7 @@
     <button type="button" (click)="valForm(3)" class="formButton btn btn-lg">Siguiente</button>
   </div>
   <div id="Fourth" class="displayoff">
-    <img src="./assets/img/formProgress/fourProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <img src="../../../assets/img/formProgress/fourProgress.png" class="progressCarRegistration" alt="actualProgress">
     <div class="elementForm">
       <label for="Filtro de aceite" class="form-label">Filtro de aceite</label>
       <input type="text" class="input form-control" id="Filtro de aceite"  name="filtro_aceite" [(ngModel)]="model.filtro_aceite">
@@ -93,7 +93,7 @@
     <button type="button" (click)="valForm(4)" class="formButton btn btn-lg">Siguiente</button>
   </div>
   <div id="Fifth" class="displayoff">
-    <img src="./assets/img/formProgress/fiveProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <img src="../../../assets/img/formProgress/fiveProgress.png" class="progressCarRegistration" alt="actualProgress">
     <div class="elementForm">
       <label for="correaDistribucion" class="form-label">Correa de distribucion</label>
       <input type="text" class="input form-control" id="correaDistribucion"  name="correo_distribucion" [(ngModel)]="model.correo_distribucion">
@@ -113,7 +113,7 @@
     <button type="button" (click)="valForm(5)"  class="formButton btn btn-lg">Siguiente</button>
   </div>
   <div id="Sixth" class="displayoff">
-    <img src="./assets/img/formProgress/sixProgress.png" class="progressCarRegistration" alt="actualProgress">
+    <img src="../../../assets/img/formProgress/sixProgress.png" class="progressCarRegistration" alt="actualProgress">
     <div class="elementForm">
       <label for="impuesto_circulacion" class="form-label">Impuesto de circulacion</label>
       <input type="date" class="input form-control" id="impuesto_circulacion"  name="impuesto_circulacion" [(ngModel)]="model.impuesto_circulacion" >

@@ -27,7 +27,7 @@ import {GoogleMapsModule} from '@angular/google-maps';
 import {GasInfoPageComponent} from './pages/gas-info-page/gas-info-page.component';
 import {GasPriceListComponent} from './pages/GeneralComponents/gas-price-list/gas-price-list.component';
 import {UserProfileViewComponent} from "./pages/user-profile-view/user-profile-view.component";
-import { FormCarComponent } from './pages/GeneralComponents/Forms/form-car/form-car.component';
+import { FormCarComponent } from './pages/form-car/form-car.component';
 
 @NgModule({
   declarations: [
