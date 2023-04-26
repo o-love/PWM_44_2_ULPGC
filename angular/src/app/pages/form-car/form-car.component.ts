@@ -93,7 +93,11 @@ export class FormCarComponent implements OnInit {
   }
 
   onFileChange(event: any) {
-    this.file = event.target.file[0];
+    const file = event.target.file[0];
+
+    if (file) {
+      this.file = file;
+    }
   }
 
   onSubmit(form: NgForm) {
