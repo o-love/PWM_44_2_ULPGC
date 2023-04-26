@@ -4,7 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
-  styleUrls: ['./about-us.component.sass']
+  styleUrls: ['./about-us.component.sass'],
+  host:{
+    id:"mainContent",
+    class:"hideOnMobile",
+  }
 })
 export class AboutUsComponent implements OnInit{
   title = "About";

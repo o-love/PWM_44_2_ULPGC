@@ -7,7 +7,7 @@ import {GasStationService} from "../../services/gasStation/gas-station.service";
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.sass'],
   host: {
-    id: "homePage",
+    id: "mainContent",
     class: "flex-grow-1 d-sm-flex justify-content-sm-center hideOnMobile"
   }
 })
