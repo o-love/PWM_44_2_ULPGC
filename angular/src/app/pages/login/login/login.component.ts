@@ -14,14 +14,20 @@ import {Observable} from "rxjs";
 })
 export class LoginComponent {
   Name: string = '';
-  Password: String = '';
+  Password: string = '';
 
   constructor(private authService: AuthService, private router: Router) {
   }
 
-  login(): void {
-    this.authService.login(this.Name, this.Password);
-    console.log("login")
-    this.router.navigate(["/userInfo"])
+  login() {
+    this.authService.login(this.Name, this.Password)
+      .then(res => {
+
+        console.log("login: ", res)
+        this.router.navigate(["/userInfo"])
+      })
+      .catch(error =>{
+        console.log(error)
+      })
   }
 }
