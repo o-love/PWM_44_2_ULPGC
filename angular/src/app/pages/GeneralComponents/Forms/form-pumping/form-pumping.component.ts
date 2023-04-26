@@ -1,7 +1,6 @@
 import {Component, ElementRef, Renderer2} from '@angular/core';
 import {PumpingModel} from "../../../../models/Pumping/pumping.model";
 import {NgForm} from "@angular/forms";
-import {CarService} from "../../../../services/car/car.service";
 @Component({
   selector: 'app-form-pumping',
   templateUrl: './form-pumping.component.html',
