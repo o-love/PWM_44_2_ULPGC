@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {User} from "../../models/User/user.model";
-
+import {auth} from "../../firebase/firestore";
+import {onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import data from '../../../assets/json/users.json'
 
 @Injectable({
@@ -11,13 +11,22 @@ export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false); // se inicializa con falso
 
   constructor() {
+    onAuthStateChanged(auth,user=>{
+      console.log(user)
+      if (user === null){
+        this.loggedIn.next(true)
+      }else{
+        this.loggedIn.next(false)
+      }
+    })
   }
 
   get isLoggedIn(): Observable<boolean> {
     return this.loggedIn.asObservable(); // convierte el loggedIn a un Observable para poder suscribirse
+
   }
 
-  checkLoginFromJSON(userEmail: String, userPassword: String): boolean {
+  checkLoginFromJSON(userEmail: string, userPassword: string): boolean {
 
     // @ts-ignore
     let userLoged = data.users.find(user => user.email === userEmail && user.password === userPassword)
@@ -28,15 +37,32 @@ export class AuthService {
     return false;
   }
 
-  login(userEmail: String, userPassword: String): void {
-    if(this.checkLoginFromJSON(userEmail,userPassword)){
-      this.loggedIn.next(true);
-    }
+  async loginFirebaseAuth(userEmail: string, userPassword: string){
+    signInWithEmailAndPassword(auth,userEmail,userPassword)
+      .then(userCredential => {
+        console.log(userCredential)
+        localStorage.setItem("userLoged",JSON.stringify(userCredential.user))
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+      });
+  }
+  async login(userEmail: string, userPassword: string) {
+    // if(this.checkLoginFromJSON(userEmail,userPassword)){
+    //   this.loggedIn.next(true);
+    // }
+    const res = await this.loginFirebaseAuth(userEmail,userPassword)
+    return res;
+
   }
 
   logout(): void {
+    auth.signOut()
     localStorage.removeItem("userLoged")
     console.log("saliendo")
-    this.loggedIn.next(false); // cambia el valor del BehaviorSubject y notifica a sus suscriptores
+    //this.loggedIn.next(false); // cambia el valor del BehaviorSubject y notifica a sus suscriptores
   }
 }
