@@ -27,7 +27,10 @@
       <input type="text" class="input  form-control" id="modelo" name="modelo" [(ngModel)]="model.modelo" required #modelo="ngModel">
       <div [hidden]="modelo.valid || modelo.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;"> <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p></div>
     </div>
-    <button type="button" [disabled]="!needFieldsInForm()" [ngClass]="needFieldsInForm ? 'boton-habilitado' : 'boton-deshabilitado'"(click)="valForm(1)" id="btnForm1" class="formButton btn btn-lg">Siguiente</button>
+    <button type="button" [disabled]="!needFieldsInForm()"
+            [ngClass]="needFieldsInForm ? 'boton-habilitado' : 'boton-deshabilitado'" (click)="valForm(1)" id="btnForm1"
+            class="formButton btn btn-lg">Siguiente
+    </button>
   </div>
   <div id="Second" class="displayoff">
     <img src="./assets/img/formProgress/secondProgress.png" class="progressCarRegistration" alt="actualProgress">
@@ -125,7 +128,8 @@
     </div>
     <div class="elementForm">
       <label for="fotoCoche" class="form-label">Foto del coche</label>
-      <input type="file" class="input form-control" id="fotoCoche"  name="foto_coche" [(ngModel)]="model.foto_coche" required>
+      <input type="file" class="input form-control" id="fotoCoche" name="foto_coche" [(ngModel)]="model.foto_coche_src"
+             required>
     </div>
     <button type="submit" class="formButton mb-4  btn btn-lg" id="btn-submit-form-car" [ngClass]="needFieldsInFinalForm ? 'boton-habilitado' : 'boton-deshabilitado'" [disabled]="!needFieldsInFinalForm()" >Enviar</button>
   </div>
