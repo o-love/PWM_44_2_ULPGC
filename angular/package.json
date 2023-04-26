@@ -23,6 +23,7 @@
     "@angular/router": "^15.2.0",
     "@ng-bootstrap/ng-bootstrap": "^14.0.1",
     "@popperjs/core": "^2.11.6",
+    "@types/firebase": "^3.2.1",
     "@types/ol": "^7.0.0",
     "@types/proj4": "^2.5.2",
     "bootstrap": "^5.2.3",
