@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {CarModel} from "../../models/Car/car.model";
+import {CarService} from "../../services/car/car.service";
 
 let var1 = "First";
 let var2 = "Second";
@@ -28,7 +29,7 @@ export class FormCarComponent implements OnInit {
 
   file: File | undefined;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {
+  constructor(private carService: CarService, private renderer: Renderer2, private el: ElementRef) {
   }
 
   ngOnInit(): void {
@@ -91,9 +92,29 @@ export class FormCarComponent implements OnInit {
     return validacion;
   }
 
+  onFileChange(event: any) {
+    this.file = event.target.file[0];
+  }
+
   onSubmit(form: NgForm) {
     if(form.valid) {
-      console.log("Formulario Enviado",form)
+      if (this.file) {
+        this.carService.storeCarImage(this.file).subscribe((url: string) => {
+          this.model.foto_coche_src = url;
+          this.sumbitForm();
+        })
+      }
+      else {
+        this.sumbitForm();
+      }
+
     }
+  }
+
+  sumbitForm() {
+    this.carService.storeCar(this.model).subscribe((res: any) => {
+      // TODO: Navigate to that cars info page.
+    });
+
   }
 }

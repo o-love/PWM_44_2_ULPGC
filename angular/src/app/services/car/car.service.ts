@@ -27,5 +27,9 @@ export class CarService {
     });
   }
 
+  storeCarImage(file: File) : Observable<string> {
+    return of();
+  }
+
 
 }
