@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import data from '../../../assets/json/users.json'
-import {Auth, createUserWithEmailAndPassword} from "@angular/fire/auth";
+import {Auth, createUserWithEmailAndPassword, onAuthStateChanged} from "@angular/fire/auth";
 
 @Injectable({
   providedIn: 'root'
