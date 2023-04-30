@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import data from '../../../assets/json/users.json'
+import {Auth, createUserWithEmailAndPassword} from "@angular/fire/auth";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import data from '../../../assets/json/users.json'
 export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false); // se inicializa con falso
 
-  constructor() {
+  constructor(private auth: Auth) {
   }
 
   get isLoggedIn(): Observable<boolean> {
@@ -55,5 +56,9 @@ export class AuthService {
     localStorage.removeItem("userLoged")
     console.log("saliendo")
     this.loggedIn.next(false); // cambia el valor del BehaviorSubject y notifica a sus suscriptores
+  }
+
+  createUser(email: string, password: string){
+    return createUserWithEmailAndPassword(this.auth,email,password)
   }
 }

@@ -29,7 +29,7 @@ import {GasPriceListComponent} from './pages/GeneralComponents/gas-price-list/ga
 import {UserProfileViewComponent} from "./pages/user-profile-view/user-profile-view.component";
 import { FormCarComponent} from "./pages/form-car/form-car.component";
 import { FormPumpingComponent } from './pages/GeneralComponents/Forms/form-pumping/form-pumping.component';
-import {UserRegistrationComponent} from "./pages/user-registration/user-registration.component";
+import {UserRegistrationComponent} from "./pages/GeneralComponents/Forms/user-registration/user-registration.component";
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -70,7 +70,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     GoogleMapsModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    //provideAuth(() => getAuth()),
+    provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     //provideStorage(() => getStorage()),
 

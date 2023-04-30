@@ -12,6 +12,7 @@ import {UserProfileViewComponent} from "./pages/user-profile-view/user-profile-v
 import {GasInfoPageComponent} from "./pages/gas-info-page/gas-info-page.component";
 import {FormPumpingComponent} from "./pages/GeneralComponents/Forms/form-pumping/form-pumping.component";
 import {FormCarComponent} from "./pages/form-car/form-car.component";
+import {UserRegistrationComponent} from "./pages/GeneralComponents/Forms/user-registration/user-registration.component";
 
 const routes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: "full"},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'userProfile', component: UserProfileViewComponent},
   {path: 'formCar', component:FormCarComponent},
   {path: 'formPumping', component:FormPumpingComponent},
+  {path: 'userRegistration', component:UserRegistrationComponent}
 ];
 
 @NgModule({
