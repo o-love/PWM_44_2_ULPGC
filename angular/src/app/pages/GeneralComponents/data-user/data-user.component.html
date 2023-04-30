@@ -1,23 +1,30 @@
 <!-- Componente de informacion del usuario -->
-<div id="dataUserContainer">
-  <div class="title-Rd-User-container">
+<div  class="h-100 d-flex justify-content-center" id="cc">
+  <div class="w-50 m-auto rounded border" id="dataUserContainer">
     <!-- Nombre del usuario -->
-    <h2 class="titleSection top-title-information-user">Datos del usuario</h2>
-    <p class="paragraph-information-user">Nombre: {{ this.user?.username }}</p>
+    <div class="rounded-top titleInfo">
+      <h2 class="ms-1" >Datos del usuario</h2>
+    </div>
+
+    <p class="border-1">Nombre: {{ this.user?.username }}</p>
 
     <!-- Correo del usuario -->
-    <p class="paragraph-information-user">Correo: {{ this.user?.email }}</p>
+    <p class="border-1">Correo: {{ this.user?.email }}</p>
 
     <!-- Numero de coches del usuario -->
-    <h2 class="titleSection other-title-information-user">Informacion de coches</h2>
-    <p class="paragraph-information-user">Numero de coches:  {{ numeroCoches }}</p>
+    <div class="rounded-top titleInfo">
+      <h2 class="ms-1">Informacion de coches</h2>
+    </div>
+    <p class="border-1">Numero de coches:  {{ numeroCoches }}</p>
 
-    <h2 class="titleSection other-title-information-user">Operaciones del usuario</h2>
+    <div class="rounded-top titleInfo">
+      <h2 class="rounded-top ">Operaciones del usuario</h2>
+    </div>
 
     <!-- Numero de repostajes del usuario -->
-    <p class="paragraph-information-user">Numero de respostajes: {{ numeroRepostajes }}</p>
+    <p class="border-1">Numero de respostajes: {{ numeroRepostajes }}</p>
 
     <!-- Numero de reparaciones del usuario -->
-    <p class="paragraph-information-user lastInfoUser">Numero de reparaciones: {{ numeroReparaciones }}</p>
+    <p class="border-1">Numero de reparaciones: {{ numeroReparaciones }}</p>
   </div>
 </div>

@@ -1,19 +1,21 @@
-<div class="user-form-icon-container">
-<div id="userProfileFotoContainer">
-  <img [src]="this.user?.photo_url" alt="Foto perfil" class="image-form-icon-options" id="profileImage">
-</div>
-<div id="btnsUser">
-  <div class="optionElement">
-    <button type="button" class="button-user-options" id="editProfileBtn">Editar<i class="fa-solid fa-pen-to-square"></i></button>
+<div id="iconAndButtons">
+  <div class="d-flex justify-content-center align-items-center">
+    <img src="../../../../assets/img/users/user_foto.PNG" alt="Logo" class="" id="profileImage">
   </div>
-  <div class="optionElement">
-    <button type="button" class="button-user-options" id="myCarsBtn">Mis coches <i class="fa-solid fa-car"></i></button>
+  <div id="" class="w-100">
+    <div class="w-100 optionElement">
+      <button type="button" class="w-100 btnPerfil" id="editProfileBtn">Editar<i class="fa-solid fa-pen-to-square"></i></button>
+    </div>
+    <div class="w-100 optionElement">
+      <button type="button" class="w-100 btnPerfil" id="myCarsBtn">Mis coches <i class="fa-solid fa-car"></i></button>
+    </div>
+    <div class="w-100 optionElement">
+      <button type="button" class="w-100 btnPerfil" id="logOutBtn">Cerrar Session <i class="fa-solid fa-right-to-bracket"></i>
+      </button>
+    </div>
+    <div class="w-100 optionElement lastOptionElement">
+      <button type="button" class="w-100 btnPerfil" id="deleteUserBtn"><span class="delete-option-form">Borrar cuenta <i
+        class="fa-solid fa-trash"></i></span></button>
+    </div>
   </div>
-  <div class="optionElement">
-    <button type="button" class="button-user-options" id="logOutBtn" (click)="logOut()">Cerrar Session <i class="fa-solid fa-right-to-bracket"></i></button>
-  </div>
-  <div class="optionElement optionElementLast">
-    <button type="button" class="button-user-options" id="deleteUserBtn"><span class="delete-option-form">Borrar cuenta <i class="fa-solid fa-trash"></i></span></button>
-  </div>
-</div>
 </div>

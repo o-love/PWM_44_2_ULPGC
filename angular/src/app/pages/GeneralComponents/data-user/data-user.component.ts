@@ -6,7 +6,10 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-data-user',
   templateUrl: './data-user.component.html',
-  styleUrls: ['./data-user.component.sass']
+  styleUrls: ['./data-user.component.sass'],
+  host:{
+    class:"m-0"
+  }
 })
 export class DataUserComponent {
   title = "dataUser";
@@ -18,7 +21,7 @@ export class DataUserComponent {
   }
 
   ngOnInit(): void {
-    const userId: number = this.route.snapshot.params['number'];
+    const userId: string = this.route.snapshot.params['number'];
     console.log(typeof(userId));
     this.userService.getUserById(userId).subscribe((user: User | undefined) => {
       this.user = user ?? undefined;

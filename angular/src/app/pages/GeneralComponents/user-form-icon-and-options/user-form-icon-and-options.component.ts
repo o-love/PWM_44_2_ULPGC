@@ -7,7 +7,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-user-form-icon-and-options',
   templateUrl: './user-form-icon-and-options.component.html',
-  styleUrls: ['./user-form-icon-and-options.component.sass']
+  styleUrls: ['./user-form-icon-and-options.component.sass'],
+  host:{
+    class:"m-0 h-100 text-center"
+  }
 })
 export class UserFormIconAndOptionsComponent implements OnInit {
   user: User | null | undefined;
@@ -17,7 +20,7 @@ export class UserFormIconAndOptionsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    const userId: number = this.route.snapshot.params['number'];
+    const userId: string = this.route.snapshot.params['number'];
     console.log(typeof (userId));
 
     this.userService.getUserById(userId).subscribe((user: User | undefined) => {
