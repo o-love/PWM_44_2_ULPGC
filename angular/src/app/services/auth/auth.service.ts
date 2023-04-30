@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {auth} from "../../firebase/firestore";
 import {onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import data from '../../../assets/json/users.json'
 
@@ -11,14 +10,6 @@ export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false); // se inicializa con falso
 
   constructor() {
-    onAuthStateChanged(auth,user=>{
-      console.log(user)
-      if (user === null){
-        this.loggedIn.next(true)
-      }else{
-        this.loggedIn.next(false)
-      }
-    })
   }
 
   get isLoggedIn(): Observable<boolean> {
@@ -37,32 +28,32 @@ export class AuthService {
     return false;
   }
 
-  async loginFirebaseAuth(userEmail: string, userPassword: string){
-    signInWithEmailAndPassword(auth,userEmail,userPassword)
-      .then(userCredential => {
-        console.log(userCredential)
-        localStorage.setItem("userLoged",JSON.stringify(userCredential.user))
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-      });
-  }
+  // async loginFirebaseAuth(userEmail: string, userPassword: string){
+  //   signInWithEmailAndPassword(auth,userEmail,userPassword)
+  //     .then(userCredential => {
+  //       console.log(userCredential)
+  //       localStorage.setItem("userLoged",JSON.stringify(userCredential.user))
+  //     })
+  //     .catch((error) => {
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       console.log(errorCode);
+  //       console.log(errorMessage);
+  //     });
+  // }
   async login(userEmail: string, userPassword: string) {
     // if(this.checkLoginFromJSON(userEmail,userPassword)){
     //   this.loggedIn.next(true);
     // }
-    const res = await this.loginFirebaseAuth(userEmail,userPassword)
+    const res = await this.checkLoginFromJSON(userEmail,userPassword)
     return res;
 
   }
 
   logout(): void {
-    auth.signOut()
+    //auth.signOut()
     localStorage.removeItem("userLoged")
     console.log("saliendo")
-    //this.loggedIn.next(false); // cambia el valor del BehaviorSubject y notifica a sus suscriptores
+    this.loggedIn.next(false); // cambia el valor del BehaviorSubject y notifica a sus suscriptores
   }
 }

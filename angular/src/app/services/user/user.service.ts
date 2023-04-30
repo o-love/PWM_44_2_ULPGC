@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {User} from "../../models/User/user.model";
 import {of} from "rxjs";
-
+import {FirestoreService} from "../firestore/firestore.service";
 // @ts-ignore
 import data from '../../../assets/json/users.json';
 
@@ -11,8 +11,8 @@ import data from '../../../assets/json/users.json';
   providedIn: 'root'
 })
 export class UserService {
-
-  constructor(protected http: HttpClient) {
+  private collection = "users"
+  constructor(protected http: HttpClient, private firestoreService: FirestoreService) {
   }
 
   getUsers(): Observable<User[]> {
@@ -22,5 +22,9 @@ export class UserService {
   getUserById(userId: number): Observable<User|undefined>{
     const users: User | undefined = data.users.find(user => user.id == userId);
     return of(users);
+  }
+
+  getAllUsers(){
+    return this.firestoreService.getAllDocs(this.collection);
   }
 }

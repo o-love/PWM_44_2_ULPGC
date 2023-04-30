@@ -30,4 +30,9 @@ export class AdminsUserListComponent {
   getUserId(user: number) {
     this.router.navigate(['userProfile', {number: user}]);
   }
+  getAllUsers(){
+    this.userService.getAllUsers().subscribe((res:any) =>{
+      console.log(res)
+    })
+  }
 }

@@ -30,6 +30,11 @@ import {UserProfileViewComponent} from "./pages/user-profile-view/user-profile-v
 import { FormCarComponent} from "./pages/form-car/form-car.component";
 import { FormPumpingComponent } from './pages/GeneralComponents/Forms/form-pumping/form-pumping.component';
 import {UserRegistrationComponent} from "./pages/user-registration/user-registration.component";
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -53,7 +58,7 @@ import {UserRegistrationComponent} from "./pages/user-registration/user-registra
     UserProfileViewComponent,
     FormCarComponent,
     FormPumpingComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,12 @@ import {UserRegistrationComponent} from "./pages/user-registration/user-registra
     HttpClientModule,
     NgOptimizedImage,
     GoogleMapsModule,
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    //provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    //provideStorage(() => getStorage()),
+
   ],
   providers: [],
   bootstrap: [AppComponent],

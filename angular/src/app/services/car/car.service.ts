@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, of} from "rxjs";
 import {CarModel} from "../../models/Car/car.model";
-
+import {FirestoreService} from "../firestore/firestore.service";
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
 
-  constructor(protected http: HttpClient) { }
-
+  constructor(protected http: HttpClient, private service: FirestoreService) { }
+  private collection = "cars"
   getCars() : Observable<CarModel[]> {
     return of([]);
   }
@@ -31,5 +31,7 @@ export class CarService {
     return of();
   }
 
-
+  getAllCars(){
+    return this.service.getAllDocs(this.collection);
+  }
 }

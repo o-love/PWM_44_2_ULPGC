@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'userInfo', component: UserFormIconAndOptionsComponent},
   {path: 'userProfile', component: UserProfileViewComponent},
   {path: 'formCar', component:FormCarComponent},
-  {path: 'formPumping', component:FormPumpingComponent}
+  {path: 'formPumping', component:FormPumpingComponent},
 ];
 
 @NgModule({
