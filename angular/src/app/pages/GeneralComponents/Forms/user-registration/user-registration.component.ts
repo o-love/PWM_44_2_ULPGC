@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {AuthService} from "../../../../services/auth/auth.service";
-
+import {Router} from "@angular/router";
+import {User} from "../../../../models/User/user.model";
 @Component({
   selector: 'app-user-registration',
   templateUrl: './user-registration.component.html',
@@ -11,20 +12,18 @@ import {AuthService} from "../../../../services/auth/auth.service";
   }
 })
 export class UserRegistrationComponent {
-  user = {username:"",email:"",is_admin:false,photo_url:""};
+  user:User = {id:"",username:"",email:"",is_admin:false,photo_url:""};
   pass="";
   passConfirm="";
-  constructor(private authService:AuthService) {
+  constructor(private authService:AuthService, private router: Router) {
   }
   registration(){
     if (this.pass === this.passConfirm){
-      this.authService.createUser(this.user.email,this.pass)
+      this.authService.createUser(this.user,this.pass)
         .then(response => {
           console.log(response)
+          this.router.navigate(["/userInfo"])
         })
     }
-    console.log("usuario => ",this.user)
-    console.log("pass => ", this.pass)
-    console.log("passConfirm => ", this.passConfirm)
   }
 }
