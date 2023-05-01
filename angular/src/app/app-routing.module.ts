@@ -21,14 +21,13 @@ const routes: Routes = [
   {path: 'cardCar', component: CardCarComponent},
   {path: 'dataUser', component: DataUserComponent},
   {path: 'gasStation', component: GasInfoPageComponent},
-  {path: 'cardCar', component: CardCarComponent},
   {path: 'login', component: LoginComponent},
   {path: 'test', component: GasStationListComponent},
   {path: 'userInfo', component: UserFormIconAndOptionsComponent},
   {path: 'userProfile', component: UserProfileViewComponent},
   {path: 'formCar', component:FormCarComponent},
   {path: 'formPumping', component:FormPumpingComponent},
-  {path: 'userRegistration', component:UserRegistrationComponent}
+  {path: 'userRegistration', component:UserRegistrationComponent},
 ];
 
 @NgModule({

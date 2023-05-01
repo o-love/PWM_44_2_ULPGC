@@ -28,6 +28,6 @@ export class CardCarComponent implements OnInit {
   }
 
   navigateToCarCreate(): void {
-    this.router.navigate(['adminPage']);
+    this.router.navigate(['formCar']);
   }
 }

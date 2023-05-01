@@ -11,7 +11,7 @@ export class CarService {
   constructor(protected http: HttpClient, private service: FirestoreService) { }
   private collection = "cars"
   getCars() : Observable<CarModel[]> {
-    return of([]);
+    return this.getAllCars();
   }
 
   storeCar(car: CarModel) : Observable<CarModel> {
@@ -25,6 +25,7 @@ export class CarService {
       cambio_bujias: "", impuesto_circulacion: "", seguro_coche: "",
       revision_itv: "", foto_coche_src: ""
     });
+
   }
 
   storeCarImage(file: File) : Observable<string> {
