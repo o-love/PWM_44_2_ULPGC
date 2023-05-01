@@ -3,12 +3,13 @@ import {HttpClient} from "@angular/common/http";
 import {Observable, of} from "rxjs";
 import {CarModel} from "../../models/Car/car.model";
 import {FirestoreService} from "../firestore/firestore.service";
+import {AngularFireStorage} from "@angular/fire/compat/storage";
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
 
-  constructor(protected http: HttpClient, private service: FirestoreService) { }
+  constructor(protected http: HttpClient, private service: FirestoreService, private storage: AngularFireStorage) { }
   private collection = "cars"
   getCars() : Observable<CarModel[]> {
     return this.getAllCars();
@@ -29,7 +30,11 @@ export class CarService {
   }
 
   storeCarImage(file: File) : Observable<string> {
-    return of();
+    const path = `car-icon/${Math.random().toString(36).substring(2)}.${file.type}`;
+    const storageRef = this.storage.ref(path);
+
+    storageRef.put(file);
+    return storageRef.getDownloadURL();
   }
 
   getAllCars(){
