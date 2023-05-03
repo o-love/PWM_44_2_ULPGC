@@ -6,6 +6,7 @@ import {of} from "rxjs";
 import {FirestoreService} from "../firestore/firestore.service";
 // @ts-ignore
 import data from '../../../assets/json/users.json';
+import {getStorage} from "@angular/fire/storage";
 
 @Injectable({
   providedIn: 'root'
@@ -16,15 +17,10 @@ export class UserService {
   }
 
   getUsers(): Observable<User[]> {
-    return of(data.users)
-  }
-
-  getUserById(userId: number): Observable<User|undefined>{
-    const users: User | undefined = data.users.find(user => user.id == userId);
-    return of(users);
-  }
-
-  getAllUsers(){
     return this.firestoreService.getAllDocs(this.collection);
+  }
+
+  getUserById(userId: string): Observable<User|undefined>{
+    return of({email: "pwkoadkpo@test.test", id: "awd9", is_admin: false, photo_url: "", username: "test user"});
   }
 }

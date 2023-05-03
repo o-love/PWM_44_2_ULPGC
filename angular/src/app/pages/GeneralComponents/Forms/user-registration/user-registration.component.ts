@@ -19,6 +19,9 @@ export class UserRegistrationComponent {
   }
   registration(){
     if (this.pass === this.passConfirm){
+
+      // @ts-ignore
+      // TODO: FIX AUTH SERVICE CREATE USER
       this.authService.createUser(this.user,this.pass)
         .then(response => {
           console.log(response)
