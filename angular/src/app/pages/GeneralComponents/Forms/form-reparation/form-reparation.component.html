@@ -1,0 +1,40 @@
+<form (ngSubmit)="onSubmit()" #reparacionForm="ngForm" class="containerForm w-50 my-auto formulario p-3 mt-3 rounded d-block d-md-block">
+  <h3><strong>Añade una reparación</strong></h3>
+  <div class="elementForm">
+    <label for="reparacionArticulo" class="labelReparacion form-label">Artículo reparado</label>
+    <input type="text" id="reparacionArticulo" class="inputDataReparacion form-control" name="articuladoReparado" [(ngModel)]="model.articuladoReparado" required #articuloReparado="ngModel">
+    <div [hidden]="articuloReparado.valid || articuloReparado.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;">
+      <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p>
+    </div>
+  </div>
+  <div class="elementForm">
+    <label for="reparacionPrecio" class="labelReparacion form-label">Precio</label>
+    <input type="text" id="reparacionPrecio" class="inputDataReparacion form-control" name="precio" [(ngModel)]="model.precio" required #precioReparacion="ngModel">
+    <div [hidden]="precioReparacion.valid || precioReparacion.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;">
+      <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p>
+    </div>
+  </div>
+  <div class="elementForm">
+    <label for="reparacionFecha" class="labelReparacion form-label">Fecha</label>   <input type="date" id="reparacionFecha" class="inputDataReparacion form-control" name="fechaReparacion"
+                                                                                           [(ngModel)]="model.fecha" required #fechaReparacion="ngModel">
+    <div [hidden]="fechaReparacion.valid || fechaReparacion.pristine" class="alert alert-danger form-errors-div pb-4 mb-0"
+         style="height:1rem;">
+      <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido</p>
+    </div>
+  </div>
+  <div class="elementForm">
+    <label for="reparacionTaller" class="labelReparacion form-label">Taller</label>
+    <input type="text" id="reparacionTaller" class="inputDataReparacion form-control" name="taller" [(ngModel)]="model.taller" required #tallerReparacion="ngModel">
+    <div [hidden]="tallerReparacion.valid || tallerReparacion.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;">
+      <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p>
+    </div>
+  </div>
+
+  <button id="button-add-repair" [disabled]="!reparacionForm.form.valid"
+          [ngClass]="{'boton-habilitado': reparacionForm.form.valid, 'boton-deshabilitado': !reparacionForm.form.valid}"
+          type="submit" class="boton p-2 text-white formButton btn btn-lg">
+    <strong>Añadir</strong>
+  </button>
+  <div class="text-center mb-3">
+  </div>
+</form>

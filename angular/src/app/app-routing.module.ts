@@ -13,6 +13,7 @@ import {GasInfoPageComponent} from "./pages/gas-info-page/gas-info-page.componen
 import {FormPumpingComponent} from "./pages/GeneralComponents/Forms/form-pumping/form-pumping.component";
 import {FormCarComponent} from "./pages/form-car/form-car.component";
 import {UserRegistrationComponent} from "./pages/GeneralComponents/Forms/user-registration/user-registration.component";
+import { FormReparationComponent} from "./pages/GeneralComponents/Forms/form-reparation/form-reparation.component";
 
 const routes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: "full"},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'userProfile', component: UserProfileViewComponent},
   {path: 'formCar', component:FormCarComponent},
   {path: 'formPumping', component:FormPumpingComponent},
+  {path: 'formReparation', component:FormReparationComponent},
   {path: 'userRegistration', component:UserRegistrationComponent},
 ];
 

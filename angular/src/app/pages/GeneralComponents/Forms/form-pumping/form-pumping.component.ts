@@ -1,24 +1,28 @@
 import {Component, ElementRef, Renderer2} from '@angular/core';
-import {PumpingModel} from "../../../../models/Pumping/pumping.model";
-import {NgForm} from "@angular/forms";
+import { PumpingModel} from "../../../../models/Pumping/pumping.model";
+
 @Component({
   selector: 'app-form-pumping',
   templateUrl: './form-pumping.component.html',
-  styleUrls: ['./form-pumping.component.sass']
+  styleUrls: ['./form-pumping.component.sass'],
+  host:{
+    id:"mainContent",
+    class:"hideOnMobile",
+  }
 })
 export class FormPumpingComponent {
 
   model: PumpingModel = {
-    precio_combustible: "",
-    km_actual: "",
-    precio_total: "",
+    precioCombustible: "",
+    kmActual: "",
+    precioTotal: "",
   }
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
   }
 
   needFieldsInForm() {
-    const validacion= this.model.precio_total && this.model.km_actual && this.model.precio_combustible;
+    const validacion= this.model.precioCombustible && this.model.kmActual && this.model.precioTotal;
     let formSubmit = this.el.nativeElement.querySelector('#button-add-pumping');
     if(!validacion){
       this.renderer.removeClass(formSubmit, 'formButton');
@@ -30,8 +34,8 @@ export class FormPumpingComponent {
     return validacion;
   }
 
-  onSubmit(pumpingForm: NgForm) {
-    if(pumpingForm.valid) {
+  onSubmit() {
+    if(this.needFieldsInForm()) {
       console.log("Formulario enviado");
     }
   }

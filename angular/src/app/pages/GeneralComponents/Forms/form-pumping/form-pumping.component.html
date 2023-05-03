@@ -1,22 +1,30 @@
-<form (ngSubmit)="onSubmit(pumpingForm)" #pumpingForm="ngForm"  class="containerForm w-50 my-auto formulario p-3  mt-3 rounded d-block d-md-block">
+<form (ngSubmit)="onSubmit()" #pumpingForm="ngForm" class="containerForm w-50 my-auto formulario p-3  mt-3 rounded d-block d-md-block">
   <h3>Añade un repostaje</h3>
   <div class="elementForm">
-    <label for="GasPrice" class="labelPumping form-label">Precio €/L combustible</label>
-    <input type="text" id="GasPrice" class="inputDataPumping form-control" name="precio_combustible" [(ngModel)]="model.precio_combustible" required #precio_combustible="ngModel">
-    <div [hidden]="precio_combustible.valid || precio_combustible.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;"> <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p></div>
+    <label for="gasPrice" class="labelPumping form-label">Precio €/L combustible</label>
+    <input type="text" id="gasPrice" class="inputDataPumping form-control" name="precioCombustible" [(ngModel)]="model.precioCombustible" required #precioCombustible="ngModel">
+    <div [hidden]="precioCombustible.valid || precioCombustible.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;">
+      <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p>
+    </div>
   </div>
   <div class="elementForm">
     <label for="totalKM" class="labelPumping form-label">Km actual</label>
-    <input type="text" id="totalKM" class="inputDataPumping form-control" name="km_actual" [(ngModel)]="model.km_actual" required #km_actual="ngModel">
-    <div [hidden]="km_actual.valid || km_actual.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;"> <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p></div>
+    <input type="text" id="totalKM" class="inputDataPumping form-control" name="kmActual" [(ngModel)]="model.kmActual" required #kmActual="ngModel">
+    <div [hidden]="kmActual.valid || kmActual.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;">
+      <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p>
+    </div>
   </div>
   <div class="elementForm">
     <label for="totalPrice" class="labelPumping form-label">Precio total</label>
-    <input type="text" id="totalPrice" class="inputDataPumping form-control" name="precio_total" [(ngModel)]="model.precio_total" required #precio_total="ngModel">
-    <div [hidden]="precio_total.valid || precio_total.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;"> <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p></div>
+    <input type="text" id="totalPrice" class="inputDataPumping form-control" name="precioTotal" [(ngModel)]="model.precioTotal" required #precioTotal="ngModel">
+    <div [hidden]="precioTotal.valid || precioTotal.pristine" class="alert alert-danger form-errors-div pb-4 mb-0" style="height:1rem;">
+      <p class="ml-2 mt-0 pt-0 d-inline-block text-decoration-none">Este campo es requerido<p>
+    </div>
   </div>
   <div class="text-center mb-3">
-  <button name="button" id="button-add-pumping" [disabled]="!needFieldsInForm()"
-          [ngClass]="needFieldsInForm ? 'boton-habilitado' : 'boton-deshabilitado'" type="submit" class="boton p-2 text-white formButton btn btn-lg"><strong>Añadir</strong></button>
+    <button id="button-add-pumping" [disabled]="!pumpingForm.form.valid"
+            [ngClass]="{'boton-habilitado': pumpingForm.form.valid, 'boton-deshabilitado': !pumpingForm.form.valid}" type="submit" class="boton p-2 text-white formButton btn btn-lg">
+      <strong>Añadir</strong>
+    </button>
   </div>
 </form>

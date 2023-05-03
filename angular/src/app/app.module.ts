@@ -35,6 +35,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { FormReparationComponent } from './pages/GeneralComponents/Forms/form-reparation/form-reparation.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     FormCarComponent,
     FormPumpingComponent,
     UserRegistrationComponent,
+    FormReparationComponent,
   ],
   imports: [
     BrowserModule,
