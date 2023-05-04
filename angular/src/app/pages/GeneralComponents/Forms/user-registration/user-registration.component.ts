@@ -22,7 +22,7 @@ export class UserRegistrationComponent {
 
       // @ts-ignore
       // TODO: FIX AUTH SERVICE CREATE USER
-      this.authService.createUser(this.user,this.pass)
+      this.authService.createUser(this.user.email,this.pass)
         .then(response => {
           console.log(response)
           this.router.navigate(["/userInfo"])

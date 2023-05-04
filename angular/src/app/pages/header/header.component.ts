@@ -24,19 +24,21 @@ export class HeaderComponent implements OnInit {
   }
 
   checkUserLoged() {
-    // @ts-ignore
-    this.user = JSON.parse(localStorage.getItem("userLoged"))
-    if (this.user !== null) {
-      this.isLoggedIn = true;
-      // @ts-ignore
-      if (this.user.is_admin) {
-        this.Rol = "Admin"
-      }else{
-        this.Rol = "usuarioLogeado"
+    try {
+      const userJson = localStorage.getItem("userLoged");
+      if (userJson !== null) {
+        this.user = JSON.parse(userJson);
+        // @ts-ignore
+        this.Rol = this.user.is_admin ? "usuarioLogeado" : "Admin";
+        this.isLoggedIn = true;
+      } else {
+        this.isLoggedIn = false;
+        this.Rol = "usuarioNoLogeado";
       }
-    }else{
+    } catch (error) {
+      console.error("Error al analizar el objeto JSON", error);
       this.isLoggedIn = false;
-      this.Rol = "usuarioNoLogeado"
+      this.Rol = "usuarioNoLogeado";
     }
   }
 
