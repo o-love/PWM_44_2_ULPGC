@@ -23,7 +23,7 @@ export class UserFormIconAndOptionsComponent implements OnInit {
     const userId: string = this.route.snapshot.params['number'];
     console.log(typeof (userId));
 
-    this.userService.getUserById(userId).subscribe((user: User | undefined) => {
+    this.userService.getUserById(userId).subscribe((user:any) => {
       this.user = user ?? undefined;
     });
   }
