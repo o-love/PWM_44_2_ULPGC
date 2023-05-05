@@ -17,7 +17,7 @@ import {UserService} from "../../services/user/user.service";
 export class HeaderComponent implements OnInit {
   isLoggedIn = false;
 
-  Rol = "usuarioNoLogeado";
+  Rol = "";
 
   private userLogged: User | undefined;
 
@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
   private setUserHeader(){
     this.userLogged = this.authService.getUser()
     console.log("usuario logeado desde header: ", this.userLogged)
-    if (this.userLogged){
+    if (this.userLogged !== undefined){
       if (this.userLogged.is_admin){
         this.Rol = "Admin"
       }else{
@@ -37,11 +37,13 @@ export class HeaderComponent implements OnInit {
     }else{
       this.Rol  = "usuarioNoLogeado"
     }
+    console.log("rol de usuario: ", this.Rol)
   }
 
   ngOnInit() {
     this.authService.isLoggedIn.subscribe(
       (loggedIn) => {
+        console.log("loggedIn: " , loggedIn)
         this.isLoggedIn = loggedIn;
         this.setUserHeader()
       }

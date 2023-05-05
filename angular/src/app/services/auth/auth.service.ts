@@ -28,11 +28,11 @@ export class AuthService {
       console.log("inice sesion")
       if (response !== null){
         this.prueba(response.email!,response.uid)
+        this.loggedIn.next(true)
       }else{
         this.userLogged = undefined
       }
 
-      this.loggedIn.next(true)
     })
     console.log("this.userLogged en authService: ", this.auth.currentUser)
   }

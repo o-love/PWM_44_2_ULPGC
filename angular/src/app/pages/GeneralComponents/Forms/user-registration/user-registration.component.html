@@ -20,7 +20,7 @@
   </div>
   <div class="my-3 d-flex flex-column w-75 m-auto">
     <label for="">Foto</label>
-    <input type="file" class="input">
+    <input type="file" class="input" (change)="onFileSelected($event)">
   </div>
   <div class="text-center mb-3" >
     <button class="boton p-2 text-white" (click)="registration()">Registrate</button>
