@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {from, map, Observable, of} from "rxjs";
 import {CarModel} from "../../models/Car/car.model";
 import {FirestoreService} from "../firestore/firestore.service";
-import {AngularFireStorage} from "@angular/fire/compat/storage";
 @Injectable({
   providedIn: 'root'
 })
@@ -11,12 +10,18 @@ export class CarService {
 
   constructor(protected http: HttpClient, private service: FirestoreService) { }
   private collection = "cars"
+
   getCars() : Observable<CarModel[]> {
-    return this.getAllCars();
+    return this.service.getAllDocs(this.collection);
+  }
+
+  getCarByID(carID: string) {
   }
 
   storeCar(car: CarModel) : Observable<CarModel> {
+    delete car.id;
     const promise: Promise<any> = this.service.createDoc(this.collection, car);
+    promise.then((res) => console.log(res));
     return from(promise).pipe(map((res) => {
       car.id = res.id;
       return car;
@@ -33,9 +38,5 @@ export class CarService {
     return storageRef.getDownloadURL();
      */
     return of("faliure")
-  }
-
-  getAllCars(){
-    return this.service.getAllDocs(this.collection);
   }
 }
