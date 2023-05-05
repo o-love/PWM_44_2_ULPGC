@@ -25,8 +25,8 @@ export class UserService {
     return this.firestoreService.getAllDocs(this.collectionDoc);
   }
 
-  getUserById(userId: string): Observable<User | undefined> {
-    return of({email: "pwkoadkpo@test.test", id: "awd9", is_admin: false, photo_url: "", username: "test user"});
+  getUserById(userId: string) {
+    return this.firestoreService.getDocById(this.collectionDoc+`/${userId}`);
   }
 
   async createUser(user: User, userPassword: string) {

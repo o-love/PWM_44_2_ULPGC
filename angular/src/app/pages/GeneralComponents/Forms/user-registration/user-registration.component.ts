@@ -21,15 +21,6 @@ export class UserRegistrationComponent {
   registration(){
     if (this.pass === this.passConfirm){
       this.userService.createUser(this.user,this.pass)
-
-
-      // @ts-ignore
-      // TODO: FIX AUTH SERVICE CREATE USER
-      // this.authService.createUser(this.user.email,this.pass)
-      //   .then(response => {
-      //     console.log(response)
-      //     this.router.navigate(["/userInfo"])
-      //   })
     }
   }
 }

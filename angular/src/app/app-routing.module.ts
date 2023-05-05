@@ -7,7 +7,6 @@ import {CardCarComponent} from "./pages/card-car/card-car.component";
 import {DataUserComponent} from "./pages/GeneralComponents/data-user/data-user.component";
 import {LoginComponent} from "./pages/login/login/login.component";
 import {GasStationListComponent} from "./pages/home-page/gas-station-list/gas-station-list.component";
-import {UserFormIconAndOptionsComponent} from "./pages/GeneralComponents/user-form-icon-and-options/user-form-icon-and-options.component";
 import {UserProfileViewComponent} from "./pages/user-profile-view/user-profile-view.component";
 import {GasInfoPageComponent} from "./pages/gas-info-page/gas-info-page.component";
 import {FormPumpingComponent} from "./pages/GeneralComponents/Forms/form-pumping/form-pumping.component";
@@ -24,7 +23,6 @@ const routes: Routes = [
   {path: 'gasStation', component: GasInfoPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'test', component: GasStationListComponent},
-  {path: 'userInfo', component: UserFormIconAndOptionsComponent},
   {path: 'userProfile', component: UserProfileViewComponent},
   {path: 'formCar', component:FormCarComponent},
   {path: 'formPumping', component:FormPumpingComponent},

@@ -24,7 +24,7 @@ export class LoginComponent {
       .then(res => {
 
         console.log("login: ", res)
-        this.router.navigate(["/userInfo"])
+        this.router.navigate(["/userProfile"])
       })
       .catch(error =>{
         console.log(error)
