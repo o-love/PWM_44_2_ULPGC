@@ -1,7 +1,18 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import data from '../../../assets/json/users.json'
-import {Auth, createUserWithEmailAndPassword, onAuthStateChanged} from "@angular/fire/auth";
+import {
+  Auth,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  browserSessionPersistence
+} from "@angular/fire/auth";
+
+import {User} from "../../models/User/user.model";
+import {FirestoreService} from "../firestore/firestore.service";
+import {UserService} from "../user/user.service";
 
 @Injectable({
   providedIn: 'root'
@@ -9,55 +20,63 @@ import {Auth, createUserWithEmailAndPassword, onAuthStateChanged} from "@angular
 export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false); // se inicializa con falso
 
-  constructor(private auth: Auth) {
+  private userLogged: User | undefined
+
+  constructor(private auth: Auth, private firestoreService: FirestoreService) {
+
+    onAuthStateChanged(this.auth, async response => {
+      console.log("inice sesion")
+      if (response !== null){
+        this.prueba(response.email!,response.uid)
+      }else{
+        this.userLogged = undefined
+      }
+
+      this.loggedIn.next(true)
+    })
+    console.log("this.userLogged en authService: ", this.auth.currentUser)
   }
 
-  get isLoggedIn(): Observable<boolean> {
+  get isLoggedIn() {
     return this.loggedIn.asObservable(); // convierte el loggedIn a un Observable para poder suscribirse
-
   }
 
-  checkLoginFromJSON(userEmail: string, userPassword: string): boolean {
-
-    // @ts-ignore
-    let userLoged = data.users.find(user => user.email === userEmail && user.password === userPassword)
-    if(userLoged!==null){
-      localStorage.setItem("userLoged",JSON.stringify(userLoged))
-      return true;
-    }
-    return false;
+  async login(userEmail: string, userPassword: string, coll: string) {
+    await this.auth.setPersistence(browserSessionPersistence)
+    const userCredentials = await signInWithEmailAndPassword(this.auth, userEmail, userPassword)
+    this.prueba(userCredentials.user.email!, userCredentials.user.uid)
   }
-
-  // async loginFirebaseAuth(userEmail: string, userPassword: string){
-  //   signInWithEmailAndPassword(auth,userEmail,userPassword)
-  //     .then(userCredential => {
-  //       console.log(userCredential)
-  //       localStorage.setItem("userLoged",JSON.stringify(userCredential.user))
-  //     })
-  //     .catch((error) => {
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       console.log(errorCode);
-  //       console.log(errorMessage);
-  //     });
-  // }
-  async login(userEmail: string, userPassword: string) {
-    // if(this.checkLoginFromJSON(userEmail,userPassword)){
-    //   this.loggedIn.next(true);
-    // }
-    const res = await this.checkLoginFromJSON(userEmail,userPassword)
-    return res;
-
+  private prueba(email:string,id:string){
+    const docObservale = this.firestoreService.getDocById(`users/${id}`)
+    docObservale.subscribe((data: any) => {
+      this.setUser(email!, id, data)
+      this.loggedIn.next(true)
+    })
   }
-
-  logout(): void {
-    //auth.signOut()
+  async logout() {
+    await signOut(this.auth)
+    this.userLogged = undefined
     localStorage.removeItem("userLoged")
     console.log("saliendo")
-    this.loggedIn.next(false); // cambia el valor del BehaviorSubject y notifica a sus suscriptores
+    this.loggedIn.next(false)
   }
 
-  createUser(email: string, password: string){
-    return createUserWithEmailAndPassword(this.auth,email,password)
+  async createUser(userEmail: string, userPassword: string) {
+    return createUserWithEmailAndPassword(this.auth, userEmail, userPassword)
+  }
+
+  getUser(): User | undefined {
+    return this.userLogged
+  }
+
+  private setUser(email: string, id: string, data: any) {
+    console.log("setUser data: ", data)
+    this.userLogged = {
+      id: id,
+      username: data.username,
+      email: email,
+      is_admin: data.is_admin,
+      photo_url: data.photo_url
+    }
   }
 }

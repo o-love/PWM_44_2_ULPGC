@@ -20,8 +20,7 @@
         <a class="nav-link text-white" [routerLink]="['/aboutUs']">Acerca de nosotros</a>
       </li>
     </ul>
-    <ul class="list-unstyled d-flex my-auto listHeader flex-column flex-lg-row listaLinksHeader"
-        *ngIf='Rol==="usuarioNoLogeado"'>
+    <ul class="list-unstyled d-flex my-auto listHeader flex-column flex-lg-row listaLinksHeader" *ngIf='Rol==="usuarioNoLogeado"'>
       <li class="ms-2 p-2 rounded itemHeader firstItem">
         <a class="nav-link text-white" >Contactanos</a>
       </li>
@@ -33,7 +32,7 @@
       <button class="btn btn-primary mx-2 text-white" id="btnLogin" [routerLink]="['/login']">Login</button>
     </div>
     <div class="mx-2 text-white" *ngIf="isLoggedIn" id="fotoPerfilHeaderContainer">
-      <img ngSrc="../../../assets/img/users/user_foto.PNG" alt="User Photo" [routerLink]="['/userInfo']" id="fotoPerfilHeader" class="my-auto"
+      <img ngSrc="../../../assets/img/users/user_foto.PNG" alt="User Photo" [routerLink]="['/userProfile']" id="fotoPerfilHeader" class="my-auto"
            height="519" width="516">
     </div>
   </div>

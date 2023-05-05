@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {
   Firestore, addDoc, collection, collectionData,
-  doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc, where, query, getDocs
+  doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc, where, query, getDocs, getDoc
 } from '@angular/fire/firestore';
 import {Observable} from "rxjs";
 import {User} from "../../models/User/user.model";
@@ -33,11 +33,17 @@ export class FirestoreService {
 
   updateDoc(coll: string, data: {}) {
     const collRef = doc(this.firestore, coll)
-    return setDoc(collRef, data);
+    return updateDoc(collRef, data);
   }
 
   createDocWithId(coll: string, data: { is_admin: boolean; photo_url: string; username: string }, id: string) {
     const collRef = doc(this.firestore, coll, id)
     return setDoc(collRef, data)
   }
+
+  getDocById(coll: string) {
+    const bookRef = doc(this.firestore, coll)
+    return docData(bookRef, {idField: 'id'})
+  }
+
 }

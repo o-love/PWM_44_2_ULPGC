@@ -46,4 +46,9 @@ export class UserService {
   editUser(user: User) {
     return this.firestoreService.updateDoc(this.collectionDoc, user.id)
   }
+
+
+  logUser(userEmail: string, userPassword: string){
+    return this.authService.login(userEmail,userPassword,this.collectionDoc)
+  }
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth/auth.service";
 import {User} from "../../models/User/user.model";
+import {UserService} from "../../services/user/user.service";
 
 @Component({
   selector: 'app-header',
@@ -14,48 +15,36 @@ import {User} from "../../models/User/user.model";
 })
 
 export class HeaderComponent implements OnInit {
-  isLoggedIn: boolean | undefined;
+  isLoggedIn = false;
 
-  Rol = "";
+  Rol = "usuarioNoLogeado";
 
-  user = {}
+  private userLogged: User | undefined;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private userService: UserService) {
   }
 
-  checkUserLoged() {
-    try {
-      const userJson = localStorage.getItem("userLoged");
-      if (userJson !== null) {
-        this.user = JSON.parse(userJson);
-        // @ts-ignore
-        this.Rol = this.user.is_admin ? "usuarioLogeado" : "Admin";
-        this.isLoggedIn = true;
-      } else {
-        this.isLoggedIn = false;
-        this.Rol = "usuarioNoLogeado";
+
+  private setUserHeader(){
+    this.userLogged = this.authService.getUser()
+    console.log("usuario logeado desde header: ", this.userLogged)
+    if (this.userLogged){
+      if (this.userLogged.is_admin){
+        this.Rol = "Admin"
+      }else{
+        this.Rol = "usuarioLogeado"
       }
-    } catch (error) {
-      console.error("Error al analizar el objeto JSON", error);
-      this.isLoggedIn = false;
-      this.Rol = "usuarioNoLogeado";
+    }else{
+      this.Rol  = "usuarioNoLogeado"
     }
   }
 
   ngOnInit() {
-
-    this.checkUserLoged()
     this.authService.isLoggedIn.subscribe(
       (loggedIn) => {
-        console.log("header => ", loggedIn);
         this.isLoggedIn = loggedIn;
-        this.checkUserLoged()
+        this.setUserHeader()
       }
     );
-  }
-
-  miLogOut() {
-    this.authService.logout()
-    console.log("loged out")
   }
 }
