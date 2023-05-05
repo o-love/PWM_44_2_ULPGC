@@ -74,7 +74,7 @@ import { FormReparationComponent } from './pages/GeneralComponents/Forms/form-re
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    //provideStorage(() => getStorage()),
+    provideStorage(() => getStorage()),
 
   ],
   providers: [],

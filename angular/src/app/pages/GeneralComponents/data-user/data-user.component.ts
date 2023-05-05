@@ -1,31 +1,36 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from "../../../models/User/user.model";
 import {UserService} from "../../../services/user/user.service";
 import {ActivatedRoute} from "@angular/router";
+import {AuthService} from "../../../services/auth/auth.service";
 
 @Component({
   selector: 'app-data-user',
   templateUrl: './data-user.component.html',
   styleUrls: ['./data-user.component.sass'],
-  host:{
-    class:"m-0"
+  host: {
+    class: "m-0"
   }
 })
-export class DataUserComponent {
+export class DataUserComponent implements OnInit {
   title = "dataUser";
-  numeroCoches: number=5;
-  numeroRepostajes: number=100;
-  numeroReparaciones: number=20;
-  user: User | null | undefined;
-  constructor(private userService: UserService, private route: ActivatedRoute) {
+  numeroCoches: number = 5;
+  numeroRepostajes: number = 100;
+  numeroReparaciones: number = 20;
+  user: User | undefined;
+
+  constructor(private authService: AuthService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    const userId: string = this.route.snapshot.params['number'];
-    console.log(typeof(userId));
-    this.userService.getUserById(userId).subscribe((user:any) => {
-      this.user = user ?? undefined;
-    });
+    this.authService.isLoggedIn.subscribe(
+      (loggedIn) => {
+        if (loggedIn) {
+          this.user = this.authService.getUser()
+        }
+        console.log("usuario", this.user)
+
+      });
   }
 
 }
