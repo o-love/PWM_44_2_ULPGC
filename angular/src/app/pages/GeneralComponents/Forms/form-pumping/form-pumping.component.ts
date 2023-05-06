@@ -20,11 +20,13 @@ import {catchError, of, tap} from "rxjs";
 
 export class FormPumpingComponent implements  OnInit{
   user: User | undefined;
+  error = false;
   model: Pumping = {
     precioCombustible: "",
     kmActual: "",
     precioTotal: "",
-    userId: ""
+    userId: "",
+    fecha: ""
   }
   constructor(private renderer: Renderer2, private el: ElementRef, private pumpingService:PumpingService, private authService: AuthService) {
   }
@@ -42,18 +44,16 @@ export class FormPumpingComponent implements  OnInit{
     return validacion;
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.needFieldsInForm()) {
       if (this.user?.id) {
-        this.pumpingService.createPumping(this.model, this.user.id)
-          .pipe(
-            tap(() => console.log("Formulario enviado")),
-            catchError((error) => {
-              console.error(error);
-              return of(null);
-            })
-          )
-          .subscribe();
+        try {
+          const result = await this.pumpingService.createPumping(this.model, this.user.id).toPromise();
+          console.log("Formulario enviado");
+        } catch (error) {
+          console.log("Error al enviar el formulario");
+          this.error = true;
+        }
       }
     }
   }

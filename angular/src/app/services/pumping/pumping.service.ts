@@ -27,13 +27,15 @@ export class PumpingService {
       isNaN(precioTotal) || precioTotal < 0) {
       throw new Error("La recarga no es valida");
     }
-
+    const fechaActual = new Date();
     const data: Pumping = {
       precioCombustible: pumping.precioCombustible,
       kmActual: pumping.kmActual,
       precioTotal: pumping.precioTotal,
-      userId: userId
+      userId: userId,
+      fecha: fechaActual.toLocaleDateString("es-ES").toString(),
     };
+
     return from(this.firestoreService.createDoc(this.collectionDoc, data));
   }
 

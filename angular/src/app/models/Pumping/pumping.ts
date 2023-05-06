@@ -3,4 +3,5 @@ export interface Pumping {
   kmActual: string;
   precioTotal: string;
   userId: string;
+  fecha: string;
 }

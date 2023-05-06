@@ -27,4 +27,8 @@
       <strong>Añadir</strong>
     </button>
   </div>
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    Error al enviar el formulario.
+  </div>
 </form>
+
