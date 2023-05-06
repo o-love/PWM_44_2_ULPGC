@@ -15,6 +15,9 @@ export class CardCarComponent implements OnInit {
   cars: CarModel[] = [];
 
   constructor(private carService: CarService, private router: Router) {
+    this.carService.getCars().subscribe((serviceCars: CarModel[]) => {
+      this.cars = [...this.cars, ...serviceCars];
+    });
   }
 
   ngOnInit(): void {
