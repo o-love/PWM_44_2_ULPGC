@@ -42,8 +42,21 @@ export class FirestoreService {
   }
 
   getDocById(coll: string) {
-    const bookRef = doc(this.firestore, coll)
-    return docData(bookRef, {idField: 'id'})
+    const docRef = doc(this.firestore, coll)
+    return docData(docRef, {idField: 'id'})
   }
 
+  async getDocByIdSnapshot(coll: string){
+    const docRef = doc(this.firestore, coll);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+      return docSnap.data()
+    } else {
+      // docSnap.data() will be undefined in this case
+      console.log("No such document!");
+      return undefined
+    }
+  }
 }

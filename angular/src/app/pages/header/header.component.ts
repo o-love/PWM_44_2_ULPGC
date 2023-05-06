@@ -25,25 +25,21 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  private setUserHeader(){
-    this.userLogged = this.authService.getUser()
-    if (this.userLogged !== undefined){
-      if (this.userLogged.is_admin){
-        this.Rol = "Admin"
-      }else{
-        this.Rol = "usuarioLogeado"
-      }
-    }else{
-      this.Rol  = "usuarioNoLogeado"
-    }
-  }
 
   ngOnInit() {
     this.authService.isLoggedIn.subscribe(
-      (loggedIn) => {
-        this.isLoggedIn = loggedIn;
-        console.log("isloggedin: ", this.isLoggedIn)
-        this.setUserHeader()
+      (user) => {
+        this.userLogged = user;
+        console.log("userLogged: ", this.userLogged)
+        if (this.userLogged){
+          if (this.userLogged.is_admin){
+            this.Rol="Admin"
+          }else{
+            this.Rol="usuarioLogeado"
+          }
+        }else{
+          this.Rol="usuarioNoLogeado"
+        }
       }
     );
   }

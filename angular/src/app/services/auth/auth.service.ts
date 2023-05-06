@@ -18,56 +18,61 @@ import {UserService} from "../user/user.service";
   providedIn: 'root'
 })
 export class AuthService {
-  private loggedIn = new BehaviorSubject<boolean>(false); // se inicializa con falso
 
-  private userLogged: User | undefined
+  private userLogged = new BehaviorSubject<User | undefined>(undefined);
+
 
   constructor(private auth: Auth, private firestoreService: FirestoreService) {
 
-    onAuthStateChanged(this.auth, async response => {
-
+    onAuthStateChanged(this.auth, response => {
       if (response !== null) {
-        let docObservale = this.firestoreService.getDocById(`users/${response.uid}`)
-        docObservale.subscribe((data: any) => {
-          this.setUser(response.email!, response.uid, data)
-        })
-        this.loggedIn.next(true)
+        this.setUser(response.uid, response.email!)
       } else {
-        this.userLogged = undefined
-        this.loggedIn.next(false)
+        this.userLogged.next(undefined)
       }
-
     })
   }
 
   get isLoggedIn() {
-    return this.loggedIn.asObservable(); // convierte el loggedIn a un Observable para poder suscribirse
+    return this.userLogged.asObservable(); // convierte el loggedIn a un Observable para poder suscribirse
   }
 
   async login(userEmail: string, userPassword: string, coll: string) {
-    return await signInWithEmailAndPassword(this.auth, userEmail, userPassword)
+    const x = await signInWithEmailAndPassword(this.auth, userEmail, userPassword)
+    this.setUser(x.user.uid, x.user.email!)
+    return x
   }
 
   async logout() {
     await signOut(this.auth)
-    this.userLogged = undefined
+    this.userLogged.next(undefined)
   }
 
   async createUser(userEmail: string, userPassword: string) {
     return createUserWithEmailAndPassword(this.auth, userEmail, userPassword)
   }
 
-  getUser(): User | undefined {
-    return this.userLogged
-  }
+  private async setUser(id: string, email: string) {
+    this.firestoreService.getDocByIdSnapshot(`users/${id}`).then(docData => {
+      this.userLogged.next({
+        id: id,
+        username: docData!['username'],
+        email: email,
+        is_admin: docData!['is_admin'],
+        photo_url: docData!['photo_url']
+      })
+      console.log(this.userLogged)
+    })
 
-  private setUser(email: string, id: string, data: any) {
-    this.userLogged = {
-      id: id,
-      username: data.username,
-      email: email,
-      is_admin: data.is_admin,
-      photo_url: data.photo_url
-    }
+    //docObservale.subscribe((data: any) => {
+    //   this.userLogged.next({
+    //     id: id,
+    //     username: data.username,
+    //     email: email,
+    //     is_admin: data.is_admin,
+    //     photo_url: data.photo_url
+    //   })
+    //   console.log("usuario seteado: ", this.userLogged)
+    // })
   }
 }

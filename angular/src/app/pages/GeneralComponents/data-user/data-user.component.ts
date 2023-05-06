@@ -24,13 +24,11 @@ export class DataUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.isLoggedIn.subscribe(
-      (loggedIn) => {
-        if (loggedIn) {
-          this.user = this.authService.getUser()
-        }
-        console.log("usuario", this.user)
-
-      });
+      (user) => {
+        this.user = user;
+        console.log("userLogged: ", this.user)
+      }
+    );
   }
 
 }

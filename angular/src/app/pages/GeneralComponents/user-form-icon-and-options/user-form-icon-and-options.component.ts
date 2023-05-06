@@ -13,24 +13,29 @@ import {ActivatedRoute, Router} from "@angular/router";
   }
 })
 export class UserFormIconAndOptionsComponent implements OnInit {
-  user: User | null | undefined;
+  user: User | undefined;
 
   constructor(private userService: UserService, private route: ActivatedRoute, private authService: AuthService, private router: Router) {
   }
 
 
   ngOnInit(): void {
-    const userId: string = this.route.snapshot.params['number'];
-    console.log(typeof (userId));
-
-    this.userService.getUserById(userId).subscribe((user:any) => {
-      this.user = user ?? undefined;
-    });
+    this.authService.isLoggedIn.subscribe(
+      (user) => {
+        this.user = user;
+        console.log("userLogged: ", this.user)
+      }
+    );
   }
 
   logOut() {
     this.authService.logout()
     this.router.navigate(["/"])
+  }
+
+  deleteUser(){
+    console.log("usuario desde profileview: ", this.user)
+    this.userService.deleteUser(this.user!)
   }
 }
 
