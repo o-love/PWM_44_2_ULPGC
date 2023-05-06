@@ -51,14 +51,7 @@ export class UserService {
 
 
   private uploadFile(file: FileUpload, id: string) {
-    this.storageService.pushFileToStorage(file, id)
-      .subscribe(porcentage => {
-          console.log("porcentaje de subida: ", porcentage)
-        },
-        error => {
-          console.log(error);
-        }
-      );
+    this.storageService.pushFileToStorage(file, id).subscribe();
   }
 
   async deleteUser(user: User) {
