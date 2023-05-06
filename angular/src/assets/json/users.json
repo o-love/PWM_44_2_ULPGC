@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "alejandro",
       "email": "alejandro@gmail.com",
       "password": "123",
@@ -9,7 +9,7 @@
       "photo_url": "./assets/img/users/user_foto.PNG"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "Oscar",
       "email": "oscar@gmail.com",
       "password": "123",
@@ -17,7 +17,7 @@
       "photo_url": "./assets/img/users/user_foto.PNG"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "cesar",
       "email": "cesar@gmail.com",
       "password": "123",

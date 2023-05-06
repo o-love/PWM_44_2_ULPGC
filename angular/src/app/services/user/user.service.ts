@@ -11,14 +11,17 @@ import {createUserWithEmailAndPassword} from "@angular/fire/auth";
 import {db} from '../../firebase/firestore';
 import {setDoc, doc, query, deleteDoc, where, getDocs, collection} from 'firebase/firestore';
 import {AuthService} from "../auth/auth.service";
+import {FileUpload} from "../../models/File/fileUpload";
+import {StorageService} from "../storage/storage.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private collectionDoc = "users"
+  private porcentage = 0
 
-  constructor(protected http: HttpClient, private firestoreService: FirestoreService, private authService: AuthService) {
+  constructor(protected http: HttpClient, private firestoreService: FirestoreService, private authService: AuthService, private storageService: StorageService) {
   }
 
   getUsers(): Observable<User[]> {
@@ -26,17 +29,36 @@ export class UserService {
   }
 
   getUserById(userId: string) {
-    return this.firestoreService.getDocById(this.collectionDoc+`/${userId}`);
+    return this.firestoreService.getDocById(this.collectionDoc + `/${userId}`);
   }
 
-  async createUser(user: User, userPassword: string) {
-    console.log("user: ", user)
-    const userCredentials = await this.authService.createUser(user.email,userPassword)
-    if (userCredentials !== null){
-      return this.firestoreService.createDocWithId(this.collectionDoc, {username:user.username, photo_url:user.photo_url, is_admin:user.is_admin},userCredentials.user.uid)
+  async createUser(user: User, userPassword: string, fileUpload: FileUpload | undefined) {
+    const userCredentials = await this.authService.createUser(user.email, userPassword)
+
+    if (fileUpload) {
+      this.uploadFile(fileUpload, userCredentials.user.uid)
+    }
+    if (userCredentials !== null) {
+      return this.firestoreService.createDocWithId(this.collectionDoc, {
+        username: user.username,
+        photo_url: user.photo_url,
+        is_admin: user.is_admin
+      }, userCredentials.user.uid)
     }
     return true
     //return this.firestoreService.createDoc(this.collectionDoc, user);
+  }
+
+
+  private uploadFile(file: FileUpload, id: string) {
+    this.storageService.pushFileToStorage(file, id)
+      .subscribe(porcentage => {
+          console.log("porcentaje de subida: ", porcentage)
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 
   async deleteUser(user: User) {
@@ -48,7 +70,7 @@ export class UserService {
   }
 
 
-  logUser(userEmail: string, userPassword: string){
-    return this.authService.login(userEmail,userPassword,this.collectionDoc)
+  logUser(userEmail: string, userPassword: string) {
+    return this.authService.login(userEmail, userPassword, this.collectionDoc)
   }
 }

@@ -25,7 +25,6 @@ export class AuthService {
   constructor(private auth: Auth, private firestoreService: FirestoreService) {
 
     onAuthStateChanged(this.auth, async response => {
-      console.log("inice sesion")
       if (response !== null){
         this.prueba(response.email!,response.uid)
         this.loggedIn.next(true)
@@ -34,7 +33,6 @@ export class AuthService {
       }
 
     })
-    console.log("this.userLogged en authService: ", this.auth.currentUser)
   }
 
   get isLoggedIn() {
@@ -57,7 +55,6 @@ export class AuthService {
     await signOut(this.auth)
     this.userLogged = undefined
     localStorage.removeItem("userLoged")
-    console.log("saliendo")
     this.loggedIn.next(false)
   }
 
@@ -70,7 +67,6 @@ export class AuthService {
   }
 
   private setUser(email: string, id: string, data: any) {
-    console.log("setUser data: ", data)
     this.userLogged = {
       id: id,
       username: data.username,

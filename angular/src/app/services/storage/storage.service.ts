@@ -20,13 +20,15 @@ export class StorageService {
     } else {
       this.basePath = "/users/"
     }
-    const type = fileUpload.file.type
-    const renamedFile = new File([fileUpload.file],id,{type})
+    console.log("id: ", id)
+    const renamedFile = new File([fileUpload.file],""+id,{type:fileUpload.file.type})
     console.log(renamedFile)
-    fileUpload.file = renamedFile
-    const filePath = this.basePath + `${fileUpload.name}`;
+    const newFileUpload = new FileUpload(renamedFile)
+    console.log("FILE UPLOAD NAME: ", fileUpload)
+
+    const filePath = this.basePath + `${newFileUpload.file.name}`;
     const storageRef = this.storage.ref(filePath)
-    const uploadTask = this.storage.upload(filePath, fileUpload.file)
+    const uploadTask = this.storage.upload(filePath, newFileUpload.file)
     console.log("subiendo archivo:")
     uploadTask.snapshotChanges().pipe(finalize(() => {
       storageRef.getDownloadURL().subscribe(downloadURL => {

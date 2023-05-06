@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from "../../../../services/auth/auth.service";
 import {Router} from "@angular/router";
 import {User} from "../../../../models/User/user.model";
 import {UserService} from "../../../../services/user/user.service";
 import {FileUpload} from "../../../../models/File/fileUpload";
 import {StorageService} from "../../../../services/storage/storage.service";
+
 @Component({
   selector: 'app-user-registration',
   templateUrl: './user-registration.component.html',
@@ -15,28 +16,32 @@ import {StorageService} from "../../../../services/storage/storage.service";
   }
 })
 export class UserRegistrationComponent {
-  user:User = {id:"",username:"",email:"",is_admin:false,photo_url:""};
-  pass="";
-  passConfirm="";
-  file: FileUpload | undefined;
-  constructor(private userService: UserService, private router: Router, private storage: StorageService) {
-  }
-  registration(){
-    if (this.file!){
-      this.storage.pushFileToStorage(this.file,"ChhhG5XVYOZjkXSkuOjY2wtVOlp1")
-    }
-    if (this.pass === this.passConfirm){
+  user: User = {id: "", username: "", email: "", is_admin: false, photo_url: ""};
+  pass = "";
+  passConfirm = "";
+  selectedFiles?: FileList;
+  currentFileUpload?: FileUpload;
+  percentage = 0;
 
-      //this.userService.createUser(this.user,this.pass)
+  constructor(private userService: UserService, private router: Router) {
+  }
+
+  registration() {
+    if (this.pass === this.passConfirm) {
+      if (this.selectedFiles) {
+        const file: File | null = this.selectedFiles.item(0)
+        this.selectedFiles = undefined
+        if (file) {
+          this.currentFileUpload = new FileUpload(file)
+          this.currentFileUpload.type ="user"
+        }
+      }
+      this.userService.createUser(this.user, this.pass, this.currentFileUpload)
     }
   }
+
 
   onFileSelected(event: Event) {
-    if (event.target!==null){
-      this.file = new FileUpload((<HTMLInputElement>event.target).files![0]);
-      this.file.type = "user"
-
-      console.log(this.file)
-    }
+    this.selectedFiles = (<HTMLInputElement>event.target).files!
   }
 }

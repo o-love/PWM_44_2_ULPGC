@@ -27,7 +27,6 @@ export class HeaderComponent implements OnInit {
 
   private setUserHeader(){
     this.userLogged = this.authService.getUser()
-    console.log("usuario logeado desde header: ", this.userLogged)
     if (this.userLogged !== undefined){
       if (this.userLogged.is_admin){
         this.Rol = "Admin"
@@ -37,13 +36,11 @@ export class HeaderComponent implements OnInit {
     }else{
       this.Rol  = "usuarioNoLogeado"
     }
-    console.log("rol de usuario: ", this.Rol)
   }
 
   ngOnInit() {
     this.authService.isLoggedIn.subscribe(
       (loggedIn) => {
-        console.log("loggedIn: " , loggedIn)
         this.isLoggedIn = loggedIn;
         this.setUserHeader()
       }
