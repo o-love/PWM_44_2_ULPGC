@@ -5,16 +5,26 @@ import {CarModel} from "../../models/Car/car.model";
 import {FirestoreService} from "../firestore/firestore.service";
 import {StorageService} from "../storage/storage.service";
 import {FileUpload} from "../../models/File/fileUpload";
+import {AuthService} from "../auth/auth.service";
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
 
-  constructor(protected http: HttpClient, private firestoreService: FirestoreService, private storageService: StorageService) { }
+  constructor(protected http: HttpClient, private firestoreService: FirestoreService, private storageService: StorageService, private authService: AuthService) { }
   private collection = "cars"
 
-  getCars() : Observable<CarModel[]> {
-    return this.firestoreService.getAllDocs(this.collection);
+  getCars() {
+    return this.authService.isLoggedIn.pipe(map(async (res) => {
+      if (res) {
+        const val = await this.firestoreService.getDocsByFieldUserId(res.id, this.collection);
+        console.log(res.id)
+        console.log(val);
+        return val;
+      }
+
+      return [];
+    }));
   }
 
   getCarByID(carID: string) {
