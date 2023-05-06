@@ -17,6 +17,7 @@ export class FormCarComponent implements OnInit {
   private formsig = var2;
 
   model: CarModel = {
+    userId: "",
     id: "",
     matricula: "", marca: "", modelo: "", combustible: "",
     aceite_motor: "", aceite_direccion: "", agua_radiador: "",

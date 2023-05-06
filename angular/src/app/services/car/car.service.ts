@@ -31,11 +31,18 @@ export class CarService {
     return this.firestoreService.getDocById(`${this.collection}/${carID}`);
   }
 
-  storeCar(car: CarModel) : Observable<CarModel> {
+  async storeCarAsync(car: CarModel) {
     delete car.id;
+    const myUser = await this.authService.isLoggedIn.toPromise();
+    car.userId = myUser?.id;
     const promise: Promise<any> = this.firestoreService.createDoc(this.collection, car);
     promise.then((res) => console.log(res));
-    return from(promise).pipe(map((res) => {
+
+    return promise;
+  }
+
+  storeCar(car: CarModel) : Observable<CarModel> {
+    return from(this.storeCarAsync(car)).pipe(map((res) => {
       car.id = res.id;
       return car;
     }))

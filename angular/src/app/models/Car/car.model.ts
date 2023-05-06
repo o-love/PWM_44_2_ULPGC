@@ -1,4 +1,5 @@
 export interface CarModel {
+  userId: string | undefined;
   id: string | undefined;
   matricula: string;
   marca: string;
