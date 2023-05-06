@@ -1,8 +1,10 @@
-import {Component, ElementRef, Renderer2} from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
 import { Pumping} from "../../../../models/Pumping/pumping";
 import {PumpingService} from "../../../../services/pumping/pumping.service";
 import {Router} from "@angular/router";
 import {UserService} from "../../../../services/user/user.service";
+import {AuthService} from "../../../../services/auth/auth.service";
+import {User} from "../../../../models/User/user.model";
 
 @Component({
   selector: 'app-form-pumping',
@@ -14,14 +16,15 @@ import {UserService} from "../../../../services/user/user.service";
   }
 })
 
-export class FormPumpingComponent {
-
+export class FormPumpingComponent implements  OnInit{
+  user: User | undefined;
   model: Pumping = {
     precioCombustible: "",
     kmActual: "",
     precioTotal: "",
+    userId: ""
   }
-  constructor(private renderer: Renderer2, private el: ElementRef, private pumpingService:PumpingService) {
+  constructor(private renderer: Renderer2, private el: ElementRef, private pumpingService:PumpingService, private authService: AuthService) {
   }
 
   needFieldsInForm() {
@@ -39,8 +42,19 @@ export class FormPumpingComponent {
 
   onSubmit() {
     if(this.needFieldsInForm()) {
-      this.pumpingService.createPumping(this.model);
-      console.log("Formulario enviado");
+      if(this.user?.id){
+        this.pumpingService.createPumping(this.model, this.user.id);
+        console.log("Formulario enviado");
+      }
     }
+  }
+
+  ngOnInit(): void {
+    this.authService.isLoggedIn.subscribe(
+      (user) => {
+        this.user = user;
+        console.log("userLogged: ", this.user)
+      }
+    );
   }
 }
