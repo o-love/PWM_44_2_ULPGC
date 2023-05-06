@@ -19,7 +19,6 @@ export class ReparationService {
       throw new Error("La reparación no es válida");
     }
 
-    const fechaActual = new Date();
     const data: ReparationModel = {
       articuladoReparado: reparation.articuladoReparado,
       precio: reparation.precio,
@@ -29,5 +28,9 @@ export class ReparationService {
     };
     return from(this.firestoreService.createDoc(this.collectionDoc, data));
   }
+  async getAllReparationsOfUser(userId: string){
+    return this.firestoreService.getDocsByFieldUserId(userId, this.collectionDoc)
+  }
+
 }
 

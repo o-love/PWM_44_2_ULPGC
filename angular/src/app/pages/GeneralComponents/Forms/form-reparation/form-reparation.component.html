@@ -30,11 +30,14 @@
     </div>
   </div>
 
-  <button id="button-add-repair" [disabled]="!reparacionForm.form.valid"
-          [ngClass]="{'boton-habilitado': reparacionForm.form.valid, 'boton-deshabilitado': !reparacionForm.form.valid}"
+  <button id="button-add-repair" [disabled]="!reparacionForm.form.valid|| submitted"
+          [ngClass]="{'boton-habilitado': reparacionForm.form.valid && !submitted, 'boton-deshabilitado': !reparacionForm.form.valid || submitted}"
           type="submit" class="boton p-2 text-white formButton btn btn-lg">
-    <strong>Añadir</strong>
+    <strong>{{ submitted ? 'Enviado' : 'Añadir' }}</strong>
   </button>
   <div class="text-center mb-3">
+  </div>
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    Error al enviar el formulario.
   </div>
 </form>

@@ -4,6 +4,7 @@ import {Pumping} from "../../../../models/Pumping/pumping";
 import {ReparationService} from "../../../../services/reparation/reparation.service";
 import {User} from "../../../../models/User/user.model";
 import {AuthService} from "../../../../services/auth/auth.service";
+import {catchError} from "rxjs";
 
 @Component({
   selector: 'app-form-reparation',
@@ -17,6 +18,9 @@ import {AuthService} from "../../../../services/auth/auth.service";
 
 export class FormReparationComponent {
   user: User | undefined;
+  error = false;
+  submitted = false;
+
   model: ReparationModel = {
     articuladoReparado: "",
     precio: "",
@@ -58,11 +62,15 @@ export class FormReparationComponent {
   onSubmit() {
     if (this.needFieldsInForm()) {
       if (this.user?.id) {
-        this.reparationService.createReparation(this.model, this.user.id);
-        console.log('Formulario enviado');
-      }else{
-      console.log("Error al enviar el formulario")
+        try {
+          this.reparationService.createReparation(this.model, this.user.id);
+          console.log('Formulario enviado');
+          this.error = false;
+          this.submitted = true;
+        }catch (error) {
+          this.error = true;
+          console.log("Error al enviar el formulario")
+        }
     }}
   }
-
 }

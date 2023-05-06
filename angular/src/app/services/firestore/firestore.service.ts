@@ -46,10 +46,10 @@ export class FirestoreService {
     return docData(docRef, {idField: 'id'})
   }
 
-  async getDocsByFielduserId(userId: string, coleccion: string) {
+  async getDocsByFieldUserId(userId: string, coleccion: string) {
     const q = query(collection(this.firestore, coleccion), where("userId", "==", userId));
     const querySnapshot = await getDocs(q);
-    return querySnapshot.docs.map(doc => doc.data());;
+    return querySnapshot.docs.map(doc => doc.data());
   }
 
 

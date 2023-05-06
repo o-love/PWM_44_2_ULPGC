@@ -40,6 +40,6 @@ export class PumpingService {
   }
 
   async getAllPumpingsOfUser(userId: string){
-      return this.firestoreService.getDocsByFielduserId(userId, "pumping")
+      return this.firestoreService.getDocsByFieldUserId(userId, this.collectionDoc)
   }
 }
