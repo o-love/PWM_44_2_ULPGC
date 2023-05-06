@@ -1,6 +1,6 @@
 import {Component, ElementRef, Renderer2} from '@angular/core';
 import {ReparationModel} from "../../../../models/Reparation/reparation.model";
-import {PumpingModel} from "../../../../models/Pumping/pumping.model";
+import {Pumping} from "../../../../models/Pumping/pumping";
 
 @Component({
   selector: 'app-form-reparation',

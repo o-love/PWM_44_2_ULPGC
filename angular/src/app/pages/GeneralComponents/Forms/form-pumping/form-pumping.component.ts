@@ -1,24 +1,27 @@
 import {Component, ElementRef, Renderer2} from '@angular/core';
-import { PumpingModel} from "../../../../models/Pumping/pumping.model";
+import { Pumping} from "../../../../models/Pumping/pumping";
+import {PumpingService} from "../../../../services/pumping/pumping.service";
+import {Router} from "@angular/router";
+import {UserService} from "../../../../services/user/user.service";
 
 @Component({
   selector: 'app-form-pumping',
   templateUrl: './form-pumping.component.html',
   styleUrls: ['./form-pumping.component.sass'],
-  host:{
-    id:"mainContent",
-    class:"hideOnMobile",
+  host: {
+    id: "mainContent",
+    class: "flex-grow-1 d-sm-flex justify-content-sm-center hideOnMobile"
   }
 })
+
 export class FormPumpingComponent {
 
-  model: PumpingModel = {
+  model: Pumping = {
     precioCombustible: "",
     kmActual: "",
     precioTotal: "",
   }
-
-  constructor(private renderer: Renderer2, private el: ElementRef) {
+  constructor(private renderer: Renderer2, private el: ElementRef, private pumpingService:PumpingService) {
   }
 
   needFieldsInForm() {
@@ -36,6 +39,7 @@ export class FormPumpingComponent {
 
   onSubmit() {
     if(this.needFieldsInForm()) {
+      this.pumpingService.createPumping(this.model);
       console.log("Formulario enviado");
     }
   }
