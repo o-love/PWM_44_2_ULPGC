@@ -41,6 +41,8 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import { CarFormIconAndOptionsComponent } from './pages/GeneralComponents/car-form-icon-and-options/car-form-icon-and-options.component';
 import { PumpingListComponent } from './pages/GeneralComponents/pumping-list/pumping-list.component';
+import { SpareListComponent } from './pages/GeneralComponents/spare-list/spare-list.component';
+import { MaintenanceListComponent } from './pages/GeneralComponents/maintenance-list/maintenance-list.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +70,8 @@ import { PumpingListComponent } from './pages/GeneralComponents/pumping-list/pum
     FormReparationComponent,
     CarFormIconAndOptionsComponent,
     PumpingListComponent,
+    SpareListComponent,
+    MaintenanceListComponent,
   ],
   imports: [
     BrowserModule,
