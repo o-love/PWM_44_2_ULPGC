@@ -20,7 +20,7 @@ import {UserService} from "../user/user.service";
 export class AuthService {
 
   private userLogged = new BehaviorSubject<User | undefined>(undefined);
-
+  currentUser: User | undefined;
 
   constructor(private auth: Auth, private firestoreService: FirestoreService) {
 
@@ -45,6 +45,7 @@ export class AuthService {
 
   async logout() {
     await signOut(this.auth)
+    this.currentUser = undefined;
     this.userLogged.next(undefined)
   }
 
@@ -54,13 +55,15 @@ export class AuthService {
 
   private async setUser(id: string, email: string) {
     this.firestoreService.getDocByIdSnapshot(`users/${id}`).then(docData => {
-      this.userLogged.next({
+      this.currentUser = {
         id: id,
         username: docData!['username'],
         email: email,
         is_admin: docData!['is_admin'],
         photo_url: docData!['photo_url']
-      })
+      };
+
+      this.userLogged.next(this.currentUser)
       console.log(this.userLogged)
     })
 

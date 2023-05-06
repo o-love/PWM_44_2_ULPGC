@@ -83,6 +83,7 @@ export class FormCarComponent implements OnInit {
   needFieldsInFinalForm() {
     const validacion = this.model.impuesto_circulacion && this.model.seguro_coche
       && this.model.revision_itv && this.model.foto_coche_src;
+    console.log(this.model.seguro_coche)
     let formSubmit = this.el.nativeElement.querySelector('#btn-submit-form-car');
     if (!validacion) {
       this.renderer.removeClass(formSubmit, 'formButton');
@@ -95,7 +96,8 @@ export class FormCarComponent implements OnInit {
   }
 
   onFileChange(event: any) {
-    const file = event.target.file[0];
+    console.log(event)
+    const file = event.target.files[0];
 
     if (file) {
       this.file = file;
@@ -105,13 +107,14 @@ export class FormCarComponent implements OnInit {
   onSubmit(form: NgForm) {
     if(form.valid) {
       this.sumbitForm().subscribe((car) => {
-        // TODO: Navigate to that cars info page.
+        console.log("car form: ", car);
       })
     }
   }
 
   sumbitForm(): Observable<CarModel> {
     if (this.file) {
+      console.log("storing with image")
       return this.carService.storeCarWithImage(this.model, this.file);
     }
     else {
