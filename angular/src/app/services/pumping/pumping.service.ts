@@ -37,7 +37,7 @@ export class PumpingService {
     return from(this.firestoreService.createDoc(this.collectionDoc, data));
   }
 
-
-
-
+  async getAllPumpingsOfUser(userId: string){
+      return this.firestoreService.getDocsByFielduserId(userId, "pumping")
+  }
 }

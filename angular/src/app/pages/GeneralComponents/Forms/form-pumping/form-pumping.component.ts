@@ -5,6 +5,8 @@ import {Router} from "@angular/router";
 import {UserService} from "../../../../services/user/user.service";
 import {AuthService} from "../../../../services/auth/auth.service";
 import {User} from "../../../../models/User/user.model";
+import {CarModel} from "../../../../models/Car/car.model";
+import {catchError, of, tap} from "rxjs";
 
 @Component({
   selector: 'app-form-pumping',
@@ -41,17 +43,26 @@ export class FormPumpingComponent implements  OnInit{
   }
 
   onSubmit() {
-    if(this.needFieldsInForm()) {
-      if(this.user?.id){
-        this.pumpingService.createPumping(this.model, this.user.id);
-        console.log("Formulario enviado");
+    if (this.needFieldsInForm()) {
+      if (this.user?.id) {
+        this.pumpingService.createPumping(this.model, this.user.id)
+          .pipe(
+            tap(() => console.log("Formulario enviado")),
+            catchError((error) => {
+              console.error(error);
+              return of(null);
+            })
+          )
+          .subscribe();
       }
     }
   }
 
+
+
   ngOnInit(): void {
     this.authService.isLoggedIn.subscribe(
-      (user) => {
+      async (user) => {
         this.user = user;
         console.log("userLogged: ", this.user)
       }
