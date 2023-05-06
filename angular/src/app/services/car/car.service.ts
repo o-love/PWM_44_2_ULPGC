@@ -30,15 +30,12 @@ export class CarService {
 
   async storeCarAsync(car: CarModel) {
     delete car.id;
-    console.log("Start Car storage")
     const myUser = this.authService.currentUser;
     car.userId = myUser?.id;
-    console.log("Start Car storage")
     return this.firestoreService.createDoc(this.collection, car);
   }
 
   storeCar(car: CarModel) : Observable<CarModel> {
-    console.log("Car Store")
     return from(this.storeCarAsync(car)).pipe(map((res) => {
       car.id = res.id;
       return car;
@@ -50,7 +47,6 @@ export class CarService {
   }
 
   storeCarWithImage(car: CarModel, image: File): Observable<CarModel> {
-    console.log("Call store");
     return this.storeCar(car).pipe(map((retCar) => {
       this.storeCarImage(image, <string>retCar.id).subscribe((url) => {
         retCar.foto_coche_src = url;

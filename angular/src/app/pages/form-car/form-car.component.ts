@@ -107,14 +107,12 @@ export class FormCarComponent implements OnInit {
   onSubmit(form: NgForm) {
     if(form.valid) {
       this.sumbitForm().subscribe((car) => {
-        console.log("car form: ", car);
       })
     }
   }
 
   sumbitForm(): Observable<CarModel> {
     if (this.file) {
-      console.log("storing with image")
       return this.carService.storeCarWithImage(this.model, this.file);
     }
     else {
