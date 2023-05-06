@@ -56,6 +56,11 @@ export class StorageService {
     )
   }
 
+  getUserImageUrl(uid: string, field: string): Observable<string> {
+    const ref = this.storage.ref(`${field}/${uid}`);
+    return ref.getDownloadURL();
+  }
+
   deleteFile(fileUpload: FileUpload): void {
     this.deleteFileDatabase(fileUpload.key)
       .then(() => {

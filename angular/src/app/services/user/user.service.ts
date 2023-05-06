@@ -54,6 +54,10 @@ export class UserService {
     this.storageService.pushFileToStorage(file, id).subscribe();
   }
 
+  async getImageUser(uid: string){
+    return this.storageService.getUserImageUrl(uid, this.collectionDoc)
+  }
+
   async deleteUser(user: User) {
     const x =this.storageService.getFiles(1,`/users/${user.id}`)
     console.log("ficheros: ",x)

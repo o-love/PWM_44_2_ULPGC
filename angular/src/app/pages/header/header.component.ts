@@ -30,6 +30,9 @@ export class HeaderComponent implements OnInit {
     this.authService.isLoggedIn.subscribe(
       (user) => {
         this.userLogged = user;
+        if(this.userLogged){
+          this.getImage(this.userLogged);
+        }
         console.log("userLogged: ", this.userLogged)
         if (this.userLogged){
           if (this.userLogged.is_admin){
@@ -43,4 +46,7 @@ export class HeaderComponent implements OnInit {
       }
     );
   }
+  async getImage(user: User) {
+  }
 }
+

@@ -14,6 +14,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class UserFormIconAndOptionsComponent implements OnInit {
   user: User | undefined;
+  profileImageUrl: string | undefined;
 
   constructor(private userService: UserService, private route: ActivatedRoute, private authService: AuthService, private router: Router) {
   }
@@ -23,6 +24,7 @@ export class UserFormIconAndOptionsComponent implements OnInit {
     this.authService.isLoggedIn.subscribe(
       (user) => {
         this.user = user;
+        this.getImage();
         console.log("userLogged: ", this.user)
       }
     );
@@ -40,6 +42,16 @@ export class UserFormIconAndOptionsComponent implements OnInit {
 
   toCars() {
     this.router.navigate(["/cardCar"])
+  }
+
+  async getImage() {
+    if (this.user?.id) {
+      (await this.userService.getImageUser(this.user?.id)).subscribe((url) => {
+        this.profileImageUrl = url;
+        const img = document.getElementById('profileImage') as HTMLImageElement;
+        img.src = this.profileImageUrl;
+      });
+    }
   }
 
   editUser() {
