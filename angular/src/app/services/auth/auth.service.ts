@@ -25,11 +25,16 @@ export class AuthService {
   constructor(private auth: Auth, private firestoreService: FirestoreService) {
 
     onAuthStateChanged(this.auth, async response => {
-      if (response !== null){
-        this.prueba(response.email!,response.uid)
+
+      if (response !== null) {
+        let docObservale = this.firestoreService.getDocById(`users/${response.uid}`)
+        docObservale.subscribe((data: any) => {
+          this.setUser(response.email!, response.uid, data)
+        })
         this.loggedIn.next(true)
-      }else{
+      } else {
         this.userLogged = undefined
+        this.loggedIn.next(false)
       }
 
     })
@@ -40,22 +45,12 @@ export class AuthService {
   }
 
   async login(userEmail: string, userPassword: string, coll: string) {
-    await this.auth.setPersistence(browserSessionPersistence)
-    const userCredentials = await signInWithEmailAndPassword(this.auth, userEmail, userPassword)
-    this.prueba(userCredentials.user.email!, userCredentials.user.uid)
+    return await signInWithEmailAndPassword(this.auth, userEmail, userPassword)
   }
-  private prueba(email:string,id:string){
-    const docObservale = this.firestoreService.getDocById(`users/${id}`)
-    docObservale.subscribe((data: any) => {
-      this.setUser(email!, id, data)
-      this.loggedIn.next(true)
-    })
-  }
+
   async logout() {
     await signOut(this.auth)
     this.userLogged = undefined
-    localStorage.removeItem("userLoged")
-    this.loggedIn.next(false)
   }
 
   async createUser(userEmail: string, userPassword: string) {

@@ -42,6 +42,7 @@ export class HeaderComponent implements OnInit {
     this.authService.isLoggedIn.subscribe(
       (loggedIn) => {
         this.isLoggedIn = loggedIn;
+        console.log("isloggedin: ", this.isLoggedIn)
         this.setUserHeader()
       }
     );

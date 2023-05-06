@@ -26,7 +26,7 @@ export class UserRegistrationComponent {
   constructor(private userService: UserService, private router: Router) {
   }
 
-  registration() {
+  async registration() {
     if (this.pass === this.passConfirm) {
       if (this.selectedFiles) {
         const file: File | null = this.selectedFiles.item(0)
@@ -36,7 +36,8 @@ export class UserRegistrationComponent {
           this.currentFileUpload.type ="user"
         }
       }
-      this.userService.createUser(this.user, this.pass, this.currentFileUpload)
+      await this.userService.createUser(this.user, this.pass, this.currentFileUpload)
+      this.router.navigate(['userProfile'])
     }
   }
 
