@@ -16,7 +16,7 @@ import {UserService} from "../../services/user/user.service";
 
 export class HeaderComponent implements OnInit {
   isLoggedIn = false;
-
+  profileImageUrl: string | undefined;
   Rol = "";
 
   private userLogged: User | undefined;
@@ -47,6 +47,13 @@ export class HeaderComponent implements OnInit {
     );
   }
   async getImage(user: User) {
+    if (user?.id) {
+      (await this.userService.getImageUser(user?.id)).subscribe((url) => {
+        this.profileImageUrl = url;
+        const img = document.getElementById('fotoPerfilHeader') as HTMLImageElement;
+        img.src = this.profileImageUrl;
+      });
+    }
   }
 }
 
