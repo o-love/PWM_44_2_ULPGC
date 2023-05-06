@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
   styleUrls: ['./about-us.component.sass'],
-  host:{
-    id:"mainContent",
-    class:"hideOnMobile",
+  host: {
+    id: "mainContent",
+    class: "flex-grow-1 d-sm-flex justify-content-sm-center hideOnMobile"
   }
 })
 export class AboutUsComponent implements OnInit{
