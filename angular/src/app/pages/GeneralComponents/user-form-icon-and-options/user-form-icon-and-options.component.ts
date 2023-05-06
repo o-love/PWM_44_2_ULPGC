@@ -37,6 +37,14 @@ export class UserFormIconAndOptionsComponent implements OnInit {
     console.log("usuario desde profileview: ", this.user)
     this.userService.deleteUser(this.user!)
   }
+
+  toCars() {
+    this.router.navigate(["/cardCar"])
+  }
+
+  editUser() {
+    // TODO: Add router to user form with current data filled
+  }
 }
 
 
