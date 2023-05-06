@@ -22,9 +22,9 @@
     </div>
   </div>
   <div class="text-center mb-3">
-    <button id="button-add-pumping" [disabled]="!pumpingForm.form.valid"
-            [ngClass]="{'boton-habilitado': pumpingForm.form.valid, 'boton-deshabilitado': !pumpingForm.form.valid}" type="submit" class="boton p-2 text-white formButton btn btn-lg">
-      <strong>Añadir</strong>
+    <button id="button-add-pumping" [disabled]="!pumpingForm.form.valid || submitted"
+            [ngClass]="{'boton-habilitado': pumpingForm.form.valid && !submitted, 'boton-deshabilitado': !pumpingForm.form.valid || submitted}" type="submit" class="boton p-2 text-white formButton formButtonPumping btn btn-lg">
+      <strong>{{ submitted ? 'Enviado' : 'Añadir' }}</strong>
     </button>
   </div>
   <div *ngIf="error" class="alert alert-danger" role="alert">

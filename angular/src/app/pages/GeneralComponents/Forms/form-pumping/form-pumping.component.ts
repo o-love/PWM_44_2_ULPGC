@@ -21,6 +21,8 @@ import {catchError, of, tap} from "rxjs";
 export class FormPumpingComponent implements  OnInit{
   user: User | undefined;
   error = false;
+  submitted = false;
+
   model: Pumping = {
     precioCombustible: "",
     kmActual: "",
@@ -50,6 +52,9 @@ export class FormPumpingComponent implements  OnInit{
         try {
           const result = await this.pumpingService.createPumping(this.model, this.user.id).toPromise();
           console.log("Formulario enviado");
+          this.error = false;
+          this.submitted = true;
+
         } catch (error) {
           console.log("Error al enviar el formulario");
           this.error = true;
