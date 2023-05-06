@@ -27,15 +27,18 @@ import {GoogleMapsModule} from '@angular/google-maps';
 import {GasInfoPageComponent} from './pages/gas-info-page/gas-info-page.component';
 import {GasPriceListComponent} from './pages/GeneralComponents/gas-price-list/gas-price-list.component';
 import {UserProfileViewComponent} from "./pages/user-profile-view/user-profile-view.component";
-import { FormCarComponent} from "./pages/form-car/form-car.component";
-import { FormPumpingComponent } from './pages/GeneralComponents/Forms/form-pumping/form-pumping.component';
+import {FormCarComponent} from "./pages/form-car/form-car.component";
+import {FormPumpingComponent} from './pages/GeneralComponents/Forms/form-pumping/form-pumping.component';
 import {UserRegistrationComponent} from "./pages/GeneralComponents/Forms/user-registration/user-registration.component";
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideStorage,getStorage } from '@angular/fire/storage';
-import { FormReparationComponent } from './pages/GeneralComponents/Forms/form-reparation/form-reparation.component';
+import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
+import {environment} from '../environments/environment';
+import {provideAuth, getAuth} from '@angular/fire/auth';
+import {provideFirestore, getFirestore} from '@angular/fire/firestore';
+import {provideStorage, getStorage} from '@angular/fire/storage';
+import {FormReparationComponent} from './pages/GeneralComponents/Forms/form-reparation/form-reparation.component';
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 
 @NgModule({
   declarations: [
@@ -75,10 +78,14 @@ import { FormReparationComponent } from './pages/GeneralComponents/Forms/form-re
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
 
   ],
   providers: [],
   bootstrap: [AppComponent],
 
 })
-export class AppModule { }
+export class AppModule {
+}
