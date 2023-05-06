@@ -40,6 +40,7 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import { CarFormIconAndOptionsComponent } from './pages/GeneralComponents/car-form-icon-and-options/car-form-icon-and-options.component';
+import { PumpingListComponent } from './pages/GeneralComponents/pumping-list/pumping-list.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { CarFormIconAndOptionsComponent } from './pages/GeneralComponents/car-fo
     UserRegistrationComponent,
     FormReparationComponent,
     CarFormIconAndOptionsComponent,
+    PumpingListComponent,
   ],
   imports: [
     BrowserModule,
