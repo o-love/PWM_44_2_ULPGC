@@ -2,6 +2,7 @@ import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {CarModel} from "../../models/Car/car.model";
 import {CarService} from "../../services/car/car.service";
+import {Observable} from "rxjs";
 
 let var1 = "First";
 let var2 = "Second";
@@ -102,23 +103,18 @@ export class FormCarComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if(form.valid) {
-      if (this.file) {
-        this.carService.storeCarImage(this.file).subscribe((url: string) => {
-          this.model.foto_coche_src = url;
-          this.sumbitForm();
-        })
-      }
-      else {
-        this.sumbitForm();
-      }
-
+      this.sumbitForm().subscribe((car) => {
+        // TODO: Navigate to that cars info page.
+      })
     }
   }
 
-  sumbitForm() {
-    this.carService.storeCar(this.model).subscribe((res: any) => {
-      // TODO: Navigate to that cars info page.
-    });
-
+  sumbitForm(): Observable<CarModel> {
+    if (this.file) {
+      return this.carService.storeCarWithImage(this.model, this.file);
+    }
+    else {
+      return this.carService.storeCar(this.model);
+    }
   }
 }
