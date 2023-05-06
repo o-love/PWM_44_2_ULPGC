@@ -1,0 +1,30 @@
+<div id="carProfileFotoContainer">
+  <img src="../img/car.png" alt="imagen coche" class="image-form-icon-options" id="carImage">
+</div>
+<div class="infoCoche">
+  <h3 id="MatriculaCoche" class="info">Matricula {{this.model.matricula}}</h3>
+  <h3 id="MarcaCoche" class="info">Marca {{this.model.marca}} {{this.model.modelo}}</h3>
+  <h3 id="ModeloCoche" class="info">Combustible</h3>
+</div>
+<div id="btnsCar">
+  <div class="optionElement w-100">
+    <button type="button" class="button-car-options w-100 btnPerfil" id="editProfileBtn" routerLink="/add-refueling">
+      Añadir Repostaje<i class="fa-solid fa-gas-pump"></i>
+    </button>
+  </div>
+  <div class="optionElement w-100">
+    <button type="button" class="button-car-optionsw-100 btnPerfil" id="myCarsBtn" routerLink="/add-spare-part">
+      Añadir Recambio <i class="fa-solid fa-wrench"></i>
+    </button>
+  </div>
+  <div class="optionElement w-100">
+    <button type="button" class="button-car-options w-100 btnPerfil" id="logOutBtn" routerLink="/edit-profile">
+      Editar <i class="fa-solid fa-pen-to-square"></i>
+    </button>
+  </div>
+  <div class="optionElement optionElementLast  w-100">
+    <button type="button" class="button-car-options w-100 btnPerfil" id="deleteUserBtn" >
+      <span class="delete-option-form">Eliminar <i class="fa-solid fa-trash"></i></span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+#iconAndButtons
+  display: grid
+  grid-template-rows: 1fr 1fr
+  min-height: 100%
+  border-right: solid 1px var(--border-buttons-profile)
+
+#profileImage
+  width: 10rem
+  height: 10rem
+
+.btnPerfil
+  min-width: 100%
+  font-size: large
+  min-height: 65px
+  border: none
+  background-color: white
+
+.optionElement
+  border-top: solid 1px var(--border-buttons-profile)
+
+.btnPerfil
+  &:hover
+    background-color: var(--hover-profile-options)
+
+.lastOptionElement
+  border-bottom: solid 1px var(--border-buttons-profile)
+
+#deleteUserBtn
+  color: red

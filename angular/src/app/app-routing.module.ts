@@ -13,6 +13,7 @@ import {FormPumpingComponent} from "./pages/GeneralComponents/Forms/form-pumping
 import {FormCarComponent} from "./pages/form-car/form-car.component";
 import {UserRegistrationComponent} from "./pages/GeneralComponents/Forms/user-registration/user-registration.component";
 import { FormReparationComponent} from "./pages/GeneralComponents/Forms/form-reparation/form-reparation.component";
+import { CarFormIconAndOptionsComponent} from "./pages/GeneralComponents/car-form-icon-and-options/car-form-icon-and-options.component";
 
 const routes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: "full"},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'formPumping', component:FormPumpingComponent},
   {path: 'formReparation', component:FormReparationComponent},
   {path: 'userRegistration', component:UserRegistrationComponent},
+  {path: 'carFormIcon', component:CarFormIconAndOptionsComponent},
 ];
 
 @NgModule({
