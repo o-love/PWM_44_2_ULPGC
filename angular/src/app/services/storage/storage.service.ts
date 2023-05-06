@@ -45,7 +45,7 @@ export class StorageService {
         fileUpload.name = fileUpload.file.name
         this.saveFileData(fileUpload)
       });
-    }));
+    })).subscribe();
 
     return from(uploadTask.then(() => { return storageRef.getDownloadURL() }))
   }
