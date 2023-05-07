@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Reparation} from "../../../models/Reparation/reparation";
 
 @Component({
   selector: 'app-spare-list',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./spare-list.component.sass']
 })
 export class SpareListComponent {
-
+  @Input()
+  reparation: Reparation[] = [];
 }

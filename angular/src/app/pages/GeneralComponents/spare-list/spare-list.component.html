@@ -1,1 +1,27 @@
-<p>spare-list works!</p>
+<div class="containerList">
+  <div class="searchBox">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" name="search" placeholder="Buscar..." class="searchInput" autocomplete="off">
+  </div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <td scope="col">Parte</td>
+      <td scope="col">Fecha</td>
+      <td scope="col">Precio</td>
+      <td scope="col">Taller</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let repair of reparation" [attr.data-id]="repair.userId">
+      <td scope="col"><img class="me-2" src="{{repair.articuladoReparado}}" alt=""></td>
+      <td scope="col" class="elementUser centrar">{{repair.fecha}}</td>
+      <td scope="col" class="centrar">{{repair.precio}}</td>
+      <td scope="col" class="centrar">{{repair.taller}}</td>
+      <td scope="col" class="btnTable centrar"><a><i class="fa-solid fa-pen-to-square centrar"></i></a></td>
+      <td scope="col" class="btnTable centrar"><a><i class="fa-solid fa-trash-can centrar"></i></a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

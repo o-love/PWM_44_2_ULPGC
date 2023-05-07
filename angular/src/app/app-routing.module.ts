@@ -14,6 +14,7 @@ import { FormReparationComponent} from "./pages/GeneralComponents/Forms/form-rep
 import { CarFormIconAndOptionsComponent} from "./pages/GeneralComponents/car-form-icon-and-options/car-form-icon-and-options.component";
 import {PumpingListComponent} from "./pages/GeneralComponents/pumping-list/pumping-list.component";
 import {MaintenanceListComponent} from "./pages/GeneralComponents/maintenance-list/maintenance-list.component";
+import {SpareListComponent} from "./pages/GeneralComponents/spare-list/spare-list.component";
 
 const routes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: "full"},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'carFormIcon', component:CarFormIconAndOptionsComponent},
   {path: 'pumpingList', component:PumpingListComponent},
   {path: 'MaintenanceList',component:MaintenanceListComponent},
+  {path: 'SpareList',component:SpareListComponent},
 ];
 
 @NgModule({

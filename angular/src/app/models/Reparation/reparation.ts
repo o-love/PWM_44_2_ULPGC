@@ -1,4 +1,4 @@
-export interface ReparationModel {
+export interface Reparation {
   articuladoReparado: string;
   precio: string;
   fecha: string;
