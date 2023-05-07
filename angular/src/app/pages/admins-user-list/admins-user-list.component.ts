@@ -36,6 +36,10 @@ export class AdminsUserListComponent {
     console.log("removed", user.username)
   }
 
+  updateUser(user: User) {
+    this.router.navigate(['/userProfileEdit', {userId: user.id}]);
+  }
+
   stopPropagation(event: Event){
     event.stopPropagation();
   }
