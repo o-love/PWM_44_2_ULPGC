@@ -15,7 +15,7 @@
 
     <tbody>
     <tr *ngFor="let repair of reparation" [attr.data-id]="repair.userId">
-      <td scope="col"><img class="me-2" src="{{repair.articuladoReparado}}" alt=""></td>
+      <td scope="col" class="centrar">{{repair.articuladoReparado}}</td>
       <td scope="col" class="elementUser centrar">{{repair.fecha}}</td>
       <td scope="col" class="centrar">{{repair.precio}}</td>
       <td scope="col" class="centrar">{{repair.taller}}</td>

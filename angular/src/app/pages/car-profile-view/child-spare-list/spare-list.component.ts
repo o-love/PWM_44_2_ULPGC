@@ -1,5 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Reparation} from "../../../models/Reparation/reparation";
+
+
 
 @Component({
   selector: 'app-child-spare-list',
@@ -7,7 +9,10 @@ import {Reparation} from "../../../models/Reparation/reparation";
   styleUrls: ['./spare-list.component.sass'],
 
 })
-export class SpareListComponent {
-  @Input()
-  reparation: Reparation[] = [];
+export class SpareListComponent implements OnInit{
+  @Input() reparation: Reparation[] = [];
+
+  ngOnInit(): void {
+  }
+
 }
