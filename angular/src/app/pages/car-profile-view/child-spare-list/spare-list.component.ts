@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Reparation} from "../../../models/Reparation/reparation";
 
 @Component({
-  selector: 'app-spare-list',
+  selector: 'app-child-spare-list',
   templateUrl: './spare-list.component.html',
   styleUrls: ['./spare-list.component.sass']
 })

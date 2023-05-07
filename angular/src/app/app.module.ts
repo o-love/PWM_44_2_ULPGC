@@ -39,10 +39,12 @@ import {FormReparationComponent} from './pages/GeneralComponents/Forms/form-repa
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
-import { CarFormIconAndOptionsComponent } from './pages/GeneralComponents/car-form-icon-and-options/car-form-icon-and-options.component';
-import { PumpingListComponent } from './pages/GeneralComponents/pumping-list/pumping-list.component';
-import { SpareListComponent } from './pages/GeneralComponents/spare-list/spare-list.component';
-import { MaintenanceListComponent } from './pages/GeneralComponents/maintenance-list/maintenance-list.component';
+import { CarFormIconAndOptionsComponent } from './pages/car-profile-view/car-form-icon-and-options/car-form-icon-and-options.component';
+import { PumpingListComponent } from './pages/car-profile-view/child-pumping-list/pumping-list.component';
+import { SpareListComponent } from './pages/car-profile-view/child-spare-list/spare-list.component';
+import { MaintenanceListComponent } from './pages/car-profile-view/child-maintenance-list/maintenance-list.component';
+import { CarProfileViewComponent } from './pages/car-profile-view/car-profile-view.component';
+import { ParentButtonsComponent } from './pages/car-profile-view/parent-buttons/parent-buttons.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +73,8 @@ import { MaintenanceListComponent } from './pages/GeneralComponents/maintenance-
     PumpingListComponent,
     SpareListComponent,
     MaintenanceListComponent,
+    CarProfileViewComponent,
+    ParentButtonsComponent,
   ],
   imports: [
     BrowserModule,

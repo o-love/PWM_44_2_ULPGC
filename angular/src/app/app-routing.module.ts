@@ -11,10 +11,7 @@ import {FormPumpingComponent} from "./pages/GeneralComponents/Forms/form-pumping
 import {FormCarComponent} from "./pages/form-car/form-car.component";
 import {UserRegistrationComponent} from "./pages/user-registration/user-registration.component";
 import { FormReparationComponent} from "./pages/GeneralComponents/Forms/form-reparation/form-reparation.component";
-import { CarFormIconAndOptionsComponent} from "./pages/GeneralComponents/car-form-icon-and-options/car-form-icon-and-options.component";
-import {PumpingListComponent} from "./pages/GeneralComponents/pumping-list/pumping-list.component";
-import {MaintenanceListComponent} from "./pages/GeneralComponents/maintenance-list/maintenance-list.component";
-import {SpareListComponent} from "./pages/GeneralComponents/spare-list/spare-list.component";
+import {CarProfileViewComponent} from "./pages/car-profile-view/car-profile-view.component";
 
 const routes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: "full"},
@@ -28,10 +25,7 @@ const routes: Routes = [
   {path: 'formPumping', component:FormPumpingComponent},
   {path: 'formReparation', component:FormReparationComponent},
   {path: 'userRegistration', component:UserRegistrationComponent},
-  {path: 'carFormIcon', component:CarFormIconAndOptionsComponent},
-  {path: 'pumpingList', component:PumpingListComponent},
-  {path: 'MaintenanceList',component:MaintenanceListComponent},
-  {path: 'SpareList',component:SpareListComponent},
+  {path: 'carView',component:CarProfileViewComponent},
 ];
 
 @NgModule({
