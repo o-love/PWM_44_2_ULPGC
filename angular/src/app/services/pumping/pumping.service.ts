@@ -16,7 +16,7 @@ export class PumpingService {
   constructor(protected http: HttpClient, private firestoreService: FirestoreService) {
   }
 
-  createPumping(pumping: Pumping, userId: string) {
+  createPumping(pumping: Pumping, userId: string, idcar: string) {
 
     const precioCombustible = pumping.precioCombustible ? parseFloat(pumping.precioCombustible) : 0;
     const kmActual = parseFloat(pumping.kmActual);
@@ -34,6 +34,7 @@ export class PumpingService {
       precioTotal: pumping.precioTotal,
       userId: userId,
       fecha: fechaActual.toLocaleDateString("es-ES").toString(),
+      idCar: idcar,
     };
 
     return from(this.firestoreService.createDoc(this.collectionDoc, data));

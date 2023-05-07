@@ -5,6 +5,7 @@ import {ReparationService} from "../../../../services/reparation/reparation.serv
 import {User} from "../../../../models/User/user.model";
 import {AuthService} from "../../../../services/auth/auth.service";
 import {catchError} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-form-reparation',
@@ -28,7 +29,7 @@ export class FormReparationComponent {
     taller: "",
     userId: "",
   }
-  constructor(private renderer: Renderer2, private el: ElementRef, private reparationService: ReparationService, private authService: AuthService) {}
+  constructor(private renderer: Renderer2,private route: ActivatedRoute, private el: ElementRef, private reparationService: ReparationService, private authService: AuthService) {}
 
 
   needFieldsInForm() {
@@ -63,7 +64,8 @@ export class FormReparationComponent {
     if (this.needFieldsInForm()) {
       if (this.user?.id) {
         try {
-          this.reparationService.createReparation(this.model, this.user.id);
+          const carId = this.route.snapshot.params['carId'];
+          this.reparationService.createReparation(this.model, this.user.id, carId);
           console.log('Formulario enviado');
           this.error = false;
           this.submitted = true;

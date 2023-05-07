@@ -4,4 +4,5 @@ export interface Pumping {
   precioTotal: string;
   userId: string;
   fecha: string;
+  idCar: string;
 }

@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
 import { Pumping} from "../../../../models/Pumping/pumping";
 import {PumpingService} from "../../../../services/pumping/pumping.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../../../services/user/user.service";
 import {AuthService} from "../../../../services/auth/auth.service";
 import {User} from "../../../../models/User/user.model";
@@ -28,9 +28,10 @@ export class FormPumpingComponent implements  OnInit{
     kmActual: "",
     precioTotal: "",
     userId: "",
-    fecha: ""
+    fecha: "",
+    idCar: "",
   }
-  constructor(private renderer: Renderer2, private el: ElementRef, private pumpingService:PumpingService, private authService: AuthService) {
+  constructor(private renderer: Renderer2,private route: ActivatedRoute, private el: ElementRef, private pumpingService:PumpingService, private authService: AuthService) {
   }
 
   needFieldsInForm() {
@@ -50,7 +51,8 @@ export class FormPumpingComponent implements  OnInit{
     if (this.needFieldsInForm()) {
       if (this.user?.id) {
         try {
-          const result = await this.pumpingService.createPumping(this.model, this.user.id).toPromise();
+          let id = this.route.snapshot.params['carId'];
+          const result = await this.pumpingService.createPumping(this.model, this.user.id,id).toPromise();
           console.log("Formulario enviado");
           this.error = false;
           this.submitted = true;

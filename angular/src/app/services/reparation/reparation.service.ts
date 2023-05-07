@@ -13,7 +13,7 @@ export class ReparationService {
   constructor(protected http: HttpClient, private firestoreService: FirestoreService) {
   }
 
-  createReparation(reparation: Reparation, userId: string) {
+  createReparation(reparation: Reparation, userId: string, idcar:string) {
     const precio = parseFloat(reparation.precio);
     if (isNaN(precio) || precio < 0) {
       throw new Error("La reparación no es válida");
@@ -24,13 +24,12 @@ export class ReparationService {
       precio: reparation.precio,
       fecha: reparation.fecha,
       taller: reparation.taller,
-      userId: userId
+      userId: userId,
     };
     return from(this.firestoreService.createDoc(this.collectionDoc, data));
   }
   async getAllReparationsOfUser(userId: string){
     return this.firestoreService.getDocsByFieldUserId(userId, this.collectionDoc)
   }
-
 }
 

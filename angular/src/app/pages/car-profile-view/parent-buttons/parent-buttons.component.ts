@@ -17,8 +17,8 @@ interface ParentButtonsProps {
 export class ParentButtonsComponent {
   tablaSeleccionada = 1;
   pumpingData: Pumping[] = [
-    { fecha: '2022-01-01', kmActual: "100", precioCombustible: "1.5", precioTotal:"",userId: "" },
-    { fecha: '2022-02-01', kmActual: "200", precioCombustible: "1.6", precioTotal:"",userId: "" },
+    { fecha: '2022-01-01', kmActual: "100", precioCombustible: "1.5", precioTotal:"",userId: "",idCar: "" },
+    { fecha: '2022-02-01', kmActual: "200", precioCombustible: "1.6", precioTotal:"",userId: "" ,idCar: ""},
   ];
   reparationData: Reparation[] = [
     { articuladoReparado: "engine", fecha: '2022-01-01', precio: "100", taller: 'Taller A' , userId:""},
