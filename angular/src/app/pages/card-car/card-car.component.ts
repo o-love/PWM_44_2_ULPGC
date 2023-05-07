@@ -32,7 +32,8 @@ export class CardCarComponent implements OnInit {
   }
 
   navigateToCarDetails(car: any): void {
-    this.router.navigate(['formCar', {carId: car.id}]); // TODO: Navigate to car page
+    let id = "D8hohBCKTtDEQnGcf2Qg";
+    this.router.navigate(['carView', {carId: id}]); // TODO: Navigate to car page
   }
 
   navigateToCarCreate(): void {
