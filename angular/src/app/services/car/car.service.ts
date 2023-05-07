@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {from, map, Observable, of, skipUntil} from "rxjs";
+import {from, map, Observable} from "rxjs";
 import {CarModel} from "../../models/Car/car.model";
 import {FirestoreService} from "../firestore/firestore.service";
 import {StorageService} from "../storage/storage.service";
-import {FileUpload} from "../../models/File/fileUpload";
 import {AuthService} from "../auth/auth.service";
 @Injectable({
   providedIn: 'root'
@@ -48,8 +47,11 @@ export class CarService {
 
   storeCarWithImage(car: CarModel, image: File): Observable<CarModel> {
     return this.storeCar(car).pipe(map((retCar) => {
-      this.storeCarImage(image, <string>retCar.id).subscribe((url) => {
-        retCar.foto_coche_src = url;
+      this.storeCarImage(image, <string>retCar.id).subscribe((urlListener) => {
+        urlListener.subscribe((url: string) => {
+          retCar.foto_coche_src = url;
+          this.updateCar(retCar);
+        })
       });
       return retCar;
     }))
