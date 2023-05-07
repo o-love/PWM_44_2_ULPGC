@@ -14,12 +14,19 @@
     </thead>
 
     <tbody>
+    <ng-container *ngIf="reparation && reparation.length > 0; else noRepairs">
     <tr *ngFor="let repair of reparation" [attr.data-id]="repair.userId">
       <td scope="col" class="centrar">{{repair.articuladoReparado}}</td>
       <td scope="col" class="elementUser centrar">{{repair.fecha}}</td>
       <td scope="col" class="centrar">{{repair.precio}}</td>
       <td scope="col" class="centrar">{{repair.taller}}</td>
     </tr>
+    </ng-container>
+    <ng-template #noRepairs>
+      <tr>
+        <td colspan="4" class="centrar bg-warning">No existen reparaciones por el momento</td>
+      </tr>
+    </ng-template>
     </tbody>
   </table>
 </div>
