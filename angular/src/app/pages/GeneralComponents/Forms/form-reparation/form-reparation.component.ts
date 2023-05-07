@@ -1,5 +1,5 @@
 import {Component, ElementRef, Renderer2} from '@angular/core';
-import {ReparationModel} from "../../../../models/Reparation/reparation.model";
+import {Reparation} from "../../../../models/Reparation/reparation";
 import {Pumping} from "../../../../models/Pumping/pumping";
 import {ReparationService} from "../../../../services/reparation/reparation.service";
 import {User} from "../../../../models/User/user.model";
@@ -21,7 +21,7 @@ export class FormReparationComponent {
   error = false;
   submitted = false;
 
-  model: ReparationModel = {
+  model: Reparation = {
     articuladoReparado: "",
     precio: "",
     fecha: "",
