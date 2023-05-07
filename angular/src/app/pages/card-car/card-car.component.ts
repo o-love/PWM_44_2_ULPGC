@@ -9,8 +9,6 @@ import {CarModel} from "../../models/Car/car.model";
   styleUrls: ['./card-car.component.sass']
 })
 export class CardCarComponent implements OnInit {
-
-  title = "cars";
   cars: CarModel[] = [];
 
   constructor(private carService: CarService, private router: Router, private route: ActivatedRoute) {
@@ -22,12 +20,12 @@ export class CardCarComponent implements OnInit {
     if (userId) {
       console.log(userId)
       this.carService.getUserCars(userId).subscribe((cars: any) => {
-        this.cars = [...this.cars, ...cars];
+        this.cars = cars;
       });
     } else {
       this.carService.getCars().subscribe((serviceCars: any) => {
         serviceCars.then((cars: any) => {
-          this.cars = [...this.cars, ...cars];
+          this.cars = cars;
         })
       });
     }
