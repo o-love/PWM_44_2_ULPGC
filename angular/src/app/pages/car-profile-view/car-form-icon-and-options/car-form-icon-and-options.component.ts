@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {CarModel} from "../../../models/Car/car.model";
 import {CarService} from "../../../services/car/car.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 })
 export class CarFormIconAndOptionsComponent {
-  model: CarModel = {
+  @Input() model: CarModel | undefined = {
     userId: "",
     id: "",
     matricula: "", marca: "", modelo: "", combustible: "",
@@ -20,26 +20,20 @@ export class CarFormIconAndOptionsComponent {
     filtro_aire: "", filtro_combustible: "", presion_neumaticos: "",
     correo_distribucion: "", correa_altenador: "", limpieza_bujias: "",
     cambio_bujias: "", impuesto_circulacion: "", seguro_coche: "",
-    revision_itv: "", foto_coche_src: ""
+    revision_itv: "", foto_coche_src: "", pumpings: [], reparation: []
   }
   constructor(private carService: CarService, private router: Router, private route: ActivatedRoute) {
 
   }
+
   navigateToAddReparation(): void {
-    let id = this.route.snapshot.params['carId'];
-    this.router.navigate(['formReparation', {carId: id}]);
+    this.router.navigate(['formReparation', {carId: this.model?.id}]);
   }
 
   navigateToAddPumping(): void {
-    let id = this.route.snapshot.params['carId'];
-    this.router.navigate(['formPumping', {carId: id}]); // TODO: Navigate to car page
+    this.router.navigate(['formPumping', {carId: this.model?.id}]);
   }
 
   ngOnInit(): void {
-    const carId = this.route.snapshot.params['carId'];
-    this.carService.getCarByID(carId).subscribe(car => {
-      console.log(car);
-      this.model = car as CarModel;
-    });
   }
 }

@@ -15,7 +15,7 @@
 
     <tbody>
     <ng-container *ngIf="pumping && pumping.length > 0; else noPumping">
-      <tr *ngFor="let pumps of pumping" [attr.data-id]="pumps.userId">
+      <tr *ngFor="let pumps of pumping">
         <td scope="col" class="centrar">{{pumps.fecha}}</td>
         <td scope="col" class="elementUser centrar">{{pumps.kmActual}}</td>
         <td scope="col" class="centrar">PENDIENTE</td>

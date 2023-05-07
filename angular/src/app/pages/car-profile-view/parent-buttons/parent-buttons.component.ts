@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Pumping} from "../../../models/Pumping/pumping";
-import {Reparation} from "../../../models/Reparation/reparation";
+import {Pumping} from "../../../models/Car/pumping";
+import {Reparation} from "../../../models/Car/reparation";
 
 interface ParentButtonsProps {
   showChild1: boolean;
@@ -16,15 +16,8 @@ interface ParentButtonsProps {
 
 export class ParentButtonsComponent {
   tablaSeleccionada = 1;
-  pumpingData: Pumping[] = [
-    { fecha: '2022-01-01', kmActual: "100", precioCombustible: "1.5", precioTotal:"",userId: "",idCar: "" },
-    { fecha: '2022-02-01', kmActual: "200", precioCombustible: "1.6", precioTotal:"",userId: "" ,idCar: ""},
-  ];
-  reparationData: Reparation[] = [
-    { articuladoReparado: "engine", fecha: '2022-01-01', precio: "100", taller: 'Taller A' , userId:""},
-    { articuladoReparado: 'transmission', fecha: '2022-02-01', precio: "200", taller: 'Taller B' , userId:""},
-    { articuladoReparado: 'brakes', fecha: '2022-03-01', precio: "300", taller: 'Taller C' , userId:""},
-  ];
+  @Input() pumpingData: Pumping[] = [];
+  @Input() reparationData: Reparation[] = [];
 
   seleccionarTabla(tabla: number) {
     this.tablaSeleccionada = tabla;

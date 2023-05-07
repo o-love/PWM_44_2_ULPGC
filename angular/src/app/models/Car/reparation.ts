@@ -3,5 +3,4 @@ export interface Reparation {
   precio: string;
   fecha: string;
   taller: string;
-  userId: string;
 }

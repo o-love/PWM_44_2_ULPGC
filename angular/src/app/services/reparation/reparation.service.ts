@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {FirestoreService} from "../firestore/firestore.service";
-import {Reparation} from "../../models/Reparation/reparation";
+import {Reparation} from "../../models/Car/reparation";
 import {from} from "rxjs";
+import {CarModel} from "../../models/Car/car.model";
+import {CarService} from "../car/car.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +12,10 @@ import {from} from "rxjs";
 export class ReparationService {
     private collectionDoc = "reparation"
 
-  constructor(protected http: HttpClient, private firestoreService: FirestoreService) {
+  constructor(protected http: HttpClient, private carService: CarService) {
   }
 
-  createReparation(reparation: Reparation, userId: string, idcar:string) {
+  createReparation(reparation: Reparation, car: CarModel) {
     const precio = parseFloat(reparation.precio);
     if (isNaN(precio) || precio < 0) {
       throw new Error("La reparación no es válida");
@@ -24,12 +26,11 @@ export class ReparationService {
       precio: reparation.precio,
       fecha: reparation.fecha,
       taller: reparation.taller,
-      userId: userId,
     };
-    return from(this.firestoreService.createDoc(this.collectionDoc, data));
-  }
-  async getAllReparationsOfUser(userId: string){
-    return this.firestoreService.getDocsByFieldUserId(userId, this.collectionDoc)
+
+    car.reparation.push(data);
+    console.log(car);
+    return this.carService.update(car);
   }
 }
 

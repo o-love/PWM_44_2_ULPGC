@@ -15,7 +15,7 @@
 
     <tbody>
     <ng-container *ngIf="reparation && reparation.length > 0; else noRepairs">
-    <tr *ngFor="let repair of reparation" [attr.data-id]="repair.userId">
+    <tr *ngFor="let repair of reparation">
       <td scope="col" class="centrar">{{repair.articuladoReparado}}</td>
       <td scope="col" class="elementUser centrar">{{repair.fecha}}</td>
       <td scope="col" class="centrar">{{repair.precio}}</td>

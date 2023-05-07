@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
-import { Pumping} from "../../../../models/Pumping/pumping";
+import { Pumping} from "../../../../models/Car/pumping";
 import {PumpingService} from "../../../../services/pumping/pumping.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../../../services/user/user.service";
@@ -7,6 +7,7 @@ import {AuthService} from "../../../../services/auth/auth.service";
 import {User} from "../../../../models/User/user.model";
 import {CarModel} from "../../../../models/Car/car.model";
 import {catchError, of, tap} from "rxjs";
+import {CarService} from "../../../../services/car/car.service";
 
 @Component({
   selector: 'app-form-pumping',
@@ -19,19 +20,17 @@ import {catchError, of, tap} from "rxjs";
 })
 
 export class FormPumpingComponent implements  OnInit{
-  user: User | undefined;
   error = false;
   submitted = false;
+  car: CarModel | undefined;
 
   model: Pumping = {
     precioCombustible: "",
     kmActual: "",
     precioTotal: "",
-    userId: "",
     fecha: "",
-    idCar: "",
   }
-  constructor(private renderer: Renderer2,private route: ActivatedRoute, private el: ElementRef, private pumpingService:PumpingService, private authService: AuthService) {
+  constructor(private renderer: Renderer2,private route: ActivatedRoute, private el: ElementRef, private pumpingService:PumpingService, private carService: CarService, private router: Router) {
   }
 
   needFieldsInForm() {
@@ -49,30 +48,20 @@ export class FormPumpingComponent implements  OnInit{
 
   async onSubmit() {
     if (this.needFieldsInForm()) {
-      if (this.user?.id) {
-        try {
-          let id = this.route.snapshot.params['carId'];
-          const result = await this.pumpingService.createPumping(this.model, this.user.id,id).toPromise();
-          console.log("Formulario enviado");
-          this.error = false;
-          this.submitted = true;
+      this.pumpingService.createPumping(this.model, this.car!).subscribe(() => {
+        this.router.navigate(['carView', {carId: this.car?.id}]);
+      });
 
-        } catch (error) {
-          console.log("Error al enviar el formulario");
-          this.error = true;
-        }
-      }
+
+      console.log("Formulario enviado");
+      this.error = false;
+      this.submitted = true;
     }
   }
 
-
-
   ngOnInit(): void {
-    this.authService.isLoggedIn.subscribe(
-      async (user) => {
-        this.user = user;
-        console.log("userLogged: ", this.user)
-      }
-    );
+    this.carService.getCarByID(this.route.snapshot.params['carId']).subscribe((car) => {
+      this.car = <CarModel>car;
+    })
   }
 }

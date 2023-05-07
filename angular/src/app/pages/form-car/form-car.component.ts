@@ -31,7 +31,7 @@ export class FormCarComponent implements OnInit {
     filtro_aire: "", filtro_combustible: "", presion_neumaticos: "",
     correo_distribucion: "", correa_altenador: "", limpieza_bujias: "",
     cambio_bujias: "", impuesto_circulacion: "", seguro_coche: "",
-    revision_itv: "", foto_coche_src: ""
+    revision_itv: "", foto_coche_src: "", pumpings: [], reparation: []
   }
 
   file: File | undefined;

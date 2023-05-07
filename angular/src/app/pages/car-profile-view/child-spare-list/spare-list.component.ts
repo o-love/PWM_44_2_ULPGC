@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Reparation} from "../../../models/Reparation/reparation";
+import {Reparation} from "../../../models/Car/reparation";
 
 
 
@@ -15,4 +15,7 @@ export class SpareListComponent implements OnInit{
   ngOnInit(): void {
   }
 
+  ngOnChanges() {
+    console.log(this.reparation)
+  }
 }

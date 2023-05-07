@@ -1,3 +1,6 @@
+import {Pumping} from "./pumping";
+import {Reparation} from "./reparation";
+
 export interface CarModel {
   userId: string | undefined;
   id: string | undefined;
@@ -25,4 +28,6 @@ export interface CarModel {
   seguro_coche: string;
   revision_itv: string;
   foto_coche_src: string;
+  pumpings: Pumping[];
+  reparation: Reparation[];
 }

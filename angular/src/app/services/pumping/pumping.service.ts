@@ -1,11 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {from, Observable, ObservedValueOf} from "rxjs";
-import {Pumping} from "../../models/Pumping/pumping";
+import {Pumping} from "../../models/Car/pumping";
 import {FirestoreService} from "../firestore/firestore.service";
 import {AuthService} from "../auth/auth.service";
 import {StorageService} from "../storage/storage.service";
 import {DocumentReference} from "@angular/fire/firestore";
+import {CarService} from "../car/car.service";
+import {CarModel} from "../../models/Car/car.model";
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +15,11 @@ import {DocumentReference} from "@angular/fire/firestore";
 export class PumpingService {
   private collectionDoc = "pumping"
 
-  constructor(protected http: HttpClient, private firestoreService: FirestoreService) {
+  constructor(protected http: HttpClient, private carService: CarService) {
+
   }
 
-  createPumping(pumping: Pumping, userId: string, idcar: string) {
+  createPumping(pumping: Pumping, car: CarModel) {
 
     const precioCombustible = pumping.precioCombustible ? parseFloat(pumping.precioCombustible) : 0;
     const kmActual = parseFloat(pumping.kmActual);
@@ -32,15 +35,11 @@ export class PumpingService {
       precioCombustible: pumping.precioCombustible,
       kmActual: pumping.kmActual,
       precioTotal: pumping.precioTotal,
-      userId: userId,
       fecha: fechaActual.toLocaleDateString("es-ES").toString(),
-      idCar: idcar,
     };
 
-    return from(this.firestoreService.createDoc(this.collectionDoc, data));
-  }
-
-  async getAllPumpingsOfUser(userId: string){
-      return this.firestoreService.getDocsByFieldUserId(userId, this.collectionDoc)
+      console.log("adding", car);
+      (<CarModel> car).pumpings.push(data);
+      return this.carService.update(<CarModel>car);
   }
 }

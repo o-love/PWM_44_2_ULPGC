@@ -1,11 +1,9 @@
-import {Component, ElementRef, Renderer2} from '@angular/core';
-import {Reparation} from "../../../../models/Reparation/reparation";
-import {Pumping} from "../../../../models/Pumping/pumping";
+import {Component, ElementRef, Input, Renderer2} from '@angular/core';
+import {Reparation} from "../../../../models/Car/reparation";
 import {ReparationService} from "../../../../services/reparation/reparation.service";
-import {User} from "../../../../models/User/user.model";
-import {AuthService} from "../../../../services/auth/auth.service";
-import {catchError} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {CarService} from "../../../../services/car/car.service";
+import {CarModel} from "../../../../models/Car/car.model";
 
 @Component({
   selector: 'app-form-reparation',
@@ -18,18 +16,17 @@ import {ActivatedRoute} from "@angular/router";
 })
 
 export class FormReparationComponent {
-  user: User | undefined;
   error = false;
   submitted = false;
+  car: CarModel | undefined;
 
   model: Reparation = {
     articuladoReparado: "",
     precio: "",
     fecha: "",
     taller: "",
-    userId: "",
   }
-  constructor(private renderer: Renderer2,private route: ActivatedRoute, private el: ElementRef, private reparationService: ReparationService, private authService: AuthService) {}
+  constructor(private renderer: Renderer2,private route: ActivatedRoute, private el: ElementRef, private carService: CarService, private router: Router, private reparationService: ReparationService) {}
 
 
   needFieldsInForm() {
@@ -52,27 +49,20 @@ export class FormReparationComponent {
   }
 
   ngOnInit(): void {
-    this.authService.isLoggedIn.subscribe(
-      async (user) => {
-        this.user = user;
-        console.log("userLogged: ", this.user)
-      }
-    );
+    this.carService.getCarByID(this.route.snapshot.params['carId']).subscribe((car) => {
+      this.car = <CarModel>car;
+    })
   }
 
   onSubmit() {
     if (this.needFieldsInForm()) {
-      if (this.user?.id) {
-        try {
-          const carId = this.route.snapshot.params['carId'];
-          this.reparationService.createReparation(this.model, this.user.id, carId);
-          console.log('Formulario enviado');
-          this.error = false;
-          this.submitted = true;
-        }catch (error) {
-          this.error = true;
-          console.log("Error al enviar el formulario")
-        }
-    }}
+      this.reparationService.createReparation(this.model, this.car!).subscribe(() => {
+        this.router.navigate(['carView', {carId: this.car?.id}]);
+      });
+
+      console.log('Formulario enviado');
+      this.error = false;
+      this.submitted = true;
+    }
   }
 }
