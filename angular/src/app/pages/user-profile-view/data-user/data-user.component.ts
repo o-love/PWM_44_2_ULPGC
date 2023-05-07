@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {User} from "../../../models/User/user.model";
+import {AuthService} from "../../../services/auth/auth.service";
 
 @Component({
   selector: 'app-data-user',
@@ -16,10 +17,13 @@ export class DataUserComponent implements OnInit {
   numeroReparaciones: number = 20;
   @Input() user: User | undefined;
 
-  constructor() {
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit(): void {
+    this.authService.isLoggedIn.subscribe((user) => {
+      this.user = user;
+    })
   }
 
 }

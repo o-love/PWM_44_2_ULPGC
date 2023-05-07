@@ -42,7 +42,7 @@ export class UserRegistrationComponent {
         await this.userService.createUser(this.user, this.pass, undefined)
       }
 
-      this.router.navigate(['userProfile'])
+      this.router.navigate(['login'])
     }
   }
 

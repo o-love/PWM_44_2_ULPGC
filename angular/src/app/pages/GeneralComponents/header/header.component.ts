@@ -18,42 +18,35 @@ export class HeaderComponent implements OnInit {
   isLoggedIn = false;
   profileImageUrl: string | undefined;
   Rol = "";
-
+  photo = "https://firebasestorage.googleapis.com/v0/b/pwm2023-fba58.appspot.com/o/assets%2Fpng-clipart-computer-icons-user-user-icon-face-monochrome-thumbnail.png?alt=media&token=a7bd81cf-9e3a-458b-b30b-d79f1929af68";
   private userLogged: User | undefined;
 
   constructor(private authService: AuthService, private userService: UserService) {
   }
 
 
-
   ngOnInit() {
     this.authService.isLoggedIn.subscribe(
       (user) => {
         this.userLogged = user;
-        if(this.userLogged){
-          this.getImage(this.userLogged);
-        }
         console.log("userLogged: ", this.userLogged)
-        if (this.userLogged){
-          if (this.userLogged.is_admin){
-            this.Rol="Admin"
-          }else{
-            this.Rol="usuarioLogeado"
+        if (this.userLogged) {
+          if (this.userLogged.photo_url !== "") {
+            this.photo = this.userLogged.photo_url
+          } else {
+            this.photo = "https://firebasestorage.googleapis.com/v0/b/pwm2023-fba58.appspot.com/o/assets%2Fpng-clipart-computer-icons-user-user-icon-face-monochrome-thumbnail.png?alt=media&token=a7bd81cf-9e3a-458b-b30b-d79f1929af68"
           }
-        }else{
-          this.Rol="usuarioNoLogeado"
+          if (this.userLogged.is_admin) {
+            this.Rol = "Admin"
+          } else {
+            this.Rol = "usuarioLogeado"
+          }
+        } else {
+          this.photo = "https://firebasestorage.googleapis.com/v0/b/pwm2023-fba58.appspot.com/o/assets%2Fpng-clipart-computer-icons-user-user-icon-face-monochrome-thumbnail.png?alt=media&token=a7bd81cf-9e3a-458b-b30b-d79f1929af68"
+          this.Rol = "usuarioNoLogeado"
         }
       }
     );
-  }
-  async getImage(user: User) {
-    if (user?.id) {
-      (await this.userService.getImageUser(user?.id)).subscribe((url) => {
-        this.profileImageUrl = url;
-        const img = document.getElementById('fotoPerfilHeader') as HTMLImageElement;
-        img.src = this.profileImageUrl;
-      });
-    }
   }
 }
 

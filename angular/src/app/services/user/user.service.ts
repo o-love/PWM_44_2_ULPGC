@@ -42,6 +42,7 @@ export class UserService {
       photo_url: "",
       username: user.username
     }, user.id)
+    this.authService.logout()
     if (fileUpload !== undefined) {
       this.storeUserImage(fileUpload.file, user.id).subscribe((urlListener) => {
         urlListener.subscribe((url: string)=>{

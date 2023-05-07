@@ -15,18 +15,18 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class UserFormIconAndOptionsComponent implements OnInit {
   @Input() user: User | undefined;
   profileImageUrl: string | undefined;
-
+  photo="https://firebasestorage.googleapis.com/v0/b/pwm2023-fba58.appspot.com/o/assets%2Fpng-clipart-computer-icons-user-user-icon-face-monochrome-thumbnail.png?alt=media&token=a7bd81cf-9e3a-458b-b30b-d79f1929af68"
   constructor(private userService: UserService, private route: ActivatedRoute, private authService: AuthService, private router: Router) {
   }
 
 
   ngOnInit(): void {
-    this.getImage();
+    if (this.user?.photo_url!=="" && this.user?.photo_url!==undefined){
+      this.photo = this.user?.photo_url
+    }
   }
 
-  ngOnChanges() {
-    this.getImage();
-  }
+
 
   logOut() {
     this.authService.logout()
@@ -42,15 +42,7 @@ export class UserFormIconAndOptionsComponent implements OnInit {
     this.router.navigate(["/cardCar", {userId: this.user?.id}])
   }
 
-  async getImage() {
-    if (this.user?.id) {
-      (await this.userService.getImageUser(this.user?.id)).subscribe((url) => {
-        this.profileImageUrl = url;
-        const img = document.getElementById('profileImage') as HTMLImageElement;
-        img.src = this.profileImageUrl;
-      });
-    }
-  }
+
 
   editUser() {
     this.router.navigate(['/userProfileEdit', {userId: this.user?.id}]);
