@@ -18,7 +18,7 @@ import {MapComponent} from './pages/GeneralComponents/map/map.component';
 import {GasStationListComponent} from './pages/home-page/gas-station-list/gas-station-list.component';
 import {DataUserComponent} from './pages/user-profile-view/data-user/data-user.component';
 import {LoginComponent} from './pages/login/login/login.component';
-import {FooterComponent} from './pages/footer/footer.component';
+import {FooterComponent} from './pages/GeneralComponents/footer/footer.component';
 import {
   UserFormIconAndOptionsComponent
 } from './pages/user-profile-view/user-form-icon-and-options/user-form-icon-and-options.component';
