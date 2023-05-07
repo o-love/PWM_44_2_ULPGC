@@ -41,20 +41,24 @@ export class CarService {
     }))
   }
 
-  storeCarImage(file: File, id:string) : Observable<any> {
+  private storeCarImage(file: File, id:string) : Observable<any> {
     return this.storageService.pushFileToStorage({file: file, key: id, name: file.name, type: "car", url: ""}, `/${this.collection}/${id}`);
+  }
+
+  updateCarWithImage(car: CarModel, image: File) {
+    this.storeCarImage(image, <string>car.id).subscribe((urlListener) => {
+      urlListener.subscribe((url: string) => {
+        car.foto_coche_src = url;
+        this.updateCar(car);
+      })
+    });
   }
 
   storeCarWithImage(car: CarModel, image: File): Observable<CarModel> {
     return this.storeCar(car).pipe(map((retCar) => {
-      this.storeCarImage(image, <string>retCar.id).subscribe((urlListener) => {
-        urlListener.subscribe((url: string) => {
-          retCar.foto_coche_src = url;
-          this.updateCar(retCar);
-        })
-      });
+      this.updateCarWithImage(car, image);
       return retCar;
-    }))
+    }));
   }
 
   private updateCar(car: CarModel) {
