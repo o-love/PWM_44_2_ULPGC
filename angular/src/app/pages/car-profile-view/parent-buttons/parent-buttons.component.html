@@ -1,0 +1,17 @@
+<div>
+  <button class="selectedInfo h-100 btnCabeceraCar" (click)="seleccionarTabla(1)">Mantenimiento</button>
+  <button class="selectedInfo h-100 btnCabeceraCar" (click)="seleccionarTabla(2)">Repostajes</button>
+  <button class="selectedInfo h-100 btnCabeceraCar" (click)="seleccionarTabla(3)">Recambios</button>
+</div>
+
+<div *ngIf="tablaSeleccionada === 1" class="mt-3">
+  <app-child-spare-list [reparation]="reparationData"></app-child-spare-list>
+</div>
+
+<div *ngIf="tablaSeleccionada === 2" class="mt-3">
+  <app-child-pumping-list [pumping]="pumpingData"></app-child-pumping-list>
+</div>
+
+<div *ngIf="tablaSeleccionada === 3" class="mt-3">
+  <app-child-maintenance-list></app-child-maintenance-list>
+</div>
