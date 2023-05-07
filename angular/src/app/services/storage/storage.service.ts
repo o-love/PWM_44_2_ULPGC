@@ -64,12 +64,8 @@ export class StorageService {
     return ref.getDownloadURL();
   }
 
-  deleteFile(fileUpload: FileUpload): void {
-    this.deleteFileDatabase(fileUpload.key)
-      .then(() => {
-        this.deleteFileStorage(fileUpload.name);
-      })
-      .catch(error => console.log(error))
+  deleteFile(path: string, id: string): void {
+    this.deleteFileStorage(path, id)
   }
 
   private saveFileData(fileUpload: FileUpload) {
@@ -80,8 +76,8 @@ export class StorageService {
     return this.db.list(this.basePath).remove(key)
   }
 
-  private deleteFileStorage(name: string) {
-    const storageRef = this.storage.ref(this.basePath);
-    storageRef.child(name).delete();
+  private deleteFileStorage(path: string, id: string) {
+    const storageRef = this.storage.ref(path);
+    storageRef.child(id).delete();
   }
 }

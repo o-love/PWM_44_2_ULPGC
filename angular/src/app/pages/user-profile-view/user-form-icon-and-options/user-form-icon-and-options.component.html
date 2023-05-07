@@ -1,21 +1,35 @@
 <div id="iconAndButtons">
-  <div class="d-flex justify-content-center align-items-center">
-    <img ngSrc="{{photo}}" alt="imagen usuario" class="" id="profileImage" height="519" width="516">
+
+  <div class="d-flex justify-content-center align-items-center" >
+    <img [ngSrc]="photo" *ngIf='photo!=="none"' alt="imagen usuario" class="" id="profileImage" height="519" width="516">
   </div>
   <div id="" class="w-100">
     <div class="w-100 optionElement">
-      <button type="button" class="w-100 btnPerfil" id="editProfileBtn" (click)="editUser()">Editar<i class="fa-solid fa-pen-to-square"></i></button>
+      <button type="button" class="w-100 btnPerfil" id="editProfileBtn" (click)="editUser()">Editar<i
+        class="fa-solid fa-pen-to-square"></i></button>
     </div>
     <div class="w-100 optionElement">
-      <button type="button" class="w-100 btnPerfil" id="myCarsBtn" (click)="toCars()">Coches <i class="fa-solid fa-car"></i></button>
+      <button type="button" class="w-100 btnPerfil" id="myCarsBtn" (click)="toCars()">Coches <i
+        class="fa-solid fa-car"></i></button>
     </div>
     <div class="w-100 optionElement">
-      <button type="button" class="w-100 btnPerfil" id="logOutBtn" (click)="logOut()">Cerrar Session <i class="fa-solid fa-right-to-bracket"></i>
+      <button type="button" class="w-100 btnPerfil" id="logOutBtn" (click)="logOut()">Cerrar Session <i
+        class="fa-solid fa-right-to-bracket"></i>
       </button>
     </div>
     <div class="w-100 optionElement lastOptionElement">
-      <button type="button" class="w-100 btnPerfil" id="deleteUserBtn" (click)="deleteUser()"><span class="delete-option-form" >Borrar cuenta <i
+      <button type="button" class="w-100 btnPerfil" id="deleteUserBtn" (click)="confirmarBorrar()"><span
+        class="delete-option-form">Borrar cuenta <i
         class="fa-solid fa-trash"></i></span></button>
+      <div id="confirmacionBorrarcuenta" class="w-50 d-none">
+        <button type="button" class="w-50 btnPerfil" id="confirmDeleteUSer" (click)="deleteUser()"><span
+          class="delete-option-form">
+            Borrar
+            <i class="fa-solid fa-trash"></i>
+          </span></button>
+        <button type="button" class="w-50 btnPerfil" id="cancelDeleteUser" (click)="cancelarBorrar()"><span
+          class="delete-option-form">Cancelar <i class="fa-solid fa-xmark"></i></span></button>
+      </div>
     </div>
   </div>
 </div>

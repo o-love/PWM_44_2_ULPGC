@@ -32,8 +32,7 @@
       <button class="btn btn-primary mx-2 text-white" id="btnLogin" [routerLink]="['/login']">Login</button>
     </div>
     <div class="mx-2 text-white" *ngIf='Rol!=="usuarioNoLogeado"' id="fotoPerfilHeaderContainer">
-      <img ngSrc="{{photo}}" alt="User Photo" [routerLink]="['/userProfile']" id="fotoPerfilHeader" class="my-auto"
-           height="519" width="516">
+      <img [ngSrc]="photo" alt="User Photo" [routerLink]="['/userProfile']" id="fotoPerfilHeader" class="my-auto" height="519" width="516">
     </div>
   </div>
 

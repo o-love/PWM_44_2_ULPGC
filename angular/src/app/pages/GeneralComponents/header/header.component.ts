@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn = false;
   profileImageUrl: string | undefined;
   Rol = "";
-  photo = "https://firebasestorage.googleapis.com/v0/b/pwm2023-fba58.appspot.com/o/assets%2Fpng-clipart-computer-icons-user-user-icon-face-monochrome-thumbnail.png?alt=media&token=a7bd81cf-9e3a-458b-b30b-d79f1929af68";
+  photo = "none";
   private userLogged: User | undefined;
 
   constructor(private authService: AuthService, private userService: UserService) {
@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
         this.userLogged = user;
         console.log("userLogged: ", this.userLogged)
         if (this.userLogged) {
-          if (this.userLogged.photo_url !== "") {
+          if (this.userLogged.photo_url !== "none") {
             this.photo = this.userLogged.photo_url
           } else {
             this.photo = "https://firebasestorage.googleapis.com/v0/b/pwm2023-fba58.appspot.com/o/assets%2Fpng-clipart-computer-icons-user-user-icon-face-monochrome-thumbnail.png?alt=media&token=a7bd81cf-9e3a-458b-b30b-d79f1929af68"
@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
             this.Rol = "usuarioLogeado"
           }
         } else {
-          this.photo = "https://firebasestorage.googleapis.com/v0/b/pwm2023-fba58.appspot.com/o/assets%2Fpng-clipart-computer-icons-user-user-icon-face-monochrome-thumbnail.png?alt=media&token=a7bd81cf-9e3a-458b-b30b-d79f1929af68"
+          this.photo="none"
           this.Rol = "usuarioNoLogeado"
         }
       }

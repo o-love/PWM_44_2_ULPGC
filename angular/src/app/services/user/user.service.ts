@@ -62,12 +62,13 @@ export class UserService {
   }
 
   async deleteUser(user: User) {
-    const x = this.storageService.getFiles(1, `/users/${user.id}`);
-    console.log("ficheros: ", x)
-    await this.authService.logout();
+    if (user.photo_url && user.photo_url!==""){
+      this.storageService.deleteFile("/users",user.id)
+    }
+    await this.firestoreService.deleteDoc(this.collectionDoc, user.id)
+    this.authService.deleteUser()
+    this.authService.logout()
 
-    //this.storageService.deleteFile(x)
-    return this.firestoreService.deleteDoc(this.collectionDoc, user.id);
   }
 
   editUser(user: User) {

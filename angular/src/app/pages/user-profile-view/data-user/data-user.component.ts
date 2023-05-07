@@ -25,5 +25,4 @@ export class DataUserComponent implements OnInit {
       this.user = user;
     })
   }
-
 }

@@ -7,7 +7,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
-  browserSessionPersistence
+  deleteUser
 } from "@angular/fire/auth";
 
 import {User} from "../../models/User/user.model";
@@ -69,5 +69,10 @@ export class AuthService {
         this.userLogged.next(undefined)
       }
     })
+  }
+
+  deleteUser(){
+    const x = this.auth.currentUser
+    deleteUser(x!)
   }
 }

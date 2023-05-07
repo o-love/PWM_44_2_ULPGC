@@ -13,17 +13,28 @@ import {ActivatedRoute, Router} from "@angular/router";
   }
 })
 export class UserFormIconAndOptionsComponent implements OnInit {
-  @Input() user: User | undefined;
+  user: User | undefined;
   profileImageUrl: string | undefined;
-  photo="https://firebasestorage.googleapis.com/v0/b/pwm2023-fba58.appspot.com/o/assets%2Fpng-clipart-computer-icons-user-user-icon-face-monochrome-thumbnail.png?alt=media&token=a7bd81cf-9e3a-458b-b30b-d79f1929af68"
+  photo="none"
   constructor(private userService: UserService, private route: ActivatedRoute, private authService: AuthService, private router: Router) {
   }
 
 
   ngOnInit(): void {
-    if (this.user?.photo_url!=="" && this.user?.photo_url!==undefined){
-      this.photo = this.user?.photo_url
-    }
+    this.authService.isLoggedIn.subscribe(
+      (user) => {
+        this.user = user;
+        if (this.user) {
+          if (this.user.photo_url !== "none") {
+            this.photo = this.user.photo_url
+          } else {
+            this.photo = "https://firebasestorage.googleapis.com/v0/b/pwm2023-fba58.appspot.com/o/assets%2Fpng-clipart-computer-icons-user-user-icon-face-monochrome-thumbnail.png?alt=media&token=a7bd81cf-9e3a-458b-b30b-d79f1929af68"
+          }
+        }else{
+          this.photo = "none"
+        }
+      }
+    );
   }
 
 
@@ -48,6 +59,22 @@ export class UserFormIconAndOptionsComponent implements OnInit {
 
   editUser() {
     this.router.navigate(['/userProfileEdit', {userId: this.user?.id}]);
+  }
+
+  confirmarBorrar() {
+    const borrar = document.getElementById("deleteUserBtn")
+    const contenedorConfirmacion = document.getElementById("confirmacionBorrarcuenta")
+    borrar!.classList.toggle("d-none")
+    contenedorConfirmacion!.classList.toggle("d-none")
+    contenedorConfirmacion!.classList.add("d-flex")
+  }
+
+  cancelarBorrar() {
+    const borrar = document.getElementById("deleteUserBtn")
+    const contenedorConfirmacion = document.getElementById("confirmacionBorrarcuenta")
+    borrar!.classList.toggle("d-none")
+    contenedorConfirmacion!.classList.toggle("d-none")
+    contenedorConfirmacion!.classList.remove("d-flex")
   }
 }
 
