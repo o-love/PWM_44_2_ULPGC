@@ -6,7 +6,11 @@ import {CarModel} from "../../models/Car/car.model";
 @Component({
   selector: 'app-card-car',
   templateUrl: './card-car.component.html',
-  styleUrls: ['./card-car.component.sass']
+  styleUrls: ['./card-car.component.sass'],
+  host: {
+    id: "mainContent",
+    class: "flex-grow-1 d-sm-flex justify-content-sm-center hideOnMobile"
+  }
 })
 export class CardCarComponent implements OnInit {
   cars: CarModel[] = [];

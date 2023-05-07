@@ -11,7 +11,11 @@ let var2 = "Second";
 @Component({
   selector: 'app-form-car',
   templateUrl: './form-car.component.html',
-  styleUrls: ['./form-car.component.sass']
+  styleUrls: ['./form-car.component.sass'],
+  host: {
+    id: "mainContent",
+    class: "flex-grow-1 d-sm-flex justify-content-sm-center hideOnMobile"
+  }
 })
 export class FormCarComponent implements OnInit {
   private formActual = var1;
