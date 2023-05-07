@@ -14,12 +14,19 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let pumps of pumping" [attr.data-id]="pumps.userId">
-      <td scope="col" class="centrar">{{pumps.fecha}}</td>
-      <td scope="col" class="elementUser centrar">{{pumps.kmActual}}</td>
-      <td scope="col" class="centrar">PENDIENTE</td>
-      <td scope="col" class="centrar">{{pumps.precioCombustible}}</td>
-    </tr>
+    <ng-container *ngIf="pumping && pumping.length > 0; else noPumping">
+      <tr *ngFor="let pumps of pumping" [attr.data-id]="pumps.userId">
+        <td scope="col" class="centrar">{{pumps.fecha}}</td>
+        <td scope="col" class="elementUser centrar">{{pumps.kmActual}}</td>
+        <td scope="col" class="centrar">PENDIENTE</td>
+        <td scope="col" class="centrar">{{pumps.precioCombustible}}</td>
+      </tr>
+    </ng-container>
+    <ng-template #noPumping>
+      <tr>
+        <td colspan="4" class="centrar bg-warning">No existen repostajes por el momento</td>
+      </tr>
+    </ng-template>
     </tbody>
 
 
