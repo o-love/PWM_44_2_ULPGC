@@ -23,7 +23,7 @@
       <td scope="col" class="elementUser centrar">{{user.username}}</td>
       <td scope="col" class="centrar">{{user.email}}</td>
       <td scope="col" class="btnTable centrar"><a><i class="fa-solid fa-pen-to-square centrar"></i></a></td>
-      <td scope="col" class="btnTable centrar"><a><i class="fa-solid fa-trash-can centrar"></i></a></td>
+      <td scope="col" class="btnTable centrar" (click)="deleteUser(user)" (click)="stopPropagation($event)"><a><i class="fa-solid fa-trash-can centrar"></i></a></td>
     </tr>
     </tbody>
 

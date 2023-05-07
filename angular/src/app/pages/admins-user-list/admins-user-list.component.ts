@@ -22,11 +22,21 @@ export class AdminsUserListComponent {
     this.userService.getUsers().subscribe(
       (userList: User[]) => {
         console.log(userList);
-        this.users = [...this.users, ...userList];
+        this.users = userList;
       }
     )
   }
   openUserPage(user: string) {
     this.router.navigate(['userProfile', {id: user}]);
+  }
+
+  deleteUser(user: User) {
+    this.userService.deleteUser(user).then();
+    this.users.splice(this.users.indexOf(user), 1);
+    console.log("removed", user.username)
+  }
+
+  stopPropagation(event: Event){
+    event.stopPropagation();
   }
 }
