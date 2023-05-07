@@ -11,7 +11,7 @@ interface ParentButtonsProps {
 @Component({
   selector: 'app-parent-buttons',
   templateUrl: './parent-buttons.component.html',
-  styleUrls: ['./parent-buttons.component.sass']
+  styleUrls: ['./parent-buttons.component.sass'],
 })
 
 export class ParentButtonsComponent {
