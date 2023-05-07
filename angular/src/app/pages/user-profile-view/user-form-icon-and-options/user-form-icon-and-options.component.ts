@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {User} from "../../../models/User/user.model";
 import {UserService} from "../../../services/user/user.service";
 import {AuthService} from "../../../services/auth/auth.service";
@@ -13,7 +13,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   }
 })
 export class UserFormIconAndOptionsComponent implements OnInit {
-  user: User | undefined;
+  @Input() user: User | undefined;
   profileImageUrl: string | undefined;
 
   constructor(private userService: UserService, private route: ActivatedRoute, private authService: AuthService, private router: Router) {
@@ -21,13 +21,11 @@ export class UserFormIconAndOptionsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.authService.isLoggedIn.subscribe(
-      (user) => {
-        this.user = user;
-        this.getImage();
-        console.log("userLogged: ", this.user)
-      }
-    );
+    this.getImage();
+  }
+
+  ngOnChanges() {
+    this.getImage();
   }
 
   logOut() {

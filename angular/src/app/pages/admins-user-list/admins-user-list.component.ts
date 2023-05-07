@@ -26,7 +26,7 @@ export class AdminsUserListComponent {
       }
     )
   }
-  getUserId(user: string) {
-    this.router.navigate(['userProfile', {number: user}]);
+  openUserPage(user: string) {
+    this.router.navigate(['userProfile', {id: user}]);
   }
 }
