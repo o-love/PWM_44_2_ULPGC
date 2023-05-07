@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {AuthService} from "../../../../services/auth/auth.service";
+import {AuthService} from "../../services/auth/auth.service";
 import {Router} from "@angular/router";
-import {User} from "../../../../models/User/user.model";
-import {UserService} from "../../../../services/user/user.service";
-import {FileUpload} from "../../../../models/File/fileUpload";
-import {StorageService} from "../../../../services/storage/storage.service";
+import {User} from "../../models/User/user.model";
+import {UserService} from "../../services/user/user.service";
+import {FileUpload} from "../../models/File/fileUpload";
+import {StorageService} from "../../services/storage/storage.service";
 
 @Component({
   selector: 'app-user-registration',

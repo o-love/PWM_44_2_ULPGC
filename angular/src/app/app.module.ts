@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './pages/header/header.component';
+import {HeaderComponent} from './pages/GeneralComponents/header/header.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HomePageComponent} from './pages/home-page/home-page.component';
 import {AdminsUserListComponent} from './pages/admins-user-list/admins-user-list.component';
@@ -16,20 +16,20 @@ import {FormsModule} from "@angular/forms";
 import {CardCarComponent} from './pages/card-car/card-car.component';
 import {MapComponent} from './pages/GeneralComponents/map/map.component';
 import {GasStationListComponent} from './pages/home-page/gas-station-list/gas-station-list.component';
-import {DataUserComponent} from './pages/GeneralComponents/data-user/data-user.component';
+import {DataUserComponent} from './pages/user-profile-view/data-user/data-user.component';
 import {LoginComponent} from './pages/login/login/login.component';
 import {FooterComponent} from './pages/footer/footer.component';
 import {
   UserFormIconAndOptionsComponent
-} from './pages/GeneralComponents/user-form-icon-and-options/user-form-icon-and-options.component';
-import {HeaderMobileComponent} from './pages/header-mobile/header-mobile.component';
+} from './pages/user-profile-view/user-form-icon-and-options/user-form-icon-and-options.component';
+import {HeaderMobileComponent} from './pages/GeneralComponents/header-mobile/header-mobile.component';
 import {GoogleMapsModule} from '@angular/google-maps';
 import {GasInfoPageComponent} from './pages/gas-info-page/gas-info-page.component';
 import {GasPriceListComponent} from './pages/GeneralComponents/gas-price-list/gas-price-list.component';
 import {UserProfileViewComponent} from "./pages/user-profile-view/user-profile-view.component";
 import {FormCarComponent} from "./pages/form-car/form-car.component";
 import {FormPumpingComponent} from './pages/GeneralComponents/Forms/form-pumping/form-pumping.component';
-import {UserRegistrationComponent} from "./pages/GeneralComponents/Forms/user-registration/user-registration.component";
+import {UserRegistrationComponent} from "./pages/user-registration/user-registration.component";
 import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {environment} from '../environments/environment';
 import {provideAuth, getAuth} from '@angular/fire/auth';

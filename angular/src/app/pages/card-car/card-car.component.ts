@@ -27,7 +27,7 @@ export class CardCarComponent implements OnInit {
   }
 
   navigateToCarDetails(car: any): void {
-    this.router.navigate(['aboutUs'], car.id);
+    this.router.navigate(['aboutUs'], car.id); // TODO: Navigate to car page
   }
 
   navigateToCarCreate(): void {
