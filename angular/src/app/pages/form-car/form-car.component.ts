@@ -3,6 +3,7 @@ import {NgForm} from "@angular/forms";
 import {CarModel} from "../../models/Car/car.model";
 import {CarService} from "../../services/car/car.service";
 import {Observable} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
 
 let var1 = "First";
 let var2 = "Second";
@@ -31,10 +32,17 @@ export class FormCarComponent implements OnInit {
 
   file: File | undefined;
 
-  constructor(private carService: CarService, private renderer: Renderer2, private el: ElementRef) {
+  constructor(private route: ActivatedRoute, private router: Router, private carService: CarService, private renderer: Renderer2, private el: ElementRef) {
   }
 
   ngOnInit(): void {
+    const carId = this.route.snapshot.params["carId"];
+    if (carId) {
+      this.carService.getCarByID(carId).subscribe((car) => {
+        console.log(car);
+        this.model = <CarModel>car;
+      });
+    }
   }
 
   valForm(nform: number) {
@@ -107,6 +115,7 @@ export class FormCarComponent implements OnInit {
   onSubmit(form: NgForm) {
     if(form.valid) {
       this.sumbitForm().subscribe((car) => {
+        this.router.navigate(['formCar', {carId: car.id}]); // TODO: GO to Car Page
       })
     }
   }

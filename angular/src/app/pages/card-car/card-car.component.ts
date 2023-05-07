@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {CarService} from "../../services/car/car.service";
 import {CarModel} from "../../models/Car/car.model";
@@ -27,7 +26,7 @@ export class CardCarComponent implements OnInit {
   }
 
   navigateToCarDetails(car: any): void {
-    this.router.navigate(['aboutUs'], car.id); // TODO: Navigate to car page
+    this.router.navigate(['formCar', {carId: car.id}]); // TODO: Navigate to car page
   }
 
   navigateToCarCreate(): void {
