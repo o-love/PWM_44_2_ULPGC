@@ -35,7 +35,9 @@ export class UserFormIconAndOptionsComponent implements OnInit {
 
   deleteUser(){
     console.log("usuario desde profileview: ", this.user)
-    this.userService.deleteUser(this.user!)
+    this.userService.deleteUser(this.user!).then(() => {
+      this.router.navigate(['/']);
+    })
   }
 
   toCars() {
