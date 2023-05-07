@@ -1,8 +1,11 @@
 #iconAndButtons
   display: grid
   grid-template-rows: 1fr 1fr
-  min-height: 100%
   border-right: solid 1px var(--border-buttons-profile)
+  @media screen and (min-width: 575px)
+    min-height: 100%
+  @media screen and (max-width: 575px)
+    min-height: 50%
 
 #profileImage
   width: 10rem

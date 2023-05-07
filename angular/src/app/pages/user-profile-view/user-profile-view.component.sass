@@ -1,5 +1,8 @@
 
 .containerProfile
   display: grid
-  grid-template-columns: 1fr 2fr
   min-height: 100%
+  @media screen and (min-width: 575px)
+    grid-template-columns: 1fr 2fr
+  @media screen and (max-width: 575px)
+    grid-template-rows: 1fr 1fr
