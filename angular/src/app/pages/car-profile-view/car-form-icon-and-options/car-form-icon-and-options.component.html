@@ -1,19 +1,19 @@
 <div id="carProfileFotoContainer">
-  <img src="../img/car.png" alt="imagen coche" class="image-form-icon-options" id="carImage">
+  <img src="{{this.model.foto_coche_src}}" alt="imagen coche" class="image-form-icon-options" id="carImage">
 </div>
 <div class="infoCoche">
-  <h3 id="MatriculaCoche" class="info">Matricula {{this.model.matricula}}</h3>
-  <h3 id="MarcaCoche" class="info">Marca {{this.model.marca}} {{this.model.modelo}}</h3>
-  <h3 id="ModeloCoche" class="info">Combustible</h3>
+  <h3 id="MatriculaCoche" class="info"><strong>Matricula</strong> {{this.model.matricula}}</h3>
+  <h3 id="MarcaCoche" class="info"><strong>Marca</strong> {{this.model.marca}} {{this.model.modelo}}</h3>
+  <h3 id="ModeloCoche" class="info"><strong>Combustible</strong> {{this.model.combustible}}</h3>
 </div>
 <div id="btnsCar">
   <div class="optionElement w-100">
-    <button type="button" class="button-car-options w-100 btnPerfil" id="editProfileBtn" routerLink="/add-refueling">
+    <button type="button" class="button-car-options w-100 btnPerfil" (click)="navigateToAddPumping()" id="editProfileBtn" routerLink="/add-refueling">
       Añadir Repostaje<i class="fa-solid fa-gas-pump"></i>
     </button>
   </div>
   <div class="optionElement w-100">
-    <button type="button" class="button-car-optionsw-100 btnPerfil" id="myCarsBtn" routerLink="/add-spare-part">
+    <button type="button" class="button-car-optionsw-100 btnPerfil" (click)="navigateToAddReparation()" id="myCarsBtn" routerLink="/add-spare-part">
       Añadir Recambio <i class="fa-solid fa-wrench"></i>
     </button>
   </div>
