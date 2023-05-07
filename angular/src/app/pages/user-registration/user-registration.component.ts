@@ -35,8 +35,13 @@ export class UserRegistrationComponent {
           this.currentFileUpload = new FileUpload(file)
           this.currentFileUpload.type ="user"
         }
+        console.log("hay un fichero")
+        await this.userService.createUser(this.user, this.pass, this.currentFileUpload)
+      }else{
+        console.log("NO hay un fichero")
+        await this.userService.createUser(this.user, this.pass, undefined)
       }
-      await this.userService.createUser(this.user, this.pass, this.currentFileUpload)
+
       this.router.navigate(['userProfile'])
     }
   }

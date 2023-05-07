@@ -9,6 +9,7 @@ import {getDownloadURL} from "@angular/fire/storage";
   providedIn: 'root'
 })
 export class StorageService {
+
   private basePath: string = ""
 
   constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) {
@@ -21,7 +22,7 @@ export class StorageService {
       this.basePath = "/users/"
     }
     console.log("id: ", id)
-    const renamedFile = new File([fileUpload.file],""+id,{type:fileUpload.file.type})
+    const renamedFile = new File([fileUpload.file], "" + id, {type: fileUpload.file.type})
     console.log(renamedFile)
     const newFileUpload = new FileUpload(renamedFile)
     console.log("FILE UPLOAD NAME: ", fileUpload)
@@ -47,7 +48,9 @@ export class StorageService {
       });
     })).subscribe();
 
-    return from(uploadTask.then(() => { return storageRef.getDownloadURL() }))
+    return from(uploadTask.then(() => {
+      return storageRef.getDownloadURL()
+    }))
   }
 
   getFiles(numFiles: number, path: string): AngularFireList<FileUpload> {

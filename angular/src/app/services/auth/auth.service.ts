@@ -55,27 +55,19 @@ export class AuthService {
 
   private async setUser(id: string, email: string) {
     this.firestoreService.getDocByIdSnapshot(`users/${id}`).then(docData => {
-      this.currentUser = {
-        id: id,
-        username: docData!['username'],
-        email: email,
-        is_admin: docData!['is_admin'],
-        photo_url: docData!['photo_url']
-      };
-
-      this.userLogged.next(this.currentUser)
-      console.log(this.userLogged)
+      if (docData!=undefined){
+        this.currentUser = {
+          id: id,
+          username: docData!['username'],
+          email: email,
+          is_admin: docData!['is_admin'],
+          photo_url: docData!['photo_url']
+        };
+        this.userLogged.next(this.currentUser)
+        console.log(this.userLogged)
+      }else{
+        this.userLogged.next(undefined)
+      }
     })
-
-    //docObservale.subscribe((data: any) => {
-    //   this.userLogged.next({
-    //     id: id,
-    //     username: data.username,
-    //     email: email,
-    //     is_admin: data.is_admin,
-    //     photo_url: data.photo_url
-    //   })
-    //   console.log("usuario seteado: ", this.userLogged)
-    // })
   }
 }
