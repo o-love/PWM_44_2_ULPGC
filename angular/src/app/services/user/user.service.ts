@@ -77,8 +77,7 @@ export class UserService {
   }
 
   editUser(user: User) {
-    console.log("USUARIO A ACTUALIZAR: ",user)
-    return this.firestoreService.updateDoc(this.collectionDoc, user)
+    return this.firestoreService.updateDoc(`${this.collectionDoc}/${user.id}`, user);
   }
 
 
