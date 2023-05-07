@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {GasStation} from "../../../models/GasStation/gas-station.model";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -16,7 +17,15 @@ export class MapComponent {
     center: {lat: 28, lng: -16},
     zoom: 7
   };
-  
+
   markerClustererImagePath =
     'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m';
+
+  constructor(private router: Router) {
+  }
+
+  markerClick(gasStation: GasStation) {
+    this.router.navigateByUrl('/gasStation', {state: gasStation});
+
+  }
 }
