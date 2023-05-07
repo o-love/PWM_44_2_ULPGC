@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CarService} from "../../services/car/car.service";
 import {CarModel} from "../../models/Car/car.model";
 
@@ -13,16 +13,24 @@ export class CardCarComponent implements OnInit {
   title = "cars";
   cars: CarModel[] = [];
 
-  constructor(private carService: CarService, private router: Router) {
+  constructor(private carService: CarService, private router: Router, private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    this.carService.getCars().subscribe((serviceCars: any) => {
-      serviceCars.then((cars: any) => {
+    const userId = this.route.snapshot.params["userId"];
+    if (userId) {
+      console.log(userId)
+      this.carService.getUserCars(userId).subscribe((cars: any) => {
         this.cars = [...this.cars, ...cars];
-      })
-    });
+      });
+    } else {
+      this.carService.getCars().subscribe((serviceCars: any) => {
+        serviceCars.then((cars: any) => {
+          this.cars = [...this.cars, ...cars];
+        })
+      });
+    }
   }
 
   navigateToCarDetails(car: any): void {

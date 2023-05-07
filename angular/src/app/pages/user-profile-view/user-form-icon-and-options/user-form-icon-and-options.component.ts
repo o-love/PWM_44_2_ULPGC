@@ -39,7 +39,7 @@ export class UserFormIconAndOptionsComponent implements OnInit {
   }
 
   toCars() {
-    this.router.navigate(["/cardCar"])
+    this.router.navigate(["/cardCar", {userId: this.user?.id}])
   }
 
   async getImage() {

@@ -23,6 +23,10 @@ export class CarService {
     }));
   }
 
+  getUserCars(userId: string) {
+    return from(this.firestoreService.getDocsByFieldUserId(userId, this.collection));
+  }
+
   getCarByID(carID: string) {
     return this.firestoreService.getDocById(`${this.collection}/${carID}`);
   }
