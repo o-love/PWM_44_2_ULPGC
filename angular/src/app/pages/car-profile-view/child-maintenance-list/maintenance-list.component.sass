@@ -40,7 +40,6 @@
 .button-car-options
   min-width: 100%
   font-size: large
-  min-height: 65px
   border: none
   background-color: white
 
@@ -66,16 +65,18 @@
   flex-direction: column
   justify-content: space-between
   align-items: center
+  margin-right: 2rem
+  margin-left: 2rem
+
 #mantenimientoInfo,#respostajesInfo,#reparacionesInfo
   max-width: 75%
   margin: auto
-
 
 .listaMantenimiento
   min-width: 100%
   margin: auto
   border: solid 1px
-  max-height: 450px
+  max-height: 380px
   overflow-y: auto
   background-color: var(--super-light-blue)
 
@@ -84,6 +85,7 @@
   display: grid
   grid-template-columns: 8fr 4fr
   padding-left: 1rem
+
 
 .itemMantenimento
   border-right: solid 1px var(--row-border-color)
@@ -131,6 +133,7 @@ table
 tbody
   background-color: var(--super-light-blue)
 
+
 @media only screen and (max-width: 800px)
   #indexBody
     display: grid
@@ -153,6 +156,7 @@ tbody
   .searchBox
     min-width: 75%
     margin: 10px auto
+
 
 @media (min-width: 801px)
   #indexBody
