@@ -43,7 +43,6 @@ import { CarFormIconAndOptionsComponent } from './pages/GeneralComponents/car-fo
 import { PumpingListComponent } from './pages/GeneralComponents/pumping-list/pumping-list.component';
 import { SpareListComponent } from './pages/GeneralComponents/spare-list/spare-list.component';
 import { MaintenanceListComponent } from './pages/GeneralComponents/maintenance-list/maintenance-list.component';
-
 @NgModule({
   declarations: [
     AppComponent,

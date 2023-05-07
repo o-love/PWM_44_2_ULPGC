@@ -1,1 +1,30 @@
-<p>pumping-list works!</p>
+<div class="containerList">
+  <div class="searchBox">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" name="search" placeholder="Buscar..." class="searchInput" autocomplete="off">
+  </div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <td scope="col">Fecha</td>
+      <td scope="col">Kms</td>
+      <td scope="col">Cantidad respostada</td>
+      <td scope="col">Precio</td>
+      <td scope="col"></td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let pumps of pumping" [attr.data-id]="pumps.userId">
+      <td scope="col"><img class="me-2" src="{{pumps.fecha}}" alt=""></td>
+      <td scope="col" class="elementUser centrar">{{pumps.kmActual}}</td>
+      <td scope="col" class="centrar">PENDIENTE</td>
+      <td scope="col" class="centrar">{{pumps.precioCombustible}}</td>
+      <td scope="col" class="btnTable centrar"><a><i class="fa-solid fa-pen-to-square centrar"></i></a></td>
+      <td scope="col" class="btnTable centrar"><a><i class="fa-solid fa-trash-can centrar"></i></a></td>
+    </tr>
+    </tbody>
+
+
+  </table>
+</div>
