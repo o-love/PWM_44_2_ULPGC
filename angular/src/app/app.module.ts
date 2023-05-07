@@ -45,6 +45,7 @@ import { SpareListComponent } from './pages/car-profile-view/child-spare-list/sp
 import { MaintenanceListComponent } from './pages/car-profile-view/child-maintenance-list/maintenance-list.component';
 import { CarProfileViewComponent } from './pages/car-profile-view/car-profile-view.component';
 import { ParentButtonsComponent } from './pages/car-profile-view/parent-buttons/parent-buttons.component';
+import { UserProfileUpdateComponent } from './pages/user-profile-update/user-profile-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { ParentButtonsComponent } from './pages/car-profile-view/parent-buttons/
     MaintenanceListComponent,
     CarProfileViewComponent,
     ParentButtonsComponent,
+    UserProfileUpdateComponent,
   ],
   imports: [
     BrowserModule,

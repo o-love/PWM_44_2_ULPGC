@@ -53,7 +53,7 @@ export class UserFormIconAndOptionsComponent implements OnInit {
   }
 
   editUser() {
-    // TODO: Add router to user form with current data filled
+    this.router.navigate(['/userProfileEdit', {userId: this.user?.id}]);
   }
 }
 

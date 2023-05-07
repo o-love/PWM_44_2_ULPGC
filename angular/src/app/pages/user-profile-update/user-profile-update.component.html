@@ -1,0 +1,20 @@
+<form id="" class="formulario w-50 my-auto p-3 rounded d-block d-md-block" *ngIf="user">
+  <div id="titulo" class="text-center mb-3">
+    <h2>Tu información</h2>
+  </div>
+  <div class="my-3 d-flex flex-column w-75 m-auto">
+    <label for="">Usuario</label>
+    <input type="text" class="input" id="user" required [(ngModel)]="user.username" name="userName">
+  </div>
+  <div class="my-3 d-flex flex-column w-75 m-auto">
+    <label for="email">Email</label>
+    <input type="email" class="input" id="email" [(ngModel)]="user.email" name="email" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" placeholder="ejemplo@dominio.com" required autocomplete="off">
+  </div>
+  <div class="my-3 d-flex flex-column w-75 m-auto">
+    <label for="">Foto</label>
+    <input type="file" class="input" (change)="onFileSelected($event)">
+  </div>
+  <div class="text-center mb-3" >
+    <button class="boton p-2 text-white" (click)="updateUser()">Actualizar</button>
+  </div>
+</form>

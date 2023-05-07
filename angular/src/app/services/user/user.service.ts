@@ -54,7 +54,7 @@ export class UserService {
   }
 
 
-  private storeUserImage(file: File, id: string) {
+  storeUserImage(file: File, id: string) {
     return this.storageService.pushFileToStorage({
       file: file,
       key: id,

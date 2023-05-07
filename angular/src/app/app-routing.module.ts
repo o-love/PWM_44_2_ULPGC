@@ -12,6 +12,7 @@ import {FormCarComponent} from "./pages/form-car/form-car.component";
 import {UserRegistrationComponent} from "./pages/user-registration/user-registration.component";
 import { FormReparationComponent} from "./pages/GeneralComponents/Forms/form-reparation/form-reparation.component";
 import {CarProfileViewComponent} from "./pages/car-profile-view/car-profile-view.component";
+import {UserProfileUpdateComponent} from "./pages/user-profile-update/user-profile-update.component";
 
 const routes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: "full"},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'formReparation', component:FormReparationComponent},
   {path: 'userRegistration', component:UserRegistrationComponent},
   {path: 'carView',component:CarProfileViewComponent},
+  {path: 'userProfileEdit', component: UserProfileUpdateComponent}
 ];
 
 @NgModule({
