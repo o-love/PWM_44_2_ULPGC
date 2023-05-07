@@ -1,19 +1,11 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {from, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {User} from "../../models/User/user.model";
-import {of} from "rxjs";
 import {FirestoreService} from "../firestore/firestore.service";
-// @ts-ignore
-import data from '../../../assets/json/users.json';
-import {getStorage} from "@angular/fire/storage";
-import {createUserWithEmailAndPassword} from "@angular/fire/auth";
-import {db} from '../../firebase/firestore';
-import {setDoc, doc, query, deleteDoc, where, getDocs, collection} from 'firebase/firestore';
 import {AuthService} from "../auth/auth.service";
 import {FileUpload} from "../../models/File/fileUpload";
 import {StorageService} from "../storage/storage.service";
-import * as url from "url";
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +34,7 @@ export class UserService {
       photo_url: "",
       username: user.username
     }, user.id)
-    this.authService.logout()
+    this.authService.logout();
     if (fileUpload !== undefined) {
       this.storeUserImage(fileUpload.file, user.id).subscribe((urlListener) => {
         urlListener.subscribe((url: string)=>{
@@ -66,16 +58,16 @@ export class UserService {
   }
 
   async getImageUser(uid: string) {
-    return this.storageService.getUserImageUrl(uid, this.collectionDoc)
+    return this.storageService.getUserImageUrl(uid, this.collectionDoc);
   }
 
   async deleteUser(user: User) {
-    const x = this.storageService.getFiles(1, `/users/${user.id}`)
+    const x = this.storageService.getFiles(1, `/users/${user.id}`);
     console.log("ficheros: ", x)
     await this.authService.logout();
 
     //this.storageService.deleteFile(x)
-    return this.firestoreService.deleteDoc(this.collectionDoc, user.id)
+    return this.firestoreService.deleteDoc(this.collectionDoc, user.id);
   }
 
   editUser(user: User) {
@@ -84,6 +76,6 @@ export class UserService {
 
 
   logUser(userEmail: string, userPassword: string) {
-    return this.authService.login(userEmail, userPassword, this.collectionDoc)
+    return this.authService.login(userEmail, userPassword, this.collectionDoc);
   }
 }
