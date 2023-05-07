@@ -115,17 +115,35 @@ export class FormCarComponent implements OnInit {
   onSubmit(form: NgForm) {
     if(form.valid) {
       this.sumbitForm().subscribe((car) => {
-        this.router.navigate(['formCar', {carId: car.id}]); // TODO: GO to Car Page
+        this.router.navigate(['cardCar']); // TODO: GO to Car Page
       })
     }
   }
 
-  sumbitForm(): Observable<CarModel> {
+  update() : Observable<CarModel> {
+    if (this.file) {
+      return this.carService.updateCarWithImage(this.model, this.file);
+    }
+    else {
+      return this.carService.update(this.model);
+    }
+  }
+
+  create(): Observable<CarModel> {
     if (this.file) {
       return this.carService.storeCarWithImage(this.model, this.file);
     }
     else {
       return this.carService.storeCar(this.model);
+    }
+  }
+
+  sumbitForm(): Observable<CarModel> {
+    if(this.model.id) {
+      return this.update()
+    }
+    else {
+      return this.create();
     }
   }
 }

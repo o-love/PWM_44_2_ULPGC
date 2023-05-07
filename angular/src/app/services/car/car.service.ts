@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {from, map, Observable} from "rxjs";
+import {from, map, Observable, of} from "rxjs";
 import {CarModel} from "../../models/Car/car.model";
 import {FirestoreService} from "../firestore/firestore.service";
 import {StorageService} from "../storage/storage.service";
@@ -45,13 +45,15 @@ export class CarService {
     return this.storageService.pushFileToStorage({file: file, key: id, name: file.name, type: "car", url: ""}, `/${this.collection}/${id}`);
   }
 
-  updateCarWithImage(car: CarModel, image: File) {
+  updateCarWithImage(car: CarModel, image: File): Observable<CarModel> {
     this.storeCarImage(image, <string>car.id).subscribe((urlListener) => {
       urlListener.subscribe((url: string) => {
         car.foto_coche_src = url;
         this.updateCar(car);
       })
     });
+
+    return of(car);
   }
 
   storeCarWithImage(car: CarModel, image: File): Observable<CarModel> {
@@ -63,6 +65,10 @@ export class CarService {
 
   private updateCar(car: CarModel) {
     return this.firestoreService.updateDoc(`${this.collection}/${car.id}`, car);
+  }
+
+  update(car: CarModel) : Observable<CarModel> {
+    return from(this.updateCar(car)).pipe(map((res) => {return car}));
   }
 
   private deleteCar(car: CarModel) {
