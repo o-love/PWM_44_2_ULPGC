@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class AdminsUserListComponent {
   searchText: string = '';
   users: User[] = [];
-  user: User | null | undefined;
   constructor(private userService: UserService, private router: Router) {
   }
 

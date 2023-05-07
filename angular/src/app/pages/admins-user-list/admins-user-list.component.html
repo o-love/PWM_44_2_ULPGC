@@ -18,7 +18,7 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let user of users | userFilter: searchText" (click)="getUserId(user.id)" [attr.data-id]="user.id">
+    <tr *ngFor="let user of users | userFilter: searchText" (click)="getUserId(user.id)">
       <td scope="col"><img class="me-2" src="{{user.photo_url}}" alt=""></td>
       <td scope="col" class="elementUser centrar">{{user.username}}</td>
       <td scope="col" class="centrar">{{user.email}}</td>

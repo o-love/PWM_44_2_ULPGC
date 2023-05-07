@@ -42,7 +42,8 @@ export class UserService {
       return this.firestoreService.createDocWithId(this.collectionDoc, {
         username: user.username,
         photo_url: user.photo_url,
-        is_admin: user.is_admin
+        is_admin: user.is_admin,
+        email: user.email,
       }, userCredentials.user.uid)
     }
     return true
