@@ -1,0 +1,7 @@
+{
+  "name": "PWM44-2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
