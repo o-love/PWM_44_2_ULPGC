@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'PWM44-2',
-  webDir: 'www',
+  webDir: 'dist/angular',
   server: {
     androidScheme: 'https'
   }
