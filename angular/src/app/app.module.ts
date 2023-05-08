@@ -46,6 +46,7 @@ import { MaintenanceListComponent } from './pages/car-profile-view/child-mainten
 import { CarProfileViewComponent } from './pages/car-profile-view/car-profile-view.component';
 import { ParentButtonsComponent } from './pages/car-profile-view/parent-buttons/parent-buttons.component';
 import { UserProfileUpdateComponent } from './pages/user-profile-update/user-profile-update.component';
+import { IonicModule } from '@ionic/angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,7 +94,8 @@ import { UserProfileUpdateComponent } from './pages/user-profile-update/user-pro
     provideStorage(() => getStorage()),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    IonicModule.forRoot()
 
   ],
   providers: [],
