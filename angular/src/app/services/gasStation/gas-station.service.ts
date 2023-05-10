@@ -54,7 +54,7 @@ export class GasStationService {
 
   getGasStationPrice(gasStation: GasStation): Observable<GasPrice[]> {
     return this.getCityGasStations(gasStation.municipality_id).pipe(map((gasStationArray: any[]) => {
-      return gasStationArray.find((value) => value.IDEESS == gasStation.IDEESS).gasPrices;
+      return gasStationArray.find((value) => value.IDEESS === gasStation.IDEESS).gasPrices;
     }))
   }
 
