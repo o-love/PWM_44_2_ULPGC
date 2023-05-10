@@ -19,5 +19,4 @@ export interface GasStation {
   municipality_id: string;
   province_id: string;
   IDCCAA: string;
-  gasPrices: GasPrice[];
 }

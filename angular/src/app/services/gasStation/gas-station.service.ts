@@ -4,6 +4,7 @@ import {map, Observable} from "rxjs";
 import {GasStation} from "../../models/GasStation/gas-station.model";
 import {GasPrice} from "../../models/GasStation/gas-price.model";
 import {GasProvincia} from "../../models/GasStation/gas-provincia.model";
+import {FirestoreService} from "../firestore/firestore.service";
 
 function rawGasStationMapper(rawGasStation: any): GasStation {
   let prices: GasPrice[] = [];
@@ -42,29 +43,23 @@ function rawGasStationMapper(rawGasStation: any): GasStation {
 })
 export class GasStationService {
 
-  constructor(protected http: HttpClient) {
-  }
+  private collection = "gasStations"
 
-  getGasStations(): Observable<GasStation[]> {
-    return this.http.get('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/')
-      .pipe(map((rawGasStations: any) => rawGasStations.ListaEESSPrecio.map(rawGasStationMapper)));
-  }
-
-  getGasStationsByProvince(provinceID: number): Observable<GasStation[]> {
-    return this.http.get(`https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProvincia/${provinceID}`)
-      .pipe(map((rawGasStations: any) => rawGasStations.ListaEESSPrecio.map(rawGasStationMapper)));
-  }
-
-  getGasStationProvincias(): Observable<GasProvincia[]> {
-    return this.http.get<GasProvincia[]>('https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/Provincias/');
-  }
-
-  getGasStationsCCAA(CCAA_id: string): Observable<GasStation[]> {
-    return this.http.get(`https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/${CCAA_id}`)
-      .pipe(map((rawGasStations: any) => rawGasStations.ListaEESSPrecio.map(rawGasStationMapper)));
+  constructor(protected http: HttpClient, private firestoreService: FirestoreService) {
   }
 
   getCanaryIslandsGasStations(): Observable<GasStation[]> {
-    return this.getGasStationsCCAA("05");
+    return this.firestoreService.getAllDocs(this.collection);
+  }
+
+  getGasStationPrice(gasStation: GasStation): Observable<GasPrice[]> {
+    return this.getCityGasStations(gasStation.municipality_id).pipe(map((gasStationArray: any[]) => {
+      return gasStationArray.find((value) => value.IDEESS == gasStation.IDEESS).gasPrices;
+    }))
+  }
+
+  private getCityGasStations(cityID: string): Observable<GasStation[]> {
+    return this.http.get(`https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroMunicipio/${cityID}`)
+      .pipe(map((rawGasStations: any) => rawGasStations.ListaEESSPrecio.map(rawGasStationMapper)));
   }
 }

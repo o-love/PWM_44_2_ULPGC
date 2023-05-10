@@ -10,6 +10,6 @@
     <p>{{gasStation.address}}. {{gasStation.municipality}}, {{gasStation.zip}}</p>
 
     <h4>Precios:</h4>
-    <app-gas-price-list [gasPrices]="gasStation.gasPrices"></app-gas-price-list>
+    <app-gas-price-list  *ngIf="gasPrices" [gasPrices]="gasPrices"></app-gas-price-list>
   </div>
 </div>

@@ -2,7 +2,6 @@
   <div *ngFor="let gasStation of gasStations" class="GasStationListElement">
     <h2>{{gasStation.name}}</h2>
     <p>{{gasStation.address}}. {{gasStation.municipality}}, {{gasStation.zip}}</p>
-    <app-gas-price-list [gasPrices]="gasStation.gasPrices"></app-gas-price-list>
     <button (click)="openGasStation(gasStation)">Abrir</button>
   </div>
 </div>

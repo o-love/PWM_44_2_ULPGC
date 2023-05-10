@@ -1,6 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {GasStation} from "../../models/GasStation/gas-station.model";
 import {ActivatedRoute} from "@angular/router";
+import {GasPrice} from "../../models/GasStation/gas-price.model";
+import {GasStationService} from "../../services/gasStation/gas-station.service";
 
 @Component({
   selector: 'app-gas-info-page',
@@ -14,11 +16,17 @@ import {ActivatedRoute} from "@angular/router";
 export class GasInfoPageComponent {
 
   gasStation: GasStation | undefined;
+  gasPrices: GasPrice[] | undefined;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private gasStationService: GasStationService) {
   }
 
   ngOnInit() {
     this.gasStation = history.state;
+    if (this.gasStation) {
+      this.gasStationService.getGasStationPrice(this.gasStation).subscribe((gasPrices) => {
+        this.gasPrices = gasPrices;
+      })
+    }
   }
 }
