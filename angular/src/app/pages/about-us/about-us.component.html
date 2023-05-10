@@ -1,9 +1,11 @@
+<ion-content>
 <div class="img-text-container">
   <div *ngFor="let paragraph of paragraphs; let j=index"
        class="paragraph"
        [ngClass]="{'odd-background-about-us': j % 2 === 0, 'even-background-about-us': j % 2 === 1}"
        style="margin-top:1rem;">
-      <img src="{{ paragraph.img }}" alt="{{paragraph.alt}}" class="img-about-us">
+    <ion-img src="{{ paragraph.img }}" alt="{{paragraph.alt}}" class="img-about-us"></ion-img>
       <p class="paragraph-about-us" [innerHTML]="paragraph.text">{{ paragraph.text }}</p>
   </div>
 </div>
+</ion-content>

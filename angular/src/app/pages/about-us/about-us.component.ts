@@ -11,7 +11,6 @@ import { HttpClient } from '@angular/common/http';
   }
 })
 export class AboutUsComponent implements OnInit{
-  title = "About";
   paragraphs : string[] | any;
 
   constructor(private http: HttpClient) { }
