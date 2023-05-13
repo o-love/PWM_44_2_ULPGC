@@ -5,12 +5,22 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'folder/Inbox',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  }
+    path: 'home-page',
+    loadChildren: () =>
+      import('./pages/home-page/home-page.module').then(
+        (m) => m.HomePagePageModule
+      ),
+  },
+  {
+    path: 'gas-info',
+    loadChildren: () =>
+      import('./pages/gas-info/gas-info.module').then(
+        (m) => m.GasInfoPageModule
+      ),
+  },
 ];
 
 @NgModule({
