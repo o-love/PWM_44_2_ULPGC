@@ -1,0 +1,1 @@
+Para abrir ionic en android estudio ejecutar el comando `ionic capacitor build`.
