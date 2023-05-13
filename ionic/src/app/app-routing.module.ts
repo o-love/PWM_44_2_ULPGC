@@ -8,7 +8,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'home-page',
+    path: '',
     loadChildren: () =>
       import('./pages/home-page/home-page.module').then(
         (m) => m.HomePagePageModule
