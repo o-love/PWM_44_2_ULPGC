@@ -1,6 +1,8 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+android/
+
 *~
 *.sw[mnpcod]
 .tmp
@@ -11,7 +13,6 @@ $RECYCLE.BIN/
 
 *.log
 log.txt
-
 
 /.sourcemaps
 /.versions
@@ -51,7 +52,6 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
-
 
 # Miscellaneous
 /.angular
