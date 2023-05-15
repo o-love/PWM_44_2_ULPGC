@@ -1,0 +1,17 @@
+#showOnDesktop{
+  @media screen and (min-width: 991px ){
+    display: flex;
+  }
+  @media screen and (max-width: 991px ){
+    display: none;
+  }
+}
+
+#showOnMobile{
+  @media screen and (min-width: 991px ){
+    display: none;
+  }
+  @media screen and (max-width: 991px ){
+    display: block;
+  }
+}

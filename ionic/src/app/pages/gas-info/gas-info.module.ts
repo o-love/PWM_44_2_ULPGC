@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { GasInfoPageRoutingModule } from './gas-info-routing.module';
 
 import { GasInfoPage } from './gas-info.page';
+import {HomePagePageModule} from "../home-page/home-page.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GasInfoPageRoutingModule
+    GasInfoPageRoutingModule,
+    HomePagePageModule
   ],
   declarations: [GasInfoPage]
 })
