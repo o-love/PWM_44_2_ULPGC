@@ -8,17 +8,20 @@ import { HomePagePageRoutingModule } from './home-page-routing.module';
 
 import { HomePagePage } from './home-page.page';
 import {HeaderComponent} from "../../header/header.component";
+import {GoogleMapsModule} from "@angular/google-maps";
+import {GasStationListComponent} from "./gas-station-list/gas-station-list.component";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePagePageRoutingModule
+    HomePagePageRoutingModule,
+    GoogleMapsModule
   ],
   exports: [
     HeaderComponent
   ],
-  declarations: [HomePagePage, HeaderComponent]
+  declarations: [HomePagePage, HeaderComponent, GasStationListComponent]
 })
 export class HomePagePageModule {}

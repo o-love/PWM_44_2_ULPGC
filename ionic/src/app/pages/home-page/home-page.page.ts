@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FirestoreService } from 'src/app/services/firestore.service';
+import {GasStation} from "../../models/GasStation/gas-station.model";
+import {GasStationService} from "../../services/gas-station.service";
 
 @Component({
   selector: 'app-home-page',
@@ -7,7 +8,20 @@ import { FirestoreService } from 'src/app/services/firestore.service';
   styleUrls: ['./home-page.page.scss'],
 })
 export class HomePagePage implements OnInit {
-  constructor(private fireService: FirestoreService) {}
 
-  ngOnInit() {}
+  gasStations: GasStation[] = [];
+
+  constructor(private gasStationService: GasStationService) {
+  }
+
+  ngOnInit(): void {
+    this.getGasStations();
+  }
+
+  getGasStations(): void {
+    this.gasStationService.getCanaryIslandsGasStations().subscribe((gasStationList: GasStation[]) => {
+      this.gasStations = gasStationList;
+      console.log(this.gasStations);
+    });
+  }
 }

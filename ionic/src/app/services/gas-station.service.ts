@@ -49,7 +49,7 @@ export class GasStationService {
 
 
   getCanaryIslandsGasStations(): Observable<GasStation[]> {
-    return this.http.get(`https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/5`)
+    return this.http.get(`https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/05`)
       .pipe(map((rawGasStations: any) => rawGasStations.ListaEESSPrecio.map(rawGasStationMapper)));
   }
 

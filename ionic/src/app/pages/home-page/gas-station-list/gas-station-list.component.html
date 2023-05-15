@@ -1,0 +1,6 @@
+<div id="gasStationListContainer">
+  <div *ngFor="let gasStation of gasStations" class="GasStationListElement" (click)="openGasStation(gasStation)" tappable>
+    <h2>{{gasStation.name}}</h2>
+    <p>{{gasStation.address}}. {{gasStation.municipality}}, {{gasStation.zip}}</p>
+  </div>
+</div>
