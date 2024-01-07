@@ -3,7 +3,7 @@
 Welcome to the Vehicle Management Interface! This interface provides a user-friendly platform for managing vehicles, performing maintenance tasks, and checking gasoline prices at various stations in Gran Canaria.
 
 <p align="center">
-  <img src="https://camo.githubusercontent.com/5c8b7abcb6ef91e418b0f4b8c3eedf84d89daf383cbdd389acae2c9de0b0898f/68747470733a2f2f692e696d6775722e636f6d2f396b547975534a2e706e67">
+  <img src="https://i.imgur.com/9kTyuSJ.png">
 </p>
 
 
